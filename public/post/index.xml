@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on My New Hugo Site</title>
+    <link>http://smwswk.github.io/post/index.xml</link>
+    <description>Recent content in Posts on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Jan 2017 21:48:47 +0800</lastBuildDate>
+    <atom:link href="http://smwswk.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>first</title>
+      <link>http://smwswk.github.io/post/first/</link>
+      <pubDate>Sun, 22 Jan 2017 21:48:47 +0800</pubDate>
+      
+      <guid>http://smwswk.github.io/post/first/</guid>
+      <description>
+
+&lt;h3 id=&#34;hello-hugo&#34;&gt;hello hugo&lt;/h3&gt;
+
+&lt;p&gt;1.aaa&lt;/p&gt;
+
+&lt;p&gt;2.bbb&lt;/p&gt;
+
+&lt;p&gt;3.ccc&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
