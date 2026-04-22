@@ -217,3 +217,38 @@ To github.com:smwswk/smwswk.github.io.git
 [0;32m✓[0m 16:41:19 同步完成
 [0;32m✓[0m 16:41:19 同步完成
 
+[0;36m→[0m 16:43:34 检测到新图片，开始同步...
+[0;36m→[0m 16:43:34 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 8 张照片，开始处理...
+[0;36m→[0m 复制：CF166917.jpg
+[0;36m→[0m 缩图：CF166917.jpg
+[0;36m→[0m web图：CF166917.jpg
+[0;36m→[0m 复制：CF166932.jpg
+[0;36m→[0m 缩图：CF166932.jpg
+[0;36m→[0m web图：CF166932.jpg
+[0;32m✓[0m 图片同步完成：8 张
+[0;36m→[0m 生成图库数据：8 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 34 
+[0;32m✓[0m Hugo 构建完成
+[master 3604b4d] 📷 sync: 2026-04-22 16:43 — files
+ 16 files changed, 3 insertions(+), 1 deletion(-)
+ create mode 100644 photo/CF166917.jpg
+ create mode 100644 photo/CF166932.jpg
+ create mode 100644 public/photo/CF166917.jpg
+ create mode 100644 public/photo/CF166932.jpg
+ create mode 100644 public/photo/thumbs/CF166917.jpg
+ create mode 100644 public/photo/thumbs/CF166932.jpg
+ create mode 100644 public/photo/web/CF166917.jpg
+ create mode 100644 public/photo/web/CF166932.jpg
+ create mode 100644 static/photo/CF166917.jpg
+ create mode 100644 static/photo/CF166932.jpg
+ create mode 100644 static/photo/thumbs/CF166917.jpg
+ create mode 100644 static/photo/thumbs/CF166932.jpg
+ create mode 100644 static/photo/web/CF166917.jpg
+ create mode 100644 static/photo/web/CF166932.jpg
