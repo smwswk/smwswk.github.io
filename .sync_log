@@ -18,3 +18,23 @@ WARN  deprecated: .Site.Data was deprecated in Hugo v0.156.0 and will be removed
  Cleaned          │  0 
 
 Total in 114 ms
+2026年 4月22日 星期三 20时07分39秒 CST
+🔄 SyncPhotos 开始...
+📂 源目录: /Users/sunminwen/Documents/GitHub/smwswk.github.io/photo
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/scripts/sync_photos.sh: line 29: syntax error near unexpected token `2'
+Start building sites … 
+hugo v0.160.1+extended+withdeploy darwin/arm64 BuildDate=2026-04-08T14:02:42Z VendorInfo=Homebrew
+
+WARN  deprecated: .Site.Data was deprecated in Hugo v0.156.0 and will be removed in a future release. Use hugo.Data instead.
+
+                  │ EN 
+──────────────────┼────
+ Pages            │ 12 
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 43 
+ Processed images │  0 
+ Aliases          │  0 
+ Cleaned          │  0 
+
+Total in 490 ms

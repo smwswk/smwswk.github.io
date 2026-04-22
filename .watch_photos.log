@@ -275,3 +275,81 @@ To github.com:smwswk/smwswk.github.io.git
  Static files     │ 34 
 [0;32m✓[0m Hugo 构建完成
 [0;36m→[0m 同步 public/ 到根目录...
+[master aadd17f] 📷 sync: 2026-04-22 19:57 — files
+ 13 files changed, 14 insertions(+)
+ create mode 100644 photo/thumbs/CF166917.jpg
+ create mode 100644 photo/thumbs/CF166932.jpg
+ create mode 100644 photo/thumbs/CF167011.jpg
+ create mode 100644 photo/thumbs/CF167078.jpg
+ create mode 100644 photo/thumbs/CF167121.jpg
+ create mode 100644 photo/thumbs/CF167235.jpg
+ create mode 100644 photo/web/CF166917.jpg
+ create mode 100644 photo/web/CF166932.jpg
+ create mode 100644 photo/web/CF167011.jpg
+ create mode 100644 photo/web/CF167078.jpg
+ create mode 100644 photo/web/CF167121.jpg
+ create mode 100644 photo/web/CF167235.jpg
+To github.com:smwswk/smwswk.github.io.git
+   05f7e00..aadd17f  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 19:58:08 同步完成
+[0;32m✓[0m 19:58:08 同步完成
+
+[0;36m→[0m 20:03:06 检测到新图片，开始同步...
+[0;36m→[0m 20:03:06 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 11 张照片，开始处理...
+[0;36m→[0m 复制：CF166760.jpg
+[0;36m→[0m 缩图：CF166760.jpg
+[0;36m→[0m web图：CF166760.jpg
+[0;36m→[0m 复制：CF166775.jpg
+[0;36m→[0m 缩图：CF166775.jpg
+[0;36m→[0m web图：CF166775.jpg
+[0;36m→[0m 复制：CF166789.jpg
+[0;36m→[0m 缩图：CF166789.jpg
+[0;36m→[0m web图：CF166789.jpg
+[0;32m✓[0m 图片同步完成：11 张
+[0;36m→[0m 生成图库数据：11 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 43 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master a1ab945] 📷 sync: 2026-04-22 20:03 — files
+ 24 files changed, 5 insertions(+), 2 deletions(-)
+ create mode 100644 photo/CF166760.jpg
+ create mode 100644 photo/CF166775.jpg
+ create mode 100644 photo/CF166789.jpg
+ create mode 100644 public/photo/CF166760.jpg
+ create mode 100644 public/photo/CF166775.jpg
+ create mode 100644 public/photo/CF166789.jpg
+ create mode 100644 public/photo/thumbs/CF166760.jpg
+ create mode 100644 public/photo/thumbs/CF166775.jpg
+ create mode 100644 public/photo/thumbs/CF166789.jpg
+ create mode 100644 public/photo/web/CF166760.jpg
+ create mode 100644 public/photo/web/CF166775.jpg
+ create mode 100644 public/photo/web/CF166789.jpg
+ create mode 100644 static/photo/CF166760.jpg
+ create mode 100644 static/photo/CF166775.jpg
+ create mode 100644 static/photo/CF166789.jpg
+ create mode 100644 static/photo/thumbs/CF166760.jpg
+ create mode 100644 static/photo/thumbs/CF166775.jpg
+ create mode 100644 static/photo/thumbs/CF166789.jpg
+ create mode 100644 static/photo/web/CF166760.jpg
+ create mode 100644 static/photo/web/CF166775.jpg
+ create mode 100644 static/photo/web/CF166789.jpg
+To github.com:smwswk/smwswk.github.io.git
+   aadd17f..a1ab945  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 20:04:02 同步完成
+[0;32m✓[0m 20:04:02 同步完成
+
