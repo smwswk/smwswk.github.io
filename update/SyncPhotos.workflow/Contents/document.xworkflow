@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>ATEMacroDocumentType</key>
+    <string>Composed Macro</string>
+    <key>application_domain</key>
+    <string>com.apple.Automator</string>
+    <key>name</key>
+    <string>SyncPhotos</string>
+    <key>run_only_in_foreground</key>
+    <false/>
+    <key>variables</key>
+    <dict/>
+    <key>workflow_actions</key>
+    <array>
+        <dict>
+            <key>action_name</key>
+            <string>Run Shell Script</string>
+            <key>action_options</key>
+            <dict>
+                <key>input_method</key>
+                <integer>0</integer>
+                <key>notify_on_error</key>
+                <false/>
+                <key>shell</key>
+                <string>/bin/bash</string>
+                <key>text</key>
+                <string>cd /Users/sunminwen/Documents/GitHub/smwswk.github.io && bash sync_photos.sh 2>&1 | /usr/bin/awk '{print}'
+/usr/bin/osascript -e 'display notification "✅ Photo sync done! Check GitHub Desktop for push status." with title "SMWSWK Photo Sync"'</string>
+            </dict>
+            <key>action_uid</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>workflow_template</key>
+    <string>application</string>
+</dict>
+</plist>

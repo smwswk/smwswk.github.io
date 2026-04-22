@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="hugo">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>更新图库 &middot; SMWSWK — Photography</title>
+  
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="/update/index.xml" rel="alternate" type="application/rss+xml" title="SMWSWK — Photography" />
+</head>
+
+<body class="">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://smwswk.github.io/"><h1>SMWSWK — Photography</h1></a>
+      <p class="subtitle">Hasselblad · Phase One · 影像叙事</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/" class="">Home</a></li>
+      <li><a href="/photo" class="">Gallery</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <p>© 2026 Sun Minwen</p>
+      <p style="margin-top:0.3rem;"><a href="https://github.com/smwswk" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</div>
+
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>手动同步</h1>
+    <p>将 photo/ 文件夹中的新照片同步到网站并发布</p>
+  </div>
+
+  <div class="update-bar" style="flex-direction:column;align-items:flex-start;gap:1.5rem;">
+    <div>
+      <p style="font-size:0.9rem;color:var(--text);margin-bottom:0.8rem;">
+        <strong>方式一（推荐）：</strong>下载下方的 Quick Action 文件，双击安装到 macOS。
+        安装后在任何 Finder 窗口的「快速操作」中即可点击运行。
+      </p>
+      <a href="/update/SyncPhotos.workflow" class="btn" download>⬇ 下载 macOS Quick Action</a>
+    </div>
+
+    <div style="border-top:1px solid var(--border);padding-top:1.5rem;width:100%;">
+      <p style="font-size:0.9rem;color:var(--text);margin-bottom:0.8rem;">
+        <strong>方式二：</strong>在终端复制粘贴运行：
+      </p>
+      <pre style="background:#111;border:1px solid var(--border);border-radius:4px;padding:1rem;font-size:0.8rem;color:var(--accent);overflow-x:auto;">cd /Users/sunminwen/Documents/GitHub/smwswk.github.io && bash sync_photos.sh</pre>
+    </div>
+
+    <div style="border-top:1px solid var(--border);padding-top:1.5rem;width:100%;">
+      <p style="font-size:0.85rem;color:var(--muted);">
+        同步脚本会自动：生成缩略图 → 复制原图到 static/photo/ → 重新构建 Hugo → git commit + 推送。
+        推送后约 1 分钟 GitHub Pages 自动生效。
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
