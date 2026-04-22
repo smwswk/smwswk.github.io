@@ -150,6 +150,14 @@ hugo_build() {
   info "构建 Hugo 站点..."
   hugo --destination public 2>&1 | grep -E "(built|files|pages)" || true
   log "Hugo 构建完成"
+
+  # 同步 public/ 到根目录（GitHub Pages 从根目录部署）
+  info "同步 public/ 到根目录..."
+  cp -f "$REPO_DIR/public/index.html" "$REPO_DIR/index.html" 2>/dev/null || true
+  cp -Rf "$REPO_DIR/public/photo/index.html" "$REPO_DIR/photo/index.html" 2>/dev/null || true
+  cp -Rf "$REPO_DIR/public/photo/index.xml" "$REPO_DIR/photo/index.xml" 2>/dev/null || true
+  cp -Rf "$REPO_DIR/public/css/" "$REPO_DIR/css/" 2>/dev/null || true
+
   rm -f "$HUGO_MARKER"
 }
 
@@ -160,7 +168,7 @@ git_commit_push() {
     return 0
   fi
 
-  git add photo/ static/photo/ data/photos.json public/ 2>/dev/null || true
+  git add photo/ static/photo/ data/photos.json public/ index.html css/ 2>/dev/null || true
 
   if git diff --cached --quiet 2>/dev/null; then
     info "没有新的 Git 变更"
