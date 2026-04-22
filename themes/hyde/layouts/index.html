@@ -3,24 +3,24 @@
 
 {{ partial "sidebar.html" . }}
 
-    <div class="content container">
-<div class="posts">
-
-      {{ range .Data.Pages }}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ .Permalink }}">
-        {{ .Title }}
-      </a>
-    </h1>
-
-    <span class="post-date">{{ .Date.Format "Mon, Jan 2, 2006" }}</span>
-
-    {{ .Content }}
+<div class="content container">
+  <div class="home-hero">
+    <h1>影像<br><em>叙事</em></h1>
+    <p class="lead">
+      用中画幅定格决定性瞬间。<br>
+      Hasselblad V 系列 · Phase One IQ3<br>
+      江苏省常熟市
+    </p>
+    <div class="home-cta">
+      <a href="/photo" class="btn">进入 Gallery</a>
+      <a href="https://github.com/smwswk" class="btn btn-ghost" target="_blank">GitHub</a>
+    </div>
+    <div class="update-bar" style="margin-top:5rem;">
+      <p>📷 自动同步 photo/ 文件夹中的新照片至网站 · 每日 08:00 自动构建</p>
+      <button class="btn btn-ghost" onclick="window.open('/update','_self')">立即手动同步 ▶</button>
+    </div>
   </div>
-  {{ end }}
-</div>
 </div>
 
-  </body>
+</body>
 </html>

@@ -1,3 +1,13 @@
 languageCode = "en-us"
-title = "My New Hugo Site"
-baseurl = "http://example.org/"
+title = "SMWSWK — Photography"
+baseurl = "https://smwswk.github.io/"
+theme = "hyde"
+footnoteSelect = "hover"
+
+[params]
+  subtitle = "Hasselblad · Phase One · 影像叙事"
+  author = "Sun Minwen"
+  description = "Hasselblad V Series Photography Portfolio"
+
+[taxonomies]
+  series = "series"

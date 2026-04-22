@@ -1,0 +1,76 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }}">
+
+{{ partial "sidebar.html" . }}
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-meta"></div>
+</div>
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>Gallery</h1>
+    <p>{{ len hugo.Data.photos.list }} 张照片 &nbsp;·&nbsp; 点击查看大图</p>
+  </div>
+
+  <div class="gallery-grid" id="gallery">
+    <!-- Injected by inline JS below -->
+  </div>
+
+  <div class="update-bar">
+    <p>📷 photo/ 文件夹变更后，运行 <code>bash sync_photos.sh</code> 同步缩图，再 <code>hugo</code> 重新构建</p>
+    <button class="btn btn-ghost" id="manual-sync-btn" onclick="alert('请在终端运行：bash sync_photos.sh\n\n然后提交到 GitHub Desktop 推送。')">手动同步</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  // ── Gallery data (injected by Hugo from static/photo/ list) ──
+  var photos = [
+    {{ $photoList := hugo.Data.photos.list }}
+    {{ range $i, $photo := $photoList }}
+    { name: "{{ $photo.name }}", thumb: "/photo/thumbs/{{ $photo.name }}", full: "/photo/{{ $photo.name }}", date: "{{ $photo.date }}" }{{ if ne $i (sub (len $photoList) 1) }},{{ end }}
+    {{ end }}
+  ];
+
+  var gallery = document.getElementById('gallery');
+
+  if (photos.length === 0) {
+    gallery.innerHTML = '<p style="color:#777;font-size:0.85rem;grid-column:1/-1;padding:2rem 0;">暂无照片。将照片放入 photo/ 文件夹后运行 sync_photos.sh。</p>';
+    return;
+  }
+
+  photos.forEach(function(p) {
+    var item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML =
+      '<img src="' + p.thumb + '" alt="' + p.name + '" loading="lazy">' +
+      '<div class="overlay"><span>' + p.name.replace(/\.[^.]+$/, '') + '</span></div>';
+    item.addEventListener('click', function() { openLightbox(p); });
+    gallery.appendChild(item);
+  });
+
+  function openLightbox(p) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = p.full;
+    document.getElementById('lightbox-meta').textContent = p.name + ' · ' + p.date;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>

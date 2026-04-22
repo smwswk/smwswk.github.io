@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="hugo">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Gallery &middot; SMWSWK — Photography</title>
+  
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="/photo/index.xml" rel="alternate" type="application/rss+xml" title="SMWSWK — Photography" />
+</head>
+
+<body class="">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://smwswk.github.io/"><h1>SMWSWK — Photography</h1></a>
+      <p class="subtitle">Hasselblad · Phase One · 影像叙事</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/" class="">Home</a></li>
+      <li><a href="/photo" class="active">Gallery</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <p>© 2026 Sun Minwen</p>
+      <p style="margin-top:0.3rem;"><a href="https://github.com/smwswk" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="lightbox" onclick="closeLightbox()">
+  <span id="lightbox-close">×</span>
+  <img id="lightbox-img" src="" alt="">
+  <div id="lightbox-meta"></div>
+</div>
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>Gallery</h1>
+    <p>2 张照片 &nbsp;·&nbsp; 点击查看大图</p>
+  </div>
+
+  <div class="gallery-grid" id="gallery">
+    
+  </div>
+
+  <div class="update-bar">
+    <p>📷 photo/ 文件夹变更后，运行 <code>bash sync_photos.sh</code> 同步缩图，再 <code>hugo</code> 重新构建</p>
+    <button class="btn btn-ghost" id="manual-sync-btn" onclick="alert('请在终端运行：bash sync_photos.sh\n\n然后提交到 GitHub Desktop 推送。')">手动同步</button>
+  </div>
+</div>
+
+<script>
+(function() {
+  
+  var photos = [
+    
+    
+    { name: "CF167264.jpg", thumb: "/photo/thumbs/CF167264.jpg", full: "/photo/CF167264.jpg", date: "2026:04:20 11:53:00" },
+    
+    { name: "CF167269.jpg", thumb: "/photo/thumbs/CF167269.jpg", full: "/photo/CF167269.jpg", date: "2026:04:20 11:57:37" }
+    
+  ];
+
+  var gallery = document.getElementById('gallery');
+
+  if (photos.length === 0) {
+    gallery.innerHTML = '<p style="color:#777;font-size:0.85rem;grid-column:1/-1;padding:2rem 0;">暂无照片。将照片放入 photo/ 文件夹后运行 sync_photos.sh。</p>';
+    return;
+  }
+
+  photos.forEach(function(p) {
+    var item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML =
+      '<img src="' + p.thumb + '" alt="' + p.name + '" loading="lazy">' +
+      '<div class="overlay"><span>' + p.name.replace(/\.[^.]+$/, '') + '</span></div>';
+    item.addEventListener('click', function() { openLightbox(p); });
+    gallery.appendChild(item);
+  });
+
+  function openLightbox(p) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = p.full;
+    document.getElementById('lightbox-meta').textContent = p.name + ' · ' + p.date;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }}">
+
+{{ partial "sidebar.html" . }}
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>手动同步</h1>
+    <p>将 photo/ 文件夹中的新照片同步到网站并发布</p>
+  </div>
+
+  <div class="update-bar" style="flex-direction:column;align-items:flex-start;gap:1.5rem;">
+    <div>
+      <p style="font-size:0.9rem;color:var(--text);margin-bottom:0.8rem;">
+        <strong>方式一（推荐）：</strong>下载下方的 Quick Action 文件，双击安装到 macOS。
+        安装后在任何 Finder 窗口的「快速操作」中即可点击运行。
+      </p>
+      <a href="/update/SyncPhotos.workflow" class="btn" download>⬇ 下载 macOS Quick Action</a>
+    </div>
+
+    <div style="border-top:1px solid var(--border);padding-top:1.5rem;width:100%;">
+      <p style="font-size:0.9rem;color:var(--text);margin-bottom:0.8rem;">
+        <strong>方式二：</strong>在终端复制粘贴运行：
+      </p>
+      <pre style="background:#111;border:1px solid var(--border);border-radius:4px;padding:1rem;font-size:0.8rem;color:var(--accent);overflow-x:auto;">cd /Users/sunminwen/Documents/GitHub/smwswk.github.io && bash sync_photos.sh</pre>
+    </div>
+
+    <div style="border-top:1px solid var(--border);padding-top:1.5rem;width:100%;">
+      <p style="font-size:0.85rem;color:var(--muted);">
+        同步脚本会自动：生成缩略图 → 复制原图到 static/photo/ → 重新构建 Hugo → git commit + 推送。
+        推送后约 1 分钟 GitHub Pages 自动生效。
+      </p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
