@@ -91,7 +91,7 @@ p { margin: 0.8em 0; }
   max-width: 1400px;
 }
 
-/* ── Gallery Grid ── */
+/* ── Photo Gallery Grid ── */
 .gallery-header {
   margin-bottom: 2.5rem;
   padding-bottom: 1.5rem;
@@ -109,29 +109,32 @@ p { margin: 0.8em 0; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
+  gap: 1rem;
   margin-bottom: 3rem;
 }
+
 .gallery-item {
-  position: relative;
-  overflow: hidden;
   border-radius: var(--radius);
+  overflow: hidden;
   background: #111;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  position: relative;
+  aspect-ratio: 4 / 3;
 }
-.gallery-item:hover { transform: scale(1.015); }
+.gallery-item:hover { opacity: 0.92; }
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 4/3;
+  height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s;
+  transition: transform 0.4s ease;
 }
+.gallery-item:hover img { transform: scale(1.03); }
+
 .gallery-item .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%);
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -140,9 +143,9 @@ p { margin: 0.8em 0; }
 }
 .gallery-item:hover .overlay { opacity: 1; }
 .overlay span {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.85);
-  letter-spacing: 0.06em;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.88);
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 

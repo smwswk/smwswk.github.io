@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSShorcutsInputContentType</key>
+    <string>public.item</string>
+    <key>NSShorcutsTemplateImageData</key>
+    <data></data>
+    <key>NSShorcutsYosemiteIconData</key>
+    <data></data>
+    <key>actions</key>
+    <array>
+        <dict>
+            <key>NSActionIdentifier</key>
+            <string>is.workflow.actions.shellscript</string>
+            <key>NSActionParameters</key>
+            <dict>
+                <key>Command</key>
+                <string>bash /Users/sunminwen/Documents/GitHub/smwswk.github.io/scripts/sync_photos.sh</string>
+                <key>RunInTerminal</key>
+                <true/>
+                <key>WatchInput</key>
+                <false/>
+            </dict>
+        </dict>
+    </array>
+    <key>creatorBuildNumber</key>
+    <integer>3131</integer>
+    <key>name</key>
+    <string>SyncPhotos</string>
+    <key>outputContent</key>
+    <dict/>
+    <key>tagSymbols</key>
+    <array/>
+    <key>version</key>
+    <integer>1</integer>
+    <key>watchMap</key>
+    <dict/>
+</dict>
+</plist>

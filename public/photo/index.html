@@ -26,6 +26,7 @@
   <link href="/photo/index.xml" rel="alternate" type="application/rss+xml" title="SMWSWK — Photography" />
 </head>
 
+
 <body class="">
 
 <div class="sidebar">
@@ -49,21 +50,20 @@
 
 
 
-<div id="lightbox" onclick="closeLightbox()">
-  <span id="lightbox-close">×</span>
-  <img id="lightbox-img" src="" alt="">
+<div id="lightbox">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="" onclick="closeLightbox()">
   <div id="lightbox-meta"></div>
 </div>
 
 <div class="content container">
   <div class="gallery-header">
     <h1>Gallery</h1>
-    <p>2 张照片 &nbsp;·&nbsp; 点击查看大图</p>
+    <p id="photo-count">加载中…</p>
   </div>
 
-  <div class="gallery-grid" id="gallery">
-    
-  </div>
+  
+  <div class="gallery-grid" id="gallery"></div>
 
   <div class="update-bar">
     <p>📷 photo/ 文件夹变更后，运行 <code>bash sync_photos.sh</code> 同步缩图，再 <code>hugo</code> 重新构建</p>
@@ -74,18 +74,16 @@
 <script>
 (function() {
   
-  var photos = [
-    
-    
-    { name: "CF167264.jpg", thumb: "/photo/thumbs/CF167264.jpg", full: "/photo/CF167264.jpg", date: "2026:04:20 11:53:00" },
-    
-    { name: "CF167269.jpg", thumb: "/photo/thumbs/CF167269.jpg", full: "/photo/CF167269.jpg", date: "2026:04:20 11:57:37" }
-    
-  ];
+  var photos = [{ name: "CF167264.jpg", thumb: "/photo/thumbs/CF167264.jpg", full: "/photo/CF167264.jpg", date: "2026:04:20 11:53:00" },{ name: "CF167269.jpg", thumb: "/photo/thumbs/CF167269.jpg", full: "/photo/CF167269.jpg", date: "2026:04:20 11:57:37" }];
 
   var gallery = document.getElementById('gallery');
 
-  if (photos.length === 0) {
+  
+  var countEl = document.getElementById('photo-count');
+  if (photos.length > 0) {
+    countEl.textContent = photos.length + ' 张照片 · 点击查看大图';
+  } else {
+    countEl.textContent = '暂无照片';
     gallery.innerHTML = '<p style="color:#777;font-size:0.85rem;grid-column:1/-1;padding:2rem 0;">暂无照片。将照片放入 photo/ 文件夹后运行 sync_photos.sh。</p>';
     return;
   }
@@ -100,6 +98,7 @@
     gallery.appendChild(item);
   });
 
+  
   function openLightbox(p) {
     var lb = document.getElementById('lightbox');
     document.getElementById('lightbox-img').src = p.full;
