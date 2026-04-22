@@ -79,7 +79,7 @@ sync_photos() {
     local thumb="${THUMBS_DIR}/${stem}.jpg"
 
     # 复制原图
-    if [[ ! -f "$dst" ]] || [[ "$(stat -c%s "$src" 2>/dev/null)" != "$(stat -c%s "$dst" 2>/dev/null)" ]]; then
+    if [[ ! -f "$dst" ]] || [[ "$(stat -f%z "$src" 2>/dev/null)" != "$(stat -f%z "$dst" 2>/dev/null)" ]]; then
       cp "$src" "$dst"
       info "复制：$basename"
     fi
@@ -129,7 +129,7 @@ generate_data() {
 
     # 尝试从 EXIF 读拍摄日期
     date=$(identify -format "%[EXIF:DateTimeOriginal]" "$f" 2>/dev/null || echo "")
-    [[ -z "$date" ]] && date=$(date -r "$(stat -c%Y "$f" 2>/dev/null)" "+%Y-%m-%d %H:%M" 2>/dev/null || echo "unknown")
+    [[ -z "$date" ]] && date=$(date -r "$f" "+%Y-%m-%d %H:%M" 2>/dev/null || echo "unknown")
 
     [[ "$first" == true ]] && first=false || json+=','
     json+=$(printf '\n    {"name":"%s","date":"%s"}' "$basename" "$date")
