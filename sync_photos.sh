@@ -46,7 +46,7 @@ check_deps() {
 
 # ── 创建目录 ──
 setup() {
-  mkdir -p "$STATIC_PHOTO" "$THUMBS_DIR"
+  mkdir -p "$STATIC_PHOTO" "$THUMBS_DIR" "${STATIC_PHOTO}/web"
 }
 
 # ── 同步照片 ──
@@ -92,6 +92,16 @@ sync_photos() {
         cp "$src" "$thumb"
       }
       info "缩图：${stem}.jpg"
+    fi
+
+    # 生成/更新 web 版大图（1920px宽，JPEG 85%）
+    local webimg="${STATIC_PHOTO}/web/${stem}.jpg"
+    if [[ ! -f "$webimg" ]] || [[ "$src" -nt "$webimg" ]]; then
+      convert "$src" -resize 1920x1920\> -quality 85 "$webimg" 2>/dev/null || {
+        warn "web 图生成失败，复制原图代替：$basename"
+        cp "$src" "$webimg"
+      }
+      info "web图：${stem}.jpg"
     fi
 
     ((count++))
