@@ -12,12 +12,8 @@ date >> "$LOG"
 # 进入仓库目录
 cd "$REPO_DIR"
 
-# 同步脚本（需要 sudo 权限写 public/）
-if command -v /usr/bin/sudo &>/dev/null; then
-    /usr/bin/sudo bash "$REPO_DIR/scripts/sync_photos.sh" 2>&1 | tee -a "$LOG"
-else
-    bash "$REPO_DIR/scripts/sync_photos.sh" 2>&1 | tee -a "$LOG"
-fi
+# 同步脚本
+bash "$REPO_DIR/scripts/sync_photos.sh" 2>&1 | tee -a "$LOG"
 
 # Hugo 构建
 echo "⚙️  运行 Hugo 构建..."
