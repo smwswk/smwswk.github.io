@@ -906,3 +906,29 @@ ERROR error copying static files: open /Users/sunminwen/Documents/GitHub/smwswk.
 [0;32m✓[0m 15:20:18 同步完成
 [0;32m✓[0m 15:20:18 同步完成
 
+[0;36m→[0m 16:12:39 检测到新图片，开始同步...
+[0;36m→[0m 16:12:39 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 36 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 36 张，共追踪 36 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │   0 
+ Non-page files   │   0 
+ Static files     │ 142 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master 0cf6b23] 📷 sync: 2026-04-24 16:12 — files
+ 4 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 photo/thumbs/CF165953.jpg
+ delete mode 100644 public/photo/.DS_Store
+To github.com:smwswk/smwswk.github.io.git
+   e7c3437..0cf6b23  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 16:12:55 同步完成
+[0;32m✓[0m 16:12:55 同步完成
+
