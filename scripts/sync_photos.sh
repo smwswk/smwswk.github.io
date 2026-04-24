@@ -10,6 +10,7 @@ BASE_DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="$BASE_DIR/photo"
 STATIC="$BASE_DIR/static/photo"
 THUMBS="$STATIC/thumbs"
+WEB="$STATIC/web"
 DATA_FILE="$BASE_DIR/data/photos.json"
 SCRIPT_FILE="$BASE_DIR/scripts/SyncPhotos.command"
 HUGO_BASE="$BASE_DIR"
@@ -23,7 +24,7 @@ if [ ! -d "$SRC" ]; then
     exit 0
 fi
 
-mkdir -p "$STATIC" "$THUMBS"
+mkdir -p "$STATIC" "$THUMBS" "$WEB"
 
 # 复制原图到 static/photo/（跳过已存在的）
 shopt -s nullglob
@@ -34,6 +35,31 @@ for ext in jpg JPG jpeg JPEG png PNG tif TIF tiff TIFF; do
         if [ ! -f "$STATIC/$fname" ]; then
             cp "$f" "$STATIC/$fname"
             echo "  ✅ 复制原图: $fname"
+        fi
+    done
+done
+shopt -u nullglob
+
+# 生成 web 版本图片（跳过已存在的）
+shopt -s nullglob
+for ext in jpg JPG jpeg JPEG png PNG; do
+    for f in "$SRC"/*."$ext"; do
+        [ -e "$f" ] || continue
+        fname=$(basename "$f")
+        out="$WEB/$fname"
+
+        if [ ! -f "$out" ]; then
+            # 对于 JPG/JPEG，压缩到 1200px 宽度，质量 85
+            # 对于 PNG，转换为 JPG 并压缩
+            if [[ "$ext" =~ ^(png|PNG)$ ]]; then
+                # PNG 转 JPG，保持文件名但改扩展名
+                base="${fname%.*}"
+                sips -s format jpeg -Z 1200 "$f" --out "$out" 2>/dev/null \
+                    && echo "  🌐 Web版: $fname → 1200px (JPG)"
+            else
+                sips -Z 1200 "$f" --out "$out" 2>/dev/null \
+                    && echo "  🌐 Web版: $fname → 1200px"
+            fi
         fi
     done
 done
