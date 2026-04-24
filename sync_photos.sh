@@ -273,6 +273,10 @@ hugo_build() {
   cp -Rf "$REPO_DIR/public/photo/index.xml" "$REPO_DIR/photo/index.xml" 2>/dev/null || true
   cp -Rf "$REPO_DIR/public/css/" "$REPO_DIR/css/" 2>/dev/null || true
 
+  # 同步图片缩略图和 web 版本到根目录
+  rsync -a "$REPO_DIR/public/photo/thumbs/" "$REPO_DIR/photo/thumbs/" 2>/dev/null || true
+  rsync -a "$REPO_DIR/public/photo/web/" "$REPO_DIR/photo/web/" 2>/dev/null || true
+
   rm -f "$HUGO_MARKER"
 }
 
