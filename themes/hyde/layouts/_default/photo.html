@@ -32,7 +32,7 @@
   var photos = [
     {{- $photoList := hugo.Data.photos.list -}}
     {{- range $i, $photo := $photoList -}}
-    { name: "{{ $photo.name }}", thumb: "/photo/thumbs/{{ $photo.name }}", full: "/photo/web/{{ $photo.name }}", date: "{{ $photo.date }}" }{{ if ne $i (sub (len $photoList) 1) }},{{ end }}
+    { name: "{{ $photo.name }}", thumb: "/photo/thumbs/{{ replace $photo.name ".png" ".jpg" }}", full: "/photo/web/{{ replace $photo.name ".png" ".jpg" }}", date: "{{ $photo.date }}" }{{ if ne $i (sub (len $photoList) 1) }},{{ end }}
     {{- end -}}
   ];
 
