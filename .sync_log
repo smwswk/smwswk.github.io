@@ -190,3 +190,37 @@ hugo v0.160.1+extended+withdeploy darwin/arm64 BuildDate=2026-04-08T14:02:42Z Ve
 
 Total in 13 ms
 ERROR error copying static files: open /Users/sunminwen/Documents/GitHub/smwswk.github.io/public/photo/B0004P0099.jpg: permission denied
+2026年 4月24日 星期五 15时00分08秒 CST
+🔄 SyncPhotos 开始...
+📂 源目录: /Users/sunminwen/Documents/GitHub/smwswk.github.io/photo
+  ✅ 复制原图: 20260423_162316_shadow_1.png
+  ✅ 复制原图: 20260423_162353_shadow_2.png
+  ✅ 复制原图: 20260423_162436_shadow_3.png
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162316_shadow_1.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/20260423_162316_shadow_1.png
+  🌐 Web版: 20260423_162316_shadow_1.png → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162353_shadow_2.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/20260423_162353_shadow_2.png
+  🌐 Web版: 20260423_162353_shadow_2.png → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162436_shadow_3.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/20260423_162436_shadow_3.png
+  🌐 Web版: 20260423_162436_shadow_3.png → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162316_shadow_1.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/thumbs/20260423_162316_shadow_1.png
+  🖼️  缩图: 20260423_162316_shadow_1.png → 800px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162353_shadow_2.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/thumbs/20260423_162353_shadow_2.png
+  🖼️  缩图: 20260423_162353_shadow_2.png → 800px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/20260423_162436_shadow_3.png
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/thumbs/20260423_162436_shadow_3.png
+  🖼️  缩图: 20260423_162436_shadow_3.png → 800px
+📝 生成图库索引...
+  ✅ data/photos.json 已更新 (111 张照片)
+🏗️  Hugo 构建...
+
+✅ 同步完成！请在 GitHub Desktop 推送变更
+Start building sites … 
+hugo v0.160.1+extended+withdeploy darwin/arm64 BuildDate=2026-04-08T14:02:42Z VendorInfo=Homebrew
+
+Total in 108 ms
+ERROR error building site: render: [en v1.0.0 guest] failed to render pages: render of "/Users/sunminwen/Documents/GitHub/smwswk.github.io/content/photo/_index.md" failed: "/Users/sunminwen/Documents/GitHub/smwswk.github.io/themes/hyde/layouts/_default/photo.html:33:22": execute of template failed: template: photo.html:33:22: executing "photo.html" at <hugo>: can't evaluate field list in type interface {}

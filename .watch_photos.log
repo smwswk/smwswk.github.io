@@ -812,3 +812,74 @@ To github.com:smwswk/smwswk.github.io.git
 [0;32m✓[0m 14:54:35 同步完成
 [0;32m✓[0m 14:54:35 同步完成
 
+[0;36m→[0m 15:00:05 检测到新图片，开始同步...
+[0;36m→[0m 15:00:05 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 33 张照片（基于 SHA-256 内容哈希去重）
+[0;36m→[0m 新增：20260423_162316_shadow_1.png
+[0;36m→[0m 新增：20260423_162353_shadow_2.png
+[0;36m→[0m 新增：20260423_162436_shadow_3.png
+[0;32m✓[0m 同步完成：新增/更新 3 张，跳过 30 张，共追踪 33 张
+[0;36m→[0m 构建 Hugo 站点...
+ERROR error copying static files: open /Users/sunminwen/Documents/GitHub/smwswk.github.io/public/photo/thumbs/20260423_162316_shadow_1.jpg: permission denied
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[0;36m→[0m 没有新的 Git 变更
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 15:00:14 同步完成
+[0;32m✓[0m 15:00:14 同步完成
+
+[0;36m→[0m 15:06:16 检测到新图片，开始同步...
+[0;36m→[0m 15:06:16 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 33 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 33 张，共追踪 33 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │   0 
+ Non-page files   │   0 
+ Static files     │ 133 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[0;36m→[0m 没有新的 Git 变更
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 15:06:24 同步完成
+[0;32m✓[0m 15:06:24 同步完成
+
+[0;36m→[0m 15:06:48 检测到新图片，开始同步...
+[0;36m→[0m 15:06:48 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 33 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 33 张，共追踪 33 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │   0 
+ Non-page files   │   0 
+ Static files     │ 133 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master 84e43d7] 📷 sync: 2026-04-24 15:06 — files
+ 6 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 photo/thumbs/20260423_162316_shadow_1.jpg
+ create mode 100644 photo/thumbs/20260423_162353_shadow_2.jpg
+ create mode 100644 photo/thumbs/20260423_162436_shadow_3.jpg
+ create mode 100644 photo/web/20260423_162316_shadow_1.jpg
+ create mode 100644 photo/web/20260423_162353_shadow_2.jpg
+ create mode 100644 photo/web/20260423_162436_shadow_3.jpg
+To github.com:smwswk/smwswk.github.io.git
+   0e19e2f..84e43d7  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 15:07:00 同步完成
+[0;32m✓[0m 15:07:00 同步完成
+
