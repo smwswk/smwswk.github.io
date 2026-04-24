@@ -701,3 +701,54 @@ ERROR error copying static files: open /Users/sunminwen/Documents/GitHub/smwswk.
 [0;32m✓[0m 14:34:16 同步完成
 [0;32m✓[0m 14:34:16 同步完成
 
+[0;36m→[0m 14:49:09 检测到新图片，开始同步...
+[0;36m→[0m 14:49:09 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 30 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 30 张，共追踪 30 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │   0 
+ Non-page files   │   0 
+ Static files     │ 118 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master a6d8dd7] 📷 sync: 2026-04-24 14:49 — files
+ 27 files changed, 0 insertions(+), 0 deletions(-)
+ mode change 100755 => 100644 photo/B0002P0624.jpg
+ mode change 100755 => 100644 photo/B0002P0679.jpg
+ mode change 100755 => 100644 photo/B0004P0099.jpg
+ mode change 100755 => 100644 photo/B0004P0110.jpg
+ mode change 100755 => 100644 photo/B0006P0179.jpg
+ mode change 100755 => 100644 photo/B0006P0189.jpg
+ mode change 100755 => 100644 photo/B0006P0208.jpg
+ mode change 100755 => 100644 photo/B0006P0219.jpg
+ mode change 100755 => 100644 photo/B0007P0045.jpg
+ mode change 100755 => 100644 public/photo/B0002P0624.jpg
+ mode change 100755 => 100644 public/photo/B0002P0679.jpg
+ mode change 100755 => 100644 public/photo/B0004P0099.jpg
+ mode change 100755 => 100644 public/photo/B0004P0110.jpg
+ mode change 100755 => 100644 public/photo/B0006P0179.jpg
+ mode change 100755 => 100644 public/photo/B0006P0189.jpg
+ mode change 100755 => 100644 public/photo/B0006P0208.jpg
+ mode change 100755 => 100644 public/photo/B0006P0219.jpg
+ mode change 100755 => 100644 public/photo/B0007P0045.jpg
+ mode change 100755 => 100644 static/photo/B0002P0624.jpg
+ mode change 100755 => 100644 static/photo/B0002P0679.jpg
+ mode change 100755 => 100644 static/photo/B0004P0099.jpg
+ mode change 100755 => 100644 static/photo/B0004P0110.jpg
+ mode change 100755 => 100644 static/photo/B0006P0179.jpg
+ mode change 100755 => 100644 static/photo/B0006P0189.jpg
+ mode change 100755 => 100644 static/photo/B0006P0208.jpg
+ mode change 100755 => 100644 static/photo/B0006P0219.jpg
+ mode change 100755 => 100644 static/photo/B0007P0045.jpg
+To github.com:smwswk/smwswk.github.io.git
+   a81a20d..a6d8dd7  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 14:49:23 同步完成
+[0;32m✓[0m 14:49:23 同步完成
+
