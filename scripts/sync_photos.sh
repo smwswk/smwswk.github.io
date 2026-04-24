@@ -49,17 +49,9 @@ for ext in jpg JPG jpeg JPEG png PNG; do
         out="$WEB/$fname"
 
         if [ ! -f "$out" ]; then
-            # 对于 JPG/JPEG，压缩到 1200px 宽度，质量 85
-            # 对于 PNG，转换为 JPG 并压缩
-            if [[ "$ext" =~ ^(png|PNG)$ ]]; then
-                # PNG 转 JPG，保持文件名但改扩展名
-                base="${fname%.*}"
-                sips -s format jpeg -Z 1200 "$f" --out "$out" 2>/dev/null \
-                    && echo "  🌐 Web版: $fname → 1200px (JPG)"
-            else
-                sips -Z 1200 "$f" --out "$out" 2>/dev/null \
-                    && echo "  🌐 Web版: $fname → 1200px"
-            fi
+            # 压缩到 1200px 宽度，保持原格式
+            sips -Z 1200 "$f" --out "$out" 2>/dev/null \
+                && echo "  🌐 Web版: $fname → 1200px"
         fi
     done
 done
