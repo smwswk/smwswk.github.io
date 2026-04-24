@@ -883,3 +883,26 @@ To github.com:smwswk/smwswk.github.io.git
 [0;32m✓[0m 15:07:00 同步完成
 [0;32m✓[0m 15:07:00 同步完成
 
+[0;36m→[0m 15:20:03 检测到新图片，开始同步...
+[0;36m→[0m 15:20:03 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 36 张照片（基于 SHA-256 内容哈希去重）
+[0;36m→[0m 新增：CF165953.jpg
+[0;36m→[0m 新增：CF165855.jpg
+[1;33m⚠[0m 缩图失败：CF165855.jpg
+[0;36m→[0m 新增：CF165965.jpg
+[1;33m⚠[0m 缩图失败：CF165965.jpg
+[0;32m✓[0m 同步完成：新增/更新 1 张，跳过 33 张，共追踪 36 张
+[0;36m→[0m 构建 Hugo 站点...
+ERROR error copying static files: open /Users/sunminwen/Documents/GitHub/smwswk.github.io/public/photo/thumbs/CF165953.jpg: permission denied
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[0;36m→[0m 没有新的 Git 变更
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 15:20:18 同步完成
+[0;32m✓[0m 15:20:18 同步完成
+

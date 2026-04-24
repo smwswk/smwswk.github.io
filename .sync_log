@@ -224,3 +224,34 @@ hugo v0.160.1+extended+withdeploy darwin/arm64 BuildDate=2026-04-08T14:02:42Z Ve
 
 Total in 108 ms
 ERROR error building site: render: [en v1.0.0 guest] failed to render pages: render of "/Users/sunminwen/Documents/GitHub/smwswk.github.io/content/photo/_index.md" failed: "/Users/sunminwen/Documents/GitHub/smwswk.github.io/themes/hyde/layouts/_default/photo.html:33:22": execute of template failed: template: photo.html:33:22: executing "photo.html" at <hugo>: can't evaluate field list in type interface {}
+2026年 4月24日 星期五 15时20分05秒 CST
+🔄 SyncPhotos 开始...
+📂 源目录: /Users/sunminwen/Documents/GitHub/smwswk.github.io/photo
+  ✅ 复制原图: CF165855.jpg
+  ✅ 复制原图: CF165953.jpg
+  ✅ 复制原图: CF165965.jpg
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/CF165855.jpg
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/CF165855.jpg
+  🌐 Web版: CF165855.jpg → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/CF165953.jpg
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/CF165953.jpg
+  🌐 Web版: CF165953.jpg → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/CF165965.jpg
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/web/CF165965.jpg
+  🌐 Web版: CF165965.jpg → 1200px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/CF165855.jpg
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/thumbs/CF165855.jpg
+  🖼️  缩图: CF165855.jpg → 800px
+/Users/sunminwen/Documents/GitHub/smwswk.github.io/photo/CF165965.jpg
+  /Users/sunminwen/Documents/GitHub/smwswk.github.io/static/photo/thumbs/CF165965.jpg
+  🖼️  缩图: CF165965.jpg → 800px
+📝 生成图库索引...
+  ✅ data/photos.json 已更新 (120 张照片)
+🏗️  Hugo 构建...
+
+✅ 同步完成！请在 GitHub Desktop 推送变更
+Start building sites … 
+hugo v0.160.1+extended+withdeploy darwin/arm64 BuildDate=2026-04-08T14:02:42Z VendorInfo=Homebrew
+
+Total in 139 ms
+ERROR error building site: render: [en v1.0.0 guest] failed to render pages: render of "/Users/sunminwen/Documents/GitHub/smwswk.github.io/content/photo/_index.md" failed: "/Users/sunminwen/Documents/GitHub/smwswk.github.io/themes/hyde/layouts/_default/photo.html:33:22": execute of template failed: template: photo.html:33:22: executing "photo.html" at <hugo>: can't evaluate field list in type interface {}
