@@ -404,3 +404,127 @@ To github.com:smwswk/smwswk.github.io.git
 [0;32m✓[0m 20:49:41 同步完成
 [0;32m✓[0m 20:49:41 同步完成
 
+[0;36m→[0m 20:57:05 检测到新图片，开始同步...
+[0;36m→[0m 20:57:05 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 12 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 12 张，共追踪 12 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 45 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master c6481ee] 📷 sync: 2026-04-22 20:57 — files
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 photo/thumbs/CF166729.jpg
+ create mode 100644 photo/web/CF166729.jpg
+To github.com:smwswk/smwswk.github.io.git
+   de0fdbc..c6481ee  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 20:57:20 同步完成
+[0;32m✓[0m 20:57:20 同步完成
+
+[0;36m→[0m 21:02:40 检测到新图片，开始同步...
+[0;36m→[0m 21:02:40 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 12 张照片（基于 SHA-256 内容哈希去重）
+[0;32m✓[0m 同步完成：新增/更新 0 张，跳过 12 张，共追踪 12 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 45 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[0;36m→[0m 没有新的 Git 变更
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 21:02:45 同步完成
+[0;32m✓[0m 21:02:45 同步完成
+
+[0;36m→[0m 10:58:58 检测到新图片，开始同步...
+[0;36m→[0m 10:58:58 检测到新图片，开始同步...
+
+[1m═══ SMWSWK Photo Sync ═══[0m
+
+[0;32m✓[0m 发现 21 张照片（基于 SHA-256 内容哈希去重）
+[0;36m→[0m 新增：pinterest_sanctuary_01_desk.png
+[0;36m→[0m 新增：pinterest_sanctuary_08_light_meter.png
+[0;36m→[0m 新增：pinterest_sanctuary_04_lens_collection.png
+[0;36m→[0m 新增：pinterest_sanctuary_06_contact_sheets.png
+[0;36m→[0m 新增：pinterest_sanctuary_09_negative_strips.png
+[0;36m→[0m 新增：pinterest_sanctuary_03_camera_detail.png
+[0;36m→[0m 新增：pinterest_sanctuary_07_camera_bag.png
+[0;36m→[0m 新增：pinterest_sanctuary_05_darkroom_corner.png
+[0;36m→[0m 新增：pinterest_sanctuary_02_film_shelf.png
+[0;32m✓[0m 同步完成：新增/更新 9 张，跳过 12 张，共追踪 21 张
+[0;36m→[0m 构建 Hugo 站点...
+ Paginator pages  │  0 
+ Non-page files   │  0 
+ Static files     │ 63 
+[0;32m✓[0m Hugo 构建完成
+[0;36m→[0m 同步 public/ 到根目录...
+[master 2776429] 📷 sync: 2026-04-24 10:59 — files
+ 49 files changed, 47 insertions(+), 2 deletions(-)
+ create mode 100644 photo/pinterest_sanctuary_01_desk.png
+ create mode 100644 photo/pinterest_sanctuary_02_film_shelf.png
+ create mode 100644 photo/pinterest_sanctuary_03_camera_detail.png
+ create mode 100644 photo/pinterest_sanctuary_04_lens_collection.png
+ create mode 100644 photo/pinterest_sanctuary_05_darkroom_corner.png
+ create mode 100644 photo/pinterest_sanctuary_06_contact_sheets.png
+ create mode 100644 photo/pinterest_sanctuary_07_camera_bag.png
+ create mode 100644 photo/pinterest_sanctuary_08_light_meter.png
+ create mode 100644 photo/pinterest_sanctuary_09_negative_strips.png
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_01_desk.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_02_film_shelf.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_03_camera_detail.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_04_lens_collection.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_05_darkroom_corner.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_06_contact_sheets.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_07_camera_bag.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_08_light_meter.jpg
+ create mode 100644 public/photo/thumbs/pinterest_sanctuary_09_negative_strips.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_01_desk.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_02_film_shelf.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_03_camera_detail.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_04_lens_collection.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_05_darkroom_corner.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_06_contact_sheets.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_07_camera_bag.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_08_light_meter.jpg
+ create mode 100644 public/photo/web/pinterest_sanctuary_09_negative_strips.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_01_desk.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_02_film_shelf.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_03_camera_detail.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_04_lens_collection.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_05_darkroom_corner.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_06_contact_sheets.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_07_camera_bag.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_08_light_meter.jpg
+ create mode 100644 static/photo/thumbs/pinterest_sanctuary_09_negative_strips.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_01_desk.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_02_film_shelf.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_03_camera_detail.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_04_lens_collection.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_05_darkroom_corner.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_06_contact_sheets.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_07_camera_bag.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_08_light_meter.jpg
+ create mode 100644 static/photo/web/pinterest_sanctuary_09_negative_strips.jpg
+To github.com:smwswk/smwswk.github.io.git
+   1716ef1..2776429  master -> master
+[0;32m✓[0m 已推送到 GitHub
+
+[1m✓ 完成[0m
+
+[0;32m✓[0m 10:59:20 同步完成
+[0;32m✓[0m 10:59:20 同步完成
+
