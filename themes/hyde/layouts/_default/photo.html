@@ -30,7 +30,7 @@
 (function() {
   // ── Photo data from Hugo data file ──
   var photos = [
-    {{- $photoList := .Site.Data.photos.list -}}
+    {{- $photoList := hugo.Data.photos.list -}}
     {{- range $i, $photo := $photoList -}}
     { name: "{{ $photo.name }}", thumb: "/photo/thumbs/{{ $photo.name }}", full: "/photo/web/{{ $photo.name }}", date: "{{ $photo.date }}" }{{ if ne $i (sub (len $photoList) 1) }},{{ end }}
     {{- end -}}
