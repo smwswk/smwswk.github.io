@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+records/
+*.jsonl
+*.csv
+*.bak
+db_backups/
+delete_candidate_backups/
+rename_backups/
+*.m4a
+*.qta
+*.wav

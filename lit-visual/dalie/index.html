@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="《大裂》小说影像化：48 张 AI 影像与对应生成提示词。">
+<title>《大裂》· 小说影像化 Prompt Archive</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f7f3ec;
+  color: #241713;
+  line-height: 1.6;
+}
+.container { max-width: 1320px; margin: 0 auto; padding: 38px 5% 72px; }
+.back-link { display: inline-block; margin-bottom: 30px; color: #9c5f32; text-decoration: none; font-size: 14px; letter-spacing: 1px; }
+.hero { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 34px; align-items: end; padding-bottom: 42px; border-bottom: 1px solid #d9c7ad; }
+.hero h1 { font-size: clamp(38px, 6vw, 86px); line-height: 0.95; letter-spacing: 0; font-weight: 650; }
+.hero h1 span { display: block; color: #9c5f32; font-size: 0.46em; margin-bottom: 10px; font-weight: 500; }
+.hero-copy { max-width: 560px; color: #5d4a3c; font-size: 16px; }
+.hero-stats { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.hero-stats span { border: 1px solid #d8c3aa; border-radius: 999px; padding: 8px 13px; background: rgba(255,255,255,0.55); font-size: 13px; color: #6a5140; }
+.cover-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 28px; }
+.cover-strip img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 10px; box-shadow: 0 10px 28px rgba(48,31,23,.12); }
+.note { margin: 28px 0 44px; padding: 18px 20px; background: #fffaf4; border: 1px solid #e2cfb6; border-radius: 12px; color: #654d3d; font-size: 14px; }
+.chapter-title { margin: 54px 0 18px; font-size: 22px; letter-spacing: 1px; font-weight: 600; color: #2b1c16; }
+.shot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.shot-card { background: #fff; border: 1px solid rgba(156,95,50,.18); border-radius: 12px; overflow: hidden; box-shadow: 0 6px 24px rgba(48,31,23,.08); }
+.shot-image { display: block; background: #e8dccd; }
+.shot-image img { width: 100%; aspect-ratio: 1; object-fit: cover; display: block; }
+.shot-body { padding: 16px 17px 18px; }
+.shot-meta { color: #9c5f32; font-size: 11px; letter-spacing: 2px; font-weight: 700; }
+.shot-body h3 { font-size: 16px; margin: 5px 0 12px; letter-spacing: 0; }
+details { border-top: 1px solid #eee0d0; padding-top: 10px; }
+summary { cursor: pointer; color: #9c5f32; font-size: 13px; font-weight: 650; }
+details p { margin-top: 10px; color: #5d4a3c; font-size: 12.5px; line-height: 1.75; }
+footer { margin-top: 64px; padding-top: 28px; border-top: 1px solid #d9c7ad; color: #7a6250; font-size: 13px; }
+@media (max-width: 960px) { .hero { grid-template-columns: 1fr; } .shot-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 620px) { .container { padding: 26px 4% 52px; } .shot-grid { grid-template-columns: 1fr; } .cover-strip { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="../" class="back-link">&larr; 返回 Lit-Visual</a>
+  <header class="hero">
+    <div>
+      <h1><span>Prompt Archive</span>《大裂》</h1>
+      <div class="hero-stats"><span>48 张影像</span><span>4 个章节批次</span><span>Image 2 生成</span><span>Prompt 公开版</span></div>
+    </div>
+    <div>
+      <p class="hero-copy">一次完整的小说影像化实验：把重构后的《大裂》拆成 48 个镜头，用同一套低饱和、夜间、电影化摄影语言生成视觉分镜。每张图保留对应 prompt，方便复盘画面如何从文本被翻译成影像。</p>
+      <div class="cover-strip">
+        <img src="images/01_entering_bar.webp" alt="Entering bar" loading="lazy">
+        <img src="images/24_zoo_enclosure_humans.webp" alt="Zoo enclosure humans" loading="lazy">
+        <img src="images/33_cave_diver_darkness.webp" alt="Cave darkness" loading="lazy">
+        <img src="images/48_empty_memory_card_slot_final.webp" alt="Empty memory card slot" loading="lazy">
+      </div>
+    </div>
+  </header>
+  <div class="note">说明：页面展示的是公开版 prompt，保留镜头构图、情绪、光线、材质和叙事意图；已移除依赖具体在世摄影师姓名的风格指令。</div>
+<h2 class="chapter-title">序幕 + 第一章：局</h2>
+<section class="shot-grid">
+  <article class="shot-card" id="shot-01">
+    <a class="shot-image" href="images/01_entering_bar.webp" target="_blank"><img src="images/01_entering_bar.webp" alt="Entering Bar" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 01</div>
+      <h3>Entering Bar</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A weathered wooden door half-open at night, a brass wind chime gently swaying casting soft golden reflections, warm amber light spilling from inside onto cold blue pavement outside, a man&#x27;s silhouette seen from behind about to enter, the contrast between the inviting warm interior and the cold exterior, narrow alleyway, rain-slicked cobblestones reflecting light, intimate yet isolating mood, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-02">
+    <a class="shot-image" href="images/02_whiskey_pushed.webp" target="_blank"><img src="images/02_whiskey_pushed.webp" alt="Whiskey Pushed" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 02</div>
+      <h3>Whiskey Pushed</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Close-up of a weathered bartender&#x27;s hand pushing a crystal whiskey glass across a dark wooden bar counter, amber liquid with a single large ice cube catching warm light, the glass creating a lens-like distortion of the background, blurred bartender face in background, only half-visible, expression unreadable, intimate bar atmosphere, dusty bottles on shelves behind, the gesture of offering without asking, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-03">
+    <a class="shot-image" href="images/03_phone_notification.webp" target="_blank"><img src="images/03_phone_notification.webp" alt="Phone Notification" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 03</div>
+      <h3>Phone Notification</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Extreme close-up of a smartphone screen glowing in darkness, notification from messaging app showing three red heart emojis and text preview, the screen light illuminating a man&#x27;s hand holding it, sharp contrast between the bright screen and the surrounding darkness, reflection of the hearts in the polished bar counter surface below, intrusive, disruptive feeling, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-04">
+    <a class="shot-image" href="images/04_phone_face_down.webp" target="_blank"><img src="images/04_phone_face_down.webp" alt="Phone Face Down" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 04</div>
+      <h3>Phone Face Down</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Top-down view of a smartphone placed face-down on a worn wooden bar counter, a man&#x27;s fingers still resting on the phone&#x27;s edge, hesitant to let go, faint light bleeding from the edges of the phone&#x27;s screen, the grain of the wood visible around the phone, a half-empty whiskey glass in soft focus nearby, sense of suppression and avoidance, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-05">
+    <a class="shot-image" href="images/05_bar_interior.webp" target="_blank"><img src="images/05_bar_interior.webp" alt="Bar Interior" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 05</div>
+      <h3>Bar Interior</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Wide shot of a dimly lit intimate bar interior, warm amber pendant lights casting pools of light on dark surfaces, framed photographs on the wall, one clearly a landscape photograph in a frame, a couple arguing quietly in the far corner, their body language tense, empty stools and scattered glasses, the solitary observer&#x27;s perspective, dust particles visible in light beams, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-06">
+    <a class="shot-image" href="images/06_man_deleting_photos.webp" target="_blank"><img src="images/06_man_deleting_photos.webp" alt="Man Deleting Photos" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 06</div>
+      <h3>Man Deleting Photos</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Medium shot of a middle-aged man sitting alone at a bar, his face half-illuminated by the blue-white glow of his phone screen, his thumb swiping across the screen, photo gallery visible, the other half of his face in shadow, expression melancholic, a nearly empty beer glass beside him, mirror-like parallel to the protagonist, the act of erasing memories, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-07">
+    <a class="shot-image" href="images/07_clearing_desk.webp" target="_blank"><img src="images/07_clearing_desk.webp" alt="Clearing Desk" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 07</div>
+      <h3>Clearing Desk</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Overhead shot of a cluttered desk being cleared, papers, old photographs, and letters scattered across dark wood surface, a man&#x27;s hands sweeping everything into a pile, motion blur on the hands, some photographs face-up showing fragments of memories, harsh overhead light creating sharp shadows, the violence of organization, crumpled papers and torn envelopes, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-08">
+    <a class="shot-image" href="images/08_the_deleted_photo.webp" target="_blank"><img src="images/08_the_deleted_photo.webp" alt="The Deleted Photo" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 08</div>
+      <h3>The Deleted Photo</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A photograph within a photograph: an old printed photo showing a young woman standing in snow, her face half-covered by a thick wool scarf, only her laughing eyes visible, snowflakes caught on the scarf&#x27;s texture, the photo itself slightly curled at edges, held between two fingers, warm skin tone of the fingers contrasting with the cold blue-white snow scene, nostalgic warmth about to be discarded, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-09">
+    <a class="shot-image" href="images/09_closing_eyes.webp" target="_blank"><img src="images/09_closing_eyes.webp" alt="Closing Eyes" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 09</div>
+      <h3>Closing Eyes</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Extreme close-up of a man&#x27;s closed eyes, long dark eyelashes casting delicate shadows on skin, fine texture of skin and subtle wrinkles visible, the eyelids completely shut as if in pain or deep resignation, soft warm light from one side, the other side falling into cool shadow, intimate, vulnerable, like a private funeral for a memory, shallow depth of field, only one eye in perfect focus, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-10">
+    <a class="shot-image" href="images/10_old_uncle_repeating.webp" target="_blank"><img src="images/10_old_uncle_repeating.webp" alt="Old Uncle Repeating" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 10</div>
+      <h3>Old Uncle Repeating</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>An elderly Chinese man sitting alone in a bare white room on a simple wooden chair, his mouth slightly open as if mid-sentence, gesturing with one hand while speaking to empty space, the room completely empty except for a single window with harsh daylight, dust particles floating in the light beam, the pathos of repetition and fading memory, institutional bareness, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-11">
+    <a class="shot-image" href="images/11_delete_button.webp" target="_blank"><img src="images/11_delete_button.webp" alt="Delete Button" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 11</div>
+      <h3>Delete Button</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Macro shot of a smartphone screen showing a delete confirmation dialog, the red &#x27;Delete&#x27; button prominent, a thumb hovering just above the button, not yet touching, the screen&#x27;s blue-white glow reflecting on the thumbnail, tiny dust particles on the screen surface visible, the moment of hesitation before irreversible action, the background app showing a blurred photo thumbnail, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+</section>
+<h2 class="chapter-title">第二至四章：异乡人 / 恶意 / 失恋的人</h2>
+<section class="shot-grid">
+  <article class="shot-card" id="shot-12">
+    <a class="shot-image" href="images/12_silver_award_certificate.webp" target="_blank"><img src="images/12_silver_award_certificate.webp" alt="Silver Award Certificate" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 12</div>
+      <h3>Silver Award Certificate</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Close-up of a silver award certificate in a golden frame hanging on a dimly lit bar wall, city photography exhibition silver prize, light reflecting off the glass frame, the certificate slightly crooked, dust on the frame edge, warm amber light from a pendant lamp casting a soft glow on the gold frame, the wall texture visible beneath peeling paint, prestigious but slightly shabby, institutional recognition in a forgotten corner, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-13">
+    <a class="shot-image" href="images/13_self_proclaimed_artist.webp" target="_blank"><img src="images/13_self_proclaimed_artist.webp" alt="Self Proclaimed Artist" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 13</div>
+      <h3>Self Proclaimed Artist</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Medium shot of a man in a gallery opening, wearing a black turtleneck, mouth open mid-sentence, gesturing expansively with one hand holding a wine glass, surrounded by large photographic prints on white walls, his face half in shadow, expression smug and performative, other gallery-goers blurred in background, looking bored, the gap between his words and the emptiness of the space, harsh gallery track lighting creating sharp shadows, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-14">
+    <a class="shot-image" href="images/14_image_garbage_river.webp" target="_blank"><img src="images/14_image_garbage_river.webp" alt="Image Garbage River" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 14</div>
+      <h3>Image Garbage River</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Surreal wide shot: a river of glossy photo prints flowing like water through an urban alleyway, thousands of identical wedding photos, portrait shots, commercial images cascading over each other, the prints glossy and reflective under streetlight, a solitary figure standing at the edge watching the flow, beautiful and nauseating simultaneously, the overwhelming volume of meaningless images, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-15">
+    <a class="shot-image" href="images/15_couple_laughing_bar.webp" target="_blank"><img src="images/15_couple_laughing_bar.webp" alt="Couple Laughing Bar" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 15</div>
+      <h3>Couple Laughing Bar</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A young couple in the corner of a dim bar suddenly burst into laughter, the girl leaning forward, hand slapping the boy&#x27;s shoulder, her expression exaggeratedly happy, almost manic, the boy looking slightly uncomfortable beneath his laugh, their laughter isolated in the quiet bar, performative, viewed from across the room through shelves of bottles, the disconnect between performed joy and real emptiness, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-16">
+    <a class="shot-image" href="images/16_chest_smashing_stone.webp" target="_blank"><img src="images/16_chest_smashing_stone.webp" alt="Chest Smashing Stone" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 16</div>
+      <h3>Chest Smashing Stone</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Surreal party scene: a man lying on a makeshift stage in a crowded living room, a large stone slab placed on his chest, people gathered around laughing hysterically, the man&#x27;s face visible between bodies, expression blank and dissociated, harsh fluorescent overhead light, cheap decorations in background, the crowd&#x27;s faces distorted with cruel amusement, a nightmare of forced performance and public humiliation, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-17">
+    <a class="shot-image" href="images/17_old_colleague_friend_request.webp" target="_blank"><img src="images/17_old_colleague_friend_request.webp" alt="Old Colleague Friend Request" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 17</div>
+      <h3>Old Colleague Friend Request</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Close-up of a smartphone screen showing a friend request notification, profile photo of a vaguely familiar face, name from years ago, the screen glowing cold blue-white in a dark room, a man&#x27;s thumb hovering over the accept button, hesitating, reflection of the man&#x27;s skeptical eyes in the screen glass, the notification feels like a trap, an unspoken agenda behind the smile, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-18">
+    <a class="shot-image" href="images/18_ice_cube_melting.webp" target="_blank"><img src="images/18_ice_cube_melting.webp" alt="Ice Cube Melting" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 18</div>
+      <h3>Ice Cube Melting</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Extreme macro shot of a single large ice cube slowly melting in an empty whiskey glass, the crystal glass sweating condensation, amber remnants of whiskey pooling at the bottom, the ice cube losing its edges, becoming formless, warm bar light refracting through the melting ice, metaphor for time passing, for things dissolving without anyone noticing, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-19">
+    <a class="shot-image" href="images/19_new_couple_next_table.webp" target="_blank"><img src="images/19_new_couple_next_table.webp" alt="New Couple Next Table" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 19</div>
+      <h3>New Couple Next Table</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A new young couple sitting at a bar table, the girl leaning her head on the boy&#x27;s shoulder, the boy staring at his phone screen, not looking at her, two glasses of cola on the table between them, no alcohol, their body language: she clings, he&#x27;s absent, viewed from the next table over, through the space between bar stools, the loneliness of being together but not connected, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-20">
+    <a class="shot-image" href="images/20_walking_girl_home.webp" target="_blank"><img src="images/20_walking_girl_home.webp" alt="Walking Girl Home" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 20</div>
+      <h3>Walking Girl Home</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Night street scene: a man and woman walking side by side under streetlamps, about a meter of space between them, not touching, their shadows stretching long on the wet pavement, she&#x27;s looking at her phone, he&#x27;s looking straight ahead, the moment before saying goodbye at her doorstep, residential street, warm windows in distance, cold night air, the ritual of the perpetual nice guy, always walking her home, never staying, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-21">
+    <a class="shot-image" href="images/21_heartbreak_privilege.webp" target="_blank"><img src="images/21_heartbreak_privilege.webp" alt="Heartbreak Privilege" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 21</div>
+      <h3>Heartbreak Privilege</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A man sitting alone on his apartment floor, surrounded by scattered vinyl records and movie ticket stubs, headphones around his neck, laptop screen glowing with a sad film paused mid-frame, dim warm lamp light, the room messy but intimate, his expression not truly sad but almost serene, comfortable in his sorrow, the luxury of having a reason to be sad, the privilege of heartbreak, viewed from above, the scene a cocoon of curated melancholy, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-22">
+    <a class="shot-image" href="images/22_empty_bar_stool.webp" target="_blank"><img src="images/22_empty_bar_stool.webp" alt="Empty Bar Stool" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 22</div>
+      <h3>Empty Bar Stool</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>An empty bar stool at a dimly lit counter, a single glass of water on the counter before it, condensation dripping down, the stool slightly pulled out as if someone just left, warm amber light pool on the dark wood counter, all other stools in the background empty too, the profound loneliness of a space designed for people now containing none, dust visible in the light beam above the stool, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+</section>
+<h2 class="chapter-title">第五至七章：动物 / 陌生女人 / 洞穴</h2>
+<section class="shot-grid">
+  <article class="shot-card" id="shot-23">
+    <a class="shot-image" href="images/23_old_tv_on_bar_wall.webp" target="_blank"><img src="images/23_old_tv_on_bar_wall.webp" alt="Old Tv On Bar Wall" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 23</div>
+      <h3>Old Tv On Bar Wall</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>An old CRT television mounted high on a dim bar wall, screen glowing silently, showing a nature documentary: a giraffe reaching for leaves, motion frozen mid-frame, the TV&#x27;s scan lines visible, slightly flickering blue-white light, empty bar stools below, the TV the only source of light besides pendant lamps, no one watching, the images playing to an empty room, the absurdity of wild animals in a drinking establishment, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-24">
+    <a class="shot-image" href="images/24_zoo_enclosure_humans.webp" target="_blank"><img src="images/24_zoo_enclosure_humans.webp" alt="Zoo Enclosure Humans" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 24</div>
+      <h3>Zoo Enclosure Humans</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Surreal wide shot: inside a zoo enclosure, but the animals are humans in everyday clothes, a man in a suit sitting on a fake rock checking his phone, a woman in office attire staring blankly at a concrete wall, visible zoo barriers and informational plaques describing them as specimens, outside the enclosure, real visitors point and take photos, the glass between them reflecting both groups, indistinguishable, clinical institutional lighting, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-25">
+    <a class="shot-image" href="images/25_giraffe_eating_leaves.webp" target="_blank"><img src="images/25_giraffe_eating_leaves.webp" alt="Giraffe Eating Leaves" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 25</div>
+      <h3>Giraffe Eating Leaves</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A solitary giraffe in a zoo enclosure at dusk, long neck stretching toward sparse leaves on a dead-looking tree, concrete enclosure walls visible, artificial habitat, the giraffe&#x27;s movement graceful but profoundly sad, no other animals visible, completely alone in a space designed to look natural but utterly artificial, fading daylight, long shadows, the last visitor has left, the dignity of a creature that doesn&#x27;t know it&#x27;s caged, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-26">
+    <a class="shot-image" href="images/26_empty_zoo_bench.webp" target="_blank"><img src="images/26_empty_zoo_bench.webp" alt="Empty Zoo Bench" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 26</div>
+      <h3>Empty Zoo Bench</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>An empty bench facing a zoo enclosure at closing time, a forgotten umbrella leaning against the bench armrest, the enclosure behind the bench blurred, a shadow of an animal barely visible in the back, dusk light filtering through trees, long shadows across the path, a paper cup on the ground near the bench, the loneliness of public spaces after everyone leaves, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-27">
+    <a class="shot-image" href="images/27_cafe_conversation.webp" target="_blank"><img src="images/27_cafe_conversation.webp" alt="Cafe Conversation" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 27</div>
+      <h3>Cafe Conversation</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Two people sitting across from each other in an empty late-night cafe, a man and a woman, coffee cups between them growing cold, the woman mid-sentence, her expression earnest, saying something important, the man listening, his face half-lit by the warm cafe light, expression unreadable, outside the window: dark empty street, rain starting to fall, the space between them on the table: two cups, a teaspoon, napkins — a battlefield of small objects, the weight of an irreversible conversation, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-28">
+    <a class="shot-image" href="images/28_bride_at_doorway.webp" target="_blank"><img src="images/28_bride_at_doorway.webp" alt="Bride At Doorway" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 28</div>
+      <h3>Bride At Doorway</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A bride in a white wedding dress standing at the entrance of a wedding venue, her back mostly to camera, turning slightly to look over her shoulder, her smile warm and genuine but somehow distant, professionally gracious, the wedding dress train spreading on the ground like snow, morning light streaming through the doorway, creating a halo effect, guests blurred in the background, raising phones to photograph her, viewed from the photographer&#x27;s perspective, the camera between us and her, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-29">
+    <a class="shot-image" href="images/29_train_toilet_wall.webp" target="_blank"><img src="images/29_train_toilet_wall.webp" alt="Train Toilet Wall" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 29</div>
+      <h3>Train Toilet Wall</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Claustrophobic close-up of a dirty train toilet wall, harsh fluorescent light creating sickly green-white tones, something smeared on the metal wall surface, abstract and disgusting, a hand gripping the edge of a metal sink in the corner of frame, knuckles white, the vibration of the train visible in the slight blur of the metal surfaces, a small window showing rushing darkness outside, the lowest point of a journey, physically and spiritually, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-30">
+    <a class="shot-image" href="images/30_no_memory_card_slot.webp" target="_blank"><img src="images/30_no_memory_card_slot.webp" alt="No Memory Card Slot" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 30</div>
+      <h3>No Memory Card Slot</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Extreme close-up of a professional camera&#x27;s open memory card slot, completely empty, the metal contacts inside visible, gleaming under harsh light, the photographer&#x27;s thumb resting beside the slot, not inserting anything, the camera body showing signs of heavy use, scratched and worn, the deliberate emptiness of the slot — a choice, not an oversight, shallow depth of field, only the empty slot in focus, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-31">
+    <a class="shot-image" href="images/31_bar_emptying_out.webp" target="_blank"><img src="images/31_bar_emptying_out.webp" alt="Bar Emptying Out" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 31</div>
+      <h3>Bar Emptying Out</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Wide shot of a bar near closing time, only a few people remaining, the bartender wiping down the counter with a white cloth, back turned, one customer slumped asleep at a distant table, head on arms, another customer at the bar, nursing a nearly empty glass, half the lights already turned off, the space shrinking into pockets of warm light, chairs upside down on tables in the background, the fragile quiet of a place designed for noise now nearly silent, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-32">
+    <a class="shot-image" href="images/32_bridge_underpass_figure.webp" target="_blank"><img src="images/32_bridge_underpass_figure.webp" alt="Bridge Underpass Figure" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 32</div>
+      <h3>Bridge Underpass Figure</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A dark bridge underpass at night, a single figure just disappearing around a corner, only a blur of movement, a coat edge, a shadow, dim orange streetlight casting long shadows on concrete pillars, wet ground reflecting the light, puddles, graffiti on the walls, the moment after someone passed through — you could have seen them if you&#x27;d looked a second earlier, the haunting possibility of alternative paths not taken, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-33">
+    <a class="shot-image" href="images/33_cave_diver_darkness.webp" target="_blank"><img src="images/33_cave_diver_darkness.webp" alt="Cave Diver Darkness" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 33</div>
+      <h3>Cave Diver Darkness</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Surreal underwater cave scene: a single dive light beam cutting through absolute darkness, illuminating suspended sediment particles floating like stars, the light beam disappearing into impenetrable black void ahead, rock formations barely visible at the edges of the light cone, no diver visible — only the light, moving deeper into the cave, the question of whether the diver is exploring or surrendering, claustrophobic, beautiful, terrifying, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-34">
+    <a class="shot-image" href="images/34_dead_fish_on_counter.webp" target="_blank"><img src="images/34_dead_fish_on_counter.webp" alt="Dead Fish On Counter" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 34</div>
+      <h3>Dead Fish On Counter</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Still life on a worn wooden counter: a single dead fish lying on its side, one eye staring blankly upward, scales still faintly iridescent under dim light, a half-empty glass of water beside it, the counter&#x27;s wood grain deep and dark with age, the fish&#x27;s mouth slightly open as if still trying to breathe, metaphor made literal: &#x27;I am already a dead fish&#x27;, beautiful and unsettling in equal measure, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+</section>
+<h2 class="chapter-title">第八章至终章：正常的世界 / 梦 / 没有储存卡</h2>
+<section class="shot-grid">
+  <article class="shot-card" id="shot-35">
+    <a class="shot-image" href="images/35_bartender_asks_are_you_happy.webp" target="_blank"><img src="images/35_bartender_asks_are_you_happy.webp" alt="Bartender Asks Are You Happy" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 35</div>
+      <h3>Bartender Asks Are You Happy</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Medium shot from behind the bar: the bartender&#x27;s hands resting on the counter, holding a cleaning cloth, his face partially visible, expression genuinely curious, a single customer visible from behind, shoulders slightly hunched over an empty glass, the question &#x27;Are you happy?&#x27; hanging in the air between them, warm amber pendant light directly above creating a pool of light around the two figures, the rest of the bar in darkness, intimate and intrusive simultaneously, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-36">
+    <a class="shot-image" href="images/36_woman_refusing_camera.webp" target="_blank"><img src="images/36_woman_refusing_camera.webp" alt="Woman Refusing Camera" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 36</div>
+      <h3>Woman Refusing Camera</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A young woman half-turning away from a camera lens, her hand raised to block her face, not angry but firm, a slight apologetic smile at the corner of her mouth, the camera visible in foreground, out of focus, a barrier between photographer and subject, soft natural window light from the side, the gesture of refusal that somehow feels comforting in its honesty, the relief of a world where some people still say no, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-37">
+    <a class="shot-image" href="images/37_goodnight_then_go_die.webp" target="_blank"><img src="images/37_goodnight_then_go_die.webp" alt="Goodnight Then Go Die" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 37</div>
+      <h3>Goodnight Then Go Die</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Two phones lying on separate surfaces, both screens showing the final messages of a conversation, one screen: &#x27;Goodnight&#x27;, the other: &#x27;Then go die&#x27;, both glowing in darkness, the phones far apart, a vast empty space between them, the casual cruelty and casual affection equally weightless as text on screens, no people visible, just the two phones and the messages and the distance, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-38">
+    <a class="shot-image" href="images/38_head_on_bar_sleeping.webp" target="_blank"><img src="images/38_head_on_bar_sleeping.webp" alt="Head On Bar Sleeping" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 38</div>
+      <h3>Head On Bar Sleeping</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Overhead shot of a man&#x27;s head resting on folded arms on a dark wooden bar counter, his face turned to the side, eyes closed, possibly asleep, possibly just resting, empty glasses scattered around him, the bar nearly empty, warm amber light creating a halo around his head, the vulnerability of a public space becoming private through exhaustion, the bar at 2am, the hour when nothing and everything makes sense, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-39">
+    <a class="shot-image" href="images/39_desert_banana_dog_head.webp" target="_blank"><img src="images/39_desert_banana_dog_head.webp" alt="Desert Banana Dog Head" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 39</div>
+      <h3>Desert Banana Dog Head</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Surreal dreamscape: a vast yellow desert under harsh sun, solitary banana plants growing randomly from the sand, each drooping and soft, ancient Egyptian-style dog-headed statues (Anubis-like) standing guard near a small pyramid, the statues&#x27; heads comically large, almost cartoonish, human figures scattered across the desert standing perfectly still like planted trees, the entire scene bathed in golden-amber desert light, a dream that makes no sense but feels deeply meaningful, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-40">
+    <a class="shot-image" href="images/40_morgue_like_dormitory.webp" target="_blank"><img src="images/40_morgue_like_dormitory.webp" alt="Morgue Like Dormitory" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 40</div>
+      <h3>Morgue Like Dormitory</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A row of identical metal bed frames in a bare institutional room, each bed identically made with thin white sheets, harsh overhead fluorescent lighting casting no shadows, the walls a sickly pale green, peeling paint, one window at the far end showing gray sky, the room feels like a morgue, or a 1970s dormitory — they&#x27;re the same thing here, ancient, decaying, the space where previous generations lived and died, no people, only the beds and the oppressive institutional geometry, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-41">
+    <a class="shot-image" href="images/41_dust_particles_in_light_beam.webp" target="_blank"><img src="images/41_dust_particles_in_light_beam.webp" alt="Dust Particles In Light Beam" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 41</div>
+      <h3>Dust Particles In Light Beam</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A single beam of harsh daylight cutting through a dark dusty room from a small high window, thousands of dust particles suspended in the light, floating impossibly slowly, the light beam hitting a bare concrete floor, creating a sharp rectangle of brightness, everything else in deep shadow, the beauty of suspended particles — dead skin, dirt, decay — transformed by light into something almost divine, reaching toward something and finding only dust, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-42">
+    <a class="shot-image" href="images/42_leaving_bar_4am.webp" target="_blank"><img src="images/42_leaving_bar_4am.webp" alt="Leaving Bar 4Am" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 42</div>
+      <h3>Leaving Bar 4Am</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A man pushing open a heavy wooden door from inside, stepping out into cold night, his silhouette against the warm interior light spilling out behind him, his breath visible in the cold air, coat collar turned up, hands deep in pockets, the street outside: empty, wet, streetlamps casting orange pools of light, 4am — the hour when the city belongs to no one, viewed from across the street, a figure small against the urban landscape, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-43">
+    <a class="shot-image" href="images/43_convenience_store_cigarettes.webp" target="_blank"><img src="images/43_convenience_store_cigarettes.webp" alt="Convenience Store Cigarettes" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 43</div>
+      <h3>Convenience Store Cigarettes</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Inside a fluorescent-lit convenience store at night, a man&#x27;s hand reaching for a pack of cigarettes from the shelf behind the counter, the cashier — a young woman, eyes half-closed with exhaustion — barely looking up, the harsh white-blue light of the store against the total darkness outside the glass doors, the strange intimacy of 24-hour commerce, transactions between strangers who will never meet again, buying cigarettes after three years of quitting — a quiet relapse, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-44">
+    <a class="shot-image" href="images/44_checking_camera_battery.webp" target="_blank"><img src="images/44_checking_camera_battery.webp" alt="Checking Camera Battery" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 44</div>
+      <h3>Checking Camera Battery</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Close-up of hands checking a professional camera on a kitchen table at dawn, battery indicator showing full charge, lens cap off, everything ready, the memory card slot clearly visible — and empty, early morning blue light through a window, a cup of black coffee nearby, the deliberate preparation, the equally deliberate omission, a man preparing for a job he has already decided to sabotage, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-45">
+    <a class="shot-image" href="images/45_wedding_bride_turning.webp" target="_blank"><img src="images/45_wedding_bride_turning.webp" alt="Wedding Bride Turning" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 45</div>
+      <h3>Wedding Bride Turning</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A bride in a wedding dress turning to look back over her shoulder, mid-stride, her dress train sweeping across the floor like fresh snow, her expression: a smile of recognition, warm but distant, professional, morning light backlighting her figure, creating a luminous outline, the photographer&#x27;s camera visible at the very edge of frame, lens aimed at her, the subject and the observer locked in their eternal unequal dance, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-46">
+    <a class="shot-image" href="images/46_shutter_clicking_empty.webp" target="_blank"><img src="images/46_shutter_clicking_empty.webp" alt="Shutter Clicking Empty" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 46</div>
+      <h3>Shutter Clicking Empty</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Extreme close-up of a camera shutter mid-fire, the mechanical blades frozen in their opening, behind them: the empty memory card slot, a void where images should be captured, light passing through the lens and hitting nothing, images formed and instantly lost, the mechanical precision of the camera betrayed by human intention, every click a perfect photograph that will never exist, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-47">
+    <a class="shot-image" href="images/47_standing_in_rain_laughing.webp" target="_blank"><img src="images/47_standing_in_rain_laughing.webp" alt="Standing In Rain Laughing" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 47</div>
+      <h3>Standing In Rain Laughing</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>A man standing alone in heavy rain on an empty city street, no umbrella, coat soaked through, water streaming down his face, but he&#x27;s laughing — not joyfully, something more complicated, rain creating a curtain around him, isolating him from the buildings and street, the laugh of someone who has finally done something completely his own, even if that thing is terrible, even if no one will ever understand, gray sky, wet pavement, a solitary figure finding liberation in self-destruction, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+  <article class="shot-card" id="shot-48">
+    <a class="shot-image" href="images/48_empty_memory_card_slot_final.webp" target="_blank"><img src="images/48_empty_memory_card_slot_final.webp" alt="Empty Memory Card Slot Final" loading="lazy"></a>
+    <div class="shot-body">
+      <div class="shot-meta">SHOT 48</div>
+      <h3>Empty Memory Card Slot Final</h3>
+      <details>
+        <summary>Prompt</summary>
+        <p>Final shot: a memory card slot on a camera, seen from directly above, completely empty, the metal contact pins visible and gleaming, the camera body around it worn from years of use, scratches and worn grip texture, the slot is a small dark rectangle, a doorway to nothing, and somehow this emptiness is the point — not a mistake, but the entire meaning, the camera without memory, the photographer without evidence, absolute freedom through deliberate erasure, cinematic staged night photography, restrained nocturnal color palette, 35mm film grain, cinematic composition, shallow depth of field, low saturation, melancholic atmosphere, muted warm amber and cool blue tones, soft vignette, night photography, atmospheric haze</p>
+      </details>
+    </div>
+  </article>
+</section>
+  <footer>所有图片由 AI 生成；原始小说文本与分析保留在本地工作区。</footer>
+</div>
+</body>
+</html>

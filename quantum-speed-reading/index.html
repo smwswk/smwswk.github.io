@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>量子速读 · SMWSWK</title>
+  <meta name="description" content="量子速读 2026.07.02：把 B站、小宇宙、小红书、公众号、知乎和本地音视频批量转成全转录、内容复原、理解式摘要和知识候选。">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css?v=20260702-quantum-store">
+  <style>
+    :root {
+      --q-bg: #f5f2ea;
+      --q-ink: #172026;
+      --q-muted: #66717d;
+      --q-line: rgba(23, 32, 38, 0.14);
+      --q-panel: #fffdf8;
+      --q-accent: #0f766e;
+      --q-warm: #d8a84f;
+    }
+    body {
+      background: var(--q-bg);
+      color: var(--q-ink);
+      overflow-x: hidden;
+    }
+    .q-page {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+    .q-nav {
+      margin-bottom: 2rem;
+      font-size: 0.82rem;
+    }
+    .q-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+      gap: 1.2rem;
+      align-items: stretch;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--q-line);
+    }
+    .q-eyebrow {
+      margin: 0 0 0.8rem;
+      color: var(--q-accent);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin: 0;
+      max-width: 760px;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+    }
+    .q-lead {
+      max-width: 720px;
+      margin: 1.1rem 0 0;
+      color: var(--q-muted);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+    .q-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.4rem;
+    }
+    .q-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 1rem;
+      border: 1px solid var(--q-accent);
+      border-radius: 8px;
+      background: var(--q-accent);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .q-btn.secondary {
+      background: transparent;
+      color: var(--q-accent);
+    }
+    .q-machine {
+      position: relative;
+      min-height: 360px;
+      border: 1px solid var(--q-line);
+      border-radius: 8px;
+      background: #14212a;
+      overflow: hidden;
+      box-shadow: 0 22px 48px rgba(23, 32, 38, 0.16);
+    }
+    .q-machine::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 8px;
+    }
+    .q-line {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+    }
+    .q-line:nth-child(1) { top: 22%; }
+    .q-line:nth-child(2) { top: 36%; width: 56%; }
+    .q-line:nth-child(3) { top: 50%; }
+    .q-line:nth-child(4) { top: 64%; width: 64%; }
+    .q-node {
+      position: absolute;
+      right: 18%;
+      top: 30%;
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      border: 2px solid var(--q-warm);
+      display: grid;
+      place-items: center;
+      color: var(--q-warm);
+      font-weight: 900;
+    }
+    .q-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+    .q-metric,
+    .q-panel {
+      border: 1px solid var(--q-line);
+      border-radius: 8px;
+      background: var(--q-panel);
+      box-shadow: 0 14px 34px rgba(23, 32, 38, 0.07);
+    }
+    .q-metric {
+      padding: 0.9rem;
+      min-height: 96px;
+    }
+    .q-metric strong {
+      display: block;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+    .q-metric span {
+      display: block;
+      margin-top: 0.45rem;
+      color: var(--q-muted);
+      font-size: 0.76rem;
+      line-height: 1.55;
+    }
+    .q-section {
+      margin-top: 2.2rem;
+    }
+    .q-section h2 {
+      margin: 0 0 1rem;
+      font-size: 1.45rem;
+      letter-spacing: 0;
+    }
+    .q-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+    .q-panel {
+      padding: 1rem;
+    }
+    .q-panel h3 {
+      margin: 0 0 0.55rem;
+      font-size: 0.98rem;
+      letter-spacing: 0;
+    }
+    .q-panel p,
+    .q-panel li {
+      color: var(--q-muted);
+      font-size: 0.82rem;
+      line-height: 1.75;
+    }
+    .q-panel ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .q-flow {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 0.65rem;
+    }
+    .q-step {
+      padding: 0.9rem;
+      border: 1px solid var(--q-line);
+      border-radius: 8px;
+      background: var(--q-panel);
+      min-height: 132px;
+    }
+    .q-step strong {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      margin-bottom: 0.7rem;
+      border-radius: 50%;
+      background: var(--q-warm);
+      color: #241b08;
+      font-size: 0.78rem;
+    }
+    .q-price {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: center;
+      padding: 1.1rem;
+      border: 1px solid var(--q-line);
+      border-radius: 8px;
+      background: #172026;
+      color: #fff;
+    }
+    .q-price p {
+      margin: 0.25rem 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.7;
+      font-size: 0.84rem;
+    }
+    @media (max-width: 780px) {
+      .q-page { padding: 2rem 1rem 3rem; }
+      .q-hero,
+      .q-grid,
+      .q-flow,
+      .q-metrics {
+        grid-template-columns: 1fr;
+      }
+      .q-machine { min-height: 260px; }
+      .q-actions .q-btn,
+      .q-price .q-btn {
+        width: 100%;
+      }
+      .q-price {
+        display: block;
+      }
+      h1 { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="q-page">
+    <nav class="q-nav"><a href="/">返回主页</a></nav>
+    <section class="q-hero">
+      <div>
+        <p class="q-eyebrow">内容摄入与知识资产化服务</p>
+        <h1>量子速读</h1>
+        <p class="q-lead">量子速读 Skill 是新版内容引擎 2026.07.02 的可安装包：把 B站、小宇宙、小红书、公众号、知乎、会议录音和课程视频批量处理成完整转录、内容复原、理解式摘要、高光金句、知识卡片和记忆候选。适合已有 Codex 环境、想搭建个人内容处理流水线的用户。</p>
+        <div class="q-actions">
+          <a class="q-btn" href="/skill-store/">¥39.90 购买 Skill</a>
+          <a class="q-btn secondary" href="/ai-diagnostic/">咨询代跑/部署</a>
+          <a class="q-btn secondary" href="#deliverables">查看交付物</a>
+        </div>
+      </div>
+      <div class="q-machine" aria-hidden="true">
+        <div class="q-line"></div>
+        <div class="q-line"></div>
+        <div class="q-line"></div>
+        <div class="q-line"></div>
+        <div class="q-node">READ</div>
+      </div>
+    </section>
+
+    <div class="q-metrics">
+      <div class="q-metric"><strong>多平台</strong><span>覆盖 B站、小宇宙、小红书、公众号、知乎和本地音视频。</span></div>
+      <div class="q-metric"><strong>全转录</strong><span>音视频先转成可追溯全文，再进入摘要层。</span></div>
+      <div class="q-metric"><strong>质检</strong><span>简介、字幕、反爬壳和短文本会被标记补采。</span></div>
+      <div class="q-metric"><strong>入库</strong><span>相关洞察进入审核队列，不直接污染长期记忆。</span></div>
+    </div>
+
+    <section class="q-section" id="deliverables">
+      <h2>交付物</h2>
+      <div class="q-grid">
+        <article class="q-panel">
+          <h3>完整转录</h3>
+          <p>音视频先下载、切片、转录、合并，保留可追溯来源，不用简介或字幕凑总结。</p>
+        </article>
+        <article class="q-panel">
+          <h3>内容复原</h3>
+          <p>先把材料讲了什么复原清楚，再输出一句话概括、论点推导、高光亮点、金句和与项目相关的判断。</p>
+        </article>
+        <article class="q-panel">
+          <h3>知识候选</h3>
+          <p>从摘要里抽取可复用洞察，进入审核队列，避免把无关热点灌进长期记忆。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <h2>处理流程</h2>
+      <div class="q-flow">
+        <div class="q-step"><strong>1</strong><h3>扫描</h3><p>从链接、稍后再看、提醒事项或素材目录整理来源。</p></div>
+        <div class="q-step"><strong>2</strong><h3>下载</h3><p>按平台处理网页、音频、视频和图文正文。</p></div>
+        <div class="q-step"><strong>3</strong><h3>转录</h3><p>音视频全量 ASR，保留每段 chunk 和全文。</p></div>
+        <div class="q-step"><strong>4</strong><h3>总结</h3><p>按内容复原和理解式摘要标准写高光与判断。</p></div>
+        <div class="q-step"><strong>5</strong><h3>入库</h3><p>只把相关洞察放入审核队列，等待确认。</p></div>
+      </div>
+    </section>
+
+    <section class="q-section">
+      <h2>适合谁</h2>
+      <div class="q-grid">
+        <article class="q-panel">
+          <h3>内容创作者</h3>
+          <ul><li>批量处理播客、视频、文章和选题素材。</li><li>从素材中提取金句、高光和可复用观点。</li></ul>
+        </article>
+        <article class="q-panel">
+          <h3>研究与咨询</h3>
+          <ul><li>把行业信息转成结构化摘要和知识卡片。</li><li>保留来源，方便复核和二次写作。</li></ul>
+        </article>
+        <article class="q-panel">
+          <h3>培训机构</h3>
+          <ul><li>处理课程、直播、会议录音和复盘材料。</li><li>沉淀讲义、纪要、问答和训练素材。</li></ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="q-section q-price">
+      <div>
+        <h2>购买后领取安装包</h2>
+        <p>已有 Codex 环境的用户可以购买量子速读 Skill 包，扫码后领取 zip 下载包、安装命令和自检脚本。需要我代跑素材、部署环境或长期维护的项目，可以单独咨询。</p>
+      </div>
+      <a class="q-btn" href="/skill-store/">去 Skill 商店购买</a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if /usr/bin/hidutil list 2>/dev/null | /usr/bin/awk '$4 == 1 && $5 == 2 && $NF == 0 { found = 1 } END { exit found ? 0 : 1 }'; then
+  /usr/bin/open "x-apple.systempreferences:com.apple.Mouse-Settings.extension"
+else
+  /usr/bin/open "x-apple.systempreferences:com.apple.Trackpad-Settings.extension"
+fi
+
+exit 0

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>音视频总结技能矩阵 · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #5c6677;
+      --line: rgba(23, 32, 51, 0.14);
+      --paper: #f7f3ec;
+      --panel: #fffdf8;
+      --accent: #0f766e;
+      --accent-dark: #115e59;
+      --warn: #8a5b11;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .workflow-page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    .workflow-hero {
+      min-height: 38vh;
+      display: grid;
+      align-items: end;
+      padding: 2.5rem 0 2rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--accent-dark);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(2.35rem, 7vw, 5.2rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 18px 42px rgba(23, 32, 51, 0.08);
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin: 0 0 0.8rem;
+      letter-spacing: 0;
+    }
+
+    .field-label {
+      display: block;
+      margin: 0 0 0.45rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 132px;
+      resize: vertical;
+      padding: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      box-sizing: border-box;
+    }
+
+    textarea:focus,
+    button:focus {
+      outline: 3px solid rgba(15, 118, 110, 0.24);
+      outline-offset: 2px;
+    }
+
+    .chips {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.5rem;
+      margin: 0.85rem 0 1rem;
+    }
+
+    .chip {
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .chip.active {
+      border-color: var(--accent);
+      background: rgba(15, 118, 110, 0.1);
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      align-items: center;
+    }
+
+    .primary,
+    .secondary {
+      min-height: 46px;
+      border-radius: 8px;
+      padding: 0 1rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .primary {
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .primary:hover {
+      background: var(--accent-dark);
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .status {
+      min-height: 46px;
+      margin-top: 1rem;
+      padding: 0.8rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.75);
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .status.ok {
+      border-color: rgba(15, 118, 110, 0.35);
+      color: var(--accent-dark);
+      background: rgba(15, 118, 110, 0.08);
+    }
+
+    .status.warn {
+      border-color: rgba(138, 91, 17, 0.35);
+      color: var(--warn);
+      background: rgba(138, 91, 17, 0.08);
+    }
+
+    pre {
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 1rem 0 0;
+      padding: 0.9rem;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #101828;
+      color: #f8fafc;
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+
+    .capability-list {
+      display: grid;
+      gap: 0.7rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .capability-list li {
+      padding: 0.72rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.7);
+    }
+
+    .capability-list strong {
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .capability-list span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.55;
+    }
+
+    .note {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-top: 1rem;
+      color: var(--accent-dark);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 820px) {
+      .workflow-page {
+        padding-top: 1.25rem;
+      }
+
+      .workflow-hero {
+        min-height: auto;
+        padding-top: 1rem;
+      }
+
+      .matrix,
+      .chips {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        align-items: stretch;
+      }
+
+      .primary,
+      .secondary {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="workflow-page">
+    <section class="workflow-hero">
+      <div>
+        <p class="eyebrow">Local Skill Matrix</p>
+        <h1>音视频总结技能矩阵</h1>
+        <p class="lead">把本地音频、视频文件和在线链接整理成一键总结任务。桥接服务启动时直接调用本机 skill；未启动时生成可交给 Codex 或 Claude 的任务文本。</p>
+        <a class="back" href="/">返回主页</a>
+      </div>
+    </section>
+
+    <section class="matrix" aria-label="音视频总结任务">
+      <article class="panel">
+        <h2>一键总结</h2>
+        <label class="field-label" for="sourceInput">音视频路径或链接</label>
+        <textarea id="sourceInput" placeholder="粘贴本地文件路径、YouTube 链接、腾讯会议录音链接，或其他音视频 URL"></textarea>
+
+        <div class="chips" aria-label="来源类型">
+          <button class="chip active" type="button" data-source-type="auto">自动识别</button>
+          <button class="chip" type="button" data-source-type="local">本地文件</button>
+          <button class="chip" type="button" data-source-type="youtube">YouTube</button>
+          <button class="chip" type="button" data-source-type="meeting">会议录音</button>
+        </div>
+
+        <div class="actions">
+          <button class="primary" type="button" id="runButton">一键总结</button>
+          <button class="secondary" type="button" id="copyButton">复制任务文本</button>
+        </div>
+
+        <div class="status" id="statusBox">等待输入。静态网页不能直接读取你的本地文件系统；需要本机桥接服务配合才能直接调用 skill。</div>
+        <pre id="promptPreview" hidden></pre>
+      </article>
+
+      <aside class="panel">
+        <h3>调用链路</h3>
+        <ul class="capability-list">
+          <li>
+            <strong>输入识别</strong>
+            <span>本地文件、通用音视频链接、YouTube、腾讯会议录音。</span>
+          </li>
+          <li>
+            <strong>音频处理</strong>
+            <span>下载或提取音频，必要时切片，交给 TeleAI/TeleSpeechASR 转录。</span>
+          </li>
+          <li>
+            <strong>深度总结</strong>
+            <span>基于完整转录稿写摘要、主题、时间线、观点和可复用素材。</span>
+          </li>
+          <li>
+            <strong>本地交付</strong>
+            <span>保存 summary.md，并用 Effie 展示结果。</span>
+          </li>
+        </ul>
+        <p class="note">本页默认尝试请求 <code>127.0.0.1:8793</code> 的本机桥接接口。没有启动桥接时，会自动复制任务文本，直接粘到 Codex 或 Claude Code 即可执行本地 skill。</p>
+      </aside>
+    </section>
+  </main>
+
+  <script>
+    const bridgeUrl = "http://127.0.0.1:8793/skill/audio-video-summary";
+    const sourceInput = document.getElementById("sourceInput");
+    const statusBox = document.getElementById("statusBox");
+    const promptPreview = document.getElementById("promptPreview");
+    const chips = Array.from(document.querySelectorAll(".chip"));
+    let sourceType = "auto";
+
+    function setStatus(message, tone) {
+      statusBox.textContent = message;
+      statusBox.className = `status${tone ? ` ${tone}` : ""}`;
+    }
+
+    function buildPrompt() {
+      const source = sourceInput.value.trim();
+      const typeLabel = {
+        auto: "自动识别",
+        local: "本地文件",
+        youtube: "YouTube",
+        meeting: "会议录音"
+      }[sourceType] || "自动识别";
+
+      return `请使用 $音视频总结 处理以下音视频内容：
+
+来源类型：${typeLabel}
+内容：${source}
+
+要求：
+1. 下载或提取音频。
+2. 使用硅基流动 TeleAI/TeleSpeechASR 完整转录。
+3. 基于完整转录稿写深度总结，不只看简介或元数据。
+4. 保存 summary.md 到本地总结目录。
+5. 用 Effie 打开结果，并在 Finder 中揭示文件位置。`;
+    }
+
+    async function copyPrompt() {
+      const source = sourceInput.value.trim();
+      if (!source) {
+        setStatus("先输入一个本地路径或音视频链接。", "warn");
+        sourceInput.focus();
+        return false;
+      }
+
+      const prompt = buildPrompt();
+      promptPreview.textContent = prompt;
+      promptPreview.hidden = false;
+
+      try {
+        await navigator.clipboard.writeText(prompt);
+        setStatus("任务文本已复制。粘到 Codex 或 Claude Code 后即可调用本地音视频总结 skill。", "ok");
+        return true;
+      } catch (error) {
+        setStatus("浏览器没有授予剪贴板权限，任务文本已显示在下方，可手动复制。", "warn");
+        return false;
+      }
+    }
+
+    chips.forEach((chip) => {
+      chip.addEventListener("click", () => {
+        sourceType = chip.dataset.sourceType;
+        chips.forEach((item) => item.classList.toggle("active", item === chip));
+      });
+    });
+
+    document.getElementById("copyButton").addEventListener("click", copyPrompt);
+
+    document.getElementById("runButton").addEventListener("click", async () => {
+      const source = sourceInput.value.trim();
+      if (!source) {
+        setStatus("先输入一个本地路径或音视频链接。", "warn");
+        sourceInput.focus();
+        return;
+      }
+
+      setStatus("正在尝试连接本机 skill 桥接服务...");
+
+      try {
+        const response = await fetch(bridgeUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            skill: "音视频总结",
+            source,
+            sourceType,
+            prompt: buildPrompt()
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Bridge returned ${response.status}`);
+        }
+
+        setStatus("已提交给本机音视频总结 skill。请查看本机任务窗口、Effie 或输出目录。", "ok");
+      } catch (error) {
+        await copyPrompt();
+        setStatus("未检测到本机桥接服务，已改为复制任务文本。启动桥接服务后，这个按钮可以直接提交任务。", "warn");
+      }
+    });
+  </script>
+</body>
+</html>

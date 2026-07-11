@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="蟑螂变形 · Kafka × Bruno Schulz，身体异化为虫壳、蛾翅、蚁触，Caravaggio明暗法中的身体恐怖">
+<title>蟑螂变形 · Lit-Visual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 5% 80px; }
+.back-link { display: inline-block; color: #b8773d; text-decoration: none; font-size: 14px; letter-spacing: 2px; margin-bottom: 32px; }
+.back-link:hover { color: #9e6330; }
+header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #d4a574; }
+header h1 { font-size: 38px; letter-spacing: 5px; font-weight: 500; margin-bottom: 8px; }
+header .subtitle { color: #b8773d; font-size: 15px; letter-spacing: 3px; }
+.inspiration { max-width: 800px; margin: 0 auto 48px; background: white; border-radius: 14px; padding: 32px 36px; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2); }
+.inspiration h2 { font-size: 20px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 500; }
+.inspiration-section { margin-bottom: 22px; }
+.inspiration-section:last-child { margin-bottom: 0; }
+.inspiration-section .label { font-size: 11px; color: #b8773d; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+.inspiration-section .content { font-size: 14px; color: #5a4636; line-height: 1.8; }
+.inspiration-section .content em { color: #b8773d; font-style: normal; }
+.prompt-section { max-width: 800px; margin: 0 auto 48px; }
+.prompt-toggle { display: inline-block; font-size: 13px; color: #886f5c; letter-spacing: 2px; cursor: pointer; padding: 10px 20px; background: #f7f2ea; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); }
+.prompt-toggle:hover { background: #ede3d5; }
+.prompt-body { display: none; margin-top: 16px; background: white; border-radius: 14px; padding: 24px 28px; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2); }
+.prompt-body.visible { display: block; }
+.prompt-item { margin-bottom: 20px; }
+.prompt-item:last-child { margin-bottom: 0; }
+.prompt-item .p-name { font-size: 13px; font-weight: 600; color: #2c1810; letter-spacing: 2px; margin-bottom: 8px; }
+.prompt-item .p-text { font-size: 12px; color: #5a4636; line-height: 1.8; font-style: italic; background: #faf7f2; padding: 14px 18px; border-radius: 8px; border-left: 3px solid #d4a574; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.08); border: 1px solid rgba(212, 165, 116, 0.18); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(76, 48, 24, 0.16); }
+.card img { width: 100%; height: 380px; object-fit: cover; display: block; background: #1a1a1a; }
+.card-body { padding: 14px 18px; }
+.card-title { font-size: 14px; font-weight: 600; color: #2c1810; letter-spacing: 1px; }
+.card-desc { font-size: 12px; color: #886f5c; margin-top: 4px; letter-spacing: 1px; }
+footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5d6c2; color: #886f5c; font-size: 12px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../" class="back-link">← 返回作品主页</a>
+
+<header>
+  <h1>蟑螂变形</h1>
+  <div class="subtitle">Cockroach Transformation</div>
+</header>
+
+<div class="inspiration">
+  <h2>灵感来源</h2>
+  <div class="inspiration-section">
+    <div class="label">文学源头</div>
+    <div class="content">Kafka《变形记》——人变成虫的现代寓言；Bruno Schulz《鳄鱼街》——父亲在阁楼中精神崩溃、身体退化为鸟群与蟑螂的魔幻现实主义。两者交汇于一个意象：<em>身体异化不是怪物片，是灵魂状态的可见化</em>。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">视觉传统</div>
+    <div class="content">Caravaggio 的烛光明暗法（chiaroscuro）——单一光源在黑暗中雕刻身体，将俗世受难升华为宗教画构图。身体恐怖（body horror）但不血腥——恐惧来自"人的形状正在变成别的什么"而非暴力。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">技术路线</div>
+    <div class="content">gpt-image-2 · 35mm Tri-X 黑白胶片 · 单烛光源 · 高反差 · 宗教画式构图</div>
+  </div>
+</div>
+
+<div class="prompt-section">
+  <span class="prompt-toggle" onclick="document.getElementById('prompts').classList.toggle('visible'); this.textContent = document.getElementById('prompts').classList.contains('visible') ? '收起 Prompt ▲' : '查看代表性 Prompt ▼'">查看代表性 Prompt ▼</span>
+  <div class="prompt-body" id="prompts">
+    <div class="prompt-item">
+      <div class="p-name">spider_fingers · 蜘蛛手指</div>
+      <div class="p-text">Extreme close-up of an old man's hands in candlelight, the fingers elongated and jointed like spider legs, dark spots at the knuckles like spider eyes, the hands resting on an open Bible, deep shadows, Caravaggio lighting, black and white, intimate and unsettling, 35mm film grain</div>
+    </div>
+    <div class="prompt-item">
+      <div class="p-name">molted_skin · 蜕皮</div>
+      <div class="p-text">A dim room with a single candle, a pile of shed human skin on the floor like a discarded garment, the skin retaining the shape of a person, the texture translucent and papery, an open window letting in moonlight, the scene like a religious deposition, black and white, eerie stillness, chiaroscuro</div>
+    </div>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer><p>所有图片由 AI 生成 · 灵感来源为 Kafka × Bruno Schulz 的文学异化传统</p></footer>
+
+</div>
+
+<script>
+const names = [
+  {f:"moth_woman_164310.webp", t:"蛾翼女人", d:"肩胛骨如蛾翅"},
+  {f:"spider_fingers_164425.webp", t:"蜘蛛手指", d:"指节如蛛腿覆于圣经"},
+  {f:"beetle_shell_164808.webp", t:"甲虫背壳", d:"背覆六角甲壳"},
+  {f:"centipede_neck_164847.webp", t:"蜈蚣颈纹", d:"老妇颈环如百足"},
+  {f:"butterfly_chest_183016.webp", t:"蝶纹胸腔", d:"肋间对称蝶翼斑"},
+  {f:"crab_hands_165239.webp", t:"蟹钳之手", d:"祈祷手指粗如蟹钳"},
+  {f:"lichen_face_165454.webp", t:"苔藓面容", d:"童颜地衣扩散"},
+  {f:"molted_skin_183036.webp", t:"蜕皮", d:"人形空壳弃于地"},
+  {f:"antennae_brow_165550.webp", t:"触角额纹", d:"额生虫须闭目冥想"},
+];
+document.getElementById('grid').innerHTML = names.map(n =>
+  `<div class="card"><img src="images/${n.f}" alt="${n.t}" loading="lazy"><div class="card-body"><div class="card-title">${n.t}</div><div class="card-desc">${n.d}</div></div></div>`
+).join('');
+</script>
+</body>
+</html>

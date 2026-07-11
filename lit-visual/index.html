@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Lit-Visual · 文学文本 → AI 影像生成。四个视觉风格方向，从经典文学到纪实摄影。">
+<title>Lit-Visual · 小说影像化</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 60px 5%; }
+header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #d4a574;
+}
+header h1 {
+  font-size: 40px;
+  letter-spacing: 6px;
+  margin-bottom: 12px;
+  color: #2c1810;
+  font-weight: 500;
+}
+header .tagline {
+  color: #886f5c;
+  font-size: 15px;
+  letter-spacing: 3px;
+  margin-bottom: 28px;
+}
+header .stat {
+  display: flex;
+  gap: 56px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-num { font-size: 30px; color: #b8773d; font-weight: 600; }
+.stat-label { color: #886f5c; font-size: 13px; margin-top: 4px; letter-spacing: 1px; }
+
+/* Project Grid */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+  margin-bottom: 50px;
+}
+@media (max-width: 768px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+.project-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 30px rgba(76, 48, 24, 0.1);
+  border: 1px solid rgba(212, 165, 116, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 40px rgba(76, 48, 24, 0.2);
+}
+.project-card .img-wrap {
+  position: relative;
+  height: 340px;
+  overflow: hidden;
+}
+.project-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.project-card:hover img { transform: scale(1.05); }
+.project-card .img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.55) 100%);
+}
+.project-card .img-title {
+  position: absolute;
+  bottom: 48px;
+  left: 26px;
+  color: white;
+  font-size: 26px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+}
+.project-card .img-count {
+  position: absolute;
+  bottom: 22px;
+  left: 26px;
+  color: rgba(255,255,255,0.85);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.3);
+}
+.project-card .card-body { padding: 24px 28px 28px; flex: 1; }
+.project-card .inspiration-label {
+  font-size: 11px;
+  color: #b8773d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.project-card .inspiration-text {
+  font-size: 13px;
+  color: #5a4636;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+.project-card .ref-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.ref-tag {
+  font-size: 11px;
+  color: #886f5c;
+  background: #f7f2ea;
+  padding: 4px 12px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+}
+
+/* CTA */
+.cta-section {
+  text-align: center;
+  padding: 40px 20px;
+}
+.cta-section p {
+  color: #886f5c;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 18px;
+}
+.btn-cta {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #b8773d;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+}
+.btn-cta:hover { background: #9e6330; transform: translateY(-2px); }
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid #e5d6c2;
+  color: #886f5c;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+footer a { color: #b8773d; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<header>
+  <h1>小说影像化</h1>
+  <div class="tagline">文学文本 → AI 影像 · 七个视觉方向</div>
+  <div class="stat">
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">视觉方向</div></div>
+    <div class="stat-item"><div class="stat-num">131</div><div class="stat-label">张作品</div></div>
+    <div class="stat-item"><div class="stat-num">3</div><div class="stat-label">种美学脉络</div></div>
+  </div>
+</header>
+
+<section class="project-grid">
+
+  <!-- 糖水摄影师的失业 -->
+  <a href="/lit-visual/sweet-water-unemployment/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/sweet-water-unemployment/images/sweet_water_01.png" alt="糖水摄影师的失业" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">糖水摄影师的失业</div>
+      <div class="img-count">6 张作品</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">社媒糖水 · Image2 人像</div>
+      <div class="inspiration-text">白净柔光、好嫁风、生活方式场景和小红书竖屏封面感。用 Codex image2 验证糖水片的可复制审美结构。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Xiaohongshu</span>
+        <span class="ref-tag">Codex image2</span>
+        <span class="ref-tag">Portra 400</span>
+      </div>
+    </div>
+  </a>
+
+
+  <!-- 生命与灵魂 -->
+  <a href="/lit-visual/life-and-soul/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/life-and-soul/images/rajasthan_girl_185442.webp" alt="生命与灵魂" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">生命与灵魂</div>
+      <div class="img-count">14 张作品</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">摄影纪实传统</div>
+      <div class="inspiration-text">以《穷忙》底层劳动者和《印度礼记》街头人物为锚点，用 AI 接续 Steve McCurry、Sebastião Salgado、Dorothea Lange 的纪实肖像传统——眼神里有尊严、有故事、有神韵。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Steve McCurry</span>
+        <span class="ref-tag">Sebastião Salgado</span>
+        <span class="ref-tag">Dorothea Lange</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 失败美学 -->
+  <a href="/lit-visual/failure-aesthetics/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/failure-aesthetics/images/abandoned_theater_162314.webp" alt="失败美学" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">失败美学</div>
+      <div class="img-count">21 张作品</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">阈限空间 · 慢电影</div>
+      <div class="inspiration-text">不做叙事，只做物的凝视。被遗弃的空间、没有人的城市、沉默的物体——在 Gregory Crewdson 的阈限空间和 Tarkovsky / Bela Tarr 的慢电影时间中，凝视失败本身的美。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Gregory Crewdson</span>
+        <span class="ref-tag">Tarkovsky</span>
+        <span class="ref-tag">Bela Tarr</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 蟑螂变形 -->
+  <a href="/lit-visual/cockroach-transformation/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/cockroach-transformation/images/spider_fingers_164425.webp" alt="蟑螂变形" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">蟑螂变形</div>
+      <div class="img-count">9 张作品</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">文学异化 · 宗教画构图</div>
+      <div class="inspiration-text">Kafka《变形记》× Bruno Schulz《鳄鱼街》——身体在烛光中异化为虫壳、蛾翅、蚁触。借 Caravaggio 宗教画的明暗法，把身体恐怖拍成殉道者肖像。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Kafka</span>
+        <span class="ref-tag">Bruno Schulz</span>
+        <span class="ref-tag">Caravaggio</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 墓地消融 -->
+  <a href="/lit-visual/grave-dissolve/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/grave-dissolve/images/man_in_sand_dune_163535.webp" alt="墓地消融" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">墓地消融</div>
+      <div class="img-count">6 张作品</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">文学消融 · 俯拍凝视</div>
+      <div class="inspiration-text">Juan Rulfo《佩德罗·巴拉莫》——亡魂与土地没有边界。俯拍镜头下，人体缓慢沉入沙丘、雪地、河泥、火山灰。Bela Tarr 式的长镜头凝视"人变成土地"的过程。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Juan Rulfo</span>
+        <span class="ref-tag">Bela Tarr</span>
+        <span class="ref-tag">俯拍长镜头</span>
+      </div>
+    </div>
+  </a>
+
+  <!-- 大裂 -->
+  <a href="/lit-visual/dalie/" class="project-card">
+    <div class="img-wrap">
+      <img src="/lit-visual/dalie/images/48_empty_memory_card_slot_final.webp" alt="《大裂》小说影像化" loading="lazy">
+      <div class="img-overlay"></div>
+      <div class="img-title">《大裂》</div>
+      <div class="img-count">48 张作品 · Prompt Archive</div>
+    </div>
+    <div class="card-body">
+      <div class="inspiration-label">长篇文本 · 视觉分镜</div>
+      <div class="inspiration-text">把《大裂》拆成 48 个镜头：酒吧、婚礼、动物园、洞穴、梦境和没有储存卡的终章。每张图保留公开版 prompt，呈现小说文本如何被翻译成影像分镜。</div>
+      <div class="ref-tags">
+        <span class="ref-tag">Image 2</span>
+        <span class="ref-tag">48 Prompts</span>
+        <span class="ref-tag">Cinematic Stills</span>
+      </div>
+    </div>
+  </a>
+
+
+      <!-- 苏联废墟 -->
+      <a href="/lit-visual/soviet-ruins/" class="project-card">
+        <div class="img-wrap">
+          <img src="/lit-visual/soviet-ruins/images/image2_abandoned_cosmodrome_20260519.webp" alt="苏联废墟" loading="lazy">
+          <div class="img-overlay"></div>
+          <div class="img-title">苏联废墟</div>
+          <div class="img-count">33 张作品</div>
+        </div>
+        <div class="card-body">
+          <div class="inspiration-label">粗野主义 · 冷战考古学</div>
+          <div class="inspiration-text">航天发射场、文化宫、射电望远镜、工人疗养院——苏联解体后的建筑遗骸。新增真 Image 2 批次，与早期通道、Aihubmix 2、无界科技并置对照。</div>
+          <div class="ref-tags">
+            <span class="ref-tag">Soviet Brutalism</span>
+            <span class="ref-tag">Chaubin</span>
+            <span class="ref-tag">真 Image 2 对照</span>
+          </div>
+        </div>
+      </a>
+</section>
+
+<div class="cta-section">
+  <p>有想生成的画面？用 AI 试试你的文本</p>
+  <a href="/lit-visual/generate/" class="btn-cta">你也可以试试生成 →</a>
+</div>
+
+<footer>
+  <p>所有图片由 AI 生成 · 灵感来源为经典文学与摄影传统</p>
+  <p style="margin-top:6px"><a href="/">← 返回主页</a></p>
+</footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>蓝牙音质切换 · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --paper: #f4f7f4;
+      --ink: #16201c;
+      --muted: #5e6b63;
+      --panel: #ffffff;
+      --line: rgba(22, 32, 28, 0.14);
+      --green: #0b7a63;
+      --blue: #2457a6;
+      --amber: #a35d00;
+      --dark: #101820;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .bt-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .bt-hero {
+      min-height: 70vh;
+      margin: 0 -1.25rem;
+      padding: 3rem 1.25rem 2rem;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(9, 19, 18, 0.96), rgba(9, 19, 18, 0.84) 46%, rgba(9, 19, 18, 0.34) 78%),
+        url("/bluetooth-audio-switch/assets/bluetooth-audio-hero.png") center right / cover no-repeat;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: #8de3cc;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: 4.7rem;
+      line-height: 0.98;
+      letter-spacing: 0;
+      color: #fff;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.48);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .actions,
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .button,
+    .source-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .actions .button {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+    }
+
+    .actions .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .section {
+      margin-top: 1.25rem;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .panel,
+    .open-source {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 1.1rem;
+      box-shadow: 0 16px 34px rgba(22, 32, 28, 0.07);
+    }
+
+    h2 {
+      margin: 0;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-size: 1.45rem;
+    }
+
+    .panel p,
+    .open-source p,
+    .note {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .tag-row,
+    .source-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.55rem;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.84rem;
+    }
+
+    .download-row a,
+    .source-link {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .download-row a:hover,
+    .source-link:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .steps {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: 2.4rem minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .steps b {
+      display: inline-flex;
+      width: 2.4rem;
+      height: 2.4rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #e1f4ef;
+      color: var(--green);
+    }
+
+    .code-block {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--dark);
+      color: #f8fafc;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .open-source {
+      margin-top: 1rem;
+      background: #fbfdfb;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .source-item {
+      border-left: 4px solid var(--green);
+      padding: 0.65rem 0.75rem;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .note {
+      border-top: 1px solid var(--line);
+      padding-top: 0.8rem;
+    }
+
+    @media (max-width: 860px) {
+      .bt-hero {
+        min-height: 68vh;
+        background-position: 62% center;
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+
+      .split,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .bt-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .bt-hero {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="bt-page">
+    <section class="bt-hero">
+      <div class="hero-inner">
+        <p class="eyebrow">macOS audio utility</p>
+        <h1>蓝牙音质切换</h1>
+        <p class="lead">把蓝牙耳机从 HFP 通话音质拉回 A2DP / AAC 音乐链路：内置麦克风负责输入，蓝牙耳机只负责输出。</p>
+        <div class="actions">
+          <a class="button" href="/bluetooth-audio-switch/downloads/bluetooth-audio-switch-macos.zip">下载 macOS 包</a>
+          <a class="button secondary" href="/bluetooth-audio-switch/downloads/bluetooth-audio-switch-source.zip">下载源码</a>
+          <a class="button secondary" href="https://github.com/smwswk/smwswk.github.io/tree/master/bluetooth-audio-switch/source" target="_blank" rel="noreferrer">GitHub 源码</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <article class="panel">
+        <h2>解决的问题</h2>
+        <p>当 macOS 把同一副蓝牙耳机同时设为输入和输出时，系统会切到 HFP / Hands-Free Profile，声音会变闷、采样率下降。这个工具先把默认输入切回内置麦克风，再把默认输出切到目标蓝牙耳机。</p>
+        <div class="tag-row">
+          <span class="tag">HFP -> A2DP</span>
+          <span class="tag">AAC</span>
+          <span class="tag">CoreAudio</span>
+          <span class="tag">SwitchAudioSource</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>使用方式</h2>
+        <ol class="steps">
+          <li><b>1</b><span>安装 `SwitchAudioSource`，然后运行源码包里的 `install.sh` 编译 CoreAudio 输入切换 helper。</span></li>
+          <li><b>2</b><span>设置 `BLUETOOTH_OUTPUT_NAME` 为耳机名称；默认示例是 OPPO Enco Air5 Pro。</span></li>
+          <li><b>3</b><span>运行 `run.sh` 或双击 `double-click-switch.command`。</span></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="open-source">
+      <h2>开源内容</h2>
+      <p>公开的是可复用源码和构建脚本，不包含个人机器上的 `.app` 二进制、签名目录或本地隐藏路径。</p>
+      <div class="source-grid">
+        <div class="source-item"><strong>AppleScript</strong>保留双击通知体验，调用本地脚本完成切换。</div>
+        <div class="source-item"><strong>Swift helper</strong>用 CoreAudio 选择内置输入设备，避免蓝牙麦克风触发 HFP。</div>
+        <div class="source-item"><strong>Shell workflow</strong>负责 AAC 偏好、输出设备选择和错误提示。</div>
+      </div>
+      <div class="download-row">
+        <a class="source-link" href="/bluetooth-audio-switch/downloads/bluetooth-audio-switch-macos.zip">macOS 包</a>
+        <a class="source-link" href="/bluetooth-audio-switch/downloads/bluetooth-audio-switch-source.zip">源码包</a>
+        <a class="source-link" href="https://github.com/smwswk/smwswk.github.io/tree/master/bluetooth-audio-switch/source" target="_blank" rel="noreferrer">查看仓库</a>
+      </div>
+      <pre class="code-block"><code>brew install switchaudio-osx
+./install.sh
+BLUETOOTH_OUTPUT_NAME="OPPO Enco Air5 Pro" ./run.sh</code></pre>
+      <p class="note">这个项目来自桌面版“蓝牙音质切换.app”，发布版改成通用开源实现：耳机名可配置，输入设备按 CoreAudio 枚举选择。</p>
+    </section>
+  </main>
+</body>
+</html>

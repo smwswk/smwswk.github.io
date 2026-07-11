@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="苏联废墟 · 粗野主义混凝土与社会主义现代主义建筑的遗骸，真 Image 2 与多模型通道对同一废墟的不同凝视">
+<title>苏联废墟 · Lit-Visual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 5% 80px; }
+.back-link { display: inline-block; color: #b8773d; text-decoration: none; font-size: 14px; letter-spacing: 2px; margin-bottom: 32px; transition: color 0.2s; }
+.back-link:hover { color: #9e6330; }
+header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #d4a574; }
+header h1 { font-size: 38px; letter-spacing: 5px; font-weight: 500; margin-bottom: 8px; }
+header .subtitle { color: #b8773d; font-size: 15px; letter-spacing: 3px; font-weight: 400; }
+
+.inspiration {
+  max-width: 800px; margin: 0 auto 48px;
+  background: white; border-radius: 14px; padding: 32px 36px;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2);
+}
+.inspiration h2 { font-size: 20px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 500; }
+.inspiration-section { margin-bottom: 22px; }
+.inspiration-section:last-child { margin-bottom: 0; }
+.inspiration-section .label { font-size: 11px; color: #b8773d; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+.inspiration-section .content { font-size: 14px; color: #5a4636; line-height: 1.8; }
+.inspiration-section .content em { color: #b8773d; font-style: normal; }
+
+.section-title {
+  max-width: 800px; margin: 52px auto 28px; text-align: center;
+  font-size: 18px; color: #2c1810; letter-spacing: 3px; font-weight: 500;
+  padding-top: 20px; border-top: 1px solid #e5d6c2;
+}
+.section-title:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: white; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.08); border: 1px solid rgba(212, 165, 116, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(76, 48, 24, 0.16); }
+.card img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.card-body { padding: 14px 18px; }
+.card-title { font-size: 14px; font-weight: 600; color: #2c1810; letter-spacing: 1px; }
+.card-desc { font-size: 12px; color: #886f5c; margin-top: 4px; letter-spacing: 1px; }
+
+footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5d6c2; color: #886f5c; font-size: 12px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../" class="back-link">&larr; 返回作品主页</a>
+
+<header>
+  <h1>苏联废墟</h1>
+  <div class="subtitle">Soviet Ruins</div>
+</header>
+
+<div class="inspiration">
+  <h2>灵感来源</h2>
+  <div class="inspiration-section">
+    <div class="label">视觉传统</div>
+    <div class="content">苏联粗野主义（Brutalism）与社会主义现代主义建筑——混凝土巨构、文化宫、射电望远镜、工人疗养院。冷战结束后这些建筑被遗弃，成为20世纪乌托邦的墓碑。参考 Fr&eacute;d&eacute;ric Chaubin 的《CCCP: Cosmic Communist Constructions Photographed》摄影集。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">创作理念</div>
+    <div class="content">同一废墟，多种凝视。用 <em>真 Image 2</em>、<em>GPT-image-2 早期通道</em>、<em>Aihubmix 2</em>、<em>无界科技</em> 对同一苏联废墟母题分别生成。不同模型对"粗野主义""废弃""宏大"的理解各异——有的偏向阴沉纪实，有的偏向浪漫废墟，有的偏向科幻末世。这种差异本身就是AI影像学的田野数据。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">技术路线</div>
+    <div class="content">真 Image 2 · GPT-image-2 早期通道 · Aihubmix 2 · 无界科技 · 35mm胶片质感 · 低饱和 · 自然光 · 广角建筑摄影</div>
+  </div>
+</div>
+
+<div class="section-title">航天发射场</div>
+<div class="grid" id="grid1"></div>
+
+<div class="section-title">文化宫</div>
+<div class="grid" id="grid2"></div>
+
+<div class="section-title">射电望远镜</div>
+<div class="grid" id="grid3"></div>
+
+<div class="section-title">游泳馆</div>
+<div class="grid" id="grid4"></div>
+
+<div class="section-title">混凝土纪念碑大厅</div>
+<div class="grid" id="grid5"></div>
+
+<div class="section-title">地下掩体</div>
+<div class="grid" id="grid6"></div>
+
+<div class="section-title">工人食堂</div>
+<div class="grid" id="grid7"></div>
+
+<div class="section-title">粗野主义住宅楼</div>
+<div class="grid" id="grid8"></div>
+
+<div class="section-title">苏联疗养院</div>
+<div class="grid" id="grid9"></div>
+
+<div class="section-title">剧院后台</div>
+<div class="grid" id="grid10"></div>
+
+<footer><p>所有图片由 AI 生成 &middot; 灵感来源为苏联粗野主义建筑与冷战考古学</p></footer>
+
+</div>
+
+<script>
+const prefix = "images/";
+const data = [
+  {f:"image2_abandoned_cosmodrome_20260519.webp", t:"航天发射场", m:"真 Image 2", g:"grid1"},
+  {f:"abandoned_cosmodrome_131037.webp", t:"航天发射场", m:"GPT-image-2", g:"grid1"},
+  {f:"wuyinkeji_abandoned_cosmodrome_180900.webp", t:"航天发射场", m:"无界科技", g:"grid1"},
+  {f:"image2_palace_of_culture_20260519.webp", t:"文化宫", m:"真 Image 2", g:"grid2"},
+  {f:"palace_of_culture_130830.webp", t:"文化宫", m:"GPT-image-2", g:"grid2"},
+  {f:"aihubmix2_palace_of_culture_183009.webp", t:"文化宫", m:"Aihubmix 2", g:"grid2"},
+  {f:"wuyinkeji_palace_of_culture_180900.webp", t:"文化宫", m:"无界科技", g:"grid2"},
+  {f:"image2_radio_telescope_20260519.webp", t:"射电望远镜", m:"真 Image 2", g:"grid3"},
+  {f:"radio_telescope_131523.webp", t:"射电望远镜", m:"GPT-image-2", g:"grid3"},
+  {f:"aihubmix2_radio_telescope_183015.webp", t:"射电望远镜", m:"Aihubmix 2", g:"grid3"},
+  {f:"wuyinkeji_radio_telescope_180901.webp", t:"射电望远镜", m:"无界科技", g:"grid3"},
+  {f:"image2_soviet_swimming_pool_20260519.webp", t:"游泳馆", m:"真 Image 2", g:"grid4"},
+  {f:"soviet_swimming_pool_130949.webp", t:"游泳馆", m:"GPT-image-2", g:"grid4"},
+  {f:"aihubmix2_soviet_swimming_pool_183012.webp", t:"游泳馆", m:"Aihubmix 2", g:"grid4"},
+  {f:"wuyinkeji_soviet_swimming_pool_180901.webp", t:"游泳馆", m:"无界科技", g:"grid4"},
+  {f:"image2_concrete_monument_hall_20260519.webp", t:"混凝土纪念碑大厅", m:"真 Image 2", g:"grid5"},
+  {f:"concrete_monument_hall_130910.webp", t:"混凝土纪念碑大厅", m:"GPT-image-2", g:"grid5"},
+  {f:"aihubmix2_concrete_monument_hall_183030.webp", t:"混凝土纪念碑大厅", m:"Aihubmix 2", g:"grid5"},
+  {f:"wuyinkeji_concrete_monument_hall_180901.webp", t:"混凝土纪念碑大厅", m:"无界科技", g:"grid5"},
+  {f:"image2_underground_bunker_20260519.webp", t:"地下掩体", m:"真 Image 2", g:"grid6"},
+  {f:"aihubmix2_underground_bunker_183032.webp", t:"地下掩体", m:"Aihubmix 2", g:"grid6"},
+  {f:"wuyinkeji_underground_bunker_180900.webp", t:"地下掩体", m:"无界科技", g:"grid6"},
+  {f:"image2_workers_canteen_20260519.webp", t:"工人食堂", m:"真 Image 2", g:"grid7"},
+  {f:"aihubmix2_workers_canteen_183032.webp", t:"工人食堂", m:"Aihubmix 2", g:"grid7"},
+  {f:"wuyinkeji_workers_canteen_180901.webp", t:"工人食堂", m:"无界科技", g:"grid7"},
+  {f:"image2_brutalist_housing_block_20260519.webp", t:"粗野主义住宅楼", m:"真 Image 2", g:"grid8"},
+  {f:"brutalist_housing_block_131115.webp", t:"粗野主义住宅楼", m:"GPT-image-2", g:"grid8"},
+  {f:"wuyinkeji_brutalist_housing_block_180901.webp", t:"粗野主义住宅楼", m:"无界科技", g:"grid8"},
+  {f:"image2_soviet_sanatorium_20260519.webp", t:"苏联疗养院", m:"真 Image 2", g:"grid9"},
+  {f:"soviet_sanatorium_131147.webp", t:"苏联疗养院", m:"GPT-image-2", g:"grid9"},
+  {f:"wuyinkeji_soviet_sanatorium_180900.webp", t:"苏联疗养院", m:"无界科技", g:"grid9"},
+  {f:"image2_soviet_theater_backstage_20260519.webp", t:"剧院后台", m:"真 Image 2", g:"grid10"},
+  {f:"wuyinkeji_soviet_theater_backstage_180901.webp", t:"剧院后台", m:"无界科技", g:"grid10"},
+];
+data.forEach(function(n) {
+  document.getElementById(n.g).innerHTML +=
+    '<div class="card"><img src="' + prefix + n.f + '" alt="' + n.t + '" loading="lazy"><div class="card-body"><div class="card-title">' + n.t + '</div><div class="card-desc">' + n.m + '</div></div></div>';
+});
+</script>
+</body>
+</html>

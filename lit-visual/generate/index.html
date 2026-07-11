@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="description" content="文学文本 → Grok Imagine 影像生成。三个视觉风格方向，首次免费。">
+<title>你也可以试试生成 · Lit-Visual</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0a;
+  --surface:#141414;
+  --border:rgba(255,255,255,0.08);
+  --text:#e8e4df;
+  --text-secondary:#8c8c8c;
+  --accent:#c9a96e;
+  --accent-glow:rgba(201,169,110,0.15);
+  --danger:#c7512e;
+  --radius:12px;
+}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","SF Pro Text",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100dvh;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:720px;margin:0 auto;padding:40px 20px 80px}
+
+/* Header */
+header{
+  text-align:center;
+  padding:48px 0 40px;
+}
+header h1{
+  font-size:clamp(24px,5vw,36px);
+  font-weight:700;
+  letter-spacing:0.04em;
+  margin-bottom:8px;
+}
+header .subtitle{
+  font-size:15px;
+  color:var(--text-secondary);
+  letter-spacing:0.06em;
+}
+.badge{
+  display:inline-block;
+  font-size:11px;
+  padding:3px 10px;
+  border-radius:20px;
+  margin-top:10px;
+  letter-spacing:0.06em;
+}
+.badge-free{background:rgba(255,255,255,0.08);color:var(--text-secondary);}
+.badge-pro{background:var(--accent-glow);color:var(--accent);}
+
+/* Style Cards */
+.style-cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+  margin-bottom:28px;
+}
+.style-card{
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px 16px;
+  cursor:pointer;
+  transition:all 0.2s;
+  text-align:center;
+}
+.style-card:hover{border-color:rgba(255,255,255,0.2);}
+.style-card.selected{
+  border-color:var(--accent);
+  background:var(--accent-glow);
+}
+.style-card .icon{font-size:28px;margin-bottom:8px;}
+.style-card .name{font-size:14px;font-weight:600;margin-bottom:4px;}
+.style-card .hint{font-size:11px;color:var(--text-secondary);line-height:1.5;}
+
+/* Input */
+.input-group{margin-bottom:20px;}
+.input-group textarea{
+  width:100%;
+  min-height:100px;
+  padding:14px 16px;
+  background:var(--surface);
+  border:1.5px solid var(--border);
+  border-radius:var(--radius);
+  color:var(--text);
+  font-size:15px;
+  font-family:inherit;
+  line-height:1.7;
+  resize:vertical;
+  transition:border-color 0.2s;
+}
+.input-group textarea:focus{
+  outline:none;
+  border-color:var(--accent);
+}
+.input-group textarea::placeholder{color:var(--text-secondary);}
+.input-group .char-count{text-align:right;font-size:11px;color:var(--text-secondary);margin-top:4px;}
+
+/* Buttons */
+.btn{
+  display:block;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:var(--radius);
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+  letter-spacing:0.03em;
+}
+.btn-primary{
+  background:var(--accent);
+  color:var(--bg);
+}
+.btn-primary:hover:not(:disabled){opacity:0.9;}
+.btn-primary:disabled{
+  background:#222;
+  color:#555;
+  cursor:not-allowed;
+}
+.btn-primary:active:not(:disabled){transform:scale(0.98);}
+.btn-ghost{
+  background:transparent;
+  color:var(--text-secondary);
+  border:1px solid var(--border);
+}
+
+/* Result */
+.result-area{margin-top:28px}
+.result-area .card{
+  background:var(--surface);
+  border-radius:var(--radius);
+  overflow:hidden;
+  border:1px solid var(--border);
+}
+.result-area img{
+  width:100%;
+  display:block;
+}
+.result-area .card-body{
+  padding:16px 20px;
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+.result-area .btn-sm{
+  flex:1;
+  min-width:100px;
+  padding:10px 16px;
+  border-radius:8px;
+  font-size:13px;
+  font-weight:500;
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  cursor:pointer;
+  text-align:center;
+  text-decoration:none;
+  transition:all 0.15s;
+}
+.result-area .btn-sm:hover{background:#222;}
+
+/* Loading */
+.loading{
+  text-align:center;
+  padding:40px 20px;
+  color:var(--text-secondary);
+}
+.spinner{
+  width:36px;height:36px;
+  border:3px solid #222;
+  border-top-color:var(--accent);
+  border-radius:50%;
+  animation:spin 0.8s linear infinite;
+  margin:0 auto 16px;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.progress-text{font-size:14px;margin-top:8px;}
+
+/* Paywall */
+.paywall{
+  text-align:center;
+  padding:36px 24px;
+  margin-top:24px;
+  background:var(--surface);
+  border-radius:var(--radius);
+  border:1px solid var(--border);
+}
+.paywall .icon{font-size:40px;margin-bottom:12px}
+.paywall h2{font-size:18px;margin-bottom:8px}
+.paywall .price{font-size:32px;font-weight:700;color:var(--accent);margin:16px 0}
+.paywall .desc{font-size:13px;color:var(--text-secondary);line-height:1.8;margin-bottom:20px}
+.paywall img.qr{max-width:220px;border-radius:var(--radius);margin:12px 0;opacity:0.9}
+.paywall .activate-link{font-size:13px;color:var(--text-secondary);margin-top:16px;cursor:pointer;text-decoration:underline}
+.activate-form{margin-top:12px;display:none}
+.activate-form input{
+  width:100%;padding:12px;border-radius:8px;
+  background:#1a1a1a;border:1px solid #333;
+  color:var(--text);font-size:14px;text-align:center;letter-spacing:2px;
+}
+.activate-form .btn{margin-top:8px}
+.activate-form .msg{font-size:12px;margin-top:6px;color:var(--danger)}
+.activate-form .msg.ok{color:#4caf50}
+
+/* Info bar */
+.info-bar{
+  text-align:center;
+  font-size:12px;
+  color:var(--text-secondary);
+  margin-top:8px;
+  min-height:20px;
+}
+
+/* Mobile */
+@media(max-width:600px){
+  .style-cards{grid-template-columns:1fr}
+  .container{padding:24px 16px 60px}
+  header{padding:32px 0 28px}
+  .style-card{padding:16px 12px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <a href="../" style="display:inline-block;color:var(--text-secondary);text-decoration:none;font-size:14px;letter-spacing:0.04em;margin-bottom:16px;">← 查看系列作品</a>
+  <header>
+    <h1>小说影像化</h1>
+    <p class="subtitle">文学文本 → Grok Imagine · 三个视觉方向</p>
+    <span class="badge badge-free" id="tierBadge">免费 1 次</span>
+  </header>
+
+  <!-- Style Selection -->
+  <div class="style-cards" id="styleCards">
+    <div class="style-card selected" data-style="literary">
+      <div class="icon">🎬</div>
+      <div class="name">文学 → AI影像</div>
+      <div class="hint">电影感调色 · 自然光 · 35mm胶片</div>
+    </div>
+    <div class="style-card" data-style="ruin">
+      <div class="icon">🏚️</div>
+      <div class="name">失败美学</div>
+      <div class="hint">废弃空间 · 寂静物体 · 中画幅</div>
+    </div>
+    <div class="style-card" data-style="portrait">
+      <div class="icon">👤</div>
+      <div class="name">人物灵魂</div>
+      <div class="hint">环境肖像 · 窗光 · 纪实风格</div>
+    </div>
+  </div>
+
+  <!-- Text Input -->
+  <div class="input-group">
+    <textarea id="promptInput"
+      placeholder="描述你想要的画面…&#10;&#10;例如：黄昏的旧图书馆，灰尘在光柱中缓慢飘落，书本散落一地"
+      maxlength="500"></textarea>
+    <div class="char-count"><span id="charCount">0</span>/500</div>
+  </div>
+
+  <!-- Generate Button -->
+  <button class="btn btn-primary" id="generateBtn" disabled>生成影像</button>
+  <div class="info-bar" id="infoBar"></div>
+
+  <!-- Result Area -->
+  <div id="resultArea"></div>
+</div>
+
+<script>
+// ── Config ──────────────────────────────────────────────
+const API_BASE = 'https://lit-visual-api.onrender.com';
+
+// ── State ───────────────────────────────────────────────
+const TRIAL_LIMIT = 1;
+let selectedStyle = 'literary';
+let licenseKey = '';
+let quota = TRIAL_LIMIT;
+let currentImageUrl = '';
+
+const $ = (s) => document.querySelector(s);
+
+// ── License / Trial ─────────────────────────────────────
+function loadLicense() {
+  licenseKey = localStorage.getItem('lv_license') || '';
+  const used = parseInt(localStorage.getItem('lv_trial_used') || '0');
+  quota = Math.max(0, TRIAL_LIMIT - used);
+  if (licenseKey) {
+    $('#tierBadge').textContent = 'PRO · 无限使用';
+    $('#tierBadge').className = 'badge badge-pro';
+    $('#infoBar').textContent = '';
+  } else if (quota > 0) {
+    $('#tierBadge').textContent = `免费 ${quota} 次`;
+    $('#tierBadge').className = 'badge badge-free';
+    $('#infoBar').textContent = '首次免费，之后 ¥9.9 永久';
+  } else {
+    $('#tierBadge').textContent = '免费已用完';
+    $('#tierBadge').className = 'badge badge-free';
+    $('#infoBar').textContent = '¥9.9 永久使用';
+  }
+}
+
+function useQuota() {
+  if (!licenseKey) {
+    const used = parseInt(localStorage.getItem('lv_trial_used') || '0');
+    localStorage.setItem('lv_trial_used', String(used + 1));
+    quota = Math.max(0, TRIAL_LIMIT - used - 1);
+    loadLicense();
+  }
+}
+
+// ── Style Selection ─────────────────────────────────────
+$('#styleCards').addEventListener('click', (e) => {
+  const card = e.target.closest('.style-card');
+  if (!card) return;
+  document.querySelectorAll('.style-card').forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  selectedStyle = card.dataset.style;
+});
+
+// ── Character Count ─────────────────────────────────────
+const promptInput = $('#promptInput');
+promptInput.addEventListener('input', () => {
+  const len = promptInput.value.length;
+  $('#charCount').textContent = len;
+  $('#generateBtn').disabled = len === 0;
+});
+$('#generateBtn').disabled = promptInput.value.length === 0;
+
+// ── Generate ────────────────────────────────────────────
+$('#generateBtn').addEventListener('click', async () => {
+  const prompt = promptInput.value.trim();
+  if (!prompt) return;
+
+  // Check quota/license
+  if (!licenseKey && quota <= 0) {
+    showPaywall();
+    return;
+  }
+
+  const btn = $('#generateBtn');
+  btn.disabled = true;
+  btn.textContent = '正在生成...';
+  $('#resultArea').innerHTML = '<div class="loading"><div class="spinner"></div><div>AI 正在构思画面...</div><div class="progress-text" style="margin-top:8px">可能需要 30-60 秒</div></div>';
+
+  try {
+    const headers = { 'Content-Type': 'application/json' };
+    const body = { prompt, style: selectedStyle };
+    if (licenseKey) body.token = licenseKey;
+
+    const resp = await fetch(API_BASE + '/api/generate-image', {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    });
+    const data = await resp.json();
+
+    if (data.error === 'payment_required') {
+      showPaywall();
+    } else if (data.success && data.image_url) {
+      useQuota();
+      currentImageUrl = data.image_url;
+      showResult(data.image_url);
+    } else {
+      $('#resultArea').innerHTML = `<div class="card" style="padding:24px;text-align:center;color:var(--danger)">${escHtml(data.error || '生成失败，请重试')}</div>`;
+    }
+  } catch (err) {
+    $('#resultArea').innerHTML = `<div class="card" style="padding:24px;text-align:center;color:var(--danger)">网络错误：${escHtml(err.message)}</div>`;
+  }
+
+  btn.disabled = false;
+  btn.textContent = '生成影像';
+});
+
+// ── Result ──────────────────────────────────────────────
+function showResult(url) {
+  $('#resultArea').innerHTML = `
+    <div class="card">
+      <img src="${escHtml(url)}" alt="Generated" loading="lazy">
+      <div class="card-body">
+        <button class="btn-sm" id="btn-download">下载图片</button>
+        <button class="btn-sm" id="btn-open">新窗口打开</button>
+      </div>
+    </div>`;
+  document.getElementById('btn-download').addEventListener('click', downloadImage);
+  document.getElementById('btn-open').addEventListener('click', function() { window.open(url); });
+}
+
+function downloadImage() {
+  if (!currentImageUrl) return;
+  const a = document.createElement('a');
+  a.href = currentImageUrl;
+  a.download = 'lit-visual-' + Date.now() + '.jpg';
+  a.target = '_blank';
+  a.click();
+}
+
+// ── Paywall ─────────────────────────────────────────────
+function showPaywall() {
+  $('#resultArea').innerHTML = `
+    <div class="paywall">
+      <div class="icon">🖼️</div>
+      <h2>免费次数已用完</h2>
+      <p class="desc">AI 生图有 API 成本，每次生成都需付费。<br>一次购买，永久使用，不限次数。</p>
+      <div class="price">¥9.9 永久</div>
+      <img src="wx-qr.jpg" class="qr" alt="微信收款码">
+      <p class="desc">微信扫码支付后<br>添加微信 smwswk 发送付款截图领取激活码</p>
+      <div class="activate-link" onclick="toggleActivate()">已有激活码？点此输入</div>
+      <div class="activate-form" id="activateForm">
+        <input type="text" id="activateInput" placeholder="XXXX-XXXX-XXXX" maxlength="14">
+        <button class="btn btn-primary" onclick="doActivate()">激活</button>
+        <div class="msg" id="activateMsg"></div>
+      </div>
+    </div>`;
+}
+
+function toggleActivate() {
+  const form = $('#activateForm');
+  form.style.display = form.style.display === 'block' ? 'none' : 'block';
+  if (form.style.display === 'block') $('#activateInput')?.focus();
+}
+
+async function doActivate() {
+  const input = $('#activateInput');
+  const msg = $('#activateMsg');
+  if (!input.value.trim()) { msg.textContent = '请输入激活码'; msg.className = 'msg'; return; }
+  msg.textContent = '验证中...'; msg.className = 'msg';
+  try {
+    const resp = await fetch(API_BASE + '/api/activate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: input.value.trim() }),
+    });
+    const data = await resp.json();
+    if (data.valid) {
+      licenseKey = data.token;
+      localStorage.setItem('lv_license', licenseKey);
+      msg.textContent = '激活成功！'; msg.className = 'msg ok';
+      setTimeout(() => {
+        $('#resultArea').innerHTML = '';
+        loadLicense();
+      }, 800);
+    } else {
+      msg.textContent = data.error || '激活码无效';
+      msg.className = 'msg';
+    }
+  } catch (e) {
+    msg.textContent = '网络错误，请重试';
+    msg.className = 'msg';
+  }
+}
+
+function escHtml(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+
+// ── Init ────────────────────────────────────────────────
+loadLicense();
+</script>
+</body>
+</html>

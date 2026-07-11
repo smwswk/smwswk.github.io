@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>职场生存指南</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="game-container">
+  <button id="audio-toggle" onclick="toggleAudio()">🔊 音效</button>
+
+  <!-- 开始画面 -->
+  <div id="start-screen">
+    <div class="start-logo">💼</div>
+    <div class="start-title">职场生存指南</div>
+    <div class="start-sub">读懂空气 · 避开飞锅</div>
+    <button class="start-btn" id="start-normal-btn" onclick="startStory()">开始</button>
+    <button class="start-btn" id="start-ngp-btn" style="margin-top:10px;background:linear-gradient(135deg,#e94560,#ff6b6b);display:none" onclick="startNewGamePlus()">🔥 真实职场</button>
+    <button class="start-btn" id="continue-btn" style="margin-top:10px;background:#2a2a4e;display:none" onclick="continueGame()">继续游戏</button>
+    <div id="start-hint" style="margin-top:14px;font-size:11px;color:#666;display:none"></div>
+  </div>
+
+  <!-- 故事线 -->
+  <div id="story-screen" class="hidden">
+    <div id="story-bg"></div>
+    <div id="story-city"></div>
+    <div id="story-player">🚶</div>
+    <div id="story-dialogue">
+      <div class="story-text" id="story-text"></div>
+      <div class="story-skip" onclick="skipStory()">跳过 →</div>
+    </div>
+  </div>
+
+  <!-- 试玩教程 -->
+  <div id="tutorial-screen" class="hidden">
+    <div id="tutorial-header">
+      <div id="tutorial-header-title">王产品</div>
+      <div id="tutorial-header-sub">试玩教程 · 学会基础操作</div>
+    </div>
+    <div id="tutorial-chat"></div>
+    <div id="tutorial-footer"></div>
+  </div>
+
+  <!-- 职业选择 -->
+  <div id="career-screen" class="hidden">
+    <div class="career-title">选择身份</div>
+    <div class="career-sub">不同职业，不同生存之道</div>
+    <div class="career-grid"></div>
+    <button class="career-confirm" id="career-confirm" disabled onclick="startGame()">确认</button>
+  </div>
+
+  <!-- 微信游戏主画面 -->
+  <div id="game-screen" class="hidden">
+    <div id="wx-header">
+      <span id="wx-header-back">‹</span>
+      <span id="wx-header-title">王产品</span>
+      <span id="wx-header-more">⋯</span>
+    </div>
+
+    <div id="wx-stats">
+      <div class="wx-stat"><div class="wx-stat-label">绩效</div><div class="wx-stat-value" id="st-perf" style="color:#07c160">50</div></div>
+      <div class="wx-stat"><div class="wx-stat-label">背锅</div><div class="wx-stat-value" id="st-blame" style="color:#999">0</div></div>
+      <div class="wx-stat"><div class="wx-stat-label">心情</div><div class="wx-stat-value" id="st-mood" style="color:#07c160">80</div></div>
+      <div class="wx-stat"><div class="wx-stat-label">人脉</div><div class="wx-stat-value" id="st-net" style="color:#999">50</div></div>
+    </div>
+
+    <div id="skill-panel"></div>
+    <div id="wx-chat"></div>
+    <div id="duel-arena">
+      <div class="duel-side opponent">
+        <div class="fighter-name-tag" id="duel-opponent-name">对手</div>
+        <div class="duel-meter"><div class="duel-meter-fill" id="opponent-stance-fill"></div></div>
+        <div class="duel-label"><span>气势</span><span class="duel-hp-num" id="opponent-stance-num">12</span></div>
+      </div>
+      <div class="duel-center">
+        <div id="duel-impact-layer"></div>
+        <div class="duel-vs" id="duel-vs-badge">交锋</div>
+      </div>
+      <div class="duel-side player">
+        <div class="fighter-name-tag">你 <small id="player-round-tag"></small></div>
+        <div class="duel-meter"><div class="duel-meter-fill" id="player-focus-fill"></div></div>
+        <div class="duel-label"><span>专注</span><span class="duel-hp-num" id="player-focus-num">0</span></div>
+      </div>
+    </div>
+
+    <div id="wx-footer">
+      <div id="wx-timer-area">
+        <span id="wx-timer-text">🔎 推理阶段</span>
+        <div id="wx-timer-bar-wrap"><div id="wx-timer-bar"></div></div>
+        <span id="wx-timer-num" class="timer-ok">∞</span>
+      </div>
+      <div id="wx-action-tools">
+        <button class="wx-tool-btn" data-tool="evidence" onclick="useTool('evidence')">📁 证据袋</button>
+        <button class="wx-tool-btn" data-tool="stall" onclick="useTool('stall')">❓ 追问</button>
+        <button class="wx-tool-btn" data-tool="meme" onclick="useTool('meme')">🧩 整理</button>
+      </div>
+      <button id="wx-decode-btn" onclick="decodeAir()">🔮 潜台词解码 (-10心情)</button>
+      <div id="wx-options"></div>
+      <button id="wx-next-btn" class="hidden" onclick="nextLevel()">继续 →</button>
+    </div>
+  </div>
+
+  <!-- Boss战 -->
+  <div id="boss-screen" class="hidden">
+    <div id="boss-header">
+      <div id="boss-header-title">⚠️ BOSS战：年度述职</div>
+      <div id="boss-header-sub"> survive 5 rounds</div>
+      <div id="boss-hp-bar"><div id="boss-hp-bar-inner"></div></div>
+    </div>
+    <div class="boss-round-indicator" id="boss-round">第 1 / 5 轮</div>
+    <div id="boss-chat"></div>
+    <div id="boss-footer">
+      <div id="boss-timer-area" style="display:flex;align-items:center;gap:8px;padding:4px 0 8px">
+        <span style="font-size:11px;color:#999">⏱️ 思考时间</span>
+        <div style="flex:1;height:5px;background:#e5e5e5;border-radius:3px;overflow:hidden"><div id="boss-timer-bar" style="height:100%;background:#07c160;border-radius:3px;width:100%;transition:width 0.1s linear"></div></div>
+        <span id="boss-timer-num" style="font-size:15px;font-weight:700;font-family:monospace;color:#07c160">15</span>
+      </div>
+      <div id="boss-options"></div>
+    </div>
+  </div>
+
+  <!-- 遗物选择 -->
+  <div id="relic-screen" class="hidden">
+    <div class="relic-title">职场遗物</div>
+    <div class="relic-sub">选择一件遗物带入下一局</div>
+    <div class="relic-grid" id="relic-grid"></div>
+    <button class="relic-confirm" id="relic-confirm" disabled onclick="confirmRelic()">携带入局</button>
+  </div>
+
+  <!-- 结束画面 -->
+  <div id="end-screen" class="hidden">
+    <div class="end-emoji" id="end-emoji">📊</div>
+    <div class="end-title" id="end-title">年度结算</div>
+    <div class="end-subtitle" id="end-subtitle"></div>
+    <div class="end-stats" id="end-stats"></div>
+    <div class="end-desc" id="end-desc"></div>
+    <div style="display:flex;flex-direction:column;gap:10px;width:100%;max-width:300px;align-items:center">
+      <button class="restart-btn" onclick="clearSave();location.reload()">再来一局</button>
+      <button class="restart-btn" style="background:#2a2a4e" onclick="clearSave();showCareer()">换职业挑战</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>

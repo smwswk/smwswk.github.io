@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="失败美学 · 凝视被遗弃的空间、没有人的城市、沉默的物体，在阈限空间中看见美">
+<title>失败美学 · Lit-Visual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 5% 80px; }
+.back-link { display: inline-block; color: #b8773d; text-decoration: none; font-size: 14px; letter-spacing: 2px; margin-bottom: 32px; transition: color 0.2s; }
+.back-link:hover { color: #9e6330; }
+header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #d4a574; }
+header h1 { font-size: 38px; letter-spacing: 5px; font-weight: 500; margin-bottom: 8px; }
+header .subtitle { color: #b8773d; font-size: 15px; letter-spacing: 3px; font-weight: 400; }
+
+.inspiration {
+  max-width: 800px; margin: 0 auto 48px;
+  background: white; border-radius: 14px; padding: 32px 36px;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2);
+}
+.inspiration h2 { font-size: 20px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 500; }
+.inspiration-section { margin-bottom: 22px; }
+.inspiration-section:last-child { margin-bottom: 0; }
+.inspiration-section .label { font-size: 11px; color: #b8773d; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+.inspiration-section .content { font-size: 14px; color: #5a4636; line-height: 1.8; }
+.inspiration-section .content em { color: #b8773d; font-style: normal; }
+
+.prompt-section { max-width: 800px; margin: 0 auto 48px; }
+.prompt-toggle { display: inline-block; font-size: 13px; color: #886f5c; letter-spacing: 2px; cursor: pointer; padding: 10px 20px; background: #f7f2ea; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); transition: all 0.2s; }
+.prompt-toggle:hover { background: #ede3d5; }
+.prompt-body { display: none; margin-top: 16px; background: white; border-radius: 14px; padding: 24px 28px; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2); }
+.prompt-body.visible { display: block; }
+.prompt-item { margin-bottom: 20px; }
+.prompt-item:last-child { margin-bottom: 0; }
+.prompt-item .p-name { font-size: 13px; font-weight: 600; color: #2c1810; letter-spacing: 2px; margin-bottom: 8px; }
+.prompt-item .p-text { font-size: 12px; color: #5a4636; line-height: 1.8; font-style: italic; background: #faf7f2; padding: 14px 18px; border-radius: 8px; border-left: 3px solid #d4a574; }
+
+.section-title {
+  max-width: 800px; margin: 52px auto 28px; text-align: center;
+  font-size: 18px; color: #2c1810; letter-spacing: 3px; font-weight: 500;
+  padding-top: 20px; border-top: 1px solid #e5d6c2;
+}
+.section-title:first-of-type { margin-top: 0; border-top: none; padding-top: 0; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: white; border-radius: 14px; overflow: hidden;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.08); border: 1px solid rgba(212, 165, 116, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(76, 48, 24, 0.16); }
+.card img { width: 100%; height: 320px; object-fit: cover; display: block; }
+.card-body { padding: 14px 18px; }
+.card-title { font-size: 14px; font-weight: 600; color: #2c1810; letter-spacing: 1px; }
+.card-desc { font-size: 12px; color: #886f5c; margin-top: 4px; letter-spacing: 1px; }
+
+footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5d6c2; color: #886f5c; font-size: 12px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../" class="back-link">← 返回作品主页</a>
+
+<header>
+  <h1>失败美学</h1>
+  <div class="subtitle">Failure Aesthetics</div>
+</header>
+
+<div class="inspiration">
+  <h2>灵感来源</h2>
+  <div class="inspiration-section">
+    <div class="label">视觉传统</div>
+    <div class="content">Gregory Crewdson 的阈限空间（Liminal Space）——在日常与陌生之间的缝隙中制造不安；Tarkovsky / Bela Tarr 的慢电影时间——长镜头凝视让观众感受到时间的重量；Todd Hido 的夜摄美学——孤立光源在黑暗中制造孤独。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">创作理念</div>
+    <div class="content">不做叙事，只做物的凝视。三个子系列：<em>被遗弃的空间</em>——剧院、教堂、工厂、图书馆等曾经承载人类活动的建筑在废弃后的寂静；<em>没有人的城市</em>——空地铁、空机场、空高速公路，城市基础设施减去人等于什么；<em>沉默的物体</em>——生锈玩具、停摆时钟、褪色照片、丢弃行李箱，物在被遗弃后才开始说话。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">技术路线</div>
+    <div class="content">gpt-image-2 · 35mm/16mm胶片质感 · 低饱和 · 自然光与荧光灯混合 · 广角镜头</div>
+  </div>
+</div>
+
+<div class="prompt-section">
+  <span class="prompt-toggle" onclick="document.getElementById('prompts').classList.toggle('visible'); this.textContent = document.getElementById('prompts').classList.contains('visible') ? '收起 Prompt ▲' : '查看代表性 Prompt ▼'">查看代表性 Prompt ▼</span>
+  <div class="prompt-body" id="prompts">
+    <div class="prompt-item">
+      <div class="p-name">abandoned_theater · 废弃剧院</div>
+      <div class="p-text">An empty theater with red velvet seats covered in dust, a single spotlight illuminating the stage where nothing is happening, heavy curtains slightly parted, abandoned grandeur, desaturated warm tones, long stillness, Gregory Crewdson aesthetic, 35mm film</div>
+    </div>
+    <div class="prompt-item">
+      <div class="p-name">empty_subway_train · 空地铁</div>
+      <div class="p-text">An empty subway train car at night, fluorescent lights humming, seats empty, advertisements still lit, the train moving through dark tunnels with no passengers, reflections in the windows showing empty seats, urban solitude, cool artificial light, symmetrical composition</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-title">被遗弃的空间</div>
+<div class="grid" id="gridAbandoned"></div>
+
+<div class="section-title">没有人的城市</div>
+<div class="grid" id="gridEmpty"></div>
+
+<div class="section-title">沉默的物体</div>
+<div class="grid" id="gridSilent"></div>
+
+<footer><p>所有图片由 AI 生成 · 灵感来源为阈限空间与慢电影传统</p></footer>
+
+</div>
+
+<script>
+const prefix = "images/";
+const abandoned = [
+  {f:"abandoned_pool_162218.webp", t:"废弃泳池", d:"被遗弃的空间"},
+  {f:"abandoned_theater_162314.webp", t:"废弃剧院", d:"被遗弃的空间"},
+  {f:"abandoned_hospital_162402.webp", t:"废弃医院", d:"被遗弃的空间"},
+  {f:"abandoned_church_162436.webp", t:"废弃教堂", d:"被遗弃的空间"},
+  {f:"abandoned_factory_162520.webp", t:"废弃工厂", d:"被遗弃的空间"},
+  {f:"abandoned_amusement_park_162603.webp", t:"废弃游乐园", d:"被遗弃的空间"},
+  {f:"abandoned_library_162647.webp", t:"废弃图书馆", d:"被遗弃的空间"},
+  {f:"abandoned_greenhouse_162726.webp", t:"废弃温室", d:"被遗弃的空间"},
+  {f:"abandoned_train_station_162814.webp", t:"废弃火车站", d:"被遗弃的空间"},
+  {f:"abandoned_ballroom_162859.webp", t:"废弃舞厅", d:"被遗弃的空间"},
+  {f:"abandoned_observatory_162938.webp", t:"废弃天文台", d:"被遗弃的空间"},
+];
+const empty = [
+  {f:"empty_subway_train_163029.webp", t:"空地铁车厢", d:"没有人的城市"},
+  {f:"empty_highway_dawn_163112.webp", t:"空高速公路", d:"没有人的城市"},
+  {f:"empty_airport_gate_163145.webp", t:"空机场登机口", d:"没有人的城市"},
+  {f:"empty_stadium_163227.webp", t:"空体育场", d:"没有人的城市"},
+  {f:"empty_parking_garage_163312.webp", t:"空停车场", d:"没有人的城市"},
+];
+const silent = [
+  {f:"city_veins_155951.webp", t:"城市脉络", d:"沉默的物体"},
+  {f:"empty_escalator_155907.webp", t:"空扶手梯", d:"沉默的物体"},
+  {f:"mirror_wasteland_160142.webp", t:"镜中废墟", d:"沉默的物体"},
+  {f:"piano_forest_160104.webp", t:"钢琴森林", d:"沉默的物体"},
+  {f:"vending_machine_beach_160029.webp", t:"沙滩贩卖机", d:"沉默的物体"},
+];
+function render(data, id) {
+  document.getElementById(id).innerHTML = data.map(n =>
+    `<div class="card"><img src="${prefix}${n.f}" alt="${n.t}" loading="lazy"><div class="card-body"><div class="card-title">${n.t}</div><div class="card-desc">${n.d}</div></div></div>`
+  ).join('');
+}
+render(abandoned, 'gridAbandoned');
+render(empty, 'gridEmpty');
+render(silent, 'gridSilent');
+</script>
+</body>
+</html>

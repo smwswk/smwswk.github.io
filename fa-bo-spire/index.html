@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>课间发波 Prototype</title>
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="topbar" aria-label="跑团状态">
+        <div>
+          <p class="eyebrow">课间发波 / Prototype 0.4</p>
+          <h1>攒、挡、波的回合制爬塔</h1>
+        </div>
+        <div class="pack-chip" id="pack-chip"></div>
+      </section>
+
+      <section class="coach" id="coach" aria-label="玩法引导">
+        <div>
+          <span id="coach-step">第 1 步</span>
+          <h2 id="coach-title">先选一套童年规则</h2>
+          <p id="coach-body">新手建议北京基础流：攒气、防御、发波的关系最清楚。</p>
+        </div>
+        <div class="rule-triangle" aria-label="基础克制关系">
+          <span>波打攒</span>
+          <span>挡防波</span>
+          <span>攒骗挡</span>
+        </div>
+      </section>
+
+      <section class="start-panel" id="start-panel" aria-label="开局规则包">
+        <div>
+          <h2>选择开局规则包</h2>
+          <p>规则包决定初始牌组、初始遗物、血量和战后奖励池。</p>
+        </div>
+        <div class="pack-grid" id="pack-grid"></div>
+      </section>
+
+      <section class="map-panel hidden" id="map-panel" aria-label="爬塔地图">
+        <div class="map-head">
+          <div>
+            <h2>课间路线</h2>
+            <p id="map-copy">选择一个可达节点继续。</p>
+          </div>
+          <button id="new-run" type="button">重开</button>
+        </div>
+        <div class="map" id="map"></div>
+      </section>
+
+      <section class="arena hidden" id="arena" aria-label="战斗区域">
+        <img class="arena-art" src="./assets/classroom.svg" alt="课间教室里的对波场景" />
+        <div class="effect-layer" id="effect-layer" aria-hidden="true"></div>
+        <div class="fighter player">
+          <span>你</span>
+          <strong id="player-hp">72/72</strong>
+          <div class="meter"><i id="player-hp-bar"></i></div>
+          <small id="player-qi">气 0</small>
+          <small id="player-block">挡 0</small>
+        </div>
+        <div class="fighter enemy">
+          <span id="enemy-name">同桌试探者</span>
+          <strong id="enemy-hp">42/42</strong>
+          <div class="meter"><i id="enemy-hp-bar"></i></div>
+          <small id="enemy-qi">气 0</small>
+          <small id="enemy-block">挡 0</small>
+        </div>
+        <div class="intent-panel">
+          <span>姿态</span>
+          <strong id="enemy-stance">手心向上</strong>
+          <p id="enemy-hint">大概率攒气，小概率突然小波</p>
+          <p id="enemy-revealed"></p>
+        </div>
+      </section>
+
+      <section class="controls hidden" id="controls" aria-label="战斗控制">
+        <div class="combat-guide">
+          <article>
+            <h2>本回合目标</h2>
+            <p id="turn-goal">先看姿态，再选择卡牌。</p>
+          </article>
+          <article>
+            <h2>出招预览</h2>
+            <p id="selection-preview">点选 1 张或多张牌，会在这里看到预计气、挡、波。</p>
+          </article>
+        </div>
+        <div class="toolbar">
+          <div>
+            <span id="draw-info">抽牌堆 0 / 弃牌堆 0</span>
+            <span id="selected-info">已选 0 张</span>
+            <span id="energy-info">能量 3/3</span>
+          </div>
+          <div class="turn-actions">
+            <button id="recommend-turn" type="button">推荐出招</button>
+            <button id="end-turn" type="button">结束回合</button>
+          </div>
+        </div>
+        <div class="hand" id="hand"></div>
+      </section>
+
+      <section class="lower hidden" id="lower">
+        <article class="panel">
+          <h2>遗物</h2>
+          <div class="relics" id="relics"></div>
+        </article>
+        <article class="panel">
+          <h2>战斗日志</h2>
+          <ol class="log" id="log"></ol>
+        </article>
+      </section>
+
+      <dialog id="reward-dialog">
+        <form method="dialog">
+          <h2 id="reward-title">课间胜利</h2>
+          <p id="reward-copy">选一张牌加入牌组。</p>
+          <div class="reward-grid" id="reward-grid"></div>
+          <button id="skip-reward" value="skip" type="submit">跳过</button>
+        </form>
+      </dialog>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>

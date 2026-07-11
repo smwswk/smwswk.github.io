@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.DS_Store
+out/
+google_tiles_*/
+google_mosaics/
+*_contact_sheet.jpg
+*_candidates.json
+*.kml
+*.csv
+*.log
+.env

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>PIXEL MAZE</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #0b0b12;
+    font-family: 'Courier New', monospace;
+    overflow: hidden;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .title {
+    color: #33ff66;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px rgba(51,255,102,0.4);
+  }
+  .hud {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 10px;
+  }
+  .hud-item {
+    color: #33ff66;
+    font-size: 13px;
+    letter-spacing: 2px;
+  }
+  .hud-item span { color: #ffd700; }
+  canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    border: 3px solid #33ff66;
+    box-shadow: 0 0 20px rgba(51,255,102,0.15), inset 0 0 20px rgba(51,255,102,0.05);
+  }
+  .controls {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  button {
+    background: #0b0b12;
+    color: #33ff66;
+    border: 2px solid #33ff66;
+    padding: 8px 18px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: all 0.1s;
+  }
+  button:hover { background: #33ff66; color: #0b0b12; }
+  button:active { transform: scale(0.95); }
+  .hint {
+    color: #444;
+    font-size: 11px;
+    margin-top: 12px;
+    letter-spacing: 1px;
+  }
+  .dpad {
+    display: none;
+    margin-top: 12px;
+    position: relative;
+    width: 140px;
+    height: 140px;
+  }
+  .dpad button {
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    font-size: 18px;
+    line-height: 44px;
+    text-align: center;
+    border: 2px solid #33ff66;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .dpad .up    { top: 0; left: 48px; }
+  .dpad .down  { bottom: 0; left: 48px; }
+  .dpad .left  { top: 48px; left: 0; }
+  .dpad .right { top: 48px; right: 0; }
+  .dpad .center { top: 48px; left: 48px; background: rgba(51,255,102,0.1); }
+  @media (max-width: 600px) {
+    .dpad { display: block; }
+    .hint { display: none; }
+    .title { font-size: 18px; letter-spacing: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="title">PIXEL MAZE</div>
+
+<div class="hud">
+  <div class="hud-item">STEPS <span id="stepCount">0</span></div>
+  <div class="hud-item">BEST <span id="bestScore">--</span></div>
+</div>
+
+<canvas id="maze"></canvas>
+
+<div class="controls">
+  <button onclick="newGame()">NEW MAZE</button>
+</div>
+
+<div class="hint">ARROW KEYS / WASD TO MOVE</div>
+
+<div class="dpad" id="dpad">
+  <button class="up"    ontouchstart="movePlayer(0,-1,event)" onmousedown="movePlayer(0,-1,event)">▲</button>
+  <button class="down"  ontouchstart="movePlayer(0,1,event)"  onmousedown="movePlayer(0,1,event)">▼</button>
+  <button class="left"  ontouchstart="movePlayer(-1,0,event)" onmousedown="movePlayer(-1,0,event)">◀</button>
+  <button class="right" ontouchstart="movePlayer(1,0,event)"  onmousedown="movePlayer(1,0,event)">▶</button>
+  <button class="center"></button>
+</div>
+
+<script>
+// ── Constants ──────────────────────────────────
+const COLS = 17;
+const ROWS = 17;
+const TILE = 16;
+const SCALE = 3;
+
+const COLORS = {
+  bg:      '#0b0b12',
+  wall:    '#33ff66',
+  wallDim: '#228844',
+  player:  '#ffffff',
+  eye:     '#0b0b12',
+  goal:    '#ffd700',
+  goalGlow:'rgba(255,215,0,',
+  text:    '#33ff66',
+  gold:    '#ffd700',
+  winBg:   'rgba(11,11,18,',
+};
+
+// ── Canvas setup ───────────────────────────────
+const canvas = document.getElementById('maze');
+canvas.width  = COLS * TILE;
+canvas.height = ROWS * TILE;
+canvas.style.width  = (COLS * TILE * SCALE) + 'px';
+canvas.style.height = (ROWS * TILE * SCALE) + 'px';
+const ctx = canvas.getContext('2d');
+ctx.imageSmoothingEnabled = false;
+
+// ── Game state ─────────────────────────────────
+let grid, px, py, gx, gy, steps, won, bestScore;
+
+// ── Maze generation: recursive backtracking ────
+function generateMaze() {
+  grid = Array.from({ length: ROWS }, () =>
+    Array.from({ length: COLS }, () => ({
+      top: true, right: true, bottom: true, left: true, visited: false
+    }))
+  );
+
+  const stack = [[0, 0]];
+  grid[0][0].visited = true;
+
+  while (stack.length) {
+    const [r, c] = stack[stack.length - 1];
+    const neighbors = [];
+
+    if (r > 0 && !grid[r-1][c].visited)      neighbors.push([r-1, c, 'top',    'bottom']);
+    if (r < ROWS-1 && !grid[r+1][c].visited)  neighbors.push([r+1, c, 'bottom', 'top']);
+    if (c > 0 && !grid[r][c-1].visited)       neighbors.push([r, c-1, 'left',   'right']);
+    if (c < COLS-1 && !grid[r][c+1].visited)  neighbors.push([r, c+1, 'right',  'left']);
+
+    if (!neighbors.length) {
+      stack.pop();
+    } else {
+      const [nr, nc, w1, w2] = neighbors[Math.floor(Math.random() * neighbors.length)];
+      grid[r][c][w1] = false;
+      grid[nr][nc][w2] = false;
+      grid[nr][nc].visited = true;
+      stack.push([nr, nc]);
+    }
+  }
+}
+
+// ── Drawing ────────────────────────────────────
+function draw() {
+  const W = COLS * TILE;
+  const H = ROWS * TILE;
+
+  // Background
+  ctx.fillStyle = COLORS.bg;
+  ctx.fillRect(0, 0, W, H);
+
+  // Scanlines
+  ctx.fillStyle = 'rgba(255,255,255,0.015)';
+  for (let y = 0; y < H; y += 4) {
+    ctx.fillRect(0, y, W, 2);
+  }
+
+  // Walls
+  ctx.strokeStyle = COLORS.wall;
+  ctx.lineWidth = 2;
+  ctx.lineCap = 'square';
+
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const x = c * TILE;
+      const y = r * TILE;
+      const cell = grid[r][c];
+
+      if (cell.top)    { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x+TILE, y); ctx.stroke(); }
+      if (cell.right)  { ctx.beginPath(); ctx.moveTo(x+TILE, y); ctx.lineTo(x+TILE, y+TILE); ctx.stroke(); }
+      if (cell.bottom) { ctx.beginPath(); ctx.moveTo(x, y+TILE); ctx.lineTo(x+TILE, y+TILE); ctx.stroke(); }
+      if (cell.left)   { ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(x, y+TILE); ctx.stroke(); }
+    }
+  }
+
+  // Wall corner dots (pixel-art junction)
+  ctx.fillStyle = COLORS.wall;
+  for (let r = 0; r <= ROWS; r++) {
+    for (let c = 0; c <= COLS; c++) {
+      const x = c * TILE;
+      const y = r * TILE;
+      // Only draw dot if at least one adjacent wall connects
+      const topWall    = r > 0 && grid[r-1] && grid[r-1][c]   ? grid[r-1][c].bottom : (r === 0);
+      const bottomWall = r < ROWS && grid[r][c]              ? grid[r][c].top     : (r === ROWS);
+      const leftWall   = c > 0 && grid[r] && grid[r][c-1]    ? grid[r][c-1].right : (c === 0);
+      const rightWall  = c < COLS && grid[r] && grid[r][c]   ? grid[r][c].left    : (c === COLS);
+      if (topWall || bottomWall || leftWall || rightWall) {
+        ctx.fillRect(x - 1, y - 1, 3, 3);
+      }
+    }
+  }
+
+  // Goal cell highlight
+  const goalPulse = Math.sin(Date.now() / 400) * 0.25 + 0.75;
+  const gc = COLORS.goalGlow + (0.25 * goalPulse) + ')';
+  ctx.fillStyle = gc;
+  ctx.fillRect(gx * TILE + 1, gy * TILE + 1, TILE - 2, TILE - 2);
+
+  // Goal sprite (key/diamond shape)
+  const gcx = gx * TILE + TILE / 2;
+  const gcy = gy * TILE + TILE / 2;
+  const gs = TILE * 0.35;
+
+  // Glow ring
+  ctx.fillStyle = COLORS.goalGlow + (0.5 * goalPulse) + ')';
+  ctx.fillRect(gcx - gs - 2, gcy - gs - 2, (gs + 2) * 2, (gs + 2) * 2);
+
+  // Diamond shape
+  ctx.fillStyle = COLORS.goal;
+  ctx.fillRect(gcx - gs, gcy - 1, gs * 2, 3);        // middle bar
+  ctx.fillRect(gcx - 1, gcy - gs, 3, gs * 2);         // vertical bar
+  ctx.fillRect(gcx - gs + 2, gcy - gs + 2, gs * 2 - 4, gs * 2 - 4); // inner
+
+  // Player sprite (if not won)
+  if (!won) {
+    const pcx = px * TILE + TILE / 2;
+    const pcy = py * TILE + TILE / 2;
+    const ps = TILE * 0.32;
+
+    // Body
+    ctx.fillStyle = COLORS.player;
+    ctx.fillRect(pcx - ps, pcy - ps + 1, ps * 2, ps * 2 - 1);
+
+    // Eyes
+    ctx.fillStyle = COLORS.eye;
+    const es = 2;
+    ctx.fillRect(pcx - 3, pcy - 3, es, es);
+    ctx.fillRect(pcx + 1, pcy - 3, es, es);
+
+    // Mouth (tiny smile)
+    ctx.fillStyle = COLORS.eye;
+    ctx.fillRect(pcx - 2, pcy + 2, 2, 1);
+    ctx.fillRect(pcx + 1, pcy + 2, 2, 1);
+
+    // Feet
+    ctx.fillStyle = COLORS.player;
+    ctx.fillRect(pcx - ps + 1, pcy + ps - 1, 4, 2);
+    ctx.fillRect(pcx + 1, pcy + ps - 1, 4, 2);
+  }
+
+  // Win overlay
+  if (won) {
+    ctx.fillStyle = COLORS.winBg + '0.88)';
+    ctx.fillRect(0, 0, W, H);
+
+    // Flashy border
+    const flash = Math.sin(Date.now() / 200) * 0.5 + 0.5;
+    ctx.strokeStyle = COLORS.goalGlow + flash + ')';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(12, H/2 - 36, W - 24, 60);
+
+    ctx.fillStyle = COLORS.gold;
+    ctx.font = 'bold 18px monospace';
+    ctx.textAlign = 'center';
+    ctx.fillText('★ ESCAPED ★', W/2, H/2 - 16);
+
+    ctx.fillStyle = COLORS.text;
+    ctx.font = '10px monospace';
+    ctx.fillText('STEPS: ' + steps, W/2, H/2 + 8);
+
+    if (bestScore && steps <= bestScore) {
+      ctx.fillStyle = COLORS.gold;
+      ctx.fillText('NEW BEST!', W/2, H/2 + 24);
+    }
+
+    ctx.textAlign = 'start';
+  }
+
+  // Update HUD
+  document.getElementById('stepCount').textContent = steps;
+  if (bestScore !== null) {
+    document.getElementById('bestScore').textContent = bestScore;
+  }
+}
+
+// ── Movement ────────────────────────────────────
+function movePlayer(dx, dy, e) {
+  if (e) e.preventDefault();
+  if (won) return;
+
+  const nx = px + dx;
+  const ny = py + dy;
+
+  // Bounds check
+  if (nx < 0 || nx >= COLS || ny < 0 || ny >= ROWS) return;
+
+  // Wall check based on direction
+  if (dx === 1  && grid[py][px].right)  return;
+  if (dx === -1 && grid[py][px].left)   return;
+  if (dy === 1  && grid[py][px].bottom) return;
+  if (dy === -1 && grid[py][px].top)    return;
+
+  px = nx;
+  py = ny;
+  steps++;
+
+  // Win check
+  if (px === gx && py === gy) {
+    won = true;
+    if (bestScore === null || steps < bestScore) {
+      bestScore = steps;
+    }
+  }
+}
+
+// ── Keyboard input ─────────────────────────────
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowUp'    || e.key === 'w' || e.key === 'W') movePlayer(0, -1);
+  if (e.key === 'ArrowDown'  || e.key === 's' || e.key === 'S') movePlayer(0, 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'a' || e.key === 'A') movePlayer(-1, 0);
+  if (e.key === 'ArrowRight' || e.key === 'd' || e.key === 'D') movePlayer(1, 0);
+  if (e.key === 'r' || e.key === 'R') newGame();
+});
+
+// ── Game loop ───────────────────────────────────
+function gameLoop() {
+  draw();
+  requestAnimationFrame(gameLoop);
+}
+
+// ── Init / Reset ────────────────────────────────
+function newGame() {
+  generateMaze();
+  px = 0;
+  py = 0;
+  gx = COLS - 1;
+  gy = ROWS - 1;
+  steps = 0;
+  won = false;
+}
+
+function init() {
+  bestScore = null;
+  newGame();
+  requestAnimationFrame(gameLoop);
+}
+
+init();
+</script>
+</body>
+</html>

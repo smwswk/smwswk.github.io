@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>系统录入自动化案例 · SMWSWK</title>
+  <meta name="description" content="通用业务系统录入自动化案例：材料解析、字段映射、附件上传、表单录入、状态回写和人工复核。">
+  <link rel="stylesheet" href="/css/case-light.css?v=20260604-cn-buttons">
+</head>
+<body class="case-light">
+  <main class="case-wrap">
+    <nav class="case-nav"><a href="/">← 返回首页</a></nav>
+
+    <section class="case-hero">
+      <div>
+        <div class="eyebrow">案例 · 系统录入自动化</div>
+        <h1>系统录入自动化</h1>
+        <p class="lead">面向大量重复录入的业务系统，将外部材料解析、字段映射、附件上传、后台表单录入和状态回写串成稳定流程，减少人工搬运和漏填风险。</p>
+        <div class="case-actions">
+          <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+          <button class="btn secondary" type="button" onclick="copyWechat()">复制微信号 smwswk</button>
+        </div>
+      </div>
+      <figure class="visual-card">
+        <div class="visual-stage entry-visual" aria-label="系统录入自动化流程示意图">
+          <div class="sheet">
+            <div class="line l1"></div>
+            <div class="line l2"></div>
+            <div class="line l3"></div>
+            <div class="line l4"></div>
+          </div>
+          <div class="arrow"></div>
+          <div class="system">
+            <div class="line l1"></div>
+            <div class="line l2"></div>
+            <div class="line l3"></div>
+          </div>
+          <div class="badge">解析 → 映射 → 提交</div>
+        </div>
+        <figcaption>示意图为匿名化流程，不包含任何客户真实系统、字段或材料。</figcaption>
+      </figure>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><strong>批量</strong><span>适合每天、每周持续出现的重复录入任务。</span></div>
+      <div class="metric"><strong>可审计</strong><span>保留输入、字段映射、提交结果和异常日志。</span></div>
+      <div class="metric"><strong>可复核</strong><span>关键字段可设置人工确认，不盲目全自动。</span></div>
+      <div class="metric"><strong>可扩展</strong><span>后续可接入提醒、报表、状态回写和权限控制。</span></div>
+    </section>
+
+    <section class="section">
+      <h2>适用场景</h2>
+      <div class="grid-3">
+        <article class="panel">
+          <h3>外部材料进入内部系统</h3>
+          <p>客户材料、表格、PDF、截图或附件需要被整理成系统字段，再逐项录入后台。</p>
+        </article>
+        <article class="panel">
+          <h3>字段规则稳定但人工耗时</h3>
+          <p>录入动作本身不复杂，但字段多、重复频率高，人工容易漏填、错填或忘记上传附件。</p>
+        </article>
+        <article class="panel">
+          <h3>需要留痕和异常处理</h3>
+          <p>每一次提交都需要知道来源、处理状态、失败原因和后续人工处理人。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>交付流程</h2>
+      <div class="steps">
+        <article class="step" data-step="01">
+          <h3>材料接收</h3>
+          <p>统一接收表格、PDF、图片、压缩包或网页材料，建立批次编号。</p>
+        </article>
+        <article class="step" data-step="02">
+          <h3>解析与校验</h3>
+          <p>提取字段，校验必填项、格式、重复记录和附件完整性。</p>
+        </article>
+        <article class="step" data-step="03">
+          <h3>字段映射</h3>
+          <p>将材料字段映射到目标系统字段，支持默认值、枚举值和人工确认。</p>
+        </article>
+        <article class="step" data-step="04">
+          <h3>自动录入</h3>
+          <p>通过浏览器自动化、接口或表单脚本完成录入、上传和提交。</p>
+        </article>
+        <article class="step" data-step="05">
+          <h3>状态回写</h3>
+          <p>记录成功、失败、待复核和异常原因，形成可追踪台账。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>交付物</h2>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>可运行工具</h3>
+          <p>根据环境交付网页小工具、浏览器自动化脚本、后台服务或表格处理脚本。</p>
+          <div class="tags">
+            <span>网页后台</span><span>表格处理</span><span>附件上传</span><span>状态台账</span>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>操作与维护说明</h3>
+          <p>包含运行方式、字段配置、异常处理、复核规则和后续扩展建议。</p>
+          <div class="tags">
+            <span>字段映射表</span><span>异常日志</span><span>复核清单</span><span>部署说明</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>边界说明</h2>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>适合自动化的部分</h3>
+          <p>规则稳定、输入来源明确、字段映射可描述、重复频率高的环节优先自动化。</p>
+        </article>
+        <article class="panel">
+          <h3>需要保留人工判断的部分</h3>
+          <p>涉及业务判断、异常材料、模糊字段和高风险提交的节点，建议设置人工复核。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <h2>有一套重复录入流程？</h2>
+        <p>可先发操作步骤、字段截图和材料样例。咨询 300 元 / 小时，项目开发按难易程度和交付范围报价。</p>
+      </div>
+      <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">微信号已复制：smwswk</div>
+  <script>
+    function copyWechat() {
+      var id = "smwswk";
+      var toast = document.getElementById("toast");
+      function show() {
+        toast.classList.add("show");
+        window.clearTimeout(window.__toastTimer);
+        window.__toastTimer = window.setTimeout(function () { toast.classList.remove("show"); }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(id).then(show, show);
+      } else {
+        show();
+      }
+    }
+  </script>
+</body>
+</html>

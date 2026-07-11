@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>账单对账表自动化案例 · SMWSWK</title>
+  <meta name="description" content="账单与对账表自动化案例：流水清洗、分类规则、专项支出识别、汇总报表和在线表格写入。">
+  <link rel="stylesheet" href="/css/case-light.css?v=20260604-cn-buttons">
+</head>
+<body class="case-light">
+  <main class="case-wrap">
+    <nav class="case-nav"><a href="/">← 返回首页</a></nav>
+
+    <section class="case-hero">
+      <div>
+        <div class="eyebrow">案例 · 账单对账自动化</div>
+        <h1>账单 / 对账表自动化</h1>
+        <p class="lead">面向运营、财务助理、小团队和个人工作室，将手机账单、支付平台流水、银行卡记录和手工表格清洗成统一明细，再自动分类、汇总并写入 WPS 或在线表格。</p>
+        <div class="case-actions">
+          <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+          <button class="btn secondary" type="button" onclick="copyWechat()">复制微信号 smwswk</button>
+        </div>
+      </div>
+      <figure class="visual-card">
+        <div class="visual-stage billing-visual" aria-label="账单对账表自动化流程示意图">
+          <div class="source">
+            <div class="line l1"></div>
+            <div class="line l2"></div>
+            <div class="line l3"></div>
+          </div>
+          <div class="arrow"></div>
+          <div class="ledger">
+            <div class="row r1"></div>
+            <div class="row r2"></div>
+            <div class="row r3"></div>
+            <div class="row r4"></div>
+          </div>
+          <div class="sum">分类汇总</div>
+        </div>
+        <figcaption>示意图为匿名化账单处理流程，不包含真实账户、商户、金额或流水。</figcaption>
+      </figure>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><strong>多来源</strong><span>支持支付平台、银行卡、导出表格和手工补录。</span></div>
+      <div class="metric"><strong>规则化</strong><span>按商户、关键词、金额、备注和账户建立分类规则。</span></div>
+      <div class="metric"><strong>可追溯</strong><span>保留原始流水、清洗结果、分类依据和人工修正。</span></div>
+      <div class="metric"><strong>可复用</strong><span>月度、季度、项目制对账都可复用同一处理流程。</span></div>
+    </section>
+
+    <section class="section">
+      <h2>适用场景</h2>
+      <div class="grid-3">
+        <article class="panel">
+          <h3>多平台流水难合并</h3>
+          <p>不同平台字段名、时间格式、收支方向和商户备注不一致，人工整理耗时。</p>
+        </article>
+        <article class="panel">
+          <h3>专项支出需要单独汇总</h3>
+          <p>餐饮、交通、采购、报销、项目成本等类别需要稳定归类和周期统计。</p>
+        </article>
+        <article class="panel">
+          <h3>表格要持续更新</h3>
+          <p>最终结果需要写入 WPS、在线表格或共享台账，方便后续筛选、审核和复盘。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>处理流程</h2>
+      <div class="steps">
+        <article class="step" data-step="01">
+          <h3>导入流水</h3>
+          <p>接收 CSV、Excel、截图转表格或平台导出文件，统一批次。</p>
+        </article>
+        <article class="step" data-step="02">
+          <h3>字段清洗</h3>
+          <p>统一日期、金额、账户、商户、备注、收支方向和交易状态。</p>
+        </article>
+        <article class="step" data-step="03">
+          <h3>分类规则</h3>
+          <p>按关键词、商户、账户、金额区间和备注建立自动归类规则。</p>
+        </article>
+        <article class="step" data-step="04">
+          <h3>异常复核</h3>
+          <p>标记重复流水、退款冲正、缺少备注和低置信度分类。</p>
+        </article>
+        <article class="step" data-step="05">
+          <h3>写入表格</h3>
+          <p>生成明细表、分类汇总、项目台账，并写入 WPS 或在线表格。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>交付物</h2>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>账单清洗与分类脚本</h3>
+          <p>根据实际账单格式定制导入模板、清洗规则、分类规则和异常标记逻辑。</p>
+          <div class="tags">
+            <span>CSV / Excel</span><span>WPS 表格</span><span>在线表格</span><span>规则配置</span>
+          </div>
+        </article>
+        <article class="panel">
+          <h3>对账表与汇总视图</h3>
+          <p>输出可筛选的明细表、按月汇总、按项目汇总、专项支出统计和异常清单。</p>
+          <div class="tags">
+            <span>明细台账</span><span>月度汇总</span><span>项目成本</span><span>异常复核</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>隐私与边界</h2>
+      <div class="grid-2">
+        <article class="panel">
+          <h3>隐私处理</h3>
+          <p>案例展示不使用真实金额、账户、商户或个人信息。实际交付时可本地处理，减少敏感数据外传。</p>
+        </article>
+        <article class="panel">
+          <h3>人工确认</h3>
+          <p>分类规则可以自动建议，但高金额、低置信度、退款冲正和特殊用途支出建议人工确认。</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div>
+        <h2>有一批账单或流水要整理？</h2>
+        <p>可先发脱敏字段样例和目标表格结构。咨询 300 元 / 小时，项目开发按难易程度和交付范围报价。</p>
+      </div>
+      <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+    </section>
+  </main>
+
+  <div class="toast" id="toast">微信号已复制：smwswk</div>
+  <script>
+    function copyWechat() {
+      var id = "smwswk";
+      var toast = document.getElementById("toast");
+      function show() {
+        toast.classList.add("show");
+        window.clearTimeout(window.__toastTimer);
+        window.__toastTimer = window.setTimeout(function () { toast.classList.remove("show"); }, 2200);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(id).then(show, show);
+      } else {
+        show();
+      }
+    }
+  </script>
+</body>
+</html>

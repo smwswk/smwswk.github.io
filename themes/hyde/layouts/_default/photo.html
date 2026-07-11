@@ -1,0 +1,78 @@
+{{ partial "head.html" . }}
+
+<body class="{{ .Site.Params.themeColor }}">
+
+{{ partial "sidebar.html" . }}
+
+<!-- Lightbox -->
+<div id="lightbox">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="" onclick="closeLightbox()">
+  <div id="lightbox-meta"></div>
+</div>
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>Gallery</h1>
+    <p id="photo-count">加载中…</p>
+  </div>
+
+  <!-- ── Photo Grid ── -->
+  <div class="gallery-grid" id="gallery"></div>
+
+</div>
+
+<script>
+(function() {
+  // ── Photo data from Hugo data file ──
+  var photos = [
+    {{- $photoList := hugo.Data.photos -}}
+    {{- range $i, $photo := $photoList -}}
+    { name: "{{ $photo.name }}", thumb: "/photo/thumbs/{{ replace $photo.name ".png" ".jpg" }}", full: "/photo/web/{{ replace $photo.name ".png" ".jpg" }}", date: "{{ $photo.date }}" }{{ if ne $i (sub (len $photoList) 1) }},{{ end }}
+    {{- end -}}
+  ];
+
+  var gallery = document.getElementById('gallery');
+
+  // Update count in header
+  var countEl = document.getElementById('photo-count');
+  if (photos.length > 0) {
+    countEl.textContent = photos.length + ' 张照片 · 点击查看大图';
+  } else {
+    countEl.textContent = '暂无照片';
+    gallery.innerHTML = '<p style="color:#777;font-size:0.85rem;grid-column:1/-1;padding:2rem 0;">暂无照片。将照片放入 photo/ 文件夹后运行 sync_photos.sh。</p>';
+    return;
+  }
+
+  photos.forEach(function(p) {
+    var item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML =
+      '<img src="' + p.thumb + '" alt="' + p.name + '" decoding="async" width="600" height="450">' +
+      '<div class="overlay"><span>' + p.name.replace(/\.[^.]+$/, '') + '</span></div>';
+    item.addEventListener('click', function() { openLightbox(p); });
+    gallery.appendChild(item);
+  });
+
+  // ── Lightbox ──
+  function openLightbox(p) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = p.full;
+    document.getElementById('lightbox-meta').textContent = p.name + ' · ' + p.date;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>

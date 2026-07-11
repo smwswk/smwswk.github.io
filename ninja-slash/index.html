@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>NINJA SLASH</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;background:#07070f;font-family:'Courier New',monospace;overflow:hidden;user-select:none;-webkit-user-select:none}
+.title{color:#ff4466;font-size:20px;letter-spacing:6px;margin-bottom:4px;text-shadow:0 0 12px rgba(255,68,102,0.5)}
+canvas{image-rendering:pixelated;image-rendering:crisp-edges;border:3px solid #ff4466;box-shadow:0 0 24px rgba(255,68,102,0.15)}
+.hint{color:#555;font-size:10px;margin-top:6px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="title">NINJA SLASH</div>
+<canvas id="game"></canvas>
+<div class="hint">A/D 移动 &nbsp; 空格/W 跳跃(×3) &nbsp; S/↓ 下砸 &nbsp; J/Z 主武器 &nbsp; K/X 手里剑 &nbsp; Shift 冲刺 &nbsp; 贴墙滑行+跳=踢墙跳 &nbsp; C 释放杀意 &nbsp; T 时间慢放 &nbsp; F 骑乘/救援 &nbsp; 1-4 切换武器</div>
+
+<script>window.onerror=function(m,u,l,c,e){document.body.innerHTML='<pre style=\'position:fixed;top:0;left:0;right:0;bottom:0;background:#000;color:#f00;padding:20px;z-index:9999;font:14px monospace;white-space:pre-wrap;\'>ERROR: '+m+'\n at '+u+':'+l+':'+c+'\n\n'+(e&&e.stack)+'</pre>';return false};</script>
+<script src="js/engine.js?v=2"></script>
+<script src="js/levels.js?v=3"></script>
+<script src="js/player.js?v=2"></script>
+<script src="js/enemies.js"></script>
+<script src="js/boss.js"></script>
+<script src="js/waves.js?v=2"></script>
+<script src="js/draw.js?v=2"></script>
+<script src="js/screens.js?v=3"></script>
+<script src="js/game.js?v=2"></script>
+</body>
+</html>

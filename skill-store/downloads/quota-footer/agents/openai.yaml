@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quota_Footer"
+  short_description: "Append compact Codex quota usage to final replies"
+  default_prompt: "Append a quota footer to the final reply"

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>NSAction</key>
+    <string>SyncPhotos</string>
+    <key>NSAppleScriptEnabled</key>
+    <true/>
+    <key>NSInputTypes</key>
+    <array>
+        <string>public.folder</string>
+    </array>
+    <key>NSMenuItem</key>
+    <dict>
+        <key>default</key>
+        <string>SyncPhotos</string>
+    </dict>
+    <key>NSSubmenuItem</key>
+    <string>快速操作</string>
+    <key>NSVisibleBackground</key>
+    <true/>
+    <key>NSWorkflowIdentifier</key>
+    <string>2A3F8E9C-B7D4-4E5A-8C3F-1D2E4F6A8B0C</string>
+    <key>NSWorkflowInstantRun</key>
+    <true/>
+</dict>
+</plist>
