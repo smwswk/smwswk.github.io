@@ -1,0 +1,5703 @@
+[
+  {
+    "title": "肖申克的救赎",
+    "title_en": "The Shawshank Redemption",
+    "year": 1994,
+    "duration": 142,
+    "rating": 9.7,
+    "director": "弗兰克·德拉邦特",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "希望",
+      "感人",
+      "励志",
+      "个人",
+      "深度",
+      "监狱"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "霸王别姬",
+    "title_en": "Farewell My Concubine",
+    "year": 1993,
+    "duration": 171,
+    "rating": 9.6,
+    "director": "陈凯歌",
+    "genres": [
+      "剧情",
+      "爱情",
+      "同性"
+    ],
+    "tags": [
+      "经典",
+      "感人",
+      "催泪",
+      "史诗",
+      "文艺",
+      "深度",
+      "京剧"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "阿甘正传",
+    "title_en": "Forrest Gump",
+    "year": 1994,
+    "duration": 142,
+    "rating": 9.5,
+    "director": "罗伯特·泽米吉斯",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "励志",
+      "感人",
+      "温暖",
+      "治愈",
+      "个人",
+      "美国梦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "泰坦尼克号",
+    "title_en": "Titanic",
+    "year": 1997,
+    "duration": 194,
+    "rating": 9.5,
+    "director": "詹姆斯·卡梅隆",
+    "genres": [
+      "剧情",
+      "爱情",
+      "灾难"
+    ],
+    "tags": [
+      "经典",
+      "浪漫",
+      "感人",
+      "史诗",
+      "视觉",
+      "伴侣"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "千与千寻",
+    "title_en": "Spirited Away",
+    "year": 2001,
+    "duration": 125,
+    "rating": 9.4,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "治愈",
+      "温暖",
+      "动画",
+      "童话",
+      "老少咸宜",
+      "家庭",
+      "奇幻"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "美丽人生",
+    "title_en": "Life Is Beautiful",
+    "year": 1997,
+    "duration": 116,
+    "rating": 9.5,
+    "director": "罗伯托·贝尼尼",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "感人",
+      "催泪",
+      "温情",
+      "家庭",
+      "治愈",
+      "二战"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "辛德勒的名单",
+    "title_en": "Schindler's List",
+    "year": 1993,
+    "duration": 195,
+    "rating": 9.5,
+    "director": "史蒂文·斯皮尔伯格",
+    "genres": [
+      "剧情",
+      "历史",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "深刻",
+      "感人",
+      "历史",
+      "人性",
+      "深度",
+      "二战"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "星际穿越",
+    "title_en": "Interstellar",
+    "year": 2014,
+    "duration": 169,
+    "rating": 9.4,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "科幻",
+      "冒险",
+      "剧情"
+    ],
+    "tags": [
+      "科幻",
+      "烧脑",
+      "感人",
+      "视觉",
+      "深刻",
+      "家庭",
+      "太空"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "盗梦空间",
+    "title_en": "Inception",
+    "year": 2010,
+    "duration": 148,
+    "rating": 9.3,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "科幻",
+      "悬疑",
+      "动作"
+    ],
+    "tags": [
+      "烧脑",
+      "悬疑",
+      "科幻",
+      "复杂",
+      "视觉",
+      "动作"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "楚门的世界",
+    "title_en": "The Truman Show",
+    "year": 1998,
+    "duration": 103,
+    "rating": 9.3,
+    "director": "彼得·威尔",
+    "genres": [
+      "剧情",
+      "科幻"
+    ],
+    "tags": [
+      "经典",
+      "深刻",
+      "讽刺",
+      "哲学",
+      "个人",
+      "存在主义"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "三傻大闹宝莱坞",
+    "title_en": "3 Idiots",
+    "year": 2009,
+    "duration": 170,
+    "rating": 9.2,
+    "director": "拉吉库马尔·希拉尼",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "喜剧",
+      "励志",
+      "教育",
+      "温情",
+      "印度",
+      "搞笑",
+      "感动"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "机器人总动员",
+    "title_en": "WALL·E",
+    "year": 2008,
+    "duration": 98,
+    "rating": 9.3,
+    "director": "安德鲁·斯坦顿",
+    "genres": [
+      "动画",
+      "科幻",
+      "爱情"
+    ],
+    "tags": [
+      "动画",
+      "科幻",
+      "浪漫",
+      "治愈",
+      "环保",
+      "老少咸宜",
+      "家庭"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "放牛班的春天",
+    "title_en": "The Chorus",
+    "year": 2004,
+    "duration": 97,
+    "rating": 9.3,
+    "director": "克里斯托夫·巴拉蒂",
+    "genres": [
+      "剧情",
+      "音乐"
+    ],
+    "tags": [
+      "治愈",
+      "音乐",
+      "教育",
+      "温情",
+      "感人",
+      "励志",
+      "师生"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "大话西游之大圣娶亲",
+    "title_en": "A Chinese Odyssey Part Two",
+    "year": 1995,
+    "duration": 95,
+    "rating": 9.2,
+    "director": "刘镇伟",
+    "genres": [
+      "喜剧",
+      "爱情",
+      "奇幻"
+    ],
+    "tags": [
+      "经典",
+      "喜剧",
+      "浪漫",
+      "爱情",
+      "搞笑",
+      "无厘头"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "熔炉",
+    "title_en": "Silenced",
+    "year": 2011,
+    "duration": 125,
+    "rating": 9.3,
+    "director": "黄东赫",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "深刻",
+      "社会",
+      "催泪",
+      "压抑",
+      "真实事件",
+      "韩国"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "教父",
+    "title_en": "The Godfather",
+    "year": 1972,
+    "duration": 175,
+    "rating": 9.3,
+    "director": "弗朗西斯·福特·科波拉",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "史诗",
+      "黑帮",
+      "深刻",
+      "人性",
+      "权力"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "无间道",
+    "title_en": "Infernal Affairs",
+    "year": 2002,
+    "duration": 101,
+    "rating": 9.3,
+    "director": "刘伟强 / 麦兆辉",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "经典",
+      "悬疑",
+      "犯罪",
+      "警匪",
+      "紧张",
+      "香港"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "疯狂动物城",
+    "title_en": "Zootopia",
+    "year": 2016,
+    "duration": 108,
+    "rating": 9.2,
+    "director": "拜伦·霍华德",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "喜剧",
+      "冒险",
+      "老少咸宜",
+      "家庭",
+      "童话",
+      "正能量"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "寻梦环游记",
+    "title_en": "Coco",
+    "year": 2017,
+    "duration": 105,
+    "rating": 9.1,
+    "director": "李·昂克里奇",
+    "genres": [
+      "动画",
+      "音乐",
+      "冒险"
+    ],
+    "tags": [
+      "动画",
+      "感人",
+      "催泪",
+      "家庭",
+      "音乐",
+      "墨西哥",
+      "生死"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "触不可及",
+    "title_en": "The Intouchables",
+    "year": 2011,
+    "duration": 112,
+    "rating": 9.2,
+    "director": "奥利维埃·纳卡什",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "温情",
+      "治愈",
+      "喜剧",
+      "感人",
+      "友谊",
+      "励志"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "当幸福来敲门",
+    "title_en": "The Pursuit of Happyness",
+    "year": 2006,
+    "duration": 117,
+    "rating": 9.1,
+    "director": "加布里尔·穆奇诺",
+    "genres": [
+      "剧情",
+      "传记"
+    ],
+    "tags": [
+      "励志",
+      "感人",
+      "温情",
+      "父子",
+      "奋斗",
+      "真实改编"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "末代皇帝",
+    "title_en": "The Last Emperor",
+    "year": 1987,
+    "duration": 163,
+    "rating": 9.1,
+    "director": "贝纳尔多·贝托鲁奇",
+    "genres": [
+      "剧情",
+      "传记",
+      "历史"
+    ],
+    "tags": [
+      "经典",
+      "史诗",
+      "历史",
+      "文艺",
+      "深刻",
+      "中国"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "活着",
+    "title_en": "To Live",
+    "year": 1994,
+    "duration": 132,
+    "rating": 9.3,
+    "director": "张艺谋",
+    "genres": [
+      "剧情",
+      "历史"
+    ],
+    "tags": [
+      "经典",
+      "深刻",
+      "历史",
+      "苦难",
+      "人生",
+      "文艺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "蝙蝠侠：黑暗骑士",
+    "title_en": "The Dark Knight",
+    "year": 2008,
+    "duration": 152,
+    "rating": 9.2,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "经典",
+      "犯罪",
+      "超级英雄",
+      "紧张",
+      "动作",
+      "暗黑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "哈利·波特与魔法石",
+    "title_en": "Harry Potter and the Sorcerer's Stone",
+    "year": 2001,
+    "duration": 152,
+    "rating": 9.1,
+    "director": "克里斯·哥伦布",
+    "genres": [
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "奇幻",
+      "魔法",
+      "冒险",
+      "老少咸宜",
+      "家庭",
+      "童话",
+      "系列"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "让子弹飞",
+    "title_en": "Let the Bullets Fly",
+    "year": 2010,
+    "duration": 132,
+    "rating": 9.0,
+    "director": "姜文",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "动作"
+    ],
+    "tags": [
+      "经典",
+      "黑色幽默",
+      "讽刺",
+      "喜剧",
+      "暴力美学",
+      "中国"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "海蒂和爷爷",
+    "title_en": "Heidi",
+    "year": 2015,
+    "duration": 111,
+    "rating": 9.3,
+    "director": "阿兰·葛斯彭纳",
+    "genres": [
+      "剧情",
+      "家庭",
+      "冒险"
+    ],
+    "tags": [
+      "治愈",
+      "温情",
+      "风景",
+      "家庭",
+      "老少咸宜",
+      "童话"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "钢琴家",
+    "title_en": "The Pianist",
+    "year": 2002,
+    "duration": 150,
+    "rating": 9.3,
+    "director": "罗曼·波兰斯基",
+    "genres": [
+      "剧情",
+      "传记",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "战争",
+      "音乐",
+      "人性",
+      "苦难",
+      "二战"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "摔跤吧！爸爸",
+    "title_en": "Dangal",
+    "year": 2016,
+    "duration": 161,
+    "rating": 9.0,
+    "director": "涅提·蒂瓦里",
+    "genres": [
+      "剧情",
+      "传记",
+      "运动"
+    ],
+    "tags": [
+      "励志",
+      "感人",
+      "父女",
+      "体育",
+      "印度",
+      "温情"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "辩护人",
+    "title_en": "The Attorney",
+    "year": 2013,
+    "duration": 127,
+    "rating": 9.2,
+    "director": "杨宇硕",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "深刻",
+      "社会",
+      "律师",
+      "正义",
+      "韩国",
+      "真实事件"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "七宗罪",
+    "title_en": "Se7en",
+    "year": 1995,
+    "duration": 127,
+    "rating": 8.8,
+    "director": "大卫·芬奇",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "暗黑",
+      "心理",
+      "惊悚",
+      "经典"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "怦然心动",
+    "title_en": "Flipped",
+    "year": 2010,
+    "duration": 90,
+    "rating": 9.1,
+    "director": "罗伯·莱纳",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "青春",
+      "初恋",
+      "温暖",
+      "治愈",
+      "纯爱",
+      "轻松"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "天使爱美丽",
+    "title_en": "Amélie",
+    "year": 2001,
+    "duration": 122,
+    "rating": 8.7,
+    "director": "让-皮埃尔·热内",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "浪漫",
+      "治愈",
+      "童话",
+      "文艺",
+      "法国",
+      "温暖",
+      "奇幻"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "少年派的奇幻漂流",
+    "title_en": "Life of Pi",
+    "year": 2012,
+    "duration": 127,
+    "rating": 9.1,
+    "director": "李安",
+    "genres": [
+      "剧情",
+      "冒险",
+      "奇幻"
+    ],
+    "tags": [
+      "视觉",
+      "奇幻",
+      "冒险",
+      "哲学",
+      "动物",
+      "3D",
+      "李安"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "狮子王",
+    "title_en": "The Lion King",
+    "year": 1994,
+    "duration": 89,
+    "rating": 9.1,
+    "director": "罗杰·阿勒斯",
+    "genres": [
+      "动画",
+      "冒险",
+      "歌舞"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "音乐",
+      "成长",
+      "家庭",
+      "老少咸宜",
+      "迪士尼"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "致命魔术",
+    "title_en": "The Prestige",
+    "year": 2006,
+    "duration": 130,
+    "rating": 8.9,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "科幻"
+    ],
+    "tags": [
+      "悬疑",
+      "烧脑",
+      "反转",
+      "魔术",
+      "诺兰",
+      "暗黑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "阿凡达",
+    "title_en": "Avatar",
+    "year": 2009,
+    "duration": 162,
+    "rating": 8.8,
+    "director": "詹姆斯·卡梅隆",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "视觉",
+      "科幻",
+      "史诗",
+      "3D",
+      "外星",
+      "环保",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "指环王1：护戒使者",
+    "title_en": "The Lord of the Rings",
+    "year": 2001,
+    "duration": 178,
+    "rating": 9.0,
+    "director": "彼得·杰克逊",
+    "genres": [
+      "剧情",
+      "动作",
+      "奇幻"
+    ],
+    "tags": [
+      "史诗",
+      "奇幻",
+      "冒险",
+      "经典",
+      "魔幻",
+      "系列",
+      "托尔金"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "指环王2：双塔奇兵",
+    "title_en": "The Lord of the Rings: The Two Towers",
+    "year": 2002,
+    "duration": 179,
+    "rating": 9.1,
+    "director": "彼得·杰克逊",
+    "genres": [
+      "剧情",
+      "动作",
+      "奇幻"
+    ],
+    "tags": [
+      "史诗",
+      "奇幻",
+      "冒险",
+      "经典",
+      "魔幻",
+      "系列"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "指环王3：王者无敌",
+    "title_en": "The Lord of the Rings: The Return of the King",
+    "year": 2003,
+    "duration": 201,
+    "rating": 9.3,
+    "director": "彼得·杰克逊",
+    "genres": [
+      "剧情",
+      "动作",
+      "奇幻"
+    ],
+    "tags": [
+      "史诗",
+      "奇幻",
+      "冒险",
+      "经典",
+      "魔幻",
+      "系列"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "绿皮书",
+    "title_en": "Green Book",
+    "year": 2018,
+    "duration": 130,
+    "rating": 8.9,
+    "director": "彼得·法雷里",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "传记"
+    ],
+    "tags": [
+      "温情",
+      "公路",
+      "种族",
+      "友谊",
+      "音乐",
+      "真实改编",
+      "轻松"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "小丑",
+    "title_en": "Joker",
+    "year": 2019,
+    "duration": 122,
+    "rating": 8.7,
+    "director": "托德·菲利普斯",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "暗黑",
+      "心理",
+      "犯罪",
+      "社会",
+      "压抑",
+      "演技",
+      "DC"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "寄生虫",
+    "title_en": "Parasite",
+    "year": 2019,
+    "duration": 132,
+    "rating": 8.7,
+    "director": "奉俊昊",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "惊悚"
+    ],
+    "tags": [
+      "黑色幽默",
+      "阶级",
+      "讽刺",
+      "社会",
+      "反转",
+      "韩国",
+      "奥斯卡"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "何以为家",
+    "title_en": "Capernaum",
+    "year": 2018,
+    "duration": 126,
+    "rating": 9.1,
+    "director": "娜丁·拉巴基",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "深刻",
+      "苦难",
+      "儿童",
+      "社会",
+      "真实",
+      "催泪"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "我不是药神",
+    "title_en": "Dying to Survive",
+    "year": 2018,
+    "duration": 117,
+    "rating": 9.0,
+    "director": "文牧野",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "社会",
+      "医疗",
+      "现实",
+      "喜剧",
+      "感人",
+      "中国"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "秒速5厘米",
+    "title_en": "5 Centimeters per Second",
+    "year": 2007,
+    "duration": 63,
+    "rating": 8.3,
+    "director": "新海诚",
+    "genres": [
+      "动画",
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "动画",
+      "青春",
+      "初恋",
+      "离别",
+      "文艺",
+      "唯美",
+      "孤独"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "你的名字",
+    "title_en": "Your Name",
+    "year": 2016,
+    "duration": 106,
+    "rating": 8.4,
+    "director": "新海诚",
+    "genres": [
+      "动画",
+      "爱情",
+      "奇幻"
+    ],
+    "tags": [
+      "动画",
+      "青春",
+      "奇幻",
+      "浪漫",
+      "唯美",
+      "新海诚",
+      "交换身体"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "天气之子",
+    "title_en": "Weathering with You",
+    "year": 2019,
+    "duration": 112,
+    "rating": 7.0,
+    "director": "新海诚",
+    "genres": [
+      "动画",
+      "爱情",
+      "奇幻"
+    ],
+    "tags": [
+      "动画",
+      "青春",
+      "奇幻",
+      "浪漫",
+      "唯美",
+      "新海诚",
+      "天气"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "哪吒之魔童降世",
+    "title_en": "Ne Zha",
+    "year": 2019,
+    "duration": 110,
+    "rating": 8.4,
+    "director": "饺子",
+    "genres": [
+      "动画",
+      "奇幻",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "喜剧",
+      "神话",
+      "热血",
+      "中国",
+      "国产",
+      "3D"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "忠犬八公的故事",
+    "title_en": "Hachi: A Dog's Tale",
+    "year": 2009,
+    "duration": 93,
+    "rating": 9.4,
+    "director": "拉斯·霍尔斯道姆",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "感人",
+      "催泪",
+      "宠物",
+      "温情",
+      "忠诚",
+      "治愈"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "两杆大烟枪",
+    "title_en": "Lock, Stock and Two Smoking Barrels",
+    "year": 1998,
+    "duration": 107,
+    "rating": 9.1,
+    "director": "盖·里奇",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "犯罪"
+    ],
+    "tags": [
+      "黑色幽默",
+      "喜剧",
+      "犯罪",
+      "英国",
+      "多线叙事",
+      "盖里奇"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "低俗小说",
+    "title_en": "Pulp Fiction",
+    "year": 1994,
+    "duration": 154,
+    "rating": 8.9,
+    "director": "昆汀·塔伦蒂诺",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "黑色幽默",
+      "暴力",
+      "多线叙事",
+      "文艺",
+      "昆汀"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "飞越疯人院",
+    "title_en": "One Flew Over the Cuckoo's Nest",
+    "year": 1975,
+    "duration": 133,
+    "rating": 9.1,
+    "director": "米洛斯·福尔曼",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "经典",
+      "自由",
+      "反抗",
+      "精神病",
+      "深刻",
+      "人性"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "搏击俱乐部",
+    "title_en": "Fight Club",
+    "year": 1999,
+    "duration": 139,
+    "rating": 9.0,
+    "director": "大卫·芬奇",
+    "genres": [
+      "剧情",
+      "动作",
+      "悬疑"
+    ],
+    "tags": [
+      "经典",
+      "精神分裂",
+      "社会",
+      "暴力",
+      "哲学",
+      "反转"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "闻香识女人",
+    "title_en": "Scent of a Woman",
+    "year": 1992,
+    "duration": 157,
+    "rating": 9.1,
+    "director": "马丁·布莱斯特",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "经典",
+      "探戈",
+      "人生",
+      "师生",
+      "励志",
+      "演技"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "死亡诗社",
+    "title_en": "Dead Poets Society",
+    "year": 1989,
+    "duration": 128,
+    "rating": 9.1,
+    "director": "彼得·威尔",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "经典",
+      "教育",
+      "诗歌",
+      "自由",
+      "师生",
+      "励志",
+      "感人"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "西西里的美丽传说",
+    "title_en": "Malèna",
+    "year": 2000,
+    "duration": 109,
+    "rating": 8.9,
+    "director": "朱塞佩·托纳多雷",
+    "genres": [
+      "剧情",
+      "战争",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "美丽",
+      "战争",
+      "欲望",
+      "青春",
+      "意大利"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "这个杀手不太冷",
+    "title_en": "Léon",
+    "year": 1994,
+    "duration": 110,
+    "rating": 9.4,
+    "director": "吕克·贝松",
+    "genres": [
+      "剧情",
+      "动作",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "杀手",
+      "温情",
+      "萝莉",
+      "动作",
+      "法国"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "十二怒汉",
+    "title_en": "12 Angry Men",
+    "year": 1957,
+    "duration": 96,
+    "rating": 9.4,
+    "director": "西德尼·吕美特",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "经典",
+      "法庭",
+      "辩论",
+      "人性",
+      "黑白",
+      "深度"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "大话西游之月光宝盒",
+    "title_en": "A Chinese Odyssey",
+    "year": 1995,
+    "duration": 87,
+    "rating": 9.0,
+    "director": "刘镇伟",
+    "genres": [
+      "喜剧",
+      "爱情",
+      "奇幻"
+    ],
+    "tags": [
+      "经典",
+      "喜剧",
+      "爱情",
+      "搞笑",
+      "无厘头",
+      "穿越"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "喜剧之王",
+    "title_en": "King of Comedy",
+    "year": 1999,
+    "duration": 85,
+    "rating": 8.8,
+    "director": "周星驰 / 李力持",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "喜剧",
+      "励志",
+      "龙套",
+      "周星驰",
+      "梦想"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "东成西就",
+    "title_en": "The Eagle Shooting Heroes",
+    "year": 1993,
+    "duration": 113,
+    "rating": 8.7,
+    "director": "刘镇伟",
+    "genres": [
+      "喜剧",
+      "奇幻",
+      "武侠"
+    ],
+    "tags": [
+      "经典",
+      "喜剧",
+      "搞笑",
+      "无厘头",
+      "全明星",
+      "香港"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "美国往事",
+    "title_en": "Once Upon a Time in America",
+    "year": 1984,
+    "duration": 229,
+    "rating": 9.2,
+    "director": "赛尔乔·莱昂内",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "史诗",
+      "黑帮",
+      "人生",
+      "时间",
+      "美国",
+      "漫长"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "海上钢琴师",
+    "title_en": "The Legend of 1900",
+    "year": 1998,
+    "duration": 170,
+    "rating": 9.3,
+    "director": "朱塞佩·托纳多雷",
+    "genres": [
+      "剧情",
+      "音乐"
+    ],
+    "tags": [
+      "经典",
+      "音乐",
+      "钢琴",
+      "孤独",
+      "天才",
+      "轮船",
+      "文艺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "廊桥遗梦",
+    "title_en": "The Bridges of Madison County",
+    "year": 1995,
+    "duration": 135,
+    "rating": 8.7,
+    "director": "克林特·伊斯特伍德",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "婚外恋",
+      "中年",
+      "文艺",
+      "摄影",
+      "温暖"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "剪刀手爱德华",
+    "title_en": "Edward Scissorhands",
+    "year": 1990,
+    "duration": 105,
+    "rating": 8.7,
+    "director": "蒂姆·波顿",
+    "genres": [
+      "剧情",
+      "奇幻",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "童话",
+      "孤独",
+      "哥特",
+      "爱情",
+      "蒂姆波顿",
+      "德普"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "黑客帝国",
+    "title_en": "The Matrix",
+    "year": 1999,
+    "duration": 136,
+    "rating": 9.1,
+    "director": "莉莉·沃卓斯基",
+    "genres": [
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "经典",
+      "科幻",
+      "哲学",
+      "虚拟现实",
+      "动作",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "源代码",
+    "title_en": "Source Code",
+    "year": 2011,
+    "duration": 93,
+    "rating": 8.5,
+    "director": "邓肯·琼斯",
+    "genres": [
+      "科幻",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "烧脑",
+      "科幻",
+      "时间循环",
+      "紧张",
+      "反转"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "禁闭岛",
+    "title_en": "Shutter Island",
+    "year": 2010,
+    "duration": 138,
+    "rating": 8.8,
+    "director": "马丁·斯科塞斯",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "惊悚",
+      "心理",
+      "反转",
+      "精神",
+      "暗黑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "记忆碎片",
+    "title_en": "Memento",
+    "year": 2000,
+    "duration": 113,
+    "rating": 8.7,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "烧脑",
+      "悬疑",
+      "记忆",
+      "倒叙",
+      "诺兰",
+      "复杂"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "第六感",
+    "title_en": "The Sixth Sense",
+    "year": 1999,
+    "duration": 107,
+    "rating": 8.9,
+    "director": "M·奈特·沙马兰",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "惊悚",
+      "反转",
+      "超自然",
+      "心理",
+      "经典"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "沉默的羔羊",
+    "title_en": "The Silence of the Lambs",
+    "year": 1991,
+    "duration": 118,
+    "rating": 8.9,
+    "director": "乔纳森·戴米",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "经典",
+      "心理",
+      "犯罪",
+      "惊悚",
+      "食人",
+      "FBI"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "蝴蝶效应",
+    "title_en": "The Butterfly Effect",
+    "year": 2004,
+    "duration": 113,
+    "rating": 8.9,
+    "director": "埃里克·布雷斯",
+    "genres": [
+      "剧情",
+      "科幻",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "科幻",
+      "时间",
+      "蝴蝶效应",
+      "命运",
+      "烧脑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "恐怖游轮",
+    "title_en": "Triangle",
+    "year": 2009,
+    "duration": 99,
+    "rating": 8.5,
+    "director": "克里斯托弗·史密斯",
+    "genres": [
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "惊悚",
+      "时间循环",
+      "轮回",
+      "烧脑",
+      "恐怖"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "心慌方",
+    "title_en": "Cube",
+    "year": 1997,
+    "duration": 90,
+    "rating": 7.9,
+    "director": "文森佐·纳塔利",
+    "genres": [
+      "科幻",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "密室",
+      "科幻",
+      "惊悚",
+      "心理",
+      "生存"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "彗星来的那一夜",
+    "title_en": "Coherence",
+    "year": 2013,
+    "duration": 89,
+    "rating": 8.5,
+    "director": "詹姆斯·沃德·布柯特",
+    "genres": [
+      "科幻",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "科幻",
+      "平行世界",
+      "烧脑",
+      "低成本",
+      "反转"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "逃出绝命镇",
+    "title_en": "Get Out",
+    "year": 2017,
+    "duration": 104,
+    "rating": 7.8,
+    "director": "乔丹·皮尔",
+    "genres": [
+      "悬疑",
+      "惊悚",
+      "恐怖"
+    ],
+    "tags": [
+      "悬疑",
+      "惊悚",
+      "种族",
+      "恐怖",
+      "社会",
+      "反转"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "消失的爱人",
+    "title_en": "Gone Girl",
+    "year": 2014,
+    "duration": 149,
+    "rating": 8.7,
+    "director": "大卫·芬奇",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "犯罪"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "婚姻",
+      "反转",
+      "心理",
+      "暗黑",
+      "大卫芬奇"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "看不见的客人",
+    "title_en": "The Invisible Guest",
+    "year": 2016,
+    "duration": 106,
+    "rating": 8.8,
+    "director": "奥里奥尔·保罗",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "反转",
+      "犯罪",
+      "西班牙",
+      "烧脑",
+      "法庭"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "调音师",
+    "title_en": "Andhadhun",
+    "year": 2018,
+    "duration": 139,
+    "rating": 8.2,
+    "director": "斯里兰姆·拉格万",
+    "genres": [
+      "喜剧",
+      "悬疑",
+      "犯罪"
+    ],
+    "tags": [
+      "悬疑",
+      "反转",
+      "黑色幽默",
+      "犯罪",
+      "印度",
+      "音乐"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "窃听风暴",
+    "title_en": "The Lives of Others",
+    "year": 2006,
+    "duration": 137,
+    "rating": 9.1,
+    "director": "弗洛里安·亨克尔·冯·多纳斯马尔克",
+    "genres": [
+      "剧情",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "监听",
+      "东德",
+      "人性",
+      "深刻",
+      "政治"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "罗马假日",
+    "title_en": "Roman Holiday",
+    "year": 1953,
+    "duration": 118,
+    "rating": 9.1,
+    "director": "威廉·惠勒",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "浪漫",
+      "童话",
+      "爱情",
+      "赫本",
+      "轻松"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "乱世佳人",
+    "title_en": "Gone with the Wind",
+    "year": 1939,
+    "duration": 238,
+    "rating": 9.3,
+    "director": "维克多·弗莱明",
+    "genres": [
+      "剧情",
+      "爱情",
+      "历史",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "史诗",
+      "爱情",
+      "战争",
+      "美国",
+      "名著改编"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "情书",
+    "title_en": "Love Letter",
+    "year": 1995,
+    "duration": 117,
+    "rating": 8.9,
+    "director": "岩井俊二",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "纯爱",
+      "文艺",
+      "日本",
+      "雪",
+      "青春",
+      "暗恋"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "爱在黎明破晓前",
+    "title_en": "Before Sunrise",
+    "year": 1995,
+    "duration": 101,
+    "rating": 8.8,
+    "director": "理查德·林克莱特",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "浪漫",
+      "对话",
+      "维也纳",
+      "文艺",
+      "三部曲",
+      "一夜情"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "爱在日落黄昏时",
+    "title_en": "Before Sunset",
+    "year": 2004,
+    "duration": 80,
+    "rating": 8.9,
+    "director": "理查德·林克莱特",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "浪漫",
+      "对话",
+      "文艺",
+      "重逢",
+      "三部曲",
+      "巴黎"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "爱乐之城",
+    "title_en": "La La Land",
+    "year": 2016,
+    "duration": 128,
+    "rating": 8.4,
+    "director": "达米恩·查泽雷",
+    "genres": [
+      "剧情",
+      "爱情",
+      "音乐"
+    ],
+    "tags": [
+      "浪漫",
+      "音乐",
+      "舞蹈",
+      "洛杉矶",
+      "梦想",
+      "爵士",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "重庆森林",
+    "title_en": "Chungking Express",
+    "year": 1994,
+    "duration": 102,
+    "rating": 8.8,
+    "director": "王家卫",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "文艺",
+      "孤独",
+      "都市",
+      "香港",
+      "王家卫",
+      "暧昧"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "花样年华",
+    "title_en": "In the Mood for Love",
+    "year": 2000,
+    "duration": 98,
+    "rating": 8.7,
+    "director": "王家卫",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "文艺",
+      "旗袍",
+      "暧昧",
+      "香港",
+      "王家卫",
+      "美学"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "罗马",
+    "title_en": "Roma",
+    "year": 2018,
+    "duration": 135,
+    "rating": 8.2,
+    "director": "阿方索·卡隆",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "黑白",
+      "家庭",
+      "女性",
+      "墨西哥",
+      "卡隆",
+      "文艺",
+      "记忆"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "请以你的名字呼唤我",
+    "title_en": "Call Me by Your Name",
+    "year": 2017,
+    "duration": 132,
+    "rating": 8.8,
+    "director": "卢卡·瓜达尼诺",
+    "genres": [
+      "剧情",
+      "爱情",
+      "同性"
+    ],
+    "tags": [
+      "青春",
+      "夏日",
+      "初恋",
+      "意大利",
+      "文艺",
+      "同性",
+      "唯美"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "卡萨布兰卡",
+    "title_en": "Casablanca",
+    "year": 1942,
+    "duration": 102,
+    "rating": 8.7,
+    "director": "迈克尔·柯蒂斯",
+    "genres": [
+      "剧情",
+      "爱情",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "战争",
+      "爱情",
+      "黑白",
+      "牺牲",
+      "北非"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "横道世之介",
+    "title_en": "A Story of Yonosuke",
+    "year": 2013,
+    "duration": 160,
+    "rating": 8.8,
+    "director": "冲田修一",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "温暖",
+      "青春",
+      "日本",
+      "治愈",
+      "日常",
+      "友谊"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "时空恋旅人",
+    "title_en": "About Time",
+    "year": 2013,
+    "duration": 123,
+    "rating": 8.8,
+    "director": "理查德·柯蒂斯",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "温暖",
+      "时间",
+      "浪漫",
+      "家庭",
+      "治愈",
+      "英国",
+      "喜剧"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "和莎莫的500天",
+    "title_en": "(500) Days of Summer",
+    "year": 2009,
+    "duration": 95,
+    "rating": 8.0,
+    "director": "马克·韦布",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "爱情",
+      "失恋",
+      "成长",
+      "非线性",
+      "独立",
+      "轻松"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "勇敢的心",
+    "title_en": "Braveheart",
+    "year": 1995,
+    "duration": 178,
+    "rating": 8.9,
+    "director": "梅尔·吉布森",
+    "genres": [
+      "剧情",
+      "动作",
+      "战争",
+      "传记"
+    ],
+    "tags": [
+      "经典",
+      "史诗",
+      "战争",
+      "自由",
+      "苏格兰",
+      "勇气"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "拯救大兵瑞恩",
+    "title_en": "Saving Private Ryan",
+    "year": 1998,
+    "duration": 169,
+    "rating": 9.1,
+    "director": "史蒂文·斯皮尔伯格",
+    "genres": [
+      "剧情",
+      "战争"
+    ],
+    "tags": [
+      "经典",
+      "战争",
+      "诺曼底",
+      "人性",
+      "二战",
+      "写实",
+      "残酷"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "血战钢锯岭",
+    "title_en": "Hacksaw Ridge",
+    "year": 2016,
+    "duration": 139,
+    "rating": 8.7,
+    "director": "梅尔·吉布森",
+    "genres": [
+      "剧情",
+      "传记",
+      "战争"
+    ],
+    "tags": [
+      "战争",
+      "真实改编",
+      "信仰",
+      "勇气",
+      "二战",
+      "医疗",
+      "梅尔吉布森"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "狂怒",
+    "title_en": "Fury",
+    "year": 2014,
+    "duration": 134,
+    "rating": 8.0,
+    "director": "大卫·阿耶",
+    "genres": [
+      "剧情",
+      "动作",
+      "战争"
+    ],
+    "tags": [
+      "战争",
+      "坦克",
+      "二战",
+      "残酷",
+      "兄弟情",
+      "动作"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "敦刻尔克",
+    "title_en": "Dunkirk",
+    "year": 2017,
+    "duration": 107,
+    "rating": 8.4,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "历史",
+      "战争"
+    ],
+    "tags": [
+      "战争",
+      "二战",
+      "诺兰",
+      "写实",
+      "海",
+      "紧张",
+      "撤离"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "1917",
+    "title_en": "1917",
+    "year": 2019,
+    "duration": 119,
+    "rating": 8.5,
+    "director": "萨姆·门德斯",
+    "genres": [
+      "剧情",
+      "战争"
+    ],
+    "tags": [
+      "战争",
+      "一战",
+      "长镜头",
+      "写实",
+      "紧张",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "疯狂的麦克斯：狂暴之路",
+    "title_en": "Mad Max: Fury Road",
+    "year": 2015,
+    "duration": 120,
+    "rating": 8.7,
+    "director": "乔治·米勒",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "动作",
+      "视觉",
+      "末日",
+      "追车",
+      "女性",
+      "爽片",
+      "废土"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "谍影重重3",
+    "title_en": "The Bourne Ultimatum",
+    "year": 2007,
+    "duration": 115,
+    "rating": 8.8,
+    "director": "保罗·格林格拉斯",
+    "genres": [
+      "动作",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "动作",
+      "间谍",
+      "紧张",
+      "追车",
+      "写实",
+      "经典"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "王牌特工：特工学院",
+    "title_en": "Kingsman: The Secret Service",
+    "year": 2014,
+    "duration": 129,
+    "rating": 8.4,
+    "director": "马修·沃恩",
+    "genres": [
+      "喜剧",
+      "动作",
+      "冒险"
+    ],
+    "tags": [
+      "动作",
+      "喜剧",
+      "间谍",
+      "英国",
+      "爽片",
+      "暴力美学"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "疾速追杀",
+    "title_en": "John Wick",
+    "year": 2014,
+    "duration": 101,
+    "rating": 7.8,
+    "director": "大卫·雷奇",
+    "genres": [
+      "动作",
+      "惊悚",
+      "犯罪"
+    ],
+    "tags": [
+      "动作",
+      "杀手",
+      "复仇",
+      "枪战",
+      "爽片",
+      "基努里维斯"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "第一滴血",
+    "title_en": "First Blood",
+    "year": 1982,
+    "duration": 93,
+    "rating": 8.3,
+    "director": "特德·科特切夫",
+    "genres": [
+      "剧情",
+      "动作",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动作",
+      "战争",
+      "老兵",
+      "越战",
+      "史泰龙"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "谍中谍4",
+    "title_en": "Mission: Impossible - Ghost Protocol",
+    "year": 2011,
+    "duration": 133,
+    "rating": 8.4,
+    "director": "布拉德·伯德",
+    "genres": [
+      "动作",
+      "惊悚",
+      "冒险"
+    ],
+    "tags": [
+      "动作",
+      "间谍",
+      "迪拜",
+      "阿汤哥",
+      "惊险",
+      "爽片"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "谍中谍6：全面瓦解",
+    "title_en": "Mission: Impossible - Fallout",
+    "year": 2018,
+    "duration": 147,
+    "rating": 8.1,
+    "director": "克里斯托夫·迈考利",
+    "genres": [
+      "动作",
+      "惊悚",
+      "冒险"
+    ],
+    "tags": [
+      "动作",
+      "间谍",
+      "阿汤哥",
+      "惊险",
+      "追车",
+      "爽片",
+      "直升机"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "终结者2：审判日",
+    "title_en": "Terminator 2: Judgment Day",
+    "year": 1991,
+    "duration": 137,
+    "rating": 8.8,
+    "director": "詹姆斯·卡梅隆",
+    "genres": [
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "经典",
+      "科幻",
+      "动作",
+      "机器人",
+      "时间",
+      "卡梅隆",
+      "施瓦辛格"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "碟中谍",
+    "title_en": "Mission: Impossible",
+    "year": 1996,
+    "duration": 110,
+    "rating": 8.2,
+    "director": "布莱恩·德帕尔玛",
+    "genres": [
+      "动作",
+      "冒险",
+      "惊悚"
+    ],
+    "tags": [
+      "经典",
+      "间谍",
+      "动作",
+      "惊险",
+      "阿汤哥"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "降临",
+    "title_en": "Arrival",
+    "year": 2016,
+    "duration": 116,
+    "rating": 7.8,
+    "director": "丹尼斯·维伦纽瓦",
+    "genres": [
+      "剧情",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "外星",
+      "语言",
+      "哲学",
+      "维伦纽瓦",
+      "母性",
+      "时间"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "火星救援",
+    "title_en": "The Martian",
+    "year": 2015,
+    "duration": 144,
+    "rating": 8.5,
+    "director": "雷德利·斯科特",
+    "genres": [
+      "剧情",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "太空",
+      "生存",
+      "幽默",
+      "NASA",
+      "火星",
+      "乐观"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "银翼杀手2049",
+    "title_en": "Blade Runner 2049",
+    "year": 2017,
+    "duration": 164,
+    "rating": 8.3,
+    "director": "丹尼斯·维伦纽瓦",
+    "genres": [
+      "剧情",
+      "科幻",
+      "动作"
+    ],
+    "tags": [
+      "科幻",
+      "视觉",
+      "赛博朋克",
+      "哲学",
+      "维伦纽瓦",
+      "未来",
+      "人工智能"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "沙丘",
+    "title_en": "Dune",
+    "year": 2021,
+    "duration": 155,
+    "rating": 7.7,
+    "director": "丹尼斯·维伦纽瓦",
+    "genres": [
+      "剧情",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "史诗",
+      "视觉",
+      "维伦纽瓦",
+      "沙漠",
+      "权力",
+      "香料"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "沙丘2",
+    "title_en": "Dune: Part Two",
+    "year": 2024,
+    "duration": 166,
+    "rating": 8.1,
+    "director": "丹尼斯·维伦纽瓦",
+    "genres": [
+      "剧情",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "史诗",
+      "视觉",
+      "维伦纽瓦",
+      "战争",
+      "复仇",
+      "动作"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "头号玩家",
+    "title_en": "Ready Player One",
+    "year": 2018,
+    "duration": 140,
+    "rating": 8.7,
+    "director": "史蒂文·斯皮尔伯格",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "游戏",
+      "彩蛋",
+      "虚拟现实",
+      "视觉",
+      "冒险",
+      "斯皮尔伯格"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "流浪地球",
+    "title_en": "The Wandering Earth",
+    "year": 2019,
+    "duration": 125,
+    "rating": 7.9,
+    "director": "郭帆",
+    "genres": [
+      "科幻",
+      "冒险",
+      "灾难"
+    ],
+    "tags": [
+      "科幻",
+      "中国",
+      "太空",
+      "灾难",
+      "刘慈欣",
+      "吴京",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "流浪地球2",
+    "title_en": "The Wandering Earth II",
+    "year": 2023,
+    "duration": 173,
+    "rating": 8.3,
+    "director": "郭帆",
+    "genres": [
+      "科幻",
+      "冒险",
+      "灾难"
+    ],
+    "tags": [
+      "科幻",
+      "中国",
+      "太空",
+      "灾难",
+      "前传",
+      "刘慈欣",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "信条",
+    "title_en": "Tenet",
+    "year": 2020,
+    "duration": 150,
+    "rating": 7.6,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "烧脑",
+      "时间",
+      "诺兰",
+      "逆转",
+      "动作",
+      "复杂"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "闪灵",
+    "title_en": "The Shining",
+    "year": 1980,
+    "duration": 146,
+    "rating": 8.3,
+    "director": "斯坦利·库布里克",
+    "genres": [
+      "恐怖"
+    ],
+    "tags": [
+      "经典",
+      "恐怖",
+      "心理",
+      "酒店",
+      "库布里克",
+      "精神分裂"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "招魂",
+    "title_en": "The Conjuring",
+    "year": 2013,
+    "duration": 112,
+    "rating": 7.8,
+    "director": "温子仁",
+    "genres": [
+      "恐怖",
+      "悬疑"
+    ],
+    "tags": [
+      "恐怖",
+      "鬼屋",
+      "温子仁",
+      "真实事件",
+      "灵异",
+      "驱魔"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "遗传厄运",
+    "title_en": "Hereditary",
+    "year": 2018,
+    "duration": 127,
+    "rating": 7.2,
+    "director": "阿里·艾斯特",
+    "genres": [
+      "恐怖"
+    ],
+    "tags": [
+      "恐怖",
+      "家庭",
+      "邪教",
+      "压抑",
+      "心理",
+      "A24"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "电锯惊魂",
+    "title_en": "Saw",
+    "year": 2004,
+    "duration": 103,
+    "rating": 7.8,
+    "director": "温子仁",
+    "genres": [
+      "悬疑",
+      "惊悚",
+      "恐怖"
+    ],
+    "tags": [
+      "恐怖",
+      "血腥",
+      "密室",
+      "悬疑",
+      "反转",
+      "温子仁"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "寂静之地",
+    "title_en": "A Quiet Place",
+    "year": 2018,
+    "duration": 90,
+    "rating": 6.4,
+    "director": "约翰·卡拉辛斯基",
+    "genres": [
+      "惊悚",
+      "恐怖"
+    ],
+    "tags": [
+      "恐怖",
+      "惊悚",
+      "怪物",
+      "无声",
+      "家庭",
+      "生存"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "咒怨",
+    "title_en": "Ju-on: The Grudge",
+    "year": 2002,
+    "duration": 92,
+    "rating": 7.5,
+    "director": "清水崇",
+    "genres": [
+      "恐怖"
+    ],
+    "tags": [
+      "恐怖",
+      "日本",
+      "诅咒",
+      "灵异",
+      "经典",
+      "氛围"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "龙猫",
+    "title_en": "My Neighbor Totoro",
+    "year": 1988,
+    "duration": 86,
+    "rating": 9.2,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "治愈",
+      "温暖",
+      "童话",
+      "宫崎骏",
+      "老少咸宜",
+      "家庭"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "天空之城",
+    "title_en": "Castle in the Sky",
+    "year": 1986,
+    "duration": 125,
+    "rating": 9.1,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "蒸汽朋克",
+      "冒险",
+      "宫崎骏",
+      "老少咸宜",
+      "飞行"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "幽灵公主",
+    "title_en": "Princess Mononoke",
+    "year": 1997,
+    "duration": 134,
+    "rating": 8.9,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "自然",
+      "环保",
+      "宫崎骏",
+      "史诗",
+      "老少咸宜"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "哈尔的移动城堡",
+    "title_en": "Howl's Moving Castle",
+    "year": 2004,
+    "duration": 119,
+    "rating": 9.1,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "魔法",
+      "爱情",
+      "宫崎骏",
+      "治愈",
+      "老少咸宜"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "魔女宅急便",
+    "title_en": "Kiki's Delivery Service",
+    "year": 1989,
+    "duration": 103,
+    "rating": 8.7,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "成长",
+      "魔法",
+      "宫崎骏",
+      "治愈",
+      "老少咸宜"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "侧耳倾听",
+    "title_en": "Whisper of the Heart",
+    "year": 1995,
+    "duration": 111,
+    "rating": 8.9,
+    "director": "近藤喜文",
+    "genres": [
+      "动画",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "青春",
+      "爱情",
+      "成长",
+      "吉卜力",
+      "治愈"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "风之谷",
+    "title_en": "Nausicaä of the Valley of the Wind",
+    "year": 1984,
+    "duration": 117,
+    "rating": 8.9,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "经典",
+      "动画",
+      "环保",
+      "末日",
+      "宫崎骏",
+      "吉卜力"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "红辣椒",
+    "title_en": "Paprika",
+    "year": 2006,
+    "duration": 90,
+    "rating": 8.9,
+    "director": "今敏",
+    "genres": [
+      "动画",
+      "科幻",
+      "悬疑"
+    ],
+    "tags": [
+      "动画",
+      "科幻",
+      "梦境",
+      "烧脑",
+      "今敏",
+      "心理",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "未麻的部屋",
+    "title_en": "Perfect Blue",
+    "year": 1997,
+    "duration": 81,
+    "rating": 8.9,
+    "director": "今敏",
+    "genres": [
+      "动画",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "动画",
+      "悬疑",
+      "心理",
+      "偶像",
+      "今敏",
+      "惊悚",
+      "身份"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "千年女优",
+    "title_en": "Millennium Actress",
+    "year": 2001,
+    "duration": 87,
+    "rating": 8.8,
+    "director": "今敏",
+    "genres": [
+      "动画",
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "动画",
+      "爱情",
+      "电影",
+      "回忆",
+      "今敏",
+      "叙事",
+      "一生"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "飞屋环游记",
+    "title_en": "Up",
+    "year": 2009,
+    "duration": 96,
+    "rating": 9.1,
+    "director": "彼特·道格特",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "冒险",
+      "治愈",
+      "家庭",
+      "老少咸宜",
+      "皮克斯",
+      "气球"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "头脑特工队",
+    "title_en": "Inside Out",
+    "year": 2015,
+    "duration": 95,
+    "rating": 8.8,
+    "director": "彼特·道格特",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "创意",
+      "情绪",
+      "家庭",
+      "老少咸宜",
+      "皮克斯",
+      "心理学"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "头脑特工队2",
+    "title_en": "Inside Out 2",
+    "year": 2024,
+    "duration": 96,
+    "rating": 8.0,
+    "director": "凯尔西·曼",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "成长",
+      "情绪",
+      "家庭",
+      "老少咸宜",
+      "皮克斯",
+      "青春期"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "玩具总动员3",
+    "title_en": "Toy Story 3",
+    "year": 2010,
+    "duration": 103,
+    "rating": 8.9,
+    "director": "李·昂克里奇",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "成长",
+      "告别",
+      "家庭",
+      "老少咸宜",
+      "皮克斯",
+      "催泪"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "无敌破坏王",
+    "title_en": "Wreck-It Ralph",
+    "year": 2012,
+    "duration": 101,
+    "rating": 8.7,
+    "director": "瑞奇·摩尔",
+    "genres": [
+      "动画",
+      "冒险",
+      "喜剧"
+    ],
+    "tags": [
+      "动画",
+      "游戏",
+      "冒险",
+      "家庭",
+      "老少咸宜",
+      "迪士尼",
+      "友谊"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "长安三万里",
+    "title_en": "Chang An",
+    "year": 2023,
+    "duration": 168,
+    "rating": 8.3,
+    "director": "谢君伟 / 邹靖",
+    "genres": [
+      "动画",
+      "历史"
+    ],
+    "tags": [
+      "动画",
+      "唐诗",
+      "历史",
+      "中国",
+      "国产",
+      "李白",
+      "教育"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "深海",
+    "title_en": "Deep Sea",
+    "year": 2023,
+    "duration": 112,
+    "rating": 7.2,
+    "director": "田晓鹏",
+    "genres": [
+      "动画",
+      "奇幻"
+    ],
+    "tags": [
+      "动画",
+      "视觉",
+      "抑郁",
+      "治愈",
+      "中国",
+      "国产",
+      "水墨"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "心灵奇旅",
+    "title_en": "Soul",
+    "year": 2020,
+    "duration": 101,
+    "rating": 8.7,
+    "director": "彼特·道格特",
+    "genres": [
+      "动画",
+      "音乐",
+      "奇幻"
+    ],
+    "tags": [
+      "动画",
+      "音乐",
+      "生命",
+      "治愈",
+      "家庭",
+      "老少咸宜",
+      "皮克斯"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "蜘蛛侠：平行宇宙",
+    "title_en": "Spider-Man: Into the Spider-Verse",
+    "year": 2018,
+    "duration": 117,
+    "rating": 8.6,
+    "director": "鲍勃·佩尔西切蒂",
+    "genres": [
+      "动画",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "动画",
+      "超级英雄",
+      "视觉",
+      "创新",
+      "家庭",
+      "蜘蛛侠",
+      "多元宇宙"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "蜘蛛侠：纵横宇宙",
+    "title_en": "Spider-Man: Across the Spider-Verse",
+    "year": 2023,
+    "duration": 140,
+    "rating": 8.5,
+    "director": "乔伊姆·多斯·桑托斯",
+    "genres": [
+      "动画",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "动画",
+      "超级英雄",
+      "视觉",
+      "创新",
+      "家庭",
+      "蜘蛛侠",
+      "续集"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "海豚湾",
+    "title_en": "The Cove",
+    "year": 2009,
+    "duration": 92,
+    "rating": 8.9,
+    "director": "路易·西霍尤斯",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "环保",
+      "动物",
+      "日本",
+      "残酷",
+      "真实"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "地球脉动2",
+    "title_en": "Planet Earth II",
+    "year": 2016,
+    "duration": 300,
+    "rating": 9.8,
+    "director": "大卫·艾登堡",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "自然",
+      "动物",
+      "视觉",
+      "BBC",
+      "风景",
+      "震撼"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "人类星球",
+    "title_en": "Human Planet",
+    "year": 2011,
+    "duration": 480,
+    "rating": 9.7,
+    "director": "BBC",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "人类",
+      "自然",
+      "BBC",
+      "文化",
+      "生存"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "寿司之神",
+    "title_en": "Jiro Dreams of Sushi",
+    "year": 2011,
+    "duration": 81,
+    "rating": 8.7,
+    "director": "大卫·贾柏",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "美食",
+      "匠人",
+      "日本",
+      "寿司",
+      "专注",
+      "励志"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "寻找小糖人",
+    "title_en": "Searching for Sugar Man",
+    "year": 2012,
+    "duration": 86,
+    "rating": 9.2,
+    "director": "马利克·本德杰鲁",
+    "genres": [
+      "纪录片",
+      "音乐",
+      "传记"
+    ],
+    "tags": [
+      "纪录片",
+      "音乐",
+      "传奇",
+      "寻找",
+      "美国",
+      "南非",
+      "真实"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "徒手攀岩",
+    "title_en": "Free Solo",
+    "year": 2018,
+    "duration": 100,
+    "rating": 8.8,
+    "director": "伊丽莎白·柴·瓦沙瑞莉",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "攀岩",
+      "极限",
+      "惊险",
+      "自然",
+      "勇气",
+      "奥斯卡"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "人生果实",
+    "title_en": "Life is Fruity",
+    "year": 2017,
+    "duration": 91,
+    "rating": 9.5,
+    "director": "伏原健之",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "生活",
+      "日本",
+      "治愈",
+      "建筑",
+      "园艺",
+      "老年"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "美国工厂",
+    "title_en": "American Factory",
+    "year": 2019,
+    "duration": 110,
+    "rating": 8.4,
+    "director": "史蒂文·博格纳尔",
+    "genres": [
+      "纪录片"
+    ],
+    "tags": [
+      "纪录片",
+      "工厂",
+      "中美",
+      "社会",
+      "经济",
+      "真实",
+      "奥巴马"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "珍",
+    "title_en": "Jane",
+    "year": 2017,
+    "duration": 90,
+    "rating": 9.1,
+    "director": "布莱特·摩根",
+    "genres": [
+      "纪录片",
+      "传记"
+    ],
+    "tags": [
+      "纪录片",
+      "动物",
+      "自然",
+      "女性",
+      "科学",
+      "黑猩猩",
+      "励志"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "海街日记",
+    "title_en": "Our Little Sister",
+    "year": 2015,
+    "duration": 127,
+    "rating": 8.8,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "治愈",
+      "家庭",
+      "日常",
+      "日本",
+      "文艺",
+      "温暖",
+      "是枝裕和",
+      "姐妹"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "步履不停",
+    "title_en": "Still Walking",
+    "year": 2008,
+    "duration": 115,
+    "rating": 8.8,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "治愈",
+      "家庭",
+      "日常",
+      "日本",
+      "文艺",
+      "温暖",
+      "是枝裕和",
+      "亲情"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "小偷家族",
+    "title_en": "Shoplifters",
+    "year": 2018,
+    "duration": 121,
+    "rating": 8.7,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情",
+      "家庭",
+      "犯罪"
+    ],
+    "tags": [
+      "深刻",
+      "家庭",
+      "社会",
+      "日本",
+      "文艺",
+      "是枝裕和",
+      "温情",
+      "金棕榈"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "如父如子",
+    "title_en": "Like Father, Like Son",
+    "year": 2013,
+    "duration": 120,
+    "rating": 8.7,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "家庭",
+      "父子",
+      "日本",
+      "文艺",
+      "是枝裕和",
+      "温情",
+      "交换"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "比海更深",
+    "title_en": "After the Storm",
+    "year": 2016,
+    "duration": 117,
+    "rating": 8.8,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "日常",
+      "家庭",
+      "日本",
+      "文艺",
+      "是枝裕和",
+      "梦想",
+      "温暖"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "燃烧女子的肖像",
+    "title_en": "Portrait of a Lady on Fire",
+    "year": 2019,
+    "duration": 121,
+    "rating": 8.7,
+    "director": "瑟琳·席安玛",
+    "genres": [
+      "剧情",
+      "爱情",
+      "同性"
+    ],
+    "tags": [
+      "女性",
+      "艺术",
+      "同性",
+      "法国",
+      "文艺",
+      "凝视",
+      "绘画"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "小姐",
+    "title_en": "The Handmaiden",
+    "year": 2016,
+    "duration": 168,
+    "rating": 8.5,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "同性"
+    ],
+    "tags": [
+      "悬疑",
+      "女性",
+      "同性",
+      "韩国",
+      "反转",
+      "朴赞郁",
+      "情色"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "一一",
+    "title_en": "Yi Yi",
+    "year": 2000,
+    "duration": 173,
+    "rating": 9.1,
+    "director": "杨德昌",
+    "genres": [
+      "剧情",
+      "爱情",
+      "家庭"
+    ],
+    "tags": [
+      "经典",
+      "家庭",
+      "人生",
+      "台湾",
+      "文艺",
+      "杨德昌",
+      "日常",
+      "哲学"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "牯岭街少年杀人事件",
+    "title_en": "A Brighter Summer Day",
+    "year": 1991,
+    "duration": 237,
+    "rating": 8.9,
+    "director": "杨德昌",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "经典",
+      "青春",
+      "台湾",
+      "文艺",
+      "杨德昌",
+      "成长",
+      "暴力"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "悲情城市",
+    "title_en": "A City of Sadness",
+    "year": 1989,
+    "duration": 157,
+    "rating": 8.9,
+    "director": "侯孝贤",
+    "genres": [
+      "剧情",
+      "历史"
+    ],
+    "tags": [
+      "经典",
+      "台湾",
+      "历史",
+      "文艺",
+      "侯孝贤",
+      "二二八",
+      "家族"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "恋恋风尘",
+    "title_en": "Dust in the Wind",
+    "year": 1986,
+    "duration": 109,
+    "rating": 8.6,
+    "director": "侯孝贤",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "青春",
+      "台湾",
+      "文艺",
+      "侯孝贤",
+      "初恋",
+      "离别"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "刺客聂隐娘",
+    "title_en": "The Assassin",
+    "year": 2015,
+    "duration": 105,
+    "rating": 7.3,
+    "director": "侯孝贤",
+    "genres": [
+      "剧情",
+      "动作",
+      "武侠"
+    ],
+    "tags": [
+      "武侠",
+      "唐代",
+      "台湾",
+      "文艺",
+      "侯孝贤",
+      "美学",
+      "女性"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "大佛普拉斯",
+    "title_en": "The Great Buddha+",
+    "year": 2017,
+    "duration": 102,
+    "rating": 8.7,
+    "director": "黄信尧",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "黑色幽默",
+      "台湾",
+      "社会",
+      "阶级",
+      "文艺",
+      "纪录片风格",
+      "讽刺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "阳光普照",
+    "title_en": "A Sun",
+    "year": 2019,
+    "duration": 155,
+    "rating": 8.6,
+    "director": "钟孟宏",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "家庭"
+    ],
+    "tags": [
+      "家庭",
+      "父子",
+      "台湾",
+      "文艺",
+      "压抑",
+      "阳光",
+      "金马"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "谁先爱上他的",
+    "title_en": "Dear Ex",
+    "year": 2018,
+    "duration": 100,
+    "rating": 8.6,
+    "director": "徐誉庭",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "同性"
+    ],
+    "tags": [
+      "家庭",
+      "同性",
+      "台湾",
+      "文艺",
+      "喜剧",
+      "和解",
+      "催泪"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "地久天长",
+    "title_en": "So Long, My Son",
+    "year": 2019,
+    "duration": 175,
+    "rating": 8.0,
+    "director": "王小帅",
+    "genres": [
+      "剧情",
+      "家庭"
+    ],
+    "tags": [
+      "家庭",
+      "时代",
+      "中国",
+      "文艺",
+      "压抑",
+      "历史",
+      "失独"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "江湖儿女",
+    "title_en": "Ash Is Purest White",
+    "year": 2018,
+    "duration": 136,
+    "rating": 7.6,
+    "director": "贾樟柯",
+    "genres": [
+      "剧情",
+      "爱情",
+      "犯罪"
+    ],
+    "tags": [
+      "江湖",
+      "中国",
+      "文艺",
+      "贾樟柯",
+      "时代",
+      "女性"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "隐入尘烟",
+    "title_en": "Return to Dust",
+    "year": 2022,
+    "duration": 133,
+    "rating": 8.4,
+    "director": "李睿珺",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "农村",
+      "中国",
+      "文艺",
+      "底层",
+      "爱情",
+      "苦难",
+      "真实"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "路边野餐",
+    "title_en": "Kaili Blues",
+    "year": 2015,
+    "duration": 113,
+    "rating": 7.8,
+    "director": "毕赣",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "诗意",
+      "贵州",
+      "中国",
+      "文艺",
+      "时间",
+      "长镜头",
+      "毕赣"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "地球最后的夜晚",
+    "title_en": "Long Day's Journey Into Night",
+    "year": 2018,
+    "duration": 138,
+    "rating": 7.0,
+    "director": "毕赣",
+    "genres": [
+      "剧情",
+      "悬疑"
+    ],
+    "tags": [
+      "诗意",
+      "梦境",
+      "中国",
+      "文艺",
+      "3D",
+      "毕赣",
+      "长镜头"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "杀人回忆",
+    "title_en": "Memories of Murder",
+    "year": 2003,
+    "duration": 132,
+    "rating": 8.9,
+    "director": "奉俊昊",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "经典",
+      "犯罪",
+      "悬疑",
+      "真实事件",
+      "韩国",
+      "奉俊昊",
+      "压抑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "雪国列车",
+    "title_en": "Snowpiercer",
+    "year": 2013,
+    "duration": 125,
+    "rating": 7.6,
+    "director": "奉俊昊",
+    "genres": [
+      "剧情",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "末日",
+      "阶级",
+      "韩国",
+      "奉俊昊",
+      "列车",
+      "反乌托邦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "燃烧",
+    "title_en": "Burning",
+    "year": 2018,
+    "duration": 148,
+    "rating": 8.1,
+    "director": "李沧东",
+    "genres": [
+      "剧情",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "文艺",
+      "阶级",
+      "韩国",
+      "李沧东",
+      "村上春树",
+      "存在"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "薄荷糖",
+    "title_en": "Peppermint Candy",
+    "year": 1999,
+    "duration": 130,
+    "rating": 8.6,
+    "director": "李沧东",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "倒叙",
+      "人生",
+      "韩国",
+      "李沧东",
+      "时代",
+      "创伤",
+      "悲剧"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "密阳",
+    "title_en": "Secret Sunshine",
+    "year": 2007,
+    "duration": 142,
+    "rating": 8.0,
+    "director": "李沧东",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "信仰",
+      "痛苦",
+      "韩国",
+      "李沧东",
+      "全度妍",
+      "宗教",
+      "救赎"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "诗",
+    "title_en": "Poetry",
+    "year": 2010,
+    "duration": 139,
+    "rating": 8.7,
+    "director": "李沧东",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "诗歌",
+      "老年",
+      "韩国",
+      "李沧东",
+      "文艺",
+      "女性",
+      "痛苦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "老男孩",
+    "title_en": "Oldboy",
+    "year": 2003,
+    "duration": 120,
+    "rating": 8.3,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情",
+      "动作",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "复仇",
+      "暴力",
+      "韩国",
+      "朴赞郁",
+      "乱伦",
+      "经典"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "亲切的金子",
+    "title_en": "Sympathy for Lady Vengeance",
+    "year": 2005,
+    "duration": 115,
+    "rating": 7.6,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "复仇",
+      "女性",
+      "韩国",
+      "朴赞郁",
+      "暴力",
+      "复仇三部曲"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "我要复仇",
+    "title_en": "Sympathy for Mr. Vengeance",
+    "year": 2002,
+    "duration": 129,
+    "rating": 7.9,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情",
+      "动作",
+      "惊悚"
+    ],
+    "tags": [
+      "复仇",
+      "底层",
+      "韩国",
+      "朴赞郁",
+      "暴力",
+      "悲剧",
+      "复仇三部曲"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "追击者",
+    "title_en": "The Chaser",
+    "year": 2008,
+    "duration": 125,
+    "rating": 8.4,
+    "director": "罗泓轸",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "韩国",
+      "紧张",
+      "真实事件",
+      "追击"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "黄海",
+    "title_en": "The Yellow Sea",
+    "year": 2010,
+    "duration": 157,
+    "rating": 8.5,
+    "director": "罗泓轸",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "动作"
+    ],
+    "tags": [
+      "犯罪",
+      "延边",
+      "韩国",
+      "河正宇",
+      "动作",
+      "紧张",
+      "暴力"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "哭声",
+    "title_en": "The Wailing",
+    "year": 2016,
+    "duration": 156,
+    "rating": 7.3,
+    "director": "罗泓轸",
+    "genres": [
+      "剧情",
+      "恐怖",
+      "悬疑"
+    ],
+    "tags": [
+      "恐怖",
+      "悬疑",
+      "宗教",
+      "韩国",
+      "罗泓轸",
+      "萨满",
+      "灵异"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "特工",
+    "title_en": "The Spy Gone North",
+    "year": 2018,
+    "duration": 137,
+    "rating": 8.7,
+    "director": "尹钟彬",
+    "genres": [
+      "剧情",
+      "悬疑"
+    ],
+    "tags": [
+      "谍战",
+      "南北",
+      "韩国",
+      "真实改编",
+      "政治",
+      "间谍"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "阳光姐妹淘",
+    "title_en": "Sunny",
+    "year": 2011,
+    "duration": 124,
+    "rating": 8.8,
+    "director": "姜炯哲",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "青春",
+      "友谊",
+      "女性",
+      "韩国",
+      "怀旧",
+      "搞笑",
+      "感人"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "我的野蛮女友",
+    "title_en": "My Sassy Girl",
+    "year": 2001,
+    "duration": 123,
+    "rating": 8.2,
+    "director": "郭在容",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "爱情"
+    ],
+    "tags": [
+      "爱情",
+      "喜剧",
+      "韩国",
+      "经典",
+      "浪漫",
+      "搞笑",
+      "全智贤"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "共同警备区",
+    "title_en": "Joint Security Area",
+    "year": 2000,
+    "duration": 110,
+    "rating": 8.8,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "南北",
+      "战争",
+      "韩国",
+      "朴赞郁",
+      "友谊",
+      "政治",
+      "感人"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "奥本海默",
+    "title_en": "Oppenheimer",
+    "year": 2023,
+    "duration": 180,
+    "rating": 8.8,
+    "director": "克里斯托弗·诺兰",
+    "genres": [
+      "剧情",
+      "传记",
+      "历史"
+    ],
+    "tags": [
+      "传记",
+      "核",
+      "二战",
+      "诺兰",
+      "历史",
+      "政治",
+      "深度"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "芭比",
+    "title_en": "Barbie",
+    "year": 2023,
+    "duration": 114,
+    "rating": 8.1,
+    "director": "格蕾塔·葛韦格",
+    "genres": [
+      "喜剧",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "喜剧",
+      "女性",
+      "粉色",
+      "社会",
+      "讽刺",
+      "娱乐",
+      "轻松"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "坠落的审判",
+    "title_en": "Anatomy of a Fall",
+    "year": 2023,
+    "duration": 151,
+    "rating": 8.5,
+    "director": "茹斯汀·特里耶",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "悬疑",
+      "法庭",
+      "婚姻",
+      "法国",
+      "女性",
+      "金棕榈",
+      "语言"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "过往人生",
+    "title_en": "Past Lives",
+    "year": 2023,
+    "duration": 105,
+    "rating": 7.6,
+    "director": "席琳·宋",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "爱情",
+      "命运",
+      "移民",
+      "韩国",
+      "美国",
+      "遗憾",
+      "文艺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "完美的日子",
+    "title_en": "Perfect Days",
+    "year": 2023,
+    "duration": 123,
+    "rating": 8.5,
+    "director": "维姆·文德斯",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "日常",
+      "日本",
+      "文德斯",
+      "清洁",
+      "治愈",
+      "文艺",
+      "东京"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "怪物",
+    "title_en": "Monster",
+    "year": 2023,
+    "duration": 125,
+    "rating": 8.6,
+    "director": "是枝裕和",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "儿童",
+      "校园",
+      "日本",
+      "是枝裕和",
+      "视角",
+      "真相",
+      "催泪"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "网络谜踪2",
+    "title_en": "Missing",
+    "year": 2023,
+    "duration": 111,
+    "rating": 8.0,
+    "director": "尼古拉斯·D·约翰逊",
+    "genres": [
+      "剧情",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "悬疑",
+      "网络",
+      "桌面电影",
+      "反转",
+      "紧张",
+      "母女"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "银河护卫队3",
+    "title_en": "Guardians of the Galaxy Vol. 3",
+    "year": 2023,
+    "duration": 150,
+    "rating": 8.3,
+    "director": "詹姆斯·古恩",
+    "genres": [
+      "喜剧",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "喜剧",
+      "动作",
+      "火箭",
+      "漫威",
+      "友情",
+      "团队"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "封神第一部：朝歌风云",
+    "title_en": "Creation of the Gods I",
+    "year": 2023,
+    "duration": 148,
+    "rating": 7.8,
+    "director": "乌尔善",
+    "genres": [
+      "动作",
+      "战争",
+      "奇幻"
+    ],
+    "tags": [
+      "神话",
+      "中国",
+      "史诗",
+      "封神榜",
+      "国产",
+      "视觉",
+      "质子"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "三大队",
+    "title_en": "Endless Journey",
+    "year": 2023,
+    "duration": 132,
+    "rating": 7.8,
+    "director": "戴墨",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "犯罪",
+      "追凶",
+      "真实改编",
+      "中国",
+      "警察",
+      "执着",
+      "张译"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "涉过愤怒的海",
+    "title_en": "Across the Furious Sea",
+    "year": 2023,
+    "duration": 144,
+    "rating": 7.5,
+    "director": "曹保平",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "复仇",
+      "中国",
+      "曹保平",
+      "原生家庭",
+      "愤怒"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "宇宙探索编辑部",
+    "title_en": "Journey to the West",
+    "year": 2023,
+    "duration": 118,
+    "rating": 8.0,
+    "director": "孔大山",
+    "genres": [
+      "喜剧",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "伪纪录片",
+      "中国",
+      "荒诞",
+      "文艺",
+      "寻找",
+      "编辑部"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "年会不能停！",
+    "title_en": "Johnny Keep Walking!",
+    "year": 2023,
+    "duration": 117,
+    "rating": 8.0,
+    "director": "董润年",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "喜剧",
+      "职场",
+      "讽刺",
+      "中国",
+      "年会",
+      "打工人",
+      "搞笑"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "河边的错误",
+    "title_en": "Only the River Flows",
+    "year": 2023,
+    "duration": 102,
+    "rating": 7.3,
+    "director": "魏书钧",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "中国",
+      "余华",
+      "文艺",
+      "迷惑",
+      "真相"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "毒舌律师",
+    "title_en": "A Guilty Conscience",
+    "year": 2023,
+    "duration": 133,
+    "rating": 7.5,
+    "director": "吴炜伦",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "法庭",
+      "律师",
+      "香港",
+      "社会",
+      "正义",
+      "黄子华"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "周处除三害",
+    "title_en": "The Pig, the Snake and the Pigeon",
+    "year": 2024,
+    "duration": 134,
+    "rating": 8.1,
+    "director": "黄精甫",
+    "genres": [
+      "动作",
+      "犯罪"
+    ],
+    "tags": [
+      "犯罪",
+      "动作",
+      "台湾",
+      "暴力",
+      "爽片",
+      "宗教",
+      "阮经天"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "热辣滚烫",
+    "title_en": "YOLO",
+    "year": 2024,
+    "duration": 129,
+    "rating": 7.8,
+    "director": "贾玲",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "喜剧",
+      "励志",
+      "减肥",
+      "拳击",
+      "中国",
+      "贾玲",
+      "女性"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "飞驰人生2",
+    "title_en": "Pegasus 2",
+    "year": 2024,
+    "duration": 121,
+    "rating": 7.7,
+    "director": "韩寒",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "运动"
+    ],
+    "tags": [
+      "喜剧",
+      "赛车",
+      "励志",
+      "中国",
+      "韩寒",
+      "沈腾",
+      "续集"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "你想活出怎样的人生",
+    "title_en": "The Boy and the Heron",
+    "year": 2023,
+    "duration": 124,
+    "rating": 7.6,
+    "director": "宫崎骏",
+    "genres": [
+      "动画",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "动画",
+      "奇幻",
+      "宫崎骏",
+      "告别",
+      "成长",
+      "隐喻",
+      "战争"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "铃芽之旅",
+    "title_en": "Suzume",
+    "year": 2022,
+    "duration": 122,
+    "rating": 7.2,
+    "director": "新海诚",
+    "genres": [
+      "动画",
+      "爱情",
+      "奇幻"
+    ],
+    "tags": [
+      "动画",
+      "奇幻",
+      "灾难",
+      "新海诚",
+      "日本",
+      "门",
+      "旅行"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "灌篮高手",
+    "title_en": "The First Slam Dunk",
+    "year": 2022,
+    "duration": 124,
+    "rating": 8.9,
+    "director": "井上雄彦",
+    "genres": [
+      "动画",
+      "运动"
+    ],
+    "tags": [
+      "动画",
+      "篮球",
+      "青春",
+      "热血",
+      "日本",
+      "怀旧",
+      "井上雄彦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "分手的决心",
+    "title_en": "Decision to Leave",
+    "year": 2022,
+    "duration": 138,
+    "rating": 7.6,
+    "director": "朴赞郁",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "犯罪",
+      "爱情",
+      "韩国",
+      "朴赞郁",
+      "警探",
+      "语言"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "瞬息全宇宙",
+    "title_en": "Everything Everywhere All at Once",
+    "year": 2022,
+    "duration": 139,
+    "rating": 7.6,
+    "director": "关家永 / 丹尼尔·施纳特",
+    "genres": [
+      "喜剧",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "多元宇宙",
+      "亚裔",
+      "家庭",
+      "荒诞",
+      "奥斯卡",
+      "杨紫琼"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "不要抬头",
+    "title_en": "Don't Look Up",
+    "year": 2021,
+    "duration": 138,
+    "rating": 7.6,
+    "director": "亚当·麦凯",
+    "genres": [
+      "喜剧",
+      "科幻"
+    ],
+    "tags": [
+      "讽刺",
+      "喜剧",
+      "末日",
+      "社会",
+      "气候",
+      "美国",
+      "黑色幽默"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "健听女孩",
+    "title_en": "CODA",
+    "year": 2021,
+    "duration": 111,
+    "rating": 8.6,
+    "director": "夏安·海德",
+    "genres": [
+      "剧情",
+      "音乐"
+    ],
+    "tags": [
+      "家庭",
+      "音乐",
+      "聋人",
+      "成长",
+      "温情",
+      "励志",
+      "奥斯卡"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "西线无战事",
+    "title_en": "All Quiet on the Western Front",
+    "year": 2022,
+    "duration": 148,
+    "rating": 8.5,
+    "director": "爱德华·贝尔格",
+    "genres": [
+      "剧情",
+      "动作",
+      "战争"
+    ],
+    "tags": [
+      "战争",
+      "一战",
+      "德国",
+      "反战",
+      "残酷",
+      "奥斯卡",
+      "名著"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "新蝙蝠侠",
+    "title_en": "The Batman",
+    "year": 2022,
+    "duration": 176,
+    "rating": 7.3,
+    "director": "马特·里夫斯",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "动作"
+    ],
+    "tags": [
+      "犯罪",
+      "暗黑",
+      "侦探",
+      "蝙蝠侠",
+      "哥谭",
+      " noir",
+      "DC"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "失控玩家",
+    "title_en": "Free Guy",
+    "year": 2021,
+    "duration": 115,
+    "rating": 7.5,
+    "director": "肖恩·利维",
+    "genres": [
+      "喜剧",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "喜剧",
+      "游戏",
+      "NPC",
+      "科幻",
+      "爽片",
+      "搞笑",
+      "瑞安雷诺兹"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "西区故事",
+    "title_en": "West Side Story",
+    "year": 2021,
+    "duration": 156,
+    "rating": 6.0,
+    "director": "史蒂文·斯皮尔伯格",
+    "genres": [
+      "剧情",
+      "爱情",
+      "歌舞"
+    ],
+    "tags": [
+      "歌舞",
+      "爱情",
+      "翻拍",
+      "斯皮尔伯格",
+      "音乐剧",
+      "帮派"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "芬奇",
+    "title_en": "Finch",
+    "year": 2021,
+    "duration": 115,
+    "rating": 8.4,
+    "director": "米格尔·萨普什尼克",
+    "genres": [
+      "剧情",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "末日",
+      "机器人",
+      "狗",
+      "温情",
+      "汤姆汉克斯",
+      "公路"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "倒数时刻",
+    "title_en": "Tick, Tick... Boom!",
+    "year": 2021,
+    "duration": 121,
+    "rating": 8.5,
+    "director": "林-曼努尔·米兰达",
+    "genres": [
+      "剧情",
+      "音乐",
+      "传记"
+    ],
+    "tags": [
+      "音乐",
+      "音乐剧",
+      "创作",
+      "纽约",
+      "梦想",
+      "林漫威",
+      "感人"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "无依之地",
+    "title_en": "Nomadland",
+    "year": 2020,
+    "duration": 107,
+    "rating": 8.1,
+    "director": "赵婷",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "流浪",
+      "美国",
+      "公路",
+      "女性",
+      "赵婷",
+      "独立",
+      "房车"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "曼克",
+    "title_en": "Mank",
+    "year": 2020,
+    "duration": 131,
+    "rating": 7.4,
+    "director": "大卫·芬奇",
+    "genres": [
+      "剧情",
+      "传记"
+    ],
+    "tags": [
+      "好莱坞",
+      "编剧",
+      "黑白",
+      "大卫芬奇",
+      "电影",
+      "复古"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "前程似锦的女孩",
+    "title_en": "Promising Young Woman",
+    "year": 2020,
+    "duration": 113,
+    "rating": 7.7,
+    "director": "埃默拉尔德·芬内尔",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "女性",
+      "复仇",
+      "犯罪",
+      "社会",
+      "惊悚",
+      "黑色",
+      "#MeToo"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "芝加哥七君子审判",
+    "title_en": "The Trial of the Chicago 7",
+    "year": 2020,
+    "duration": 129,
+    "rating": 8.6,
+    "director": "艾伦·索金",
+    "genres": [
+      "剧情",
+      "历史"
+    ],
+    "tags": [
+      "法庭",
+      "历史",
+      "政治",
+      "美国",
+      "索金",
+      "对话",
+      "真实"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "爱尔兰人",
+    "title_en": "The Irishman",
+    "year": 2019,
+    "duration": 209,
+    "rating": 8.8,
+    "director": "马丁·斯科塞斯",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "传记"
+    ],
+    "tags": [
+      "黑帮",
+      "史诗",
+      "马丁斯科塞斯",
+      "Netflix",
+      "老年",
+      "历史",
+      "回忆"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "好莱坞往事",
+    "title_en": "Once Upon a Time in Hollywood",
+    "year": 2019,
+    "duration": 161,
+    "rating": 7.3,
+    "director": "昆汀·塔伦蒂诺",
+    "genres": [
+      "剧情",
+      "喜剧"
+    ],
+    "tags": [
+      "好莱坞",
+      "60年代",
+      "昆汀",
+      "复古",
+      "电影",
+      "致敬",
+      "真实事件改编"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "婚姻故事",
+    "title_en": "Marriage Story",
+    "year": 2019,
+    "duration": 137,
+    "rating": 8.5,
+    "director": "诺亚·鲍姆巴赫",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "婚姻",
+      "离婚",
+      "家庭",
+      "情感",
+      "演技",
+      "真实",
+      "对话"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "利刃出鞘",
+    "title_en": "Knives Out",
+    "year": 2019,
+    "duration": 130,
+    "rating": 8.1,
+    "director": "莱恩·约翰逊",
+    "genres": [
+      "剧情",
+      "喜剧",
+      "悬疑"
+    ],
+    "tags": [
+      "悬疑",
+      "侦探",
+      "家族",
+      "喜剧",
+      "推理",
+      "反转",
+      "谋杀"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "一个明星的诞生",
+    "title_en": "A Star Is Born",
+    "year": 2018,
+    "duration": 136,
+    "rating": 7.4,
+    "director": "布莱德利·库珀",
+    "genres": [
+      "剧情",
+      "爱情",
+      "音乐"
+    ],
+    "tags": [
+      "音乐",
+      "爱情",
+      "明星",
+      "翻拍",
+      "Lady Gaga",
+      "演艺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "黑豹",
+    "title_en": "Black Panther",
+    "year": 2018,
+    "duration": 134,
+    "rating": 6.5,
+    "director": "瑞恩·库格勒",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "超级英雄",
+      "漫威",
+      "非洲",
+      "科幻",
+      "动作",
+      "黑人",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "波西米亚狂想曲",
+    "title_en": "Bohemian Rhapsody",
+    "year": 2018,
+    "duration": 135,
+    "rating": 8.6,
+    "director": "布莱恩·辛格",
+    "genres": [
+      "剧情",
+      "音乐",
+      "传记"
+    ],
+    "tags": [
+      "音乐",
+      "皇后乐队",
+      "传记",
+      "摇滚",
+      "演唱会",
+      "弗雷迪",
+      "经典"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "三个广告牌",
+    "title_en": "Three Billboards Outside Ebbing, Missouri",
+    "year": 2017,
+    "duration": 115,
+    "rating": 8.7,
+    "director": "马丁·麦克唐纳",
+    "genres": [
+      "剧情",
+      "犯罪"
+    ],
+    "tags": [
+      "母亲",
+      "复仇",
+      "小镇",
+      "黑色幽默",
+      "演技",
+      "社会",
+      "犯罪"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "月光男孩",
+    "title_en": "Moonlight",
+    "year": 2016,
+    "duration": 111,
+    "rating": 7.4,
+    "director": "巴里·杰金斯",
+    "genres": [
+      "剧情",
+      "同性"
+    ],
+    "tags": [
+      "成长",
+      "黑人",
+      "同性",
+      "三段式",
+      "迈阿密",
+      "身份",
+      "奥斯卡"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "萨利机长",
+    "title_en": "Sully",
+    "year": 2016,
+    "duration": 96,
+    "rating": 8.3,
+    "director": "克林特·伊斯特伍德",
+    "genres": [
+      "剧情",
+      "传记"
+    ],
+    "tags": [
+      "真实事件",
+      "空难",
+      "机长",
+      "英雄",
+      "航空",
+      "伊斯特伍德",
+      "哈德逊河"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "聚焦",
+    "title_en": "Spotlight",
+    "year": 2015,
+    "duration": 129,
+    "rating": 8.8,
+    "director": "汤姆·麦卡锡",
+    "genres": [
+      "剧情",
+      "传记"
+    ],
+    "tags": [
+      "调查",
+      "记者",
+      "真实事件",
+      "宗教",
+      "性侵",
+      "奥斯卡",
+      "新闻"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "爆裂鼓手",
+    "title_en": "Whiplash",
+    "year": 2014,
+    "duration": 107,
+    "rating": 8.7,
+    "director": "达米恩·查泽雷",
+    "genres": [
+      "剧情",
+      "音乐"
+    ],
+    "tags": [
+      "音乐",
+      "爵士",
+      "鼓",
+      "师徒",
+      "励志",
+      "痛苦",
+      "才华"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "美国队长2",
+    "title_en": "Captain America: The Winter Soldier",
+    "year": 2014,
+    "duration": 136,
+    "rating": 8.0,
+    "director": "罗素兄弟",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "超级英雄",
+      "动作",
+      "间谍",
+      "漫威",
+      "政治",
+      "兄弟情"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "丹麦女孩",
+    "title_en": "The Danish Girl",
+    "year": 2015,
+    "duration": 119,
+    "rating": 8.3,
+    "director": "汤姆·霍珀",
+    "genres": [
+      "剧情",
+      "爱情",
+      "传记"
+    ],
+    "tags": [
+      "变性",
+      "艺术",
+      "爱情",
+      "传记",
+      "油画",
+      "埃迪雷德梅恩",
+      "身份"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "年轻气盛",
+    "title_en": "Youth",
+    "year": 2015,
+    "duration": 124,
+    "rating": 8.2,
+    "director": "保罗·索伦蒂诺",
+    "genres": [
+      "剧情"
+    ],
+    "tags": [
+      "老年",
+      "艺术",
+      "阿尔卑斯",
+      "意大利",
+      "音乐",
+      "人生",
+      "索伦蒂诺"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "机械姬",
+    "title_en": "Ex Machina",
+    "year": 2014,
+    "duration": 108,
+    "rating": 7.6,
+    "director": "亚历克斯·加兰",
+    "genres": [
+      "科幻",
+      "悬疑",
+      "惊悚"
+    ],
+    "tags": [
+      "科幻",
+      "人工智能",
+      "图灵测试",
+      "伦理",
+      "女性",
+      "机器人",
+      "心理"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "夜行者",
+    "title_en": "Nightcrawler",
+    "year": 2014,
+    "duration": 117,
+    "rating": 8.3,
+    "director": "丹·吉尔罗伊",
+    "genres": [
+      "剧情",
+      "犯罪",
+      "惊悚"
+    ],
+    "tags": [
+      "新闻",
+      "犯罪",
+      "洛杉矶",
+      "杰克吉伦哈尔",
+      "媒体",
+      "暗黑",
+      "野心"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "超能陆战队",
+    "title_en": "Big Hero 6",
+    "year": 2014,
+    "duration": 102,
+    "rating": 8.2,
+    "director": "唐·霍尔",
+    "genres": [
+      "动画",
+      "喜剧",
+      "冒险"
+    ],
+    "tags": [
+      "动画",
+      "机器人",
+      "友情",
+      "家庭",
+      "老少咸宜",
+      "迪士尼",
+      "治愈"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "移动迷宫",
+    "title_en": "The Maze Runner",
+    "year": 2014,
+    "duration": 113,
+    "rating": 7.2,
+    "director": "韦斯·鲍尔",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "迷宫",
+      "末日",
+      "青少年",
+      "生存",
+      "反乌托邦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "她",
+    "title_en": "Her",
+    "year": 2013,
+    "duration": 126,
+    "rating": 8.4,
+    "director": "斯派克·琼斯",
+    "genres": [
+      "剧情",
+      "爱情",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "爱情",
+      "人工智能",
+      "孤独",
+      "未来",
+      "语音",
+      "斯派克琼斯"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "为奴十二年",
+    "title_en": "12 Years a Slave",
+    "year": 2013,
+    "duration": 134,
+    "rating": 8.2,
+    "director": "史蒂夫·麦奎因",
+    "genres": [
+      "剧情",
+      "传记",
+      "历史"
+    ],
+    "tags": [
+      "奴隶",
+      "美国",
+      "历史",
+      "种族",
+      "自由",
+      "真实改编",
+      "痛苦"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "地心引力",
+    "title_en": "Gravity",
+    "year": 2013,
+    "duration": 91,
+    "rating": 7.9,
+    "director": "阿方索·卡隆",
+    "genres": [
+      "科幻",
+      "惊悚",
+      "冒险"
+    ],
+    "tags": [
+      "太空",
+      "灾难",
+      "生存",
+      "3D",
+      "卡隆",
+      "紧张",
+      "视觉"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "了不起的盖茨比",
+    "title_en": "The Great Gatsby",
+    "year": 2013,
+    "duration": 143,
+    "rating": 8.0,
+    "director": "巴兹·鲁赫曼",
+    "genres": [
+      "剧情",
+      "爱情"
+    ],
+    "tags": [
+      "经典",
+      "爱情",
+      "美国",
+      "爵士时代",
+      "奢华",
+      "莱昂纳多",
+      "悲剧"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "星际迷航：暗黑无界",
+    "title_en": "Star Trek Into Darkness",
+    "year": 2013,
+    "duration": 132,
+    "rating": 7.9,
+    "director": "J·J·艾布拉姆斯",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "太空",
+      "动作",
+      "星际",
+      "冒险",
+      "柯克船长"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "安德的游戏",
+    "title_en": "Ender's Game",
+    "year": 2013,
+    "duration": 114,
+    "rating": 7.0,
+    "director": "加文·胡德",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "科幻",
+      "战争",
+      "少年",
+      "太空",
+      "策略",
+      "反战"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "被解救的姜戈",
+    "title_en": "Django Unchained",
+    "year": 2012,
+    "duration": 165,
+    "rating": 8.8,
+    "director": "昆汀·塔伦蒂诺",
+    "genres": [
+      "剧情",
+      "动作",
+      "西部"
+    ],
+    "tags": [
+      "西部",
+      "复仇",
+      "昆汀",
+      "暴力",
+      "奴隶",
+      "美国",
+      "黑色幽默"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "悲惨世界",
+    "title_en": "Les Misérables",
+    "year": 2012,
+    "duration": 158,
+    "rating": 8.6,
+    "director": "汤姆·霍珀",
+    "genres": [
+      "剧情",
+      "爱情",
+      "歌舞"
+    ],
+    "tags": [
+      "音乐剧",
+      "革命",
+      "法国",
+      "音乐",
+      "经典",
+      "名著",
+      "悲怆"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "复仇者联盟",
+    "title_en": "The Avengers",
+    "year": 2012,
+    "duration": 143,
+    "rating": 8.2,
+    "director": "乔斯·韦登",
+    "genres": [
+      "动作",
+      "科幻",
+      "冒险"
+    ],
+    "tags": [
+      "超级英雄",
+      "动作",
+      "团队",
+      "漫威",
+      "娱乐",
+      "视觉",
+      "爽片"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "007：大破天幕杀机",
+    "title_en": "Skyfall",
+    "year": 2012,
+    "duration": 143,
+    "rating": 7.2,
+    "director": "萨姆·门德斯",
+    "genres": [
+      "动作",
+      "惊悚",
+      "冒险"
+    ],
+    "tags": [
+      "间谍",
+      "动作",
+      "英国",
+      "007",
+      "邦德",
+      "经典",
+      "萨姆门德斯"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "霍比特人1：意外之旅",
+    "title_en": "The Hobbit: An Unexpected Journey",
+    "year": 2012,
+    "duration": 169,
+    "rating": 8.1,
+    "director": "彼得·杰克逊",
+    "genres": [
+      "动作",
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "奇幻",
+      "冒险",
+      "中土",
+      "托尔金",
+      "矮人",
+      "史诗",
+      "魔戒前传"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "哈利·波特与死亡圣器(下)",
+    "title_en": "Harry Potter and the Deathly Hallows: Part 2",
+    "year": 2011,
+    "duration": 130,
+    "rating": 8.9,
+    "director": "大卫·叶茨",
+    "genres": [
+      "奇幻",
+      "冒险"
+    ],
+    "tags": [
+      "奇幻",
+      "魔法",
+      "决战",
+      "哈利波特",
+      "系列",
+      "童年",
+      "终结"
+    ],
+    "aliases": []
+  },
+  {
+    "title": "猩球崛起",
+    "title_en": "Rise of the Planet of the Apes",
+    "year": 2011,
+    "duration": 105,
+    "rating": 8.1,
+    "director": "鲁伯特·瓦耶特",
+    "genres": [
+      "剧情",
+      "动作",
+      "科幻"
+    ],
+    "tags": [
+      "科幻",
+      "猩猩",
+      "进化",
+      "人类",
+      "动作",
+      "CG",
+      "前传"
+    ],
+    "aliases": []
+  }
+]

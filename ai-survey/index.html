@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="version" content="20260604-pricing-short">
+<title>AI 自动化需求诊断</title>
+<style>
+  :root {
+    --bg: #f6f7f8;
+    --card: #ffffff;
+    --text: #20252b;
+    --sub: #66717d;
+    --accent: #17636d;
+    --accent-dark: #124f57;
+    --border: #d9dfe5;
+    --input-bg: #f9fbfc;
+    --soft: #edf4f5;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 18px;
+    max-width: 720px;
+    margin: 0 auto;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .header {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 10px 24px rgba(31, 41, 55, 0.06);
+  }
+  .eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  h1 { font-size: 24px; line-height: 1.25; margin-bottom: 8px; }
+  .header p { color: var(--sub); font-size: 14px; }
+  .price-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .price-pill {
+    border: 1px solid #c8d8dd;
+    background: var(--soft);
+    color: #214d55;
+    border-radius: 999px;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .progress-bar-wrap {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    position: sticky;
+    top: 12px;
+    z-index: 10;
+  }
+  .progress-bar-outer { flex: 1; height: 8px; background: #e5eaee; border-radius: 4px; overflow: hidden; }
+  .progress-bar-inner { height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.25s; width: 0%; }
+  .progress-text { font-size: 13px; color: var(--sub); font-weight: 700; white-space: nowrap; }
+  .section {
+    background: var(--card);
+    border-radius: 14px;
+    margin-bottom: 12px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(31, 41, 55, 0.04);
+  }
+  .section.completed { border-color: rgba(23, 99, 109, 0.55); }
+  .section-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .sec-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: var(--soft);
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 800;
+    border: 1px solid #c8d8dd;
+  }
+  .sec-info { flex: 1; min-width: 0; }
+  .sec-title { font-weight: 800; font-size: 15px; }
+  .sec-sub { font-size: 12px; color: var(--sub); }
+  .sec-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: #f0f3f5;
+    color: var(--sub);
+    white-space: nowrap;
+  }
+  .sec-badge.done { background: #dceff1; color: var(--accent); }
+  .sec-chevron { font-size: 12px; color: #a8b2ba; transition: transform 0.25s; flex-shrink: 0; }
+  .section.open .sec-chevron { transform: rotate(90deg); }
+  .sec-body { display: none; padding: 0 16px 16px; }
+  .section.open .sec-body { display: block; }
+  .q-item { margin-bottom: 14px; }
+  .q-label {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .q-num { color: var(--accent); font-size: 13px; white-space: nowrap; }
+  .q-input,
+  .q-textarea {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: inherit;
+    background: var(--input-bg);
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    resize: vertical;
+  }
+  .q-input:focus,
+  .q-textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(23, 99, 109, 0.12);
+  }
+  .q-input.filled,
+  .q-textarea.filled {
+    border-color: rgba(23, 99, 109, 0.5);
+    background: #f4fafb;
+  }
+  .q-textarea { min-height: 72px; }
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  .chip {
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 7px 12px;
+    background: #ffffff;
+    color: #41515c;
+    font-size: 13px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .chip.selected {
+    border-color: var(--accent);
+    background: var(--soft);
+    color: var(--accent);
+    font-weight: 700;
+  }
+  .note {
+    margin: 8px 0 0;
+    padding: 10px 12px;
+    background: #f8fafb;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--sub);
+    font-size: 12px;
+  }
+  .bottom-bar {
+    position: static;
+    background: var(--card);
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    gap: 10px;
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 28px rgba(31, 41, 55, 0.12);
+    margin-top: 16px;
+  }
+  .btn {
+    flex: 1;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-reset { background: #f5f7f8; color: #586572; }
+  .btn-submit { background: var(--accent); color: #ffffff; border-color: var(--accent); }
+  .btn-submit:active { background: var(--accent-dark); }
+  .summary-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 28, 35, 0.42);
+    z-index: 100;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 36px 16px;
+    overflow-y: auto;
+  }
+  .summary-modal.show { display: flex; }
+  .summary-card {
+    background: var(--card);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 560px;
+    width: 100%;
+    border: 1px solid var(--border);
+  }
+  .summary-card h3 { margin-bottom: 12px; font-size: 17px; }
+  .summary-item { margin-bottom: 10px; font-size: 14px; line-height: 1.55; }
+  .summary-item .s-q { font-weight: 800; color: var(--text); }
+  .summary-item .s-a { color: var(--sub); margin-top: 2px; white-space: pre-wrap; }
+  .summary-empty { color: #a0a8af; font-size: 13px; }
+  .conversion-block {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f4fafb;
+    border-radius: 12px;
+    border: 1px solid #c8d8dd;
+  }
+  .conversion-block h4 { font-size: 15px; margin-bottom: 6px; color: var(--accent); }
+  .conversion-block p { font-size: 13px; color: #53616d; margin-bottom: 10px; }
+  .conversion-wechat {
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px dashed var(--accent);
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  .btn-copy,
+  .btn-close {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  .btn-copy { border: 1px solid var(--accent); background: var(--accent); color: #ffffff; }
+  .btn-close { border: 1px solid var(--border); background: #ffffff; color: var(--text); }
+  .toast {
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    background: #172026;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+    white-space: nowrap;
+  }
+  .toast.show { opacity: 1; }
+  @media (max-width: 520px) {
+    body { padding: 14px; }
+    h1 { font-size: 22px; }
+    .bottom-bar { flex-direction: column; }
+    .price-pill { width: 100%; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="eyebrow">AI Automation Diagnostic</div>
+  <h1>AI 自动化需求诊断</h1>
+  <p>用 6 个问题把流程、材料、系统限制和交付目标说清楚，便于快速判断是否值得做自动化。</p>
+  <div class="price-row">
+    <div class="price-pill">咨询：300 元 / 小时</div>
+    <div class="price-pill">项目开发：按难易程度报价</div>
+  </div>
+</div>
+
+<div class="progress-bar-wrap">
+  <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
+  <div class="progress-text" id="progressText">0/6</div>
+</div>
+
+<div class="section open" id="sec1">
+  <div class="section-header" onclick="toggleSec(1)">
+    <div class="sec-icon">01</div>
+    <div class="sec-info">
+      <div class="sec-title">流程本身</div>
+      <div class="sec-sub">先判断这件事是否适合自动化</div>
+    </div>
+    <div class="sec-badge" id="badge1">0/3</div>
+    <div class="sec-chevron">▶</div>
+  </div>
+  <div class="sec-body">
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">1</span> 想自动化的是哪一件具体工作？</div>
+      <textarea class="q-textarea" data-q="1" placeholder="例如：把客户提交的材料录入后台、把订单同步到表格、把会议录音整理成纪要。"></textarea>
+    </div>
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">2</span> 现在人工操作大概有哪些步骤？</div>
+      <textarea class="q-textarea" data-q="2" placeholder="按顺序写：从哪里拿材料、打开哪个系统、填哪些字段、最后如何确认完成。"></textarea>
+    </div>
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">3</span> 输入材料和最终输出分别是什么？</div>
+      <textarea class="q-textarea" data-q="3" placeholder="输入：表格 / PDF / 图片 / 录音 / 聊天记录；输出：表单、报告、后台记录、通知等。"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="section open" id="sec2">
+  <div class="section-header" onclick="toggleSec(2)">
+    <div class="sec-icon">02</div>
+    <div class="sec-info">
+      <div class="sec-title">成本与限制</div>
+      <div class="sec-sub">看投入产出和技术边界</div>
+    </div>
+    <div class="sec-badge" id="badge2">0/3</div>
+    <div class="sec-chevron">▶</div>
+  </div>
+  <div class="sec-body">
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">4</span> 这件事多久做一次？每次大概花多少时间？</div>
+      <input class="q-input" data-q="4" placeholder="例如：每天 20 单，每单 3 分钟；每周整理一次，每次 2 小时。">
+    </div>
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">5</span> 会涉及哪些系统、账号、附件或审核要求？</div>
+      <textarea class="q-textarea" data-q="5" placeholder="例如：网页后台、Excel、企业微信、飞书、多维表格、附件上传、人工复核。"></textarea>
+    </div>
+    <div class="q-item">
+      <div class="q-label"><span class="q-num">6</span> 希望交付成什么形式？</div>
+      <textarea class="q-textarea" data-q="6" placeholder="例如：网页小工具、浏览器自动化脚本、表格处理脚本、后台系统、定期报告。"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="section open" id="sec3">
+  <div class="section-header" onclick="toggleSec(3)">
+    <div class="sec-icon">03</div>
+    <div class="sec-info">
+      <div class="sec-title">场景类型</div>
+      <div class="sec-sub">可多选，便于初步归类</div>
+    </div>
+    <div class="sec-badge" id="badge3">选填</div>
+    <div class="sec-chevron">▶</div>
+  </div>
+  <div class="sec-body">
+    <div class="chips" id="scenarioChips">
+      <div class="chip" data-scenario="系统录入自动化">系统录入自动化</div>
+      <div class="chip" data-scenario="票据 / 表单处理">票据 / 表单处理</div>
+      <div class="chip" data-scenario="业务后台">业务后台</div>
+      <div class="chip" data-scenario="会议 / 课程内容处理">会议 / 课程内容处理</div>
+      <div class="chip" data-scenario="零售 / 私域顾问">零售 / 私域顾问</div>
+      <div class="chip" data-scenario="桌面流程小工具">桌面流程小工具</div>
+    </div>
+    <div class="note">咨询按 300 元 / 小时计费；项目开发会根据流程复杂度、系统限制、数据来源和交付形态单独评估。</div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <button class="btn btn-reset" onclick="resetAll()">清空</button>
+  <button class="btn btn-submit" onclick="showSummary()">生成诊断摘要</button>
+</div>
+
+<div class="summary-modal" id="summaryModal">
+  <div class="summary-card" id="summaryCard"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const qs = ['1', '2', '3', '4', '5', '6'];
+  const storageKey = 'ai_survey_short';
+
+  function selectedScenarios() {
+    return Array.from(document.querySelectorAll('.chip.selected')).map(el => el.dataset.scenario);
+  }
+
+  function updateProgress() {
+    let filled = 0;
+    qs.forEach(q => {
+      const el = document.querySelector('[data-q="' + q + '"]');
+      if (el && el.value.trim()) filled++;
+    });
+    const pct = Math.round((filled / qs.length) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = filled + '/' + qs.length;
+
+    [
+      { n: 1, fields: ['1', '2', '3'] },
+      { n: 2, fields: ['4', '5', '6'] }
+    ].forEach(sec => {
+      const done = sec.fields.filter(q => {
+        const el = document.querySelector('[data-q="' + q + '"]');
+        return el && el.value.trim();
+      }).length;
+      const badge = document.getElementById('badge' + sec.n);
+      const box = document.getElementById('sec' + sec.n);
+      if (done === sec.fields.length) {
+        box.classList.add('completed');
+        badge.classList.add('done');
+        badge.textContent = '完成';
+      } else {
+        box.classList.remove('completed');
+        badge.classList.remove('done');
+        badge.textContent = done + '/' + sec.fields.length;
+      }
+    });
+
+    const scenarioCount = selectedScenarios().length;
+    const badge3 = document.getElementById('badge3');
+    badge3.textContent = scenarioCount ? scenarioCount + ' 类' : '选填';
+    if (scenarioCount) badge3.classList.add('done'); else badge3.classList.remove('done');
+    saveState();
+  }
+
+  function toggleSec(n) {
+    document.getElementById('sec' + n).classList.toggle('open');
+    saveState();
+  }
+
+  document.addEventListener('input', function(e) {
+    if (!e.target.hasAttribute('data-q')) return;
+    e.target.classList.toggle('filled', Boolean(e.target.value.trim()));
+    updateProgress();
+  });
+
+  document.getElementById('scenarioChips').addEventListener('click', function(e) {
+    if (!e.target.classList.contains('chip')) return;
+    e.target.classList.toggle('selected');
+    updateProgress();
+  });
+
+  function questionText(id) {
+    const label = document.querySelector('[data-q="' + id + '"]').closest('.q-item').querySelector('.q-label');
+    return label ? label.textContent.replace(/^\s*\d+\s*/, '').trim() : id;
+  }
+
+  function showSummary() {
+    const card = document.getElementById('summaryCard');
+    let html = '<h3>AI 自动化需求摘要</h3>';
+    let hasContent = false;
+    qs.forEach(id => {
+      const el = document.querySelector('[data-q="' + id + '"]');
+      const val = el ? el.value.trim() : '';
+      if (!val) return;
+      hasContent = true;
+      html += '<div class="summary-item"><div class="s-q">' + questionText(id) + '</div><div class="s-a">' + val + '</div></div>';
+    });
+    const scenarios = selectedScenarios();
+    if (scenarios.length) {
+      hasContent = true;
+      html += '<div class="summary-item"><div class="s-q">场景类型</div><div class="s-a">' + scenarios.join(' / ') + '</div></div>';
+    }
+    if (!hasContent) {
+      html += '<div class="summary-empty">还没有填写内容。</div>';
+    }
+    html += '<button class="btn-copy" onclick="copySummary()">复制诊断摘要</button>';
+    html += '<div class="conversion-block">';
+    html += '<h4>下一步沟通</h4>';
+    html += '<p>可将摘要发到微信。咨询定价为 300 元 / 小时；项目开发根据难易程度、系统限制和交付范围单独报价。</p>';
+    html += '<div class="conversion-wechat" onclick="copyWechat()">微信号：smwswk</div>';
+    html += '</div>';
+    html += '<button class="btn-close" onclick="closeSummary()">关闭</button>';
+    card.innerHTML = html;
+    document.getElementById('summaryModal').classList.add('show');
+  }
+
+  function closeSummary() {
+    document.getElementById('summaryModal').classList.remove('show');
+  }
+
+  function summaryText() {
+    let text = 'AI 自动化需求摘要\n\n';
+    qs.forEach(id => {
+      const el = document.querySelector('[data-q="' + id + '"]');
+      const val = el ? el.value.trim() : '';
+      if (val) text += questionText(id) + '\n' + val + '\n\n';
+    });
+    const scenarios = selectedScenarios();
+    if (scenarios.length) text += '场景类型\n' + scenarios.join(' / ') + '\n\n';
+    text += '咨询定价：300 元 / 小时\n项目开发：根据难易程度和交付范围报价\n微信：smwswk\n';
+    return text;
+  }
+
+  function copySummary() {
+    copyText(summaryText(), '诊断摘要已复制');
+  }
+
+  function copyWechat() {
+    copyText('smwswk', '微信号已复制：smwswk');
+  }
+
+  function copyText(text, msg) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(() => showToast(msg), () => showToast(msg));
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast(msg);
+    }
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    window.clearTimeout(window.__toastTimer);
+    window.__toastTimer = window.setTimeout(() => t.classList.remove('show'), 2000);
+  }
+
+  function resetAll() {
+    if (!confirm('确定清空当前填写内容吗？')) return;
+    document.querySelectorAll('[data-q]').forEach(el => {
+      el.value = '';
+      el.classList.remove('filled');
+    });
+    document.querySelectorAll('.chip').forEach(el => el.classList.remove('selected'));
+    updateProgress();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function saveState() {
+    const data = {};
+    document.querySelectorAll('[data-q]').forEach(el => {
+      data[el.dataset.q] = el.value || '';
+    });
+    data._scenarios = selectedScenarios();
+    data._sections = [1, 2, 3].map(n => document.getElementById('sec' + n).classList.contains('open'));
+    localStorage.setItem(storageKey, JSON.stringify(data));
+  }
+
+  function loadState() {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (!raw) {
+        updateProgress();
+        return;
+      }
+      const data = JSON.parse(raw);
+      Object.entries(data).forEach(([k, v]) => {
+        if (k.startsWith('_')) return;
+        const el = document.querySelector('[data-q="' + k + '"]');
+        if (el) {
+          el.value = v;
+          el.classList.toggle('filled', Boolean(v));
+        }
+      });
+      if (data._scenarios) {
+        document.querySelectorAll('.chip').forEach(el => {
+          el.classList.toggle('selected', data._scenarios.includes(el.dataset.scenario));
+        });
+      }
+      if (data._sections) {
+        data._sections.forEach((open, i) => {
+          const sec = document.getElementById('sec' + (i + 1));
+          if (sec) sec.classList.toggle('open', Boolean(open));
+        });
+      }
+      updateProgress();
+    } catch(e) {
+      updateProgress();
+    }
+  }
+
+  loadState();
+</script>
+</body>
+</html>

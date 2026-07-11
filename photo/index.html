@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="hugo">
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  
+  <title>Gallery &middot; SMWSWK</title>
+  
+
+  
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  <link href="/photo/index.xml" rel="alternate" type="application/rss+xml" title="SMWSWK" />
+</head>
+
+
+<body class="">
+
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://ai-independent-builder.onrender.com/"><h1>SMWSWK</h1></a>
+      <p class="subtitle">AI × Contemporary Creation</p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="/" class="">Home</a></li>
+      <li><a href="/photo" class="active">Gallery</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/podcast">Podcast</a></li>
+      <li><a href="/lit-visual">Lit-Visual</a></li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <p>© 2026 SMWSWK</p>
+      <p style="margin-top:0.3rem;"><a href="https://github.com/smwswk" target="_blank">GitHub</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="lightbox">
+  <span id="lightbox-close" onclick="closeLightbox()">×</span>
+  <img id="lightbox-img" src="" alt="" onclick="closeLightbox()">
+  <div id="lightbox-meta"></div>
+</div>
+
+<div class="content container">
+  <div class="gallery-header">
+    <h1>Gallery</h1>
+    <p id="photo-count">加载中…</p>
+  </div>
+
+  
+  <div class="gallery-grid" id="gallery"></div>
+
+</div>
+
+<script>
+(function() {
+  
+  var photos = [{ name: "04_B0004P0110_portra400_v2.png", thumb: "/photo/thumbs/04_B0004P0110_portra400_v2.jpg", full: "/photo/web/04_B0004P0110_portra400_v2.jpg", date: "2026-05-15T13:57" },{ name: "03_B0004P0099_portra400_v2.png", thumb: "/photo/thumbs/03_B0004P0099_portra400_v2.jpg", full: "/photo/web/03_B0004P0099_portra400_v2.jpg", date: "2026-05-15T13:57" },{ name: "06_B0006P0189_portra400.png", thumb: "/photo/thumbs/06_B0006P0189_portra400.jpg", full: "/photo/web/06_B0006P0189_portra400.jpg", date: "2026-05-15T13:57" },{ name: "01_B0002P0130_portra400.png", thumb: "/photo/thumbs/01_B0002P0130_portra400.jpg", full: "/photo/web/01_B0002P0130_portra400.jpg", date: "2026-05-15T13:57" },{ name: "07_B0006P0208_portra400.png", thumb: "/photo/thumbs/07_B0006P0208_portra400.jpg", full: "/photo/web/07_B0006P0208_portra400.jpg", date: "2026-05-15T13:57" },{ name: "06_B0006P0204_portra400_v2.png", thumb: "/photo/thumbs/06_B0006P0204_portra400_v2.jpg", full: "/photo/web/06_B0006P0204_portra400_v2.jpg", date: "2026-05-15T13:57" },{ name: "05_B0006P0179_portra400_v2.png", thumb: "/photo/thumbs/05_B0006P0179_portra400_v2.jpg", full: "/photo/web/05_B0006P0179_portra400_v2.jpg", date: "2026-05-15T13:57" },{ name: "05_B0004P0176_portra400.png", thumb: "/photo/thumbs/05_B0004P0176_portra400.jpg", full: "/photo/web/05_B0004P0176_portra400.jpg", date: "2026-05-15T13:57" },{ name: "02_B0002P0598_portra400.png", thumb: "/photo/thumbs/02_B0002P0598_portra400.jpg", full: "/photo/web/02_B0002P0598_portra400.jpg", date: "2026-05-15T13:57" },{ name: "03_B0002P0629_portra400.png", thumb: "/photo/thumbs/03_B0002P0629_portra400.jpg", full: "/photo/web/03_B0002P0629_portra400.jpg", date: "2026-05-15T13:57" },{ name: "pinterest_sanctuary_09_negative_strips.png", thumb: "/photo/thumbs/pinterest_sanctuary_09_negative_strips.jpg", full: "/photo/web/pinterest_sanctuary_09_negative_strips.jpg", date: "2026-04-24T10:47" },{ name: "pinterest_sanctuary_08_light_meter.png", thumb: "/photo/thumbs/pinterest_sanctuary_08_light_meter.jpg", full: "/photo/web/pinterest_sanctuary_08_light_meter.jpg", date: "2026-04-24T10:46" },{ name: "pinterest_sanctuary_07_camera_bag.png", thumb: "/photo/thumbs/pinterest_sanctuary_07_camera_bag.jpg", full: "/photo/web/pinterest_sanctuary_07_camera_bag.jpg", date: "2026-04-24T10:46" },{ name: "pinterest_sanctuary_06_contact_sheets.png", thumb: "/photo/thumbs/pinterest_sanctuary_06_contact_sheets.jpg", full: "/photo/web/pinterest_sanctuary_06_contact_sheets.jpg", date: "2026-04-24T10:45" },{ name: "pinterest_sanctuary_05_darkroom_corner.png", thumb: "/photo/thumbs/pinterest_sanctuary_05_darkroom_corner.jpg", full: "/photo/web/pinterest_sanctuary_05_darkroom_corner.jpg", date: "2026-04-24T10:45" },{ name: "pinterest_sanctuary_04_lens_collection.png", thumb: "/photo/thumbs/pinterest_sanctuary_04_lens_collection.jpg", full: "/photo/web/pinterest_sanctuary_04_lens_collection.jpg", date: "2026-04-24T10:44" },{ name: "pinterest_sanctuary_03_camera_detail.png", thumb: "/photo/thumbs/pinterest_sanctuary_03_camera_detail.jpg", full: "/photo/web/pinterest_sanctuary_03_camera_detail.jpg", date: "2026-04-24T10:35" },{ name: "pinterest_sanctuary_02_film_shelf.png", thumb: "/photo/thumbs/pinterest_sanctuary_02_film_shelf.jpg", full: "/photo/web/pinterest_sanctuary_02_film_shelf.jpg", date: "2026-04-24T10:12" },{ name: "pinterest_sanctuary_01_desk.png", thumb: "/photo/thumbs/pinterest_sanctuary_01_desk.jpg", full: "/photo/web/pinterest_sanctuary_01_desk.jpg", date: "2026-04-24T10:11" },{ name: "CF167269.jpg", thumb: "/photo/thumbs/CF167269.jpg", full: "/photo/web/CF167269.jpg", date: "2026-04-20T11:57:37" },{ name: "CF167264.jpg", thumb: "/photo/thumbs/CF167264.jpg", full: "/photo/web/CF167264.jpg", date: "2026-04-20T11:53:00" },{ name: "CF167235.jpg", thumb: "/photo/thumbs/CF167235.jpg", full: "/photo/web/CF167235.jpg", date: "2026-04-18T17:23:04" },{ name: "CF167078.jpg", thumb: "/photo/thumbs/CF167078.jpg", full: "/photo/web/CF167078.jpg", date: "2026-04-18T12:45:37" },{ name: "CF167011.jpg", thumb: "/photo/thumbs/CF167011.jpg", full: "/photo/web/CF167011.jpg", date: "2026-04-17T12:42:07" },{ name: "CF166932.jpg", thumb: "/photo/thumbs/CF166932.jpg", full: "/photo/web/CF166932.jpg", date: "2026-04-15T11:46:06" },{ name: "CF166917.jpg", thumb: "/photo/thumbs/CF166917.jpg", full: "/photo/web/CF166917.jpg", date: "2026-04-15T11:36:20" },{ name: "CF166789.jpg", thumb: "/photo/thumbs/CF166789.jpg", full: "/photo/web/CF166789.jpg", date: "2026-04-07T12:21:44" },{ name: "CF166775.jpg", thumb: "/photo/thumbs/CF166775.jpg", full: "/photo/web/CF166775.jpg", date: "2026-04-07T12:02:56" },{ name: "CF166760.jpg", thumb: "/photo/thumbs/CF166760.jpg", full: "/photo/web/CF166760.jpg", date: "2026-04-07T11:39:15" },{ name: "CF166729.jpg", thumb: "/photo/thumbs/CF166729.jpg", full: "/photo/web/CF166729.jpg", date: "2026-04-05T14:40:06" },{ name: "CF165965.jpg", thumb: "/photo/thumbs/CF165965.jpg", full: "/photo/web/CF165965.jpg", date: "2026-03-22T15:39:56" },{ name: "CF165953.jpg", thumb: "/photo/thumbs/CF165953.jpg", full: "/photo/web/CF165953.jpg", date: "2026-03-22T07:54:55" },{ name: "CF165855.jpg", thumb: "/photo/thumbs/CF165855.jpg", full: "/photo/web/CF165855.jpg", date: "2026-03-21T10:51:33" },{ name: "B0002P0679.jpg", thumb: "/photo/thumbs/B0002P0679.jpg", full: "/photo/web/B0002P0679.jpg", date: "2025-02-01T13:37:37" },{ name: "B0002P0624.jpg", thumb: "/photo/thumbs/B0002P0624.jpg", full: "/photo/web/B0002P0624.jpg", date: "2025-02-01T11:27:54" },{ name: "B0007P0045.jpg", thumb: "/photo/thumbs/B0007P0045.jpg", full: "/photo/web/B0007P0045.jpg", date: "2025-01-04T20:03:21" },{ name: "B0006P0219.jpg", thumb: "/photo/thumbs/B0006P0219.jpg", full: "/photo/web/B0006P0219.jpg", date: "2025-01-04T16:49:09" },{ name: "B0006P0208.jpg", thumb: "/photo/thumbs/B0006P0208.jpg", full: "/photo/web/B0006P0208.jpg", date: "2025-01-04T16:41:20" },{ name: "B0006P0189.jpg", thumb: "/photo/thumbs/B0006P0189.jpg", full: "/photo/web/B0006P0189.jpg", date: "2025-01-04T16:22:04" },{ name: "B0006P0179.jpg", thumb: "/photo/thumbs/B0006P0179.jpg", full: "/photo/web/B0006P0179.jpg", date: "2025-01-04T16:14:32" },{ name: "B0004P0110.jpg", thumb: "/photo/thumbs/B0004P0110.jpg", full: "/photo/web/B0004P0110.jpg", date: "2025-01-01T14:12:02" },{ name: "B0004P0099.jpg", thumb: "/photo/thumbs/B0004P0099.jpg", full: "/photo/web/B0004P0099.jpg", date: "2025-01-01T14:03:48" }];
+
+  var gallery = document.getElementById('gallery');
+
+  
+  var countEl = document.getElementById('photo-count');
+  if (photos.length > 0) {
+    countEl.textContent = photos.length + ' 张照片 · 点击查看大图';
+  } else {
+    countEl.textContent = '暂无照片';
+    gallery.innerHTML = '<p style="color:#777;font-size:0.85rem;grid-column:1/-1;padding:2rem 0;">暂无照片。将照片放入 photo/ 文件夹后运行 sync_photos.sh。</p>';
+    return;
+  }
+
+  photos.forEach(function(p) {
+    var item = document.createElement('div');
+    item.className = 'gallery-item';
+    item.innerHTML =
+      '<img src="' + p.thumb + '" alt="' + p.name + '" decoding="async" width="600" height="450">' +
+      '<div class="overlay"><span>' + p.name.replace(/\.[^.]+$/, '') + '</span></div>';
+    item.addEventListener('click', function() { openLightbox(p); });
+    gallery.appendChild(item);
+  });
+
+  
+  function openLightbox(p) {
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightbox-img').src = p.full;
+    document.getElementById('lightbox-meta').textContent = p.name + ' · ' + p.date;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  window.closeLightbox = function() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  };
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+})();
+</script>
+
+</body>
+</html>

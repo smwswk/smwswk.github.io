@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>搞艺术的独立开发者</title>
+  <meta name="description" content="AI 时代当代创作者。B站2.8万粉，独立播客 Contact Sheets 联合主播。摄影、播客、AI 工作流。">
+  <meta name="keywords" content="搞艺术的独立开发者,AI创作,摄影,播客,独立播客,B站,小红书">
+  <meta property="og:title" content="搞艺术的独立开发者">
+  <meta property="og:description" content="AI 时代当代创作者 — 在技术与感知的交界处，建立新的创作语言。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ai-independent-builder.onrender.com/about/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ai-independent-builder.onrender.com/about/">
+  <style>
+
+  :root {
+    --bg: #0a0a0a;
+    --card: #111111;
+    --text: #e8e4df;
+    --text-secondary: #999;
+    --text-muted: #777;
+    --accent: #c9a96e;
+    --accent-subtle: rgba(201, 169, 110, 0.08);
+    --border: #222;
+    --border-light: #1a1a1a;
+    --shadow: 0 1px 3px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.3);
+    --radius: 10px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  /* ---------- Masthead ---------- */
+  .masthead {
+    text-align: center;
+    padding: 48px 36px 40px;
+    background: var(--card);
+    color: var(--text);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 24px;
+    border: 1px solid var(--border-light);
+  }
+
+  .masthead .subtitle {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .masthead .name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .masthead .handle {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-secondary);
+    letter-spacing: 0.04em;
+    margin-bottom: 18px;
+  }
+
+  .masthead .tagline {
+    display: inline-block;
+    font-size: 16px;
+    color: var(--accent);
+    background: var(--accent-subtle);
+    padding: 8px 24px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 26px;
+    border: 1px solid rgba(201, 169, 110, 0.15);
+  }
+
+  .masthead .stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .masthead .stat { text-align: center; }
+  .masthead .stat .num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .masthead .stat .num .unit {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--accent);
+  }
+  .masthead .stat .lbl {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* ---------- Section ---------- */
+  .section {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px 36px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-light);
+  }
+
+  .section-label {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: var(--text);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .section-label::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  /* ---------- Identity Grid ---------- */
+  .identity-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .identity-card {
+    padding: 18px 16px;
+    background: #161616;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .identity-card .icon {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .identity-card .role {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .identity-card .detail {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ---------- Timeline ---------- */
+  .timeline-list {
+    list-style: none;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 14px;
+    align-items: flex-start;
+  }
+
+  .timeline-item:last-child { margin-bottom: 0; }
+
+  .timeline-dot {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    margin-top: 9px;
+  }
+
+  .timeline-content .milestone {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+
+  .timeline-content .context {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+
+  .timeline-content .context em {
+    font-style: normal;
+    color: var(--accent);
+  }
+
+  /* ---------- Exhibition List ---------- */
+  .exhibition-list {
+    list-style: none;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 2.1;
+    columns: 2;
+    column-gap: 24px;
+  }
+
+  .exhibition-list li::before {
+    content: '— ';
+    color: var(--accent);
+  }
+
+  /* ---------- Links ---------- */
+  .links-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .link-card {
+    flex: 1;
+    min-width: 130px;
+    padding: 16px 18px;
+    background: #161616;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    text-align: center;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 16px;
+    transition: all 0.15s;
+  }
+
+  .link-card:hover {
+    border-color: var(--accent);
+  }
+
+  .link-card .platform {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .link-card .id {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 2px;
+    word-break: break-all;
+  }
+
+  /* ---------- Footer ---------- */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 600px) {
+    .page { padding: 0 12px; margin: 20px auto; }
+    .masthead { padding: 32px 20px 28px; }
+    .masthead .name { font-size: 26px; }
+    .masthead .handle { font-size: 15px; }
+    .masthead .stats-row { gap: 20px; }
+    .masthead .stat .num { font-size: 24px; }
+    .section { padding: 24px 18px; }
+    .section-label { font-size: 18px; }
+    .identity-grid { grid-template-columns: repeat(2, 1fr); }
+    .identity-card .icon { font-size: 22px; }
+    .identity-card .role { font-size: 14px; }
+    .identity-card .detail { font-size: 12px; }
+    .exhibition-list { columns: 1; }
+    .links-row { flex-direction: column; }
+  }
+
+  /* ---------- Print ---------- */
+  @media print {
+    body { background: white; color: #2c2c2c; }
+    .page { max-width: 100%; margin: 0; padding: 0; }
+    .masthead {
+      box-shadow: none;
+      border-radius: 0;
+      background: white;
+      border: 1px solid #e0e0e0;
+    }
+    .section {
+      box-shadow: none;
+      border-radius: 0;
+      break-inside: avoid;
+      margin-bottom: 12px;
+      border: 1px solid #e0e0e0;
+      background: white;
+    }
+    .masthead .tagline {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .masthead .name, .masthead .stat .num,
+    .section-label, .identity-card .role,
+    .timeline-content .milestone, .link-card { color: #2c2c2c; }
+    .masthead .subtitle { color: #c7512e; }
+    .masthead .stat .num .unit,
+    .timeline-content .context em,
+    .exhibition-list li::before { color: #c7512e; }
+    .masthead .handle,
+    .identity-card .detail,
+    .link-card .id,
+    .footer { color: #999; }
+    .identity-card, .link-card { background: #fafaf9; border-color: #f2eeea; }
+    @page { margin: 12mm; size: A4; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ========== MASTHEAD ========== -->
+  <header class="masthead">
+    <div class="subtitle">Contemporary Creator · Podcaster · AI Practitioner</div>
+    <h1 class="name">独立开发者</h1>
+    <p class="handle">搞艺术的独立开发者 · independent-builderg</p>
+    <p class="tagline">在技术与感知的交界处，建立新的创作语言</p>
+
+    <div class="stats-row">
+      <div class="stat">
+        <div class="num">B站 <span class="unit">2.7w</span></div>
+        <div class="lbl">搞艺术的独立开发者</div>
+      </div>
+      <div class="stat">
+        <div class="num">小红书 <span class="unit">8k</span></div>
+        <div class="lbl">搞艺术的独立开发者</div>
+      </div>
+      <div class="stat">
+        <div class="num">播客 <span class="unit">1.5w</span></div>
+        <div class="lbl">独立播客 Contact Sheets</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== IDENTITY ========== -->
+  <section class="section">
+    <div class="section-label">身份</div>
+    <div class="identity-grid">
+      <div class="identity-card">
+        <div class="icon">📷</div>
+        <div class="role">哈苏创作者</div>
+        <div class="detail">OPPO 影像合作<br>中国国家地理供稿人<br>图虫/Shutterstock签约</div>
+      </div>
+      <div class="identity-card">
+        <div class="icon">🎙️</div>
+        <div class="role">播客主播</div>
+        <div class="detail">独立播客 Contact Sheets<br>联合主播 & 策划<br>1.5万订阅 · 访谈/杂谈</div>
+      </div>
+      <div class="identity-card">
+        <div class="icon">🎬</div>
+        <div class="role">自媒体人</div>
+        <div class="detail">B站 2.7万 · 小红书 8k<br>哈苏/器材/摄影文化<br>充电栏目 · 捡垃圾系列</div>
+      </div>
+      <div class="identity-card">
+        <div class="icon">🤖</div>
+        <div class="role">AI 创作者</div>
+        <div class="detail">Claude Code 重度用户<br>AI 工作流自动化搭建<br>视觉模型集成 · 提示工程</div>
+      </div>
+      <div class="identity-card">
+        <div class="icon">🏛️</div>
+        <div class="role">策展 & 教学</div>
+        <div class="detail">地方叙事摄影策展顾问<br>华东地区/上海陆家嘴<br>在地摄影工作坊</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== 2025 HIGHLIGHTS ========== -->
+  <section class="section">
+    <div class="section-label">2025 关键节点</div>
+    <div class="timeline-list">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">采访马格南摄影师 Alec Soth</div>
+          <div class="context">以播客主播身份，联合 Photo Reason 共同采访。话题从创作怀疑、停顿聊到"为什么'玩'比技巧更重要"。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">首届中文摄影播客节</div>
+          <div class="context">以主办播客身份发起话题"拍得越多越像，审美趋同怎么破？"，联合小米影像、单向空间、Photo Reason 共同举办。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">策展：上海《此地此刻》地方叙事摄影展</div>
+          <div class="context">担任小美艺术空间 × 摊美术馆联合策展顾问；主持陆家嘴街道地方叙事摄影调查工作坊。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">华东地区线下摄影工作坊</div>
+          <div class="context">以主办方角色搭建从扫街到展览的极限 48 小时工作坊，带领听友完成创作闭环。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">自媒体增长与爆款</div>
+          <div class="context">B站/小红书/播客合计增长近万粉丝。爆款内容：<em>哈苏后背</em>、<em>徕卡M1</em>、<em>CCD专题</em>、<em>苹果体验</em>。听友群扩展至 5 个。</div>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-content">
+          <div class="milestone">品牌合作</div>
+          <div class="context">合作品牌：<em>OPPO</em>、<em>理想国出版社</em>、<em>后浪出版社</em>、<em>明基</em> 等。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXHIBITIONS ========== -->
+  <section class="section">
+    <div class="section-label">展览与发表</div>
+    <ul class="exhibition-list">
+      <li>2018 《表面》— 平遥国际摄影节</li>
+      <li>2022 《生活趣味》《色彩几何》— 第十届华东地区摄影艺术展 <strong>铜奖</strong></li>
+      <li>2023 《生活小事》—《白相》华东地区七人摄影联展</li>
+      <li>2024 《豫园雨景》— 小米上海《探寻城市文脉》摄影展</li>
+      <li>2024 《时间的墙》— 大屋顶Space × 银盐空间《迷墙》主题展</li>
+      <li>2024 《背影》— 富士 X Space《肖像力》征集展</li>
+      <li>2024 《马孔多》— 富士 X Space《历历万乡》主题展</li>
+      <li>2025 策展顾问 — 上海小美艺术空间 × 摊美术馆《此地此刻》</li>
+    </ul>
+  </section>
+
+  <!-- ========== LINKS ========== -->
+  <section class="section">
+    <div class="section-label">找到我</div>
+    <div class="links-row">
+      <a href="https://example.invalid/removed" class="link-card" target="_blank">
+        <div class="platform">B站</div>
+        <div class="id">@搞艺术的独立开发者 · 2.7w粉</div>
+      </a>
+      <a href="https://www.xiaohongshu.com/user/profile/5ca42c54000000001603c81a" class="link-card" target="_blank">
+        <div class="platform">小红书</div>
+        <div class="id">@搞艺术的独立开发者 · 8k粉</div>
+      </a>
+      <a href="https://example.invalid/removed" class="link-card" target="_blank">
+        <div class="platform">小宇宙</div>
+        <div class="id">独立播客 Contact Sheets · 1.5w订阅</div>
+      </a>
+      <a href="https://github.com/smwswk" class="link-card" target="_blank">
+        <div class="platform">GitHub</div>
+        <div class="id">@smwswk</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <div class="footer">
+    独立 AI 探索者<br>
+    摄影 / 播客 / 策展 / 开源工具
+  </div>
+
+</div>
+
+</body>
+</html>

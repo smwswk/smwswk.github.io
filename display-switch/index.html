@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>双机共享显示器切换包 · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --paper: #0b0d10;
+      --panel: #11161d;
+      --panel-2: #151b24;
+      --ink: #edf2f7;
+      --muted-copy: #9aa6b2;
+      --line-soft: rgba(237, 242, 247, 0.12);
+      --hot: #e7c16b;
+      --ok: #4fc3a1;
+      --vga: #58a6ff;
+      --hdmi: #f97373;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .switch-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+
+    .switch-hero {
+      min-height: 42vh;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.82fr);
+      gap: 1.5rem;
+      align-items: center;
+      border-bottom: 1px solid var(--line-soft);
+      padding-bottom: 2.2rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: var(--hot);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: var(--ink);
+      font-size: clamp(2.15rem, 6vw, 5rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 690px;
+      margin: 1.1rem 0 0;
+      color: var(--muted-copy);
+      font-size: 1rem;
+      line-height: 1.75;
+      overflow-wrap: anywhere;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.5rem;
+    }
+
+    .switch-button {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      border: 1px solid var(--hot);
+      border-radius: 8px;
+      color: var(--paper);
+      background: var(--hot);
+      font-weight: 700;
+    }
+
+    .switch-button.secondary {
+      color: var(--ink);
+      background: transparent;
+      border-color: var(--line-soft);
+    }
+
+    .switch-button:hover {
+      opacity: 0.86;
+    }
+
+    .diagram {
+      min-height: 300px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: radial-gradient(circle at 30% 15%, rgba(79, 195, 161, 0.16), transparent 32%),
+                  linear-gradient(145deg, #11161d, #0a0d12);
+    }
+
+    .monitor {
+      position: absolute;
+      left: 50%;
+      top: 18%;
+      width: 48%;
+      height: 42%;
+      transform: translateX(-50%);
+      border: 8px solid #2f3a46;
+      border-radius: 8px;
+      background: linear-gradient(135deg, rgba(88, 166, 255, 0.18), rgba(249, 115, 115, 0.18));
+      box-shadow: 0 24px 55px rgba(0, 0, 0, 0.28);
+    }
+
+    .monitor::after {
+      content: "TF2416";
+      position: absolute;
+      left: 50%;
+      bottom: 0.6rem;
+      transform: translateX(-50%);
+      color: rgba(237, 242, 247, 0.72);
+      font-size: 0.78rem;
+      letter-spacing: 0;
+    }
+
+    .stand {
+      position: absolute;
+      left: 50%;
+      top: 60%;
+      width: 18%;
+      height: 12%;
+      transform: translateX(-50%);
+      border-bottom: 42px solid #2f3a46;
+      border-left: 16px solid transparent;
+      border-right: 16px solid transparent;
+    }
+
+    .base {
+      position: absolute;
+      left: 38%;
+      right: 38%;
+      top: 76%;
+      height: 12px;
+      border-radius: 999px;
+      background: #2f3a46;
+    }
+
+    .machine {
+      position: absolute;
+      bottom: 11%;
+      width: 28%;
+      min-height: 66px;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.75rem;
+      color: var(--ink);
+      font-size: 0.82rem;
+    }
+
+    .machine strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .machine span {
+      color: var(--muted-copy);
+    }
+
+    .machine.win { left: 7%; }
+    .machine.mac { right: 7%; }
+
+    .line {
+      position: absolute;
+      height: 3px;
+      transform-origin: left center;
+      border-radius: 999px;
+    }
+
+    .line-vga {
+      left: 30%;
+      bottom: 26%;
+      width: 25%;
+      transform: rotate(-29deg);
+      background: var(--vga);
+      box-shadow: 0 0 14px rgba(88, 166, 255, 0.5);
+    }
+
+    .line-hdmi {
+      right: 30%;
+      bottom: 26%;
+      width: 25%;
+      transform: rotate(209deg);
+      background: var(--hdmi);
+      box-shadow: 0 0 14px rgba(249, 115, 115, 0.5);
+    }
+
+    .hotkey {
+      position: absolute;
+      right: 8%;
+      top: 8%;
+      display: grid;
+      grid-template-columns: repeat(3, 42px);
+      gap: 0.4rem;
+    }
+
+    .key {
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-soft);
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--hot);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 1rem;
+    }
+
+    .source-section {
+      margin-top: 1rem;
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+      background: var(--panel-2);
+      padding: 1.1rem;
+    }
+
+    .source-section h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+
+    .source-section p {
+      max-width: 820px;
+      margin: 0.75rem 0 0;
+      color: var(--muted-copy);
+      line-height: 1.7;
+      overflow-wrap: anywhere;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .source-item {
+      border-left: 4px solid var(--ok);
+      border-radius: 0 8px 8px 0;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.75rem;
+      color: var(--muted-copy);
+      line-height: 1.58;
+      font-size: 0.84rem;
+    }
+
+    .source-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+
+    .info-card h2,
+    .info-card h3 {
+      margin: 0 0 0.6rem;
+      color: var(--ink);
+      font-size: 1rem;
+      letter-spacing: 0;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: var(--muted-copy);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+
+    .info-card ul {
+      margin: 0;
+      padding-left: 1.05rem;
+    }
+
+    .code-line {
+      display: block;
+      margin-top: 0.55rem;
+      padding: 0.62rem;
+      border: 1px solid var(--line-soft);
+      border-radius: 6px;
+      background: #090b0f;
+      color: var(--ok);
+      font-size: 0.78rem;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 860px) {
+      .switch-page {
+        overflow-x: hidden;
+      }
+
+      .switch-hero,
+      .info-grid,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .switch-hero {
+        min-height: auto;
+      }
+
+      .diagram {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .switch-page {
+        padding: 2rem 1rem 3rem;
+      }
+
+      .actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .switch-button {
+        width: 100%;
+      }
+
+      .diagram {
+        min-height: 300px;
+      }
+
+      .monitor {
+        width: 62%;
+        top: 20%;
+      }
+
+      .hotkey {
+        right: 0.8rem;
+        top: 0.8rem;
+        grid-template-columns: repeat(3, 34px);
+        gap: 0.3rem;
+      }
+
+      .key {
+        height: 31px;
+        font-size: 0.68rem;
+      }
+
+      .machine {
+        width: 38%;
+        min-height: 62px;
+        padding: 0.58rem;
+        font-size: 0.72rem;
+      }
+
+      .machine.win {
+        left: 4%;
+      }
+
+      .machine.mac {
+        right: 4%;
+      }
+
+      .line-vga {
+        left: 31%;
+        width: 25%;
+      }
+
+      .line-hdmi {
+        right: 31%;
+        width: 25%;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="switch-page">
+  <section class="switch-hero">
+    <div>
+      <p class="eyebrow">Automation Workflow</p>
+      <h1>双机共享显示器切换包</h1>
+      <p class="lead">
+        一台 Win7 老电脑走 VGA，一台 Mac 走 HDMI，共用同一台 TF2416 显示器。Mac 端 DDC/CI 不通后，改由 Win7 端主动发起输入源切换，并用 AutoHotkey 绑定 Win+C。
+      </p>
+      <div class="actions">
+        <a class="switch-button" href="/display-switch/display-switch-win7-kit.zip" download>下载 Win7 工具包</a>
+        <a class="switch-button secondary" href="/display-switch/downloads/display-switch-source.zip" download>下载源码包</a>
+        <a class="switch-button secondary" href="https://github.com/smwswk/smwswk.github.io/tree/master/display-switch/source" target="_blank" rel="noopener">GitHub 源码</a>
+        <a class="switch-button secondary" href="/">返回首页</a>
+      </div>
+    </div>
+    <div class="diagram" aria-label="Win7 and Mac share one TF2416 monitor">
+      <div class="monitor"></div>
+      <div class="stand"></div>
+      <div class="base"></div>
+      <div class="line line-vga"></div>
+      <div class="line line-hdmi"></div>
+      <div class="machine win"><strong>Win7</strong><span>VGA · ControlMyMonitor</span></div>
+      <div class="machine mac"><strong>Mac</strong><span>HDMI · shared display</span></div>
+      <div class="hotkey" aria-hidden="true">
+        <div class="key">Win</div>
+        <div class="key">+</div>
+        <div class="key">C</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="info-grid">
+    <article class="info-card">
+      <h2>已验证参数</h2>
+      <ul>
+        <li>显示器：TF2416</li>
+        <li>VCP 60 / Input Select 可读写</li>
+        <li>VGA / Win7 = 1</li>
+        <li>HDMI / Mac = 3</li>
+      </ul>
+    </article>
+
+    <article class="info-card">
+      <h2>快捷键</h2>
+      <ul>
+        <li>Win+C：在 Win7 和 Mac 之间切换</li>
+        <li>Win+Shift+C：直接切到 Mac</li>
+        <li>Win+Ctrl+C：直接切到 Win7</li>
+      </ul>
+    </article>
+
+    <article class="info-card">
+      <h2>Win7 启动</h2>
+      <p>解压后运行：</p>
+      <code class="code-line">start_win_c_hotkey.bat</code>
+      <p>需要开机自启时运行：</p>
+      <code class="code-line">install_win_c_hotkey_on_startup.bat</code>
+    </article>
+  </section>
+
+  <section class="source-section">
+    <h2>开源说明</h2>
+    <p>
+      现成 Win7 工具包保留第三方便携工具，方便旧电脑直接运行；源码包只包含脚本、配置和 MIT 许可，不包含 ControlMyMonitor 或 AutoHotkey 二进制文件。
+    </p>
+    <div class="source-grid">
+      <div class="source-item">
+        <strong>配置化</strong>
+        `config.bat` 集中放显示器 ID、VGA/HDMI 输入值和工具路径。
+      </div>
+      <div class="source-item">
+        <strong>可审计</strong>
+        切换、诊断、热键、自启和 watcher 都是普通 bat / ahk 文件。
+      </div>
+      <div class="source-item">
+        <strong>可移植</strong>
+        默认值是 TF2416 的实测参数，其他 DDC/CI 显示器可先跑诊断再改。
+      </div>
+    </div>
+  </section>
+</div>
+</body>
+</html>

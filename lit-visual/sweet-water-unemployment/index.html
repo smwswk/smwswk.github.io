@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="糖水摄影师的失业：Codex image2 生成的小红书糖水人像实验。">
+<title>糖水摄影师的失业 · SMWSWK</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: #f7f3ee;
+  color: #221a16;
+  line-height: 1.65;
+}
+.wrap { max-width: 1160px; margin: 0 auto; padding: 48px 20px 64px; }
+.hero {
+  min-height: 62vh;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.72fr);
+  gap: 44px;
+  align-items: end;
+  padding-bottom: 44px;
+  border-bottom: 1px solid rgba(76, 55, 40, 0.16);
+}
+.hero-copy { padding-bottom: 12px; }
+.eyebrow { font-size: 12px; letter-spacing: 0.22em; color: #9b6d57; text-transform: uppercase; margin-bottom: 18px; }
+h1 { font-size: clamp(42px, 8vw, 88px); line-height: 0.95; font-weight: 600; letter-spacing: 0; margin-bottom: 24px; }
+.lead { max-width: 620px; font-size: 17px; color: #6a5144; }
+.hero-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 22px 50px rgba(58, 38, 26, 0.18);
+}
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+.meta span {
+  border: 1px solid rgba(127, 92, 70, 0.24);
+  color: #785943;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 42px;
+}
+.shot { background: #eee5dd; border-radius: 8px; overflow: hidden; }
+.shot img { width: 100%; aspect-ratio: 3 / 4; height: auto; object-fit: cover; display: block; }
+.note {
+  max-width: 760px;
+  margin: 44px auto 0;
+  color: #6a5144;
+  font-size: 15px;
+  text-align: center;
+}
+.back { display: inline-block; margin-top: 34px; color: #8a5d43; text-decoration: none; }
+@media (max-width: 760px) {
+  .wrap { padding: 28px 16px 44px; }
+  .hero { grid-template-columns: 1fr; gap: 26px; min-height: auto; }
+  .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Codex Image2 Portrait Study</p>
+      <h1>糖水摄影师的失业</h1>
+      <p class="lead">一次面向小红书竖屏审美的 AI 糖水人像实验：好嫁风、白净柔光、生活方式场景、正常比例和可发布封面感。</p>
+      <div class="meta">
+        <span>Codex image2</span>
+        <span>3:4 竖屏</span>
+        <span>小红书封面感</span>
+        <span>Portra 400 气质</span>
+      </div>
+      <a class="back" href="/lit-visual/">返回 Lit-Visual</a>
+    </div>
+    <img class="hero-img" src="images/sweet_water_01.png" alt="糖水摄影师的失业封面">
+  </section>
+  <section class="grid">
+      <figure class="shot">
+        <img src="images/sweet_water_01.png" alt="糖水摄影师的失业 01" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/sweet_water_02.png" alt="糖水摄影师的失业 02" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/sweet_water_03.png" alt="糖水摄影师的失业 03" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/sweet_water_04.png" alt="糖水摄影师的失业 04" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/sweet_water_05.png" alt="糖水摄影师的失业 05" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/sweet_water_06.png" alt="糖水摄影师的失业 06" loading="lazy">
+      </figure>
+  </section>
+  <p class="note">不是摄影作品替代宣言，而是一次低成本风格验证：当审美被拆成构图、光线、服装、场景和社媒反馈机制，糖水片生产会变成 prompt 工程。</p>
+</main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="墓地消融 · Juan Rulfo《佩德罗·巴拉莫》的亡魂世界，俯拍凝视人体沉入土地的缓慢过程">
+<title>墓地消融 · Lit-Visual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 5% 80px; }
+.back-link { display: inline-block; color: #b8773d; text-decoration: none; font-size: 14px; letter-spacing: 2px; margin-bottom: 32px; }
+.back-link:hover { color: #9e6330; }
+header { text-align: center; margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid #d4a574; }
+header h1 { font-size: 38px; letter-spacing: 5px; font-weight: 500; margin-bottom: 8px; }
+header .subtitle { color: #b8773d; font-size: 15px; letter-spacing: 3px; }
+.inspiration { max-width: 800px; margin: 0 auto 48px; background: white; border-radius: 14px; padding: 32px 36px; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2); }
+.inspiration h2 { font-size: 20px; letter-spacing: 3px; margin-bottom: 20px; font-weight: 500; }
+.inspiration-section { margin-bottom: 22px; }
+.inspiration-section:last-child { margin-bottom: 0; }
+.inspiration-section .label { font-size: 11px; color: #b8773d; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 6px; }
+.inspiration-section .content { font-size: 14px; color: #5a4636; line-height: 1.8; }
+.inspiration-section .content em { color: #b8773d; font-style: normal; }
+.prompt-section { max-width: 800px; margin: 0 auto 48px; }
+.prompt-toggle { display: inline-block; font-size: 13px; color: #886f5c; letter-spacing: 2px; cursor: pointer; padding: 10px 20px; background: #f7f2ea; border-radius: 8px; border: 1px solid rgba(212, 165, 116, 0.2); }
+.prompt-toggle:hover { background: #ede3d5; }
+.prompt-body { display: none; margin-top: 16px; background: white; border-radius: 14px; padding: 24px 28px; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06); border: 1px solid rgba(212, 165, 116, 0.2); }
+.prompt-body.visible { display: block; }
+.prompt-item { margin-bottom: 20px; }
+.prompt-item:last-child { margin-bottom: 0; }
+.prompt-item .p-name { font-size: 13px; font-weight: 600; color: #2c1810; letter-spacing: 2px; margin-bottom: 8px; }
+.prompt-item .p-text { font-size: 12px; color: #5a4636; line-height: 1.8; font-style: italic; background: #faf7f2; padding: 14px 18px; border-radius: 8px; border-left: 3px solid #d4a574; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.card { background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 4px 22px rgba(76, 48, 24, 0.08); border: 1px solid rgba(212, 165, 116, 0.18); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 10px 32px rgba(76, 48, 24, 0.16); }
+.card img { width: 100%; height: 380px; object-fit: cover; display: block; background: #1a1a1a; }
+.card-body { padding: 14px 18px; }
+.card-title { font-size: 14px; font-weight: 600; color: #2c1810; letter-spacing: 1px; }
+.card-desc { font-size: 12px; color: #886f5c; margin-top: 4px; letter-spacing: 1px; }
+footer { text-align: center; margin-top: 60px; padding-top: 30px; border-top: 1px solid #e5d6c2; color: #886f5c; font-size: 12px; letter-spacing: 2px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../" class="back-link">← 返回作品主页</a>
+
+<header>
+  <h1>墓地消融</h1>
+  <div class="subtitle">Grave Dissolve</div>
+</header>
+
+<div class="inspiration">
+  <h2>灵感来源</h2>
+  <div class="inspiration-section">
+    <div class="label">文学源头</div>
+    <div class="content">Juan Rulfo《佩德罗·巴拉莫》——科马拉村的亡魂在土地上行走、说话、回忆，生者与死者之间没有明确的边界。"死人不会死，他们只是慢慢地变成土地。"</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">视觉传统</div>
+    <div class="content">Bela Tarr 的俯拍长镜头——摄影机从上方凝视，将人体从"人物"降格为"地貌的一部分"。高反差黑白、16mm/35mm胶片颗粒。每一次消融都是一个缓慢的葬礼。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">技术路线</div>
+    <div class="content">gpt-image-2 · 黑白/单色调 · 俯拍 · 人与土地材质融合 · 高反差 · Bela Tarr 慢电影美学</div>
+  </div>
+</div>
+
+<div class="prompt-section">
+  <span class="prompt-toggle" onclick="document.getElementById('prompts').classList.toggle('visible'); this.textContent = document.getElementById('prompts').classList.contains('visible') ? '收起 Prompt ▲' : '查看代表性 Prompt ▼'">查看代表性 Prompt ▼</span>
+  <div class="prompt-body" id="prompts">
+    <div class="prompt-item">
+      <div class="p-name">man_in_sand_dune · 沙丘中人</div>
+      <div class="p-text">Top-down view of a man lying on his back in desert sand, sand slowly covering his body, only his face visible and even that beginning to erode into the dune texture, eyes open staring at sky, the desert reclaiming him, monochrome, extreme high contrast, minimalist composition, 16mm film</div>
+    </div>
+    <div class="prompt-item">
+      <div class="p-name">dancer_in_chalk · 白垩舞者</div>
+      <div class="p-text">Overhead shot of a ballerina lying on a white chalk cliff, her white dress merging with the chalk surface, arms positioned like a broken marionette, the white-on-white creating subtle tonal variations, dissolution of form, monochrome, high key lighting, minimalist, fine art photography</div>
+    </div>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer><p>所有图片由 AI 生成 · 灵感来源为 Juan Rulfo 的亡魂世界与 Bela Tarr 的俯拍凝视</p></footer>
+
+</div>
+
+<script>
+const names = [
+  {f:"man_in_sand_dune_163535.webp", t:"沙丘中人", d:"沙漠收复人体"},
+  {f:"old_man_in_snow_163730.webp", t:"雪中老人", d:"身体与雪原融合"},
+  {f:"dancer_in_chalk_164108.webp", t:"白垩舞者", d:"白裙消入白垩悬崖"},
+  {f:"fisherman_in_pebbles_164134.webp", t:"卵石渔夫", d:"渔网如裹尸布"},
+  {f:"monk_in_dust_164232.webp", t:"尘土僧侣", d:"僧袍与废墟同色"},
+  {f:"soldier_in_mud_182823.webp", t:"泥泞士兵", d:"战壕即坟墓"},
+];
+document.getElementById('grid').innerHTML = names.map(n =>
+  `<div class="card"><img src="images/${n.f}" alt="${n.t}" loading="lazy"><div class="card-body"><div class="card-title">${n.t}</div><div class="card-desc">${n.d}</div></div></div>`
+).join('');
+</script>
+</body>
+</html>

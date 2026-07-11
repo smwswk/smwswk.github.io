@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雾镇 · 生长型小说</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;700&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d1117;
+    color: #c9d1d9;
+    font-family: 'Noto Serif SC', serif;
+    line-height: 1.8;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Fog animation */
+  .fog {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.04;
+    background: radial-gradient(ellipse at 30% 50%, rgba(200,210,230,0.3) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 30%, rgba(180,190,210,0.2) 0%, transparent 40%);
+    animation: fogMove 20s ease-in-out infinite alternate;
+  }
+  @keyframes fogMove {
+    0% { transform: translateX(-5%) scale(1.05); }
+    100% { transform: translateX(5%) scale(0.95); }
+  }
+
+  /* Grain texture */
+  .grain {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 128px;
+  }
+
+  .container {
+    position: relative;
+    z-index: 10;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 60px 24px 120px;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .header h1 {
+    font-size: 42px;
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    color: rgba(255,255,255,0.9);
+    margin-bottom: 12px;
+  }
+  .header .subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.35);
+    letter-spacing: 0.15em;
+  }
+
+  /* Time banner */
+  .time-banner {
+    text-align: center;
+    padding: 24px;
+    margin-bottom: 40px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .time-banner .elapsed {
+    font-size: 14px;
+    color: rgba(255,255,255,0.5);
+  }
+  .time-banner .elapsed strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 400;
+  }
+  .time-banner .visit-count {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.3);
+  }
+
+  /* World state */
+  .world-state {
+    margin-bottom: 40px;
+  }
+  .world-state .meta {
+    display: flex;
+    gap: 24px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .world-state .meta-item {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.1em;
+  }
+  .world-state .meta-item span {
+    color: rgba(255,255,255,0.7);
+    font-weight: 700;
+  }
+  .world-state .mood {
+    font-size: 15px;
+    color: rgba(255,255,255,0.6);
+    font-style: italic;
+    padding: 16px 20px;
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid rgba(200,180,140,0.4);
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* Section */
+  .section {
+    margin-bottom: 48px;
+  }
+  .section-title {
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  /* Event cards */
+  .event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .event-card {
+    padding: 20px 24px;
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .event-card:hover {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .event-card .time {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+    margin-bottom: 8px;
+    font-family: monospace;
+  }
+  .event-card .text {
+    font-size: 14px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.75);
+  }
+  .event-card .actors {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .event-card .actor-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* Character cards */
+  .character-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  .character-card {
+    padding: 20px;
+    background: rgba(255,255,255,0.015);
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  .character-card:hover {
+    background: rgba(255,255,255,0.03);
+    border-color: rgba(255,255,255,0.08);
+  }
+  .character-card .name {
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 4px;
+  }
+  .character-card .location {
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 12px;
+  }
+  .character-card .mood {
+    font-size: 12px;
+    color: rgba(200,180,140,0.8);
+    margin-bottom: 8px;
+  }
+  .character-card .activity {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.7;
+  }
+
+  /* Hooks */
+  .hook-list {
+    list-style: none;
+  }
+  .hook-list li {
+    padding: 12px 0;
+    font-size: 13px;
+    color: rgba(255,255,255,0.55);
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    position: relative;
+    padding-left: 20px;
+  }
+  .hook-list li::before {
+    content: "◦";
+    position: absolute;
+    left: 0;
+    color: rgba(200,180,140,0.5);
+  }
+  .hook-list li:last-child { border-bottom: none; }
+
+  /* Footer note */
+  .footer-note {
+    text-align: center;
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    color: rgba(255,255,255,0.25);
+    line-height: 2;
+  }
+
+  /* Grow button */
+  .grow-btn {
+    display: block;
+    width: 100%;
+    max-width: 280px;
+    margin: 40px auto;
+    padding: 14px 32px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 8px;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .grow-btn:hover {
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.9);
+  }
+  .grow-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  /* Reader notes */
+  .notes-section {
+    margin-bottom: 48px;
+  }
+  .notes-input {
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 16px;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+  }
+  .notes-input:focus {
+    border-color: rgba(200,180,140,0.4);
+    background: rgba(255,255,255,0.05);
+  }
+  .notes-input::placeholder {
+    color: rgba(255,255,255,0.25);
+  }
+  .note-item {
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    background: rgba(255,255,255,0.02);
+    border-left: 3px solid rgba(200,180,140,0.3);
+    border-radius: 0 8px 8px 0;
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.6);
+    position: relative;
+  }
+  .note-item .note-time {
+    font-size: 10px;
+    color: rgba(255,255,255,0.25);
+    margin-bottom: 4px;
+  }
+  .note-item .note-delete {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .note-item:hover .note-delete {
+    opacity: 1;
+  }
+  .note-item .note-delete:hover {
+    color: rgba(255,100,100,0.6);
+  }
+  .note-empty {
+    text-align: center;
+    padding: 24px;
+    color: rgba(255,255,255,0.2);
+    font-size: 13px;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="fog"></div>
+<div class="grain"></div>
+
+<div class="container" id="app">
+  <div class="header">
+    <h1>雾 镇</h1>
+    <div class="subtitle">生长型小说 · 每次来访，世界已变</div>
+  </div>
+
+  <div class="time-banner">
+    <div class="elapsed" id="elapsed"></div>
+    <div class="visit-count" id="visitCount"></div>
+  </div>
+
+  <div class="world-state">
+    <div class="meta">
+      <div class="meta-item">时间 <span id="worldTime"></span></div>
+      <div class="meta-item">天气 <span id="worldWeather"></span></div>
+    </div>
+    <div class="mood" id="worldMood"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">最近发生的事</div>
+    <div class="event-list" id="events"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">镇上的人</div>
+    <div class="character-grid" id="characters"></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">未解之谜</div>
+    <ul class="hook-list" id="hooks"></ul>
+  </div>
+
+  <button class="grow-btn" id="growBtn" onclick="growWorld()">让世界继续生长</button>
+
+  <div class="section notes-section">
+    <div class="section-title">你的笔记</div>
+    <textarea class="notes-input" id="noteInput" placeholder="记录你的观察、猜想和疑问...这些笔记会影响雾镇的生长方向"></textarea>
+    <div style="text-align:right; margin-top:8px;">
+      <button class="grow-btn" style="margin:0; width:auto; padding:8px 20px; font-size:12px;" onclick="addNote()">保存笔记</button>
+    </div>
+    <div id="notesList" style="margin-top:20px;">
+      <div class="note-empty">还没有笔记。写下你的第一个观察...</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    雾镇在你不在的时候也在运转。<br>
+    角色会自己做出决定，事件会自己发生。<br>
+    每次来访，你都会看到一个不一样的世界。
+  </div>
+</div>
+
+<script>
+const STATE = {
+  "meta": {
+    "version": "0.2",
+    "created": "2026-05-19T15:00:00+08:00",
+    "last_visited": "2026-05-19T17:53:18.154984",
+    "visit_count": 2,
+    "generation_count": 1
+  },
+  "world": {
+    "name": "雾镇",
+    "time_of_day": "傍晚",
+    "weather": "无雾",
+    "mood": "静谧中带着不安",
+    "anomalies": [
+      "雾中灯的灯泡坏了一个，林雾没有换",
+      "陈雨在火车站发现了一本日记，第一页被撕掉了",
+      "小北三天没有上屋顶，在后院挖了一个坑"
+    ],
+    "lore_fragments": [
+      "雾镇的时间不跟外面的世界同步",
+      "每个居民过一段时间会遗忘一件事，同时发现一件新的事",
+      "没有人知道怎么进来，也没有人出去过"
+    ]
+  },
+  "characters": {
+    "lin_wu": {
+      "name": "林雾",
+      "age": 35,
+      "traits": [
+        "沉默",
+        "敏锐",
+        "保护欲强",
+        "选择性遗忘"
+      ],
+      "location": "雾中灯",
+      "mood": "平静中带着犹豫",
+      "activity": "擦拭酒杯，偶尔看向吧台后面的锁着的门",
+      "recent_change": "开始频繁看向那扇锁了三年的门",
+      "motivation": {
+        "short_term": "弄清楚自己为什么最近总看向那扇锁着的门",
+        "long_term": "保护小北，同时不让自己的过去暴露"
+      },
+      "emotions": {
+        "calm": 0.6,
+        "anxious": 0.4,
+        "curious": 0.7,
+        "fearful": 0.3,
+        "protective": 0.9
+      },
+      "relationships": {
+        "chen_yu": {
+          "trust": 0.3,
+          "affection": 0.2,
+          "tension": 0.6,
+          "history": "觉得陈雨太想搞明白，但允许他待到最晚"
+        },
+        "xiao_bei": {
+          "trust": 0.8,
+          "affection": 0.9,
+          "tension": 0.1,
+          "history": "小北住在她楼上，她不记得是怎么开始的"
+        }
+      },
+      "memory_capacity": 5,
+      "memories": [
+        "三天前小北在酒馆打碎了一个杯子",
+        "陈雨昨晚来喝了三杯酒",
+        "灯泡坏了一周，她没有换",
+        "昨晚关店前多放了一个杯子，不知道原因"
+      ],
+      "secrets": [
+        "她是第一个来到雾镇的人，但她忘了",
+        "吧台后面锁着的门里有什么，她三年没打开过"
+      ],
+      "agenda": {
+        "current": "维持日常，不引起注意",
+        "next": "可能会打开那扇锁着的门"
+      }
+    },
+    "chen_yu": {
+      "name": "陈雨",
+      "age": 28,
+      "traits": [
+        "执着",
+        "焦虑",
+        "孤独",
+        "记录狂"
+      ],
+      "location": "废弃火车站",
+      "mood": "焦虑但兴奋",
+      "activity": "坐在候车室读新发现的日记",
+      "recent_change": "发现日记最后一页写着三年前要见林雾",
+      "motivation": {
+        "short_term": "破解日记里提到的'真相'",
+        "long_term": "拼凑出雾镇的完整历史，找到出去的方法"
+      },
+      "emotions": {
+        "calm": 0.2,
+        "anxious": 0.8,
+        "curious": 0.9,
+        "fearful": 0.4,
+        "protective": 0.1
+      },
+      "relationships": {
+        "lin_wu": {
+          "trust": 0.5,
+          "affection": 0.3,
+          "tension": 0.5,
+          "history": "觉得林雾知道一些事情但不肯说"
+        },
+        "xiao_bei": {
+          "trust": 0.6,
+          "affection": 0.2,
+          "tension": 0.3,
+          "history": "半信半疑她的'看到'，但记下她说的每句话"
+        }
+      },
+      "memory_capacity": 7,
+      "memories": [
+        "发现了一本黑色封皮的日记，第一页被撕掉了",
+        "日记最后一页写着'明天我要去见林雾，告诉她真相'，日期是三年前的今天",
+        "等了三年火车，没有一列来过",
+        "林雾的酒馆是他唯一觉得安全的地方"
+      ],
+      "secrets": [
+        "他的日记第一页也是撕掉的，他不记得是谁撕的",
+        "他怀疑林雾是第一个来到雾镇的人，但没有证据"
+      ],
+      "agenda": {
+        "current": "破解日记，寻找林雾和真相的联系",
+        "next": "可能会直接质问林雾"
+      }
+    },
+    "xiao_bei": {
+      "name": "小北",
+      "age": 10,
+      "traits": [
+        "沉默",
+        "诚实",
+        "孤独",
+        "直觉强"
+      ],
+      "location": "酒馆后院",
+      "mood": "专注",
+      "activity": "挖坑",
+      "recent_change": "三天没有上屋顶，开始在坑里埋东西",
+      "motivation": {
+        "short_term": "把种子埋好",
+        "long_term": "让雾镇长出新的东西"
+      },
+      "emotions": {
+        "calm": 0.9,
+        "anxious": 0.1,
+        "curious": 0.8,
+        "fearful": 0.0,
+        "protective": 0.5
+      },
+      "relationships": {
+        "lin_wu": {
+          "trust": 0.9,
+          "affection": 0.8,
+          "tension": 0.2,
+          "history": "给她吃的、让她住，但从不问她从哪来"
+        },
+        "chen_yu": {
+          "trust": 0.5,
+          "affection": 0.3,
+          "tension": 0.2,
+          "history": "利用他——告诉他一些无关紧要的事，看他认真记录"
+        }
+      },
+      "memory_capacity": 3,
+      "memories": [
+        "种子是从雾里带回来的",
+        "林雾是第一个来的人，但她忘了",
+        "小北在屋顶上跟雾说话，对林雾说了奇怪的话"
+      ],
+      "secrets": [
+        "她知道雾镇的秘密，但不知道怎么用语言描述",
+        "她能从雾里带东西回来，但大人看不到"
+      ],
+      "agenda": {
+        "current": "挖坑，埋种子",
+        "next": "等待种子发芽"
+      }
+    }
+  },
+  "events": [
+    {
+      "time": "2026-05-19T18:53:18.154948",
+      "type": "character_dialogue",
+      "description": "林雾看到小北站在屋顶边缘，面对着浓雾。她的嘴在动，像是在跟谁说话，但雾里没有其他人。林雾想叫她下来，但小北突然转过头，直直地看着她，说：\"你不是第一个想出去的。\"",
+      "involved": [
+        "xiao_bei",
+        "lin_wu"
+      ]
+    },
+    {
+      "time": "2026-05-19T14:30:00",
+      "type": "world_state",
+      "description": "雾镇的傍晚，雾比昨天更浓了。钟楼的响声听起来有点闷，像是被雾捂住了。",
+      "involved": [],
+      "impact": {
+        "world.mood": "更压抑了一些"
+      }
+    },
+    {
+      "time": "2026-05-19T12:00:00",
+      "type": "discovery",
+      "description": "陈雨在火车站的候车室长椅下面发现了一本黑色封皮的日记。翻开第一页，发现被撕掉了。最后一页写着：\"明天我要去见林雾，告诉她真相。\"日期是三年前的今天。",
+      "involved": [
+        "chen_yu"
+      ],
+      "impact": {
+        "chen_yu.emotions.anxious": "+0.2",
+        "chen_yu.emotions.curious": "+0.3"
+      }
+    },
+    {
+      "time": "2026-05-19T09:00:00",
+      "type": "character_action",
+      "description": "小北从屋顶上下来，径直走向酒馆后院，开始用一根树枝挖坑。林雾在窗口看到了，没有问。",
+      "involved": [
+        "xiao_bei",
+        "lin_wu"
+      ],
+      "impact": {
+        "lin_wu.emotions.curious": "+0.1"
+      }
+    },
+    {
+      "time": "2026-05-18T20:00:00",
+      "type": "character_action",
+      "description": "林雾在关店前照例在吧台上放了一杯酒。但她多放了一个杯子——她也不知道为什么。",
+      "involved": [
+        "lin_wu"
+      ],
+      "impact": {
+        "lin_wu.emotions.anxious": "+0.1"
+      }
+    }
+  ],
+  "plot_hooks": [
+    "火车站的旧日记里提到了一个\"真相\"，关于林雾的",
+    "小北在坑里埋了\"种子\"，她说会长出新的东西",
+    "林雾开始频繁看向吧台后面锁了三年的门",
+    "钟楼的响声越来越闷",
+    "雾比昨天更浓了"
+  ],
+  "reader_notes": []
+};
+
+const ACTOR_NAMES = {
+  lin_wu: '林雾',
+  chen_yu: '陈雨',
+  xiao_bei: '小北'
+};
+
+function formatElapsed(lastVisit) {
+  const now = new Date();
+  const last = new Date(lastVisit);
+  const diff = now - last;
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  const days = Math.floor(hours / 24);
+
+  if (days > 0) {
+    const remaining = hours % 24;
+    if (remaining > 0) return `距离上次来访已经过去了 ${days} 天 ${remaining} 小时`;
+    return `距离上次来访已经过去了 ${days} 天`;
+  }
+  if (hours > 0) return `距离上次来访已经过去了 ${hours} 小时`;
+  const mins = Math.floor(diff / (1000 * 60));
+  if (mins > 0) return `距离上次来访已经过去了 ${mins} 分钟`;
+  return "你刚刚才来过";
+}
+
+function render() {
+  const s = STATE;
+
+  // Elapsed time
+  document.getElementById('elapsed').innerHTML =
+    `<strong>${formatElapsed(s.meta.last_visited)}</strong>`;
+  document.getElementById('visitCount').textContent =
+    `第 ${s.meta.visit_count} 次来访`;
+
+  // World state
+  document.getElementById('worldTime').textContent = s.world.time_of_day;
+  document.getElementById('worldWeather').textContent = s.world.weather;
+  document.getElementById('worldMood').textContent = s.world.mood;
+
+  // Events
+  const eventsEl = document.getElementById('events');
+  eventsEl.innerHTML = s.events.map(e => {
+    const time = new Date(e.time).toLocaleString('zh-CN', {
+      month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit'
+    });
+    const actors = e.involved.map(id =>
+      `<span class="actor-tag">${ACTOR_NAMES[id] || id}</span>`
+    ).join('');
+    return `
+      <div class="event-card">
+        <div class="time">${time}</div>
+        <div class="text">${e.description}</div>
+        ${actors ? `<div class="actors">${actors}</div>` : ''}
+      </div>
+    `;
+  }).join('');
+
+  // Characters
+  const charEl = document.getElementById('characters');
+  charEl.innerHTML = Object.values(s.characters).map(c => `
+    <div class="character-card">
+      <div class="name">${c.name}</div>
+      <div class="location">📍 ${c.location}</div>
+      <div class="mood">${c.mood}</div>
+      <div class="activity">${c.activity}</div>
+    </div>
+  `).join('');
+
+  // Hooks
+  const hooksEl = document.getElementById('hooks');
+  hooksEl.innerHTML = s.plot_hooks.map(h => `<li>${h}</li>`).join('');
+}
+
+function growWorld() {
+  const btn = document.getElementById('growBtn');
+  btn.disabled = true;
+  btn.textContent = "雾正在变浓...";
+
+  // In a real version, this would call an AI to generate new events
+  // For now, we simulate the passage of time
+  setTimeout(() => {
+    STATE.meta.last_visited = new Date().toISOString();
+    STATE.meta.visit_count++;
+
+    // Simulate a new event based on time passage
+    const now = new Date();
+    const timeStr = now.toISOString().slice(0, 16);
+
+    // Simple growth logic (placeholder for AI generation)
+    const newEvents = [
+      {
+        "time": timeStr,
+        "type": "world_state",
+        "description": "雾又浓了一些。你注意到酒馆门口的灯笼在轻微晃动，但没有风。",
+        "involved": []
+      }
+    ];
+
+    STATE.events.unshift(...newEvents);
+    render();
+
+    btn.disabled = false;
+    btn.textContent = "让世界继续生长";
+  }, 1500);
+}
+
+// Reader notes
+const NOTES_KEY = 'mist_town_notes';
+
+function loadNotes() {
+  try {
+    return JSON.parse(localStorage.getItem(NOTES_KEY) || '[]');
+  } catch {
+    return [];
+  }
+}
+
+function saveNotes(notes) {
+  localStorage.setItem(NOTES_KEY, JSON.stringify(notes));
+}
+
+function renderNotes() {
+  const notes = loadNotes();
+  const container = document.getElementById('notesList');
+  if (notes.length === 0) {
+    container.innerHTML = '<div class="note-empty">还没有笔记。写下你的第一个观察...</div>';
+    return;
+  }
+  container.innerHTML = notes.map((note, idx) => `
+    <div class="note-item">
+      <div class="note-delete" onclick="deleteNote(${idx})">删除</div>
+      <div class="note-time">${new Date(note.time).toLocaleString('zh-CN')}</div>
+      ${escapeHtml(note.text)}
+    </div>
+  `).join('');
+}
+
+function addNote() {
+  const input = document.getElementById('noteInput');
+  const text = input.value.trim();
+  if (!text) return;
+
+  const notes = loadNotes();
+  notes.unshift({
+    time: new Date().toISOString(),
+    text: text
+  });
+  saveNotes(notes);
+  input.value = '';
+  renderNotes();
+}
+
+function deleteNote(idx) {
+  const notes = loadNotes();
+  notes.splice(idx, 1);
+  saveNotes(notes);
+  renderNotes();
+}
+
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// Init notes
+renderNotes();
+
+render();
+</script>
+
+</body>
+</html>

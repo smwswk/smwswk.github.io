@@ -1,0 +1,27 @@
+# Hugo generated
+public/
+resources/
+
+# macOS
+.DS_Store
+
+# Runtime artifacts
+*.log
+*.pid
+.hugo_build.lock
+.hugo_synced
+
+# Auto-generated
+.sync_photos.py
+
+# Sync marker
+.sync_log
+
+# Raw photo originals (stored elsewhere, not in git)
+photo/CF*.jpg
+photo/B*.jpg
+photo/pinterest_sanctuary_*.png
+
+# Unoptimized portfolio assets
+wedding-ai-studio/wedding/**/*.png
+wedding-ai-studio/commercial/**/*.png

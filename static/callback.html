@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>授权中...</title>
+</head>
+<body>
+<script>
+(function(){
+  var p=new URLSearchParams(location.search);
+  var code=p.get('code');
+  var state=p.get('state')||'';
+  if(!code){document.body.textContent='授权失败：缺少 code';return}
+  if(!state){document.body.textContent='授权失败：缺少 state';return}
+  var i=state.indexOf('::');
+  if(i===-1){document.body.textContent='授权失败：state 格式错误';return}
+  var cb=state.substring(0,i);
+  var next=state.substring(i+2);
+  var url=cb+'?code='+encodeURIComponent(code);
+  if(next)url+='&next='+encodeURIComponent(next);
+  location.replace(url);
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+AutoHotkey_*/
+ControlMyMonitor.exe
+ControlMyMonitor.chm
+*.log
+monitors.txt
+vcp_*.tsv
+input_current.txt
+to_mac.flag
+to_win7.flag
+.DS_Store

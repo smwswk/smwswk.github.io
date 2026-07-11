@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一个开源 macOS 桌面按钮，按当前设备打开鼠标或触控板的自然滚动设置页。">
+  <title>自然滚动设置 · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --paper: #f5f6f1;
+      --ink: #17201b;
+      --muted: #5e665f;
+      --panel: #ffffff;
+      --line: rgba(23, 32, 27, 0.14);
+      --green: #0a7b55;
+      --blue: #1f5ea8;
+      --amber: #9a5a00;
+      --dark: #10151f;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .scroll-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .scroll-hero {
+      min-height: 70vh;
+      margin: 0 -1.25rem;
+      padding: 3rem 1.25rem 2rem;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(9, 15, 18, 0.96), rgba(9, 15, 18, 0.82) 48%, rgba(9, 15, 18, 0.28) 82%),
+        url("/mac-scroll-switcher/assets/natural-scroll-toggle-ui.png") center right / cover no-repeat;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: #95dfc7;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: 4.6rem;
+      line-height: 0.98;
+      letter-spacing: 0;
+      color: #fff;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.48);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .actions,
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .button,
+    .source-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .actions .button {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+    }
+
+    .actions .button.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .panel,
+    .open-source {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 1.1rem;
+      box-shadow: 0 16px 34px rgba(23, 32, 27, 0.07);
+    }
+
+    h2 {
+      margin: 0;
+      letter-spacing: 0;
+      color: var(--ink);
+      font-size: 1.45rem;
+    }
+
+    .panel p,
+    .open-source p,
+    .note {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-top: 0.85rem;
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.55rem;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.84rem;
+    }
+
+    .steps {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: 2.4rem minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .steps b {
+      display: inline-flex;
+      width: 2.4rem;
+      height: 2.4rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #e5f4ed;
+      color: var(--green);
+    }
+
+    .open-source {
+      margin-top: 1rem;
+      background: #fbfdfb;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .source-item {
+      border-left: 4px solid var(--green);
+      padding: 0.65rem 0.75rem;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .download-row a,
+    .source-link {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .download-row a:hover,
+    .source-link:hover {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .code-block {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--dark);
+      color: #f8fafc;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.55;
+    }
+
+    .note {
+      border-top: 1px solid var(--line);
+      padding-top: 0.8rem;
+    }
+
+    @media (max-width: 860px) {
+      .scroll-hero {
+        min-height: 68vh;
+        background-position: 62% center;
+      }
+
+      h1 {
+        font-size: 3.1rem;
+      }
+
+      .split,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .scroll-page {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      .scroll-hero {
+        margin-left: -1rem;
+        margin-right: -1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+
+      h1 {
+        font-size: 2.45rem;
+      }
+
+      .actions,
+      .download-row {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button,
+      .source-link {
+        width: 100%;
+        box-sizing: border-box;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="scroll-page">
+    <section class="scroll-hero">
+      <div class="hero-inner">
+        <p class="eyebrow">macOS desktop utility</p>
+        <h1>自然滚动设置</h1>
+        <p class="lead">一个桌面按钮：检测当前是否有外接鼠标，然后打开 macOS 鼠标或触控板设置页。它不替你切换开关，只把你带到正确位置。</p>
+        <div class="actions">
+          <a class="button" href="/mac-scroll-switcher/downloads/natural-scroll-toggle-macos.zip">下载 macOS 包</a>
+          <a class="button secondary" href="/mac-scroll-switcher/downloads/natural-scroll-toggle-source.zip">下载源码</a>
+          <a class="button secondary" href="https://github.com/smwswk/smwswk.github.io/tree/master/mac-scroll-switcher/source" target="_blank" rel="noreferrer">GitHub 源码</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <article class="panel">
+        <h2>解决的问题</h2>
+        <p>直接改 `com.apple.swipescrolldirection` 有时不会立刻影响真实滚动方向；自动点击系统设置又依赖辅助功能权限和界面结构。这个版本只负责打开对应设置页，最后一步由用户手动操作。</p>
+        <div class="tag-row">
+          <span class="tag">macOS</span>
+          <span class="tag">System Settings</span>
+          <span class="tag">hidutil</span>
+          <span class="tag">无辅助功能权限</span>
+        </div>
+      </article>
+
+      <article class="panel">
+        <h2>使用方式</h2>
+        <ol class="steps">
+          <li><b>1</b><span>下载 macOS 包，解压后把 `自然滚动开关.app` 放到桌面或应用程序文件夹。</span></li>
+          <li><b>2</b><span>双击它：有外接鼠标时打开“鼠标”，没有外接鼠标时打开“触控板”。</span></li>
+          <li><b>3</b><span>在系统设置里手动调整“自然滚动”开关。</span></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="open-source">
+      <h2>开源内容</h2>
+      <p>公开的是 shell 入口脚本、App bundle 模板、构建脚本和 MIT 许可证。源码包不包含个人机器路径，也不依赖私有配置。</p>
+      <div class="source-grid">
+        <div class="source-item"><strong>设备检测</strong>用 `hidutil list` 判断是否存在外接 HID 鼠标。</div>
+        <div class="source-item"><strong>只打开页面</strong>通过 `x-apple.systempreferences` 打开鼠标或触控板设置。</div>
+        <div class="source-item"><strong>本地构建</strong>用普通 App bundle 模板生成 `.app`，不需要辅助功能权限。</div>
+      </div>
+      <div class="download-row">
+        <a class="source-link" href="/mac-scroll-switcher/downloads/natural-scroll-toggle-macos.zip">macOS 包</a>
+        <a class="source-link" href="/mac-scroll-switcher/downloads/natural-scroll-toggle-source.zip">源码包</a>
+        <a class="source-link" href="https://github.com/smwswk/smwswk.github.io/tree/master/mac-scroll-switcher/source" target="_blank" rel="noreferrer">查看仓库</a>
+      </div>
+      <pre class="code-block"><code>cd mac-scroll-switcher/source
+./build.sh
+open build/自然滚动开关.app</code></pre>
+      <p class="note">这个工具不会静默改偏好文件，也不会真实点击系统设置控件。它只打开对应设置页，因此比自动切换版本更稳。</p>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,125 @@
+{{ partial "head.html" . }}
+<body class="{{ .Site.Params.themeColor }} {{if .Site.Params.layoutReverse}}layout-reverse{{end}}">
+
+{{ partial "sidebar.html" . }}
+
+<div class="content container">
+  <div class="home-hero">
+    <h1>AI 时代<br><em>创作者</em></h1>
+    <p class="lead">
+      摄影 · 播客 · AI 工作流 · 视觉叙事<br>
+      在技术与感知的交界处，建立新的创作语言
+    </p>
+    <div class="home-cta">
+      <a href="/photo" class="btn">Gallery</a>
+      <a href="/about" class="btn btn-outline">About</a>
+      <a href="/podcast" class="btn btn-outline">Podcast</a>
+    </div>
+  </div>
+
+  <div class="project-section">
+    <h2>AI <em>工作流</em> 搭建</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <div class="p-icon">🤖</div>
+        <div class="p-title">Claude Code 技能矩阵</div>
+        <div class="p-desc">几十个自建 skill 覆盖内容摄入、自动总结、记忆系统、数字日记，四步迭代法持续调教趋近稳定。</div>
+      </div>
+      <div class="project-card">
+        <div class="p-icon">👁️</div>
+        <div class="p-title">视觉模型集成</div>
+        <div class="p-desc">多模态视觉理解 API 与 Claude Code 自动集成，无视觉能力时智能切换模型完成图片分析。</div>
+      </div>
+      <div class="project-card">
+        <div class="p-icon">📝</div>
+        <div class="p-title">数字日记 + 备份系统</div>
+        <div class="p-desc">cron 定时自动生成日记，skills/scripts/memory 日备 iCloud 7天轮转。</div>
+      </div>
+      <div class="project-card">
+        <div class="p-icon">⏰</div>
+        <div class="p-title">提醒事项批量处理</div>
+        <div class="p-desc">连接 macOS Reminders.app，自动分类筛选 + 批量执行日常任务。</div>
+      </div>
+      <div class="project-card">
+        <div class="p-icon">🎬</div>
+        <div class="p-title">音视频总结技能矩阵</div>
+        <div class="p-desc">B站/小宇宙/小红书/公众号 四个独立 skill，下载→ASR转录→深度总结→记忆嵌入，平台全覆盖。</div>
+      </div>
+      <div class="project-card">
+        <div class="p-icon">🕷️</div>
+        <div class="p-title">知乎批量抓取</div>
+        <div class="p-desc">通过知乎 JSON API 批量抓取高赞回答，无需登录绕过反爬，按问题/答案 ID 精准提取。</div>
+      </div>
+    </div>
+
+    <h2>成果 <em>展示</em></h2>
+    <div class="project-grid">
+      <a href="https://ai-independent-builder.onrender.com/wedding-ai-studio/" class="project-card" target="_blank">
+        <div class="p-icon">👰</div>
+        <div class="p-title">婚纱样片 AI</div>
+        <div class="p-desc">11张可用样片，中式/西式/港风/治愈多风格覆盖，Portfolio HTML + PDF 已部署。</div>
+        <div class="p-link">wedding-ai-studio →</div>
+      </a>
+      <a href="https://ai-independent-builder.onrender.com/ai-survey/" class="project-card" target="_blank">
+        <div class="p-icon">📋</div>
+        <div class="p-title">AI 需求调研工具</div>
+        <div class="p-desc">5层渐进式交互问卷，4场景分支，微信可发，调查非技术用户 AI 痛点。</div>
+        <div class="p-link">ai-survey →</div>
+      </a>
+      <a href="/podcast/" class="project-card">
+        <div class="p-icon">🎙️</div>
+        <div class="p-title">播客商务名片</div>
+        <div class="p-desc">独立播客 Contact Sheets 品牌名片，3主播 + 报价体系，支持地推版分发。</div>
+        <div class="p-link">podcast →</div>
+      </a>
+      <a href="/lit-visual/" class="project-card">
+        <div class="p-icon">🖼️</div>
+        <div class="p-title">小说影像化工作流</div>
+        <div class="p-desc">文学文本 → AI 生图，3个视觉风格方向，首次免费，¥9.9 永久无限使用。</div>
+        <div class="p-link">lit-visual →</div>
+      </a>
+      <a href="https://ai-independent-builder.onrender.com/wedding-ai-studio/commercial/" class="project-card" target="_blank">
+        <div class="p-icon">🏪</div>
+        <div class="p-title">商业视觉 AI</div>
+        <div class="p-desc">5大品类 45+ 张商用图，菜品/电商/餐饮/饮品/空间全覆盖，AI 直出可用。</div>
+        <div class="p-link">commercial →</div>
+      </a>
+      <a href="https://ai-independent-builder.onrender.com/photo-diary/" class="project-card" target="_blank">
+        <div class="p-icon">📷</div>
+        <div class="p-title">照片日记 · AI 写日记</div>
+        <div class="p-desc">选照片 AI 自动生成日记，EXIF 时间戳解析，PWA 可安装到桌面，¥9.9 永久付费。</div>
+        <div class="p-link">photo-diary →</div>
+      </a>
+    </div>
+  </div>
+
+  <div class="skill-section">
+    <h2>自建 <em>Skill</em> 清单</h2>
+    <p class="skill-intro">二十余个 Claude Code Skill，覆盖内容摄入、创作生成、工作流自动化、分发维护全链路。每个 Skill 经历 AI 草案→人重写→对比差异→更新规则 四步迭代趋近稳定。</p>
+    <div class="skill-grid">
+      <div class="skill-cat">
+        <div class="sc-label">内容摄入</div>
+        <div class="sc-items">内容引擎 · B站视频总结 · 小宇宙总结 · 小红书总结 · 公众号解析 · 知乎抓取 · AI资讯日报</div>
+      </div>
+      <div class="skill-cat">
+        <div class="sc-label">创作生成</div>
+        <div class="sc-items">小说影像化 · 商业片出图 · 当代摄影生图 · 哈苏Portra复刻</div>
+      </div>
+      <div class="skill-cat">
+        <div class="sc-label">自动化</div>
+        <div class="sc-items">全自动总结迭代 · 提醒事项处理 · 数字日记 · 音视频总结</div>
+      </div>
+      <div class="skill-cat">
+        <div class="sc-label">分发与维护</div>
+        <div class="sc-items">小红书发布 · 主页维护 · print-pdf · ocr-and-documents</div>
+      </div>
+      <div class="skill-cat">
+        <div class="sc-label">决策辅助</div>
+        <div class="sc-items">选题拷问 · 直达根源 · 旅行攻略生成 · 电话听取意见</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

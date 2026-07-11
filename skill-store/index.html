@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Skill 商店 · SMWSWK</title>
+  <meta name="description" content="SMWSWK 开源 Agent Skills：31 个适配 Codex 与 Claude Code 的工作流，以及内容处理和自动化服务。">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css?v=20260702-skill-store">
+  <style>
+    :root {
+      --store-bg: #f6f4ef;
+      --store-ink: #172026;
+      --store-muted: #66717d;
+      --store-line: rgba(23, 32, 38, 0.14);
+      --store-panel: #fffdfa;
+      --store-teal: #0f766e;
+      --store-rust: #b54e35;
+      --store-gold: #d8a84f;
+      --store-dark: #172026;
+    }
+    * { box-sizing: border-box; }
+    body {
+      background: var(--store-bg);
+      color: var(--store-ink);
+      overflow-x: hidden;
+    }
+    .store-page {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 1.25rem 4rem;
+    }
+    .store-nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      font-size: 0.84rem;
+    }
+    .store-hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 0.72fr);
+      gap: 1rem;
+      align-items: stretch;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--store-line);
+    }
+    .store-kicker {
+      margin: 0 0 0.8rem;
+      color: var(--store-teal);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    h1 {
+      margin: 0;
+      max-width: 780px;
+      font-size: clamp(2.6rem, 7vw, 5.8rem);
+      line-height: 0.98;
+      letter-spacing: 0;
+    }
+    .store-lead {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: var(--store-muted);
+      font-size: 1.02rem;
+      line-height: 1.8;
+    }
+    .store-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1.25rem;
+    }
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 1rem;
+      border: 1px solid var(--store-teal);
+      border-radius: 8px;
+      background: var(--store-teal);
+      color: #fff;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .store-btn.secondary {
+      background: transparent;
+      color: var(--store-teal);
+    }
+    .store-btn.rust {
+      border-color: var(--store-rust);
+      background: var(--store-rust);
+    }
+    .store-console {
+      min-height: 330px;
+      border: 1px solid var(--store-line);
+      border-radius: 8px;
+      background: var(--store-dark);
+      color: #f8f1e2;
+      padding: 1rem;
+      box-shadow: 0 20px 48px rgba(23, 32, 38, 0.16);
+      display: grid;
+      align-content: space-between;
+    }
+    .console-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.7rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.78);
+      font-size: 0.82rem;
+    }
+    .console-row strong { color: #fff; }
+    .console-mark {
+      margin-top: 1rem;
+      padding: 0.9rem;
+      border: 1px solid rgba(216,168,79,0.44);
+      border-radius: 8px;
+      color: var(--store-gold);
+      font-weight: 900;
+      text-align: center;
+    }
+    .store-section { margin-top: 2.2rem; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      margin-bottom: 0.7rem;
+      padding: 0 0.65rem;
+      border-radius: 999px;
+      background: rgba(181,78,53,0.1);
+      color: var(--store-rust);
+      font-size: 0.72rem;
+      font-weight: 900;
+    }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: end;
+      margin-bottom: 1rem;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: 0;
+    }
+    .section-head p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--store-muted);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+    .product-grid.single {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .product {
+      border: 1px solid var(--store-line);
+      border-radius: 8px;
+      background: var(--store-panel);
+      padding: 1rem;
+      box-shadow: 0 14px 34px rgba(23, 32, 38, 0.07);
+      display: grid;
+      gap: 0.8rem;
+      min-height: 280px;
+    }
+    .product-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.8rem;
+      align-items: start;
+    }
+    .product h3 {
+      margin: 0 0 0.35rem;
+      font-size: 1.08rem;
+      letter-spacing: 0;
+    }
+    .product-tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 0 0.65rem;
+      border-radius: 999px;
+      background: rgba(15,118,110,0.1);
+      color: var(--store-teal);
+      font-size: 0.72rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+    .product p,
+    .product li {
+      color: var(--store-muted);
+      font-size: 0.84rem;
+      line-height: 1.75;
+    }
+    .product ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+    .price {
+      font-size: 1.85rem;
+      line-height: 1;
+      font-weight: 900;
+      color: var(--store-rust);
+      white-space: nowrap;
+    }
+    .price small {
+      color: var(--store-muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+    }
+    .price.free {
+      color: var(--store-teal);
+      font-size: 1.55rem;
+    }
+    .price.service {
+      color: var(--store-dark);
+      font-size: 1.3rem;
+    }
+    .product-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      align-self: end;
+    }
+    .checkout {
+      border: 0;
+    }
+    .store-note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border: 1px solid var(--store-line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--store-muted);
+      font-size: 0.84rem;
+      line-height: 1.8;
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      background: rgba(23, 32, 38, 0.52);
+      overflow-y: auto;
+    }
+    .modal.open { display: flex; }
+    .modal-panel {
+      width: min(440px, 100%);
+      border-radius: 8px;
+      background: #fffdfa;
+      border: 1px solid var(--store-line);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+      padding: 1rem;
+      max-height: calc(100dvh - 2rem);
+      overflow-y: auto;
+    }
+    .modal-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      align-items: start;
+      margin-bottom: 0.8rem;
+    }
+    .modal-head h2 {
+      margin: 0;
+      font-size: 1.2rem;
+      letter-spacing: 0;
+    }
+    .modal-close {
+      border: 1px solid var(--store-line);
+      border-radius: 8px;
+      background: #fff;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+    .pay-qr {
+      display: block;
+      width: min(260px, 100%);
+      margin: 1rem auto;
+      border-radius: 8px;
+      border: 1px solid var(--store-line);
+      background: #fff;
+    }
+    .pay-amount {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 900;
+      color: var(--store-rust);
+    }
+    .pay-copy {
+      width: 100%;
+      margin-top: 0.7rem;
+    }
+    .paid-confirm {
+      width: 100%;
+      margin-top: 0.7rem;
+      border-color: var(--store-rust);
+      background: var(--store-rust);
+    }
+    .delivery-panel {
+      display: none;
+      margin-top: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid rgba(15,118,110,0.24);
+      border-radius: 8px;
+      background: rgba(15,118,110,0.08);
+    }
+    .delivery-panel.open { display: block; }
+    .delivery-panel h3 {
+      margin: 0 0 0.5rem;
+      font-size: 0.98rem;
+      letter-spacing: 0;
+    }
+    .delivery-panel p {
+      margin: 0.45rem 0;
+      color: var(--store-muted);
+      font-size: 0.82rem;
+      line-height: 1.65;
+    }
+    .download-link {
+      width: 100%;
+      margin: 0.45rem 0;
+    }
+    .install-code {
+      overflow-x: auto;
+      margin: 0.55rem 0 0;
+      padding: 0.7rem;
+      border-radius: 8px;
+      background: var(--store-dark);
+      color: #fff;
+      font-size: 0.72rem;
+      line-height: 1.55;
+    }
+    .pay-desc {
+      color: var(--store-muted);
+      font-size: 0.84rem;
+      line-height: 1.75;
+      text-align: center;
+    }
+    .copy-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%);
+      padding: 0.65rem 0.9rem;
+      border-radius: 8px;
+      background: var(--store-dark);
+      color: #fff;
+      font-size: 0.84rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.18s ease;
+      z-index: 30;
+    }
+    .copy-toast.show { opacity: 1; }
+    @media (max-width: 820px) {
+      .store-page { padding: 2rem 1rem 3rem; }
+      .store-hero,
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+      .product-grid.single {
+        grid-template-columns: 1fr;
+      }
+      .section-head {
+        display: block;
+      }
+      .section-head p {
+        margin-top: 0.45rem;
+      }
+      .store-actions .store-btn,
+      .product-actions .store-btn {
+        width: 100%;
+      }
+      .modal {
+        align-items: flex-start;
+      }
+      h1 { font-size: 3rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="store-page">
+    <nav class="store-nav">
+      <a href="/">返回主页</a>
+      <a href="#free-skills">免费 Skill</a>
+    </nav>
+
+    <section class="store-hero">
+      <div>
+        <p class="store-kicker">数字 Skill 与自动化服务</p>
+        <h1>Skill 商店</h1>
+        <p class="store-lead">31 个 Codex / Claude Code Skill 已在 GitHub 以 MIT 许可证公开。可以直接查看源码、安装单个 skill，也可以预约内容代跑、环境部署和桌面自动化服务。</p>
+        <div class="store-actions">
+          <a class="store-btn" href="https://github.com/smwswk/independent-builderg-agent-skills" target="_blank" rel="noopener">查看 GitHub 仓库</a>
+          <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信号</button>
+        </div>
+      </div>
+      <div class="store-console" aria-hidden="true">
+        <div>
+          <div class="console-row"><span>内容摄入</span><strong>转录 / 摘要 / 高光</strong></div>
+          <div class="console-row"><span>自动化</span><strong>脚本 / 后台 / 工作台</strong></div>
+          <div class="console-row"><span>交付方式</span><strong>源码 / 文档 / 下载包</strong></div>
+          <div class="console-row"><span>领取</span><strong>安装包 / 使用说明</strong></div>
+        </div>
+        <div class="console-mark">31 个开源 Skill</div>
+      </div>
+    </section>
+
+    <section class="store-section" id="products">
+      <span class="section-label">开源主仓库</span>
+      <div class="section-head">
+        <h2>Anonymous Contributor Agent Skills</h2>
+        <p>28 个 skill 来自批量内容摄入、飞思修图、Voice Memos、卫星堪景、文档和 macOS 自动化等具体项目。源码、安装方法、测试和开源边界都在同一个仓库。</p>
+      </div>
+
+      <div class="product-grid single">
+        <article class="product">
+          <div class="product-top">
+            <div>
+              <span class="product-tag">v1.0.2 / MIT</span>
+              <h3>28 个 Agent Skills</h3>
+            </div>
+            <div class="price free">免费开源</div>
+          </div>
+          <p>仓库同时支持 Codex、Claude Code 和 Agent Skills 格式。量子速读现在作为开源目录的一部分继续维护，付费部分改为代跑、部署和定制服务。</p>
+          <ul>
+            <li>可用 npx skills 查看目录并安装单个 skill。</li>
+            <li>CI 会检查目录完整性、缓存、符号链接、密钥和私有挂载路径。</li>
+            <li>私人数据、个人记录和客户生产配置不公开。</li>
+            <li>已知第三方 skill 不包装成原创内容。</li>
+          </ul>
+          <div class="product-actions">
+            <a class="store-btn" href="https://github.com/smwswk/independent-builderg-agent-skills" target="_blank" rel="noopener">查看源码与安装方法</a>
+            <a class="store-btn secondary" href="https://github.com/smwswk/independent-builderg-agent-skills/releases/tag/v1.0.2" target="_blank" rel="noopener">查看 v1.0.2</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="store-section" id="free-skills">
+      <span class="section-label">免费开源</span>
+      <div class="section-head">
+        <h2>单个 Skill 入口</h2>
+        <p>完整目录统一在 GitHub 维护。下面保留两个最小入口，方便快速试用。</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-top">
+            <div>
+              <span class="product-tag">MIT</span>
+              <h3>额度尾注 Skill</h3>
+            </div>
+            <div class="price free">免费</div>
+          </div>
+          <p>在 Codex 最终回复结尾显示额度状态的小 Skill。读取本机 Codex 登录态，只输出短尾注。</p>
+          <ul>
+            <li>公开 SKILL.md、脚本和许可证。</li>
+            <li>适合作为创建小型 Skill 的模板。</li>
+            <li>不上传对话内容。</li>
+          </ul>
+          <div class="product-actions">
+            <a class="store-btn" href="./downloads/quota-footer.zip" download>下载 zip</a>
+            <a class="store-btn secondary" href="https://github.com/smwswk/independent-builderg-agent-skills/tree/main/skills/quota-footer" target="_blank" rel="noopener">查看源码</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-top">
+            <div>
+              <span class="product-tag">MIT</span>
+              <h3>量子速读 Skill</h3>
+            </div>
+            <div class="price free">免费</div>
+          </div>
+          <p>大批量内容摄入和 ASR 的并发执行配置，包含离线校验和吞吐基准脚本。</p>
+          <ul>
+            <li>适合已经确认范围的大批量任务。</li>
+            <li>支持硅基流动 TeleAI/TeleSpeechASR。</li>
+            <li>不含 API Key，真实 ASR 运行需要自行配置。</li>
+          </ul>
+          <div class="product-actions">
+            <a class="store-btn" href="https://github.com/smwswk/independent-builderg-agent-skills/tree/main/skills/quantum-speed-reading" target="_blank" rel="noopener">查看源码</a>
+            <a class="store-btn secondary" href="#services">需要代跑</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="store-section" id="services">
+      <span class="section-label">定制服务</span>
+      <div class="section-head">
+        <h2>需要评估的服务</h2>
+        <p>如果你希望我直接处理素材、部署环境或改造内部流程，可以先发需求和样本，我会按工作量报价。</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="product">
+          <div class="product-top">
+            <div>
+              <span class="product-tag">内容处理</span>
+              <h3>代跑量子速读 / 音视频总结</h3>
+            </div>
+            <div class="price service">评估报价</div>
+          </div>
+          <p>你发素材或链接，我代跑下载、转录、摘要、质检和交付。适合没有本地 Codex 环境、只要结果的人。</p>
+          <ul>
+            <li>按平台、素材时长、数量和摘要深度报价。</li>
+            <li>先做样本质检，再批量处理。</li>
+            <li>可交付 Markdown、转录稿、知识候选和长图。</li>
+          </ul>
+          <div class="product-actions">
+            <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信咨询</button>
+            <a class="store-btn secondary" href="/audio-video-summary/">接入方案</a>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-top">
+            <div>
+              <span class="product-tag">自动化</span>
+              <h3>桌面流程自动化</h3>
+            </div>
+            <div class="price service">项目报价</div>
+          </div>
+          <p>把重复桌面操作、表格处理、文件命名、系统录入和旧工具限制封装成可复用脚本或小工具。</p>
+          <ul>
+            <li>先看截图、样表和操作步骤。</li>
+            <li>交付可运行脚本、说明和回滚方式。</li>
+            <li>复杂后台、账号系统和团队培训单独报价。</li>
+          </ul>
+          <div class="product-actions">
+            <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信咨询</button>
+            <a class="store-btn secondary" href="/system-entry-automation-case/">查看案例</a>
+          </div>
+        </article>
+      </div>
+
+      <p class="store-note">Skill 源码免费。批量代跑、私有部署、环境配置、企业流程自动化和长期维护按具体工作量报价。</p>
+    </section>
+  </main>
+
+  <div class="copy-toast" id="copyToast">已复制微信号：smwswk</div>
+
+  <script>
+    const toast = document.getElementById('copyToast');
+
+    async function copyWechat() {
+      try {
+        await navigator.clipboard.writeText('smwswk');
+        showToast();
+      } catch (error) {
+        const input = document.createElement('input');
+        input.value = 'smwswk';
+        document.body.appendChild(input);
+        input.select();
+        document.execCommand('copy');
+        input.remove();
+        showToast();
+      }
+    }
+
+    function showToast() {
+      toast.classList.add('show');
+      window.setTimeout(() => toast.classList.remove('show'), 1400);
+    }
+  </script>
+</body>
+</html>

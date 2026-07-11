@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="生命与灵魂 · 以AI接续纪实摄影传统，捕捉眼神中的尊严与故事">
+<title>生命与灵魂 · Lit-Visual</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  background: linear-gradient(180deg, #f8f5f0 0%, #faf7f2 100%);
+  color: #2c1810;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.container { max-width: 1300px; margin: 0 auto; padding: 40px 5% 80px; }
+.back-link {
+  display: inline-block;
+  color: #b8773d;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  transition: color 0.2s;
+}
+.back-link:hover { color: #9e6330; }
+
+header {
+  text-align: center;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #d4a574;
+}
+header h1 {
+  font-size: 38px;
+  letter-spacing: 5px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+header .subtitle {
+  color: #b8773d;
+  font-size: 15px;
+  letter-spacing: 3px;
+  font-weight: 400;
+}
+
+/* Inspiration Block */
+.inspiration {
+  max-width: 800px;
+  margin: 0 auto 48px;
+  background: white;
+  border-radius: 14px;
+  padding: 32px 36px;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+}
+.inspiration h2 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+  color: #2c1810;
+  font-weight: 500;
+}
+.inspiration-section { margin-bottom: 22px; }
+.inspiration-section:last-child { margin-bottom: 0; }
+.inspiration-section .label {
+  font-size: 11px;
+  color: #b8773d;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.inspiration-section .content {
+  font-size: 14px;
+  color: #5a4636;
+  line-height: 1.8;
+}
+.inspiration-section .content em { color: #b8773d; font-style: normal; }
+
+/* Prompt Toggle */
+.prompt-section {
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.prompt-toggle {
+  display: inline-block;
+  font-size: 13px;
+  color: #886f5c;
+  letter-spacing: 2px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: #f7f2ea;
+  border-radius: 8px;
+  border: 1px solid rgba(212, 165, 116, 0.2);
+  transition: all 0.2s;
+}
+.prompt-toggle:hover { background: #ede3d5; }
+.prompt-body {
+  display: none;
+  margin-top: 16px;
+  background: white;
+  border-radius: 14px;
+  padding: 24px 28px;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.06);
+  border: 1px solid rgba(212, 165, 116, 0.2);
+}
+.prompt-body.visible { display: block; }
+.prompt-item { margin-bottom: 20px; }
+.prompt-item:last-child { margin-bottom: 0; }
+.prompt-item .p-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #2c1810;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+.prompt-item .p-text {
+  font-size: 12px;
+  color: #5a4636;
+  line-height: 1.8;
+  font-style: italic;
+  background: #faf7f2;
+  padding: 14px 18px;
+  border-radius: 8px;
+  border-left: 3px solid #d4a574;
+}
+
+/* Image Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 22px rgba(76, 48, 24, 0.08);
+  border: 1px solid rgba(212, 165, 116, 0.18);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 32px rgba(76, 48, 24, 0.16);
+}
+.card img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+}
+.card-body { padding: 14px 18px; }
+.card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c1810;
+  letter-spacing: 1px;
+}
+.card-desc {
+  font-size: 12px;
+  color: #886f5c;
+  margin-top: 4px;
+  letter-spacing: 1px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 60px;
+  padding-top: 30px;
+  border-top: 1px solid #e5d6c2;
+  color: #886f5c;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="../" class="back-link">← 返回作品主页</a>
+
+<header>
+  <h1>生命与灵魂</h1>
+  <div class="subtitle">Life & Soul</div>
+</header>
+
+<div class="inspiration">
+  <h2>灵感来源</h2>
+  <div class="inspiration-section">
+    <div class="label">摄影参考</div>
+    <div class="content">Steve McCurry 的纪实肖像（色彩与眼神）、Sebastião Salgado《劳动者》的尊严凝视、Dorothea Lange 大萧条肖像中的人性重量。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">文学锚点</div>
+    <div class="content"><em>《穷忙》The Working Poor</em> — 底层劳动者的尊严而非怜悯；<em>《印度礼记》</em> — 街头人物的神韵与生命力；失去与怀念 — 眼神中的记忆重量。</div>
+  </div>
+  <div class="inspiration-section">
+    <div class="label">技术路线</div>
+    <div class="content">gpt-image-2 · 35mm胶片质感 · 浅景深 · 环境肖像 · 自然光与钨丝灯混合</div>
+  </div>
+</div>
+
+<div class="prompt-section">
+  <span class="prompt-toggle" onclick="document.getElementById('prompts').classList.toggle('visible'); this.textContent = document.getElementById('prompts').classList.contains('visible') ? '收起 Prompt ▲' : '查看代表性 Prompt ▼'">查看代表性 Prompt ▼</span>
+  <div class="prompt-body" id="prompts">
+    <div class="prompt-item">
+      <div class="p-name">rajasthan_girl · 拉贾斯坦女孩</div>
+      <div class="p-text">A young Rajasthani girl, 8 years old, in bright traditional clothing with mirror embroidery, standing in a desert village doorway, looking at camera with curious fearless eyes full of life and mischief, desert wind blowing her hair, late afternoon golden light, dust in the air, vivid colors against sand, documentary portrait, warm tones, shallow depth of field, 35mm film</div>
+    </div>
+    <div class="prompt-item">
+      <div class="p-name">old_man_empty_chair · 老人与空椅子</div>
+      <div class="p-text">An elderly man in his 80s, sitting in a sunlit living room, looking at an empty armchair beside him with tender grieving eyes full of memory, afternoon light through lace curtains, a half-finished cup of tea on the side table, the weight of absence visible in his posture, emotional documentary portrait, warm tones, shallow depth of field, 35mm film</div>
+    </div>
+  </div>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<footer><p>所有图片由 AI 生成 · 灵感来源为纪实摄影传统与底层叙事</p></footer>
+
+</div>
+
+<script>
+const names = [
+  {f:"night_janitor_191717.webp", t:"夜班清洁工", d:"《穷忙》" },
+  {f:"waitress_break_184843.webp", t:"女服务员休息", d:"《穷忙》" },
+  {f:"factory_worker_lunch_184922.webp", t:"工厂工人午餐", d:"《穷忙》" },
+  {f:"farm_worker_sunset_185007.webp", t:"农场工人日落", d:"《穷忙》" },
+  {f:"cashier_night_shift_185044.webp", t:"便利店收银员", d:"《穷忙》" },
+  {f:"varanasi_old_man_191806.webp", t:"瓦拉纳西苦行僧", d:"《印度礼记》" },
+  {f:"rajasthan_girl_185442.webp", t:"拉贾斯坦女孩", d:"《印度礼记》" },
+  {f:"kolkata_rickshaw_185520.webp", t:"加尔各答车夫", d:"《印度礼记》" },
+  {f:"kerala_boatman_185603.webp", t:"喀拉拉船夫", d:"《印度礼记》" },
+  {f:"tibetan_refugee_woman_185641.webp", t:"西藏难民妇女", d:"《印度礼记》" },
+  {f:"old_man_empty_chair_190010.webp", t:"老人与空椅子", d:"失去与怀念" },
+  {f:"widow_garden_191847.webp", t:"寡妇与玫瑰园", d:"失去与怀念" },
+  {f:"portrait_eyes_story_190106.webp", t:"眼神特写", d:"通用" },
+  {f:"portrait_father_son_190152.webp", t:"父子", d:"通用" },
+];
+const prefix = "images/";
+let html = '';
+names.forEach(n => {
+  html += `<div class="card"><img src="${prefix}${n.f}" alt="${n.t}" loading="lazy"><div class="card-body"><div class="card-title">${n.t}</div><div class="card-desc">${n.d}</div></div></div>`;
+});
+document.getElementById('grid').innerHTML = html;
+</script>
+</body>
+</html>

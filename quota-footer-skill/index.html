@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>额度尾注 Skill · SMWSWK</title>
+  <meta name="description" content="一个开源 Codex Skill：在最终回复结尾显示 Codex 额度使用情况。">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css?v=20260605-quota">
+  <style>
+    :root {
+      --s-bg: #f7f7f4;
+      --s-ink: #172026;
+      --s-muted: #66717d;
+      --s-line: rgba(23, 32, 38, 0.14);
+      --s-panel: #ffffff;
+      --s-accent: #2f6f58;
+    }
+    body { background: var(--s-bg); color: var(--s-ink); overflow-x: hidden; }
+    .s-page { max-width: 1040px; margin: 0 auto; padding: 3rem 1.25rem 4rem; }
+    .s-nav { margin-bottom: 2rem; font-size: 0.82rem; }
+    .s-hero { padding-bottom: 2rem; border-bottom: 1px solid var(--s-line); }
+    .s-kicker { margin: 0 0 0.8rem; color: var(--s-accent); font-size: 0.76rem; font-weight: 800; }
+    h1 { margin: 0; max-width: 760px; font-size: clamp(2.4rem, 7vw, 5.2rem); line-height: 0.98; letter-spacing: 0; }
+    .s-lead { max-width: 720px; margin: 1rem 0 0; color: var(--s-muted); font-size: 1.04rem; line-height: 1.8; }
+    .s-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-top: 1.3rem; }
+    .s-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 1rem; border-radius: 8px; border: 1px solid var(--s-accent); background: var(--s-accent); color: #fff; font-weight: 800; text-decoration: none; }
+    .s-btn.secondary { background: transparent; color: var(--s-accent); }
+    .s-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.85rem; margin-top: 1.5rem; }
+    .s-panel { border: 1px solid var(--s-line); border-radius: 8px; background: var(--s-panel); padding: 1rem; box-shadow: 0 14px 34px rgba(23, 32, 38, 0.07); }
+    .s-panel h2, .s-panel h3 { margin: 0 0 0.65rem; letter-spacing: 0; }
+    .s-panel p, .s-panel li { color: var(--s-muted); font-size: 0.84rem; line-height: 1.75; }
+    .s-section { margin-top: 2.2rem; }
+    pre { overflow-x: auto; border-radius: 8px; border: 1px solid var(--s-line); background: #172026; color: #f4f0e8; padding: 1rem; font-size: 0.8rem; line-height: 1.6; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .footer-sample { display: inline-block; padding: 0.75rem 0.9rem; border: 1px solid var(--s-line); border-radius: 8px; background: #fff; font-weight: 800; }
+    @media (max-width: 780px) {
+      .s-page { padding: 2rem 1rem 3rem; }
+      .s-grid { grid-template-columns: 1fr; }
+      .s-actions .s-btn { width: 100%; }
+      h1 { font-size: 2.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <main class="s-page">
+    <nav class="s-nav"><a href="/">返回主页</a></nav>
+    <section class="s-hero">
+      <p class="s-kicker">Open Source Codex Skill</p>
+      <h1>额度尾注 Skill</h1>
+      <p class="s-lead">一个很小但实用的 Codex Skill：读取本机 Codex OAuth token，查询 WHAM usage 接口，在最终回复结尾追加一行额度状态。</p>
+      <div class="s-actions">
+        <a class="s-btn" href="./SKILL.md">下载 SKILL.md</a>
+        <a class="s-btn secondary" href="./quota_footer.py">下载脚本</a>
+        <a class="s-btn secondary" href="./LICENSE">查看许可证</a>
+      </div>
+    </section>
+
+    <div class="s-grid">
+      <article class="s-panel">
+        <h3>显示格式</h3>
+        <p class="footer-sample">额度：5h 29%｜周 21%</p>
+      </article>
+      <article class="s-panel">
+        <h3>数据来源</h3>
+        <p>读取 <code>~/.codex/auth.json</code> 中的 OAuth token，请求 <code>chatgpt.com/backend-api/wham/usage</code>。</p>
+      </article>
+      <article class="s-panel">
+        <h3>默认克制</h3>
+        <p>只显示短尾注；重置时间、错误细节和原始 JSON 只有在追问或接近触顶时展开。</p>
+      </article>
+    </div>
+
+    <section class="s-section s-panel">
+      <h2>安装</h2>
+      <pre><code>mkdir -p ~/.codex/skills/quota-footer/scripts
+curl -fsSL https://ai-independent-builder.onrender.com/quota-footer-skill/SKILL.md -o ~/.codex/skills/quota-footer/SKILL.md
+curl -fsSL https://ai-independent-builder.onrender.com/quota-footer-skill/quota_footer.py -o ~/.codex/skills/quota-footer/scripts/quota_footer.py
+chmod +x ~/.codex/skills/quota-footer/scripts/quota_footer.py</code></pre>
+    </section>
+
+    <section class="s-section s-panel">
+      <h2>运行</h2>
+      <pre><code>python3 ~/.codex/skills/quota-footer/scripts/quota_footer.py</code></pre>
+    </section>
+
+    <section class="s-section s-panel">
+      <h2>边界</h2>
+      <ul>
+        <li>只适用于本机已有 Codex 登录态的环境。</li>
+        <li>不上传对话内容，只请求使用量接口。</li>
+        <li>接口字段可能变化，脚本失败时应降级为“额度：读取失败”。</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,6 @@
+interface:
+  display_name: "Voice Memos Organizer"
+  short_description: "Safely transcribe, clean, and rename Voice Memos"
+  default_prompt: "Use $voice-memos-organizer to safely transcribe, clean up, and rename my macOS Voice Memos library."
+policy:
+  allow_implicit_invocation: true

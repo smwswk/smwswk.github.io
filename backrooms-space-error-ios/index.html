@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>空间错误 Demo</title>
+    <link rel="stylesheet" href="./styles-space4.css?v=cluerule1">
+  </head>
+  <body>
+    <main class="shell" aria-live="polite">
+      <canvas id="worldCanvas"></canvas>
+      <div class="vignette" aria-hidden="true"></div>
+      <div class="fade" id="fade" aria-hidden="true"></div>
+
+      <section class="hud">
+        <div class="readout">
+          <span id="timer">03:00</span>
+          <span id="roomLabel">房间 118</span>
+        </div>
+        <div class="meter" aria-label="接近出口的信号强度">
+          <span id="meterFill"></span>
+        </div>
+        <p class="status" id="status">荧光灯在头顶发出平直的嗡鸣。</p>
+      </section>
+
+      <section class="actions" aria-label="方向选择">
+        <button class="start" id="startButton" type="button">开始</button>
+        <div class="directions" id="directions">
+          <button type="button" data-door="left">左</button>
+          <button type="button" data-door="center">前</button>
+          <button type="button" data-door="right">右</button>
+          <button type="button" data-door="exit" class="hidden">出口</button>
+        </div>
+      </section>
+
+      <section class="ending hidden" id="endingOverlay" aria-live="assertive">
+        <div class="ending-line"></div>
+        <p class="ending-kicker">出口已确认</p>
+        <h1>灯声留在了身后</h1>
+        <p>门关上以后，房间 118 仍在继续编号。你没有回头，直到那阵低频声变成普通的安静。</p>
+        <button type="button" id="restartButton">重新开始</button>
+      </section>
+    </main>
+    <script type="module" src="./app-space4.js?v=cluerule1"></script>
+  </body>
+</html>

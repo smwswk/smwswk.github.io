@@ -1,0 +1,6 @@
+interface:
+  display_name: "高德卫星堪景"
+  short_description: "用高德和 Google 卫星图筛选并导入拍摄堪景点"
+  default_prompt: "Use $gaode-satellite-kanjing to scan satellite-map oddities, run optional Google satellite second-pass scouting, and import candidate shooting locations into AMap."
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>跨平台光盘刻录工具 · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #586171;
+      --paper: #f6f1e8;
+      --panel: #fffdf8;
+      --line: rgba(17, 24, 39, 0.16);
+      --red: #b42318;
+      --green: #087443;
+      --blue: #2457a6;
+      --gold: #9a6700;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .disc-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .disc-hero {
+      min-height: 72vh;
+      margin: 0 -1.25rem;
+      padding: 3rem 1.25rem 2rem;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(7, 13, 24, 0.96), rgba(7, 13, 24, 0.86) 44%, rgba(7, 13, 24, 0.42) 72%, rgba(7, 13, 24, 0.2)),
+        url("/disc-burner/assets/disc-burner-hero.png") center right / cover no-repeat;
+      color: #fff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-inner {
+      max-width: 920px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: #f5c65b;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 720px;
+      margin: 0;
+      font-size: clamp(2.55rem, 8vw, 6rem);
+      line-height: 0.96;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+
+    .disc-hero h1 {
+      color: #fff;
+      text-shadow: 0 4px 22px rgba(0, 0, 0, 0.52);
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-size: 1.08rem;
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .actions a,
+    .source-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .actions a {
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+    }
+
+    .actions a.secondary {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+
+    .version {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 1.1rem;
+      box-shadow: 0 16px 36px rgba(17, 24, 39, 0.08);
+    }
+
+    .version h2 {
+      margin: 0;
+      letter-spacing: 0;
+      font-size: 1.45rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin: 0.8rem 0 0;
+    }
+
+    .tag {
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      padding: 0.25rem 0.55rem;
+      color: var(--muted);
+      background: #fff;
+      font-size: 0.84rem;
+    }
+
+    .version p,
+    .open-source p {
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0.85rem 0 0;
+    }
+
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1rem;
+    }
+
+    .download-row a,
+    .source-link {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .download-row a:hover,
+    .source-link:hover {
+      border-color: var(--blue);
+      color: var(--blue);
+    }
+
+    .open-source {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfaf5;
+      padding: 1.1rem;
+    }
+
+    .open-source h2 {
+      margin: 0;
+      letter-spacing: 0;
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .source-item {
+      border-left: 4px solid var(--green);
+      padding: 0.65rem 0.75rem;
+      background: #fff;
+      border-radius: 0 8px 8px 0;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-item strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .note {
+      margin-top: 1rem;
+      color: #6b4f00;
+      border-top: 1px solid var(--line);
+      padding-top: 0.8rem;
+      line-height: 1.65;
+      font-size: 0.95rem;
+    }
+
+    .back {
+      display: inline-flex;
+      margin-top: 1.4rem;
+      color: var(--blue);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 820px) {
+      .disc-hero {
+        min-height: 64vh;
+      }
+
+      .split,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions a,
+      .download-row a,
+      .source-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="disc-page">
+    <section class="disc-hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Open Source Utility</p>
+        <h1>跨平台<br>光盘刻录工具</h1>
+        <p class="lead">一个旧工作流的公开整理版：Mac 用 hdiutil / drutil，Windows 7 用系统 IMAPI2。目标是把“把文件夹刻成数据光盘”这件小事做成双击入口。</p>
+        <div class="actions">
+          <a href="/disc-burner/downloads/disc-burner-mac.zip">下载 Mac 版</a>
+          <a href="/disc-burner/downloads/disc-burner-win7.zip">下载 Windows 7 版</a>
+          <a class="secondary" href="https://github.com/smwswk/smwswk.github.io/tree/master/disc-burner/source" target="_blank">查看开源码</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="split" aria-label="双版本">
+      <article class="version">
+        <h2>Mac 版</h2>
+        <div class="tag-row">
+          <span class="tag">Python 3</span>
+          <span class="tag">hdiutil</span>
+          <span class="tag">drutil</span>
+        </div>
+        <p>把 `需要刻录的文件` 生成 ISO，再调用系统刻录工具写入 CD/DVD。脚本目录即工作目录，不依赖个人路径。</p>
+        <div class="download-row">
+          <a href="/disc-burner/downloads/disc-burner-mac.zip">下载 Mac 版</a>
+          <a href="/disc-burner/source/mac/burn_disc.py">查看 burn_disc.py</a>
+        </div>
+      </article>
+
+      <article class="version">
+        <h2>Windows 7 版</h2>
+        <div class="tag-row">
+          <span class="tag">CMD</span>
+          <span class="tag">VBScript</span>
+          <span class="tag">IMAPI2</span>
+        </div>
+        <p>不需要 Python，用 Windows 7 自带 IMAPI2 COM 接口直接刻录数据光盘。入口是 `双击刻光盘.cmd`。</p>
+        <div class="download-row">
+          <a href="/disc-burner/downloads/disc-burner-win7.zip">下载 Windows 7 版</a>
+          <a href="/disc-burner/source/windows-win7/burn_disc_win7.vbs">查看 VBS</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="open-source">
+      <h2>开源包内容</h2>
+      <p>公开版只包含脚本、说明、许可证和空的 `需要刻录的文件` 占位目录；真实刻录素材、视频、图片、播放器包和本地绝对路径全部排除。</p>
+      <div class="source-grid">
+        <div class="source-item"><strong>mac/</strong>Python 脚本、双击 `.command`、空素材目录。</div>
+        <div class="source-item"><strong>windows-win7/</strong>`.cmd` 启动器、IMAPI2 `.vbs`、空素材目录。</div>
+        <div class="source-item"><strong>downloads/</strong>Mac 包、Win7 包、完整源码包。</div>
+      </div>
+      <p class="download-row">
+        <a class="source-link" href="/disc-burner/downloads/disc-burner-source.zip">下载完整源码包</a>
+        <a class="source-link" href="https://github.com/smwswk/smwswk.github.io/tree/master/disc-burner/source" target="_blank">GitHub 源码目录</a>
+      </p>
+      <p class="note">物理刻录仍取决于光驱、空白盘和系统 IMAPI / drutil 状态。这个项目只发布脚本层工作流，不承诺跨所有刻录硬件。</p>
+    </section>
+
+    <a class="back" href="/">← 返回首页</a>
+  </main>
+</body>
+</html>

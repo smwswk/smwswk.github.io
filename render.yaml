@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: ai-independent-builder
+    runtime: static
+    buildCommand: "true"
+    staticPublishPath: .
+    autoDeployTrigger: commit
+
+  - type: web
+    name: lit-visual-api
+    env: python
+    rootDir: api
+    buildCommand: ""
+    startCommand: python3 server.py
+    envVars:
+      - key: IMAGE_API_BASE
+        value: https://api.gptsapi.net/v1
+      - key: IMAGE_MODEL
+        value: grok-imagine-image
+      - key: GPTSAPI_API_KEY
+        sync: false
+      - key: PAYMENT_SECRET
+        sync: false

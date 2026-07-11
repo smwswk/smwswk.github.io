@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="一个开源的 macOS Voice Memos 整理工具，支持转录、标题候选、清理前 dry-run 和备份。">
+  <title>Voice Memos Organizer · SMWSWK</title>
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/hyde.css">
+  <style>
+    :root {
+      --paper: #f4f6f3;
+      --ink: #17201c;
+      --muted: #5d695f;
+      --panel: #ffffff;
+      --line: rgba(23, 32, 28, 0.14);
+      --green: #0a7658;
+      --red: #a9424b;
+      --blue: #245e8f;
+      --dark: #0e1417;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .voice-page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.25rem 4rem;
+    }
+
+    .voice-hero {
+      min-height: 68vh;
+      margin: 0 -1.25rem;
+      padding: 3rem 1.25rem 2rem;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(9, 13, 16, 0.96), rgba(9, 13, 16, 0.82) 48%, rgba(9, 13, 16, 0.22) 86%),
+        url("/voice-memos-organizer/assets/voice-memos-organizer-ui.png") center right / cover no-repeat;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.75rem;
+      color: #91e1c4;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      color: #fff;
+      font-size: 4.4rem;
+      line-height: 0.98;
+      letter-spacing: 0;
+      text-shadow: 0 5px 24px rgba(0, 0, 0, 0.48);
+    }
+
+    .lead {
+      max-width: 730px;
+      margin: 1rem 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 1.04rem;
+      line-height: 1.72;
+    }
+
+    .actions,
+    .download-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.25rem;
+    }
+
+    .button,
+    .source-link,
+    .download-row a {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      padding: 0 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .actions .button {
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--ink);
+    }
+
+    .actions .button.secondary {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 1rem;
+      margin-top: 1.2rem;
+    }
+
+    .panel,
+    .open-source {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+      padding: 1.1rem;
+      box-shadow: 0 16px 34px rgba(23, 32, 28, 0.06);
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.45rem;
+      letter-spacing: 0;
+    }
+
+    .panel p,
+    .open-source p {
+      margin: 0.85rem 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .safety-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .safety-list li {
+      display: grid;
+      grid-template-columns: 2.35rem minmax(0, 1fr);
+      gap: 0.65rem;
+      align-items: start;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .safety-list b {
+      display: inline-flex;
+      width: 2.35rem;
+      height: 2.35rem;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      background: #e2f1eb;
+      color: var(--green);
+    }
+
+    .source-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .source-item {
+      border-left: 4px solid var(--green);
+      border-radius: 0 8px 8px 0;
+      background: #f8fbf9;
+      padding: 0.75rem;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .source-item strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      color: var(--ink);
+    }
+
+    .source-item.warn {
+      border-left-color: var(--red);
+      background: #fff7f7;
+    }
+
+    .source-item.info {
+      border-left-color: var(--blue);
+      background: #f4f9fe;
+    }
+
+    .download-row a {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .download-row a.primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+
+    @media (max-width: 820px) {
+      .split,
+      .source-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .voice-hero {
+        min-height: 62vh;
+        background:
+          linear-gradient(180deg, rgba(9, 13, 16, 0.96), rgba(9, 13, 16, 0.82)),
+          url("/voice-memos-organizer/assets/voice-memos-organizer-ui.png") center / cover no-repeat;
+      }
+
+      h1 {
+        font-size: 3rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .voice-page {
+        padding: 0 1rem 3rem;
+      }
+
+      .voice-hero {
+        margin: 0 -1rem;
+        padding: 2.2rem 1rem 1.75rem;
+      }
+
+      h1 {
+        font-size: 2.42rem;
+      }
+
+      .actions,
+      .download-row {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .button,
+      .source-link,
+      .download-row a {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+<main class="voice-page">
+  <section class="voice-hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Open Source Skill</p>
+      <h1>Voice Memos Organizer</h1>
+      <p class="lead">
+        用 Python 盘点 macOS 语音备忘录、切片转录、生成标题候选和清理清单。公开版默认走 dry-run 和备份，写库、删除、批量改名都要显式确认。
+      </p>
+      <div class="actions">
+        <a class="button" href="/voice-memos-organizer/downloads/voice-memos-organizer-source.zip" download>下载源码包</a>
+        <a class="button secondary" href="https://github.com/smwswk/smwswk.github.io/tree/master/voice-memos-organizer/source" target="_blank" rel="noopener">GitHub 源码</a>
+        <a class="button secondary" href="/">返回首页</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="split">
+    <article class="panel">
+      <h2>能做什么</h2>
+      <ul class="safety-list">
+        <li><b>1</b><span>读取 Voice Memos 的 `CloudRecordings.db`，生成录音清单和处理 manifest。</span></li>
+        <li><b>2</b><span>用 `ffmpeg` 切片 `.m4a` / `.qta`，再用 `TeleAI/TeleSpeechASR` 转录。</span></li>
+        <li><b>3</b><span>生成标题候选、摘要、关键词和低信息录音候选，供人工审查。</span></li>
+      </ul>
+    </article>
+
+    <article class="panel">
+      <h2>公开版保护</h2>
+      <p>这不是一个“点一下全自动清理”的工具。它把危险动作拆成候选、dry-run、备份、显式确认和事后校验。</p>
+      <ul class="safety-list">
+        <li><b>写</b><span>`apply` / `apply-db` 必须加 `--confirm-live-write`。</span></li>
+        <li><b>删</b><span>`delete-candidates` 必须先 dry-run，正式执行还要 `--confirm-delete`。</span></li>
+        <li><b>改</b><span>导出文件夹批量改名必须加 `--confirm-rename`。</span></li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="open-source">
+    <h2>源码包内容</h2>
+    <p>已清理掉缓存和本机产物，只保留 Skill 说明、工作流参考、Python 脚本、公开 README、`.gitignore` 和 MIT 许可。</p>
+    <div class="source-grid">
+      <div class="source-item">
+        <strong>转录主流程</strong>
+        `process_voice_memos.py` 负责盘点、切片、ASR、摘要和结果导出。
+      </div>
+      <div class="source-item warn">
+        <strong>安全写入</strong>
+        数据库写入和删除会先备份，公开版还要求显式确认参数。
+      </div>
+      <div class="source-item info">
+        <strong>可独立使用</strong>
+        `organize_recording_folder.py` 可处理已导出的录音文件夹，不必直接碰 Voice Memos 数据库。
+      </div>
+    </div>
+    <div class="download-row">
+      <a class="primary" href="/voice-memos-organizer/downloads/voice-memos-organizer-source.zip" download>下载 voice-memos-organizer-source.zip</a>
+      <a href="https://github.com/smwswk/smwswk.github.io/tree/master/voice-memos-organizer/source" target="_blank" rel="noopener">查看 GitHub source</a>
+    </div>
+  </section>
+</main>
+</body>
+</html>
