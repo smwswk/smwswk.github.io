@@ -1,11 +1,11 @@
 languageCode = "en-us"
-title = "SMWSWK"
+title = "个人 AI 工作台"
 baseurl = "https://ai-independent-builder.onrender.com/"
 theme = "hyde"
 
 [params]
   subtitle = "AI × Contemporary Creation"
-  author = "搞艺术的独立开发者"
+  author = "Anonymous Contributor"
   description = "AI-Era Contemporary Creator — Photography, Podcast, AI Workflow, Visual Storytelling"
 
 [taxonomies]

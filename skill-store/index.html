@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Skill 商店 · SMWSWK</title>
-  <meta name="description" content="SMWSWK 开源 Agent Skills：31 个适配 Codex 与 Claude Code 的工作流，以及内容处理和自动化服务。">
+  <title>开源 Skills · 个人 AI 工作台</title>
+  <meta name="description" content="适配 Codex 与 Claude Code 的脱敏 Agent Skills 公开目录。">
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/hyde.css?v=20260702-skill-store">
@@ -406,30 +406,29 @@
 
     <section class="store-hero">
       <div>
-        <p class="store-kicker">数字 Skill 与自动化服务</p>
-        <h1>Skill 商店</h1>
-        <p class="store-lead">31 个 Codex / Claude Code Skill 已在 GitHub 以 MIT 许可证公开。可以直接查看源码、安装单个 skill，也可以预约内容代跑、环境部署和桌面自动化服务。</p>
+        <p class="store-kicker">脱敏、通用、可复用</p>
+        <h1>开源 Skills</h1>
+        <p class="store-lead">公开目录只保留可独立复用的 Codex / Claude Code 工作流。真实数据、个人记录、账号配置、精确位置和生产操作层不公开。</p>
         <div class="store-actions">
           <a class="store-btn" href="https://github.com/smwswk/independent-builderg-agent-skills" target="_blank" rel="noopener">查看 GitHub 仓库</a>
-          <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信号</button>
         </div>
       </div>
       <div class="store-console" aria-hidden="true">
         <div>
           <div class="console-row"><span>内容摄入</span><strong>转录 / 摘要 / 高光</strong></div>
           <div class="console-row"><span>自动化</span><strong>脚本 / 后台 / 工作台</strong></div>
-          <div class="console-row"><span>交付方式</span><strong>源码 / 文档 / 下载包</strong></div>
-          <div class="console-row"><span>领取</span><strong>安装包 / 使用说明</strong></div>
+          <div class="console-row"><span>公开形式</span><strong>源码 / 文档 / 下载包</strong></div>
+          <div class="console-row"><span>边界</span><strong>不含账号与真实数据</strong></div>
         </div>
-        <div class="console-mark">31 个开源 Skill</div>
+        <div class="console-mark">36 个开源 Skill</div>
       </div>
     </section>
 
     <section class="store-section" id="products">
       <span class="section-label">开源主仓库</span>
       <div class="section-head">
-        <h2>Anonymous Contributor Agent Skills</h2>
-        <p>28 个 skill 来自批量内容摄入、飞思修图、Voice Memos、卫星堪景、文档和 macOS 自动化等具体项目。源码、安装方法、测试和开源边界都在同一个仓库。</p>
+        <h2>Agent Skills</h2>
+        <p>公开 skill 来自内容摄入、图像处理、语音备忘录、文档和 macOS 自动化等具体项目。源码、安装方法、测试和开源边界都在同一个仓库。</p>
       </div>
 
       <div class="product-grid single">
@@ -437,15 +436,15 @@
           <div class="product-top">
             <div>
               <span class="product-tag">v1.0.2 / MIT</span>
-              <h3>28 个 Agent Skills</h3>
+              <h3>36 个 Agent Skills</h3>
             </div>
             <div class="price free">免费开源</div>
           </div>
-          <p>仓库同时支持 Codex、Claude Code 和 Agent Skills 格式。量子速读现在作为开源目录的一部分继续维护，付费部分改为代跑、部署和定制服务。</p>
+          <p>仓库同时支持 Codex、Claude Code 和 Agent Skills 格式。这里只提供开源代码与说明，不提供代跑、部署或定制服务。</p>
           <ul>
             <li>可用 npx skills 查看目录并安装单个 skill。</li>
             <li>CI 会检查目录完整性、缓存、符号链接、密钥和私有挂载路径。</li>
-            <li>私人数据、个人记录和客户生产配置不公开。</li>
+            <li>私人数据、个人记录、账号配置和生产环境不公开。</li>
             <li>已知第三方 skill 不包装成原创内容。</li>
           </ul>
           <div class="product-actions">
@@ -500,90 +499,17 @@
           </ul>
           <div class="product-actions">
             <a class="store-btn" href="https://github.com/smwswk/independent-builderg-agent-skills/tree/main/skills/quantum-speed-reading" target="_blank" rel="noopener">查看源码</a>
-            <a class="store-btn secondary" href="#services">需要代跑</a>
+            <a class="store-btn secondary" href="/quantum-speed-reading/">查看说明</a>
           </div>
         </article>
 
       </div>
     </section>
 
-    <section class="store-section" id="services">
-      <span class="section-label">定制服务</span>
-      <div class="section-head">
-        <h2>需要评估的服务</h2>
-        <p>如果你希望我直接处理素材、部署环境或改造内部流程，可以先发需求和样本，我会按工作量报价。</p>
-      </div>
-
-      <div class="product-grid">
-        <article class="product">
-          <div class="product-top">
-            <div>
-              <span class="product-tag">内容处理</span>
-              <h3>代跑量子速读 / 音视频总结</h3>
-            </div>
-            <div class="price service">评估报价</div>
-          </div>
-          <p>你发素材或链接，我代跑下载、转录、摘要、质检和交付。适合没有本地 Codex 环境、只要结果的人。</p>
-          <ul>
-            <li>按平台、素材时长、数量和摘要深度报价。</li>
-            <li>先做样本质检，再批量处理。</li>
-            <li>可交付 Markdown、转录稿、知识候选和长图。</li>
-          </ul>
-          <div class="product-actions">
-            <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信咨询</button>
-            <a class="store-btn secondary" href="/audio-video-summary/">接入方案</a>
-          </div>
-        </article>
-
-        <article class="product">
-          <div class="product-top">
-            <div>
-              <span class="product-tag">自动化</span>
-              <h3>桌面流程自动化</h3>
-            </div>
-            <div class="price service">项目报价</div>
-          </div>
-          <p>把重复桌面操作、表格处理、文件命名、系统录入和旧工具限制封装成可复用脚本或小工具。</p>
-          <ul>
-            <li>先看截图、样表和操作步骤。</li>
-            <li>交付可运行脚本、说明和回滚方式。</li>
-            <li>复杂后台、账号系统和团队培训单独报价。</li>
-          </ul>
-          <div class="product-actions">
-            <button class="store-btn secondary" type="button" onclick="copyWechat()">复制微信咨询</button>
-            <a class="store-btn secondary" href="/system-entry-automation-case/">查看案例</a>
-          </div>
-        </article>
-      </div>
-
-      <p class="store-note">Skill 源码免费。批量代跑、私有部署、环境配置、企业流程自动化和长期维护按具体工作量报价。</p>
+    <section class="store-section" id="boundary">
+      <span class="section-label">公开边界</span>
+      <div class="section-head"><h2>源码开放，生产系统保持私有</h2><p>公开内容不包含真实工作数据、个人账号、密钥、精确位置、生产配置或可直接聚合敏感空间信息的操作层。</p></div>
     </section>
   </main>
-
-  <div class="copy-toast" id="copyToast">已复制微信号：smwswk</div>
-
-  <script>
-    const toast = document.getElementById('copyToast');
-
-    async function copyWechat() {
-      try {
-        await navigator.clipboard.writeText('smwswk');
-        showToast();
-      } catch (error) {
-        const input = document.createElement('input');
-        input.value = 'smwswk';
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand('copy');
-        input.remove();
-        showToast();
-      }
-    }
-
-    function showToast() {
-      toast.classList.add('show');
-      window.setTimeout(() => toast.classList.remove('show'), 1400);
-    }
-  </script>
 </body>
 </html>

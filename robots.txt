@@ -1,3 +1,6 @@
 User-agent: *
-Allow: /
+Disallow: /creator/
+Disallow: /gaode-satellite-kanjing/
+Disallow: /wedding-ai-studio/
+
 Sitemap: https://ai-independent-builder.onrender.com/sitemap.xml

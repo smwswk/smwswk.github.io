@@ -16,17 +16,17 @@ SKILL_ILLUSTRATIONS = [
 
 
 class HomepagePlainLanguageTest(unittest.TestCase):
-    def test_homepage_routes_identity_and_ai_help_sections(self):
+    def test_homepage_routes_public_workbench_sections(self):
         html = HOME.read_text(encoding="utf-8")
 
-        self.assertIn("一个人 + AI 的工作台", html)
+        self.assertIn("一个人 + AI 的自用系统", html)
         self.assertIn("先选入口", html)
-        self.assertIn("AI 独立开发者", html)
-        self.assertIn("主播独立开发者", html)
-        self.assertIn("创作独立开发者", html)
-        self.assertIn("器材独立开发者", html)
+        self.assertIn("自动化自测", html)
+        self.assertIn("播客数据", html)
+        self.assertIn("Agent Skills", html)
+        self.assertIn("匿名影像", html)
         self.assertIn("工具和 Skill", html)
-        self.assertIn("AI 需求诊断", html)
+        self.assertIn("公开边界", html)
 
     def test_homepage_removes_professional_section_jargon(self):
         html = HOME.read_text(encoding="utf-8")
@@ -37,13 +37,14 @@ class HomepagePlainLanguageTest(unittest.TestCase):
         self.assertNotIn("AI / Podcast / Creation / Gear", html)
         self.assertNotIn("近期更新", html)
 
-    def test_homepage_uses_plain_personal_brand(self):
+    def test_homepage_uses_privacy_preserving_brand(self):
         html = HOME.read_text(encoding="utf-8")
 
-        self.assertIn("<title>独立开发者工作台</title>", html)
-        self.assertIn("<h1>独立开发者工作台</h1>", html)
-        self.assertIn("© 2026 独立开发者", html)
-        self.assertIn("var id = 'smwswk';", html)
+        self.assertIn("<title>个人 AI 工作台</title>", html)
+        self.assertIn("<h1>个人 AI 工作台</h1>", html)
+        self.assertIn("© 2026 Anonymous Contributor", html)
+        self.assertNotIn("复制微信", html)
+        self.assertNotIn("AI 独立开发者", html)
         self.assertIn('class="home-page workbench-home"', html)
 
     def test_homepage_has_unified_skill_illustrations_and_current_tool_links(self):
@@ -54,7 +55,7 @@ class HomepagePlainLanguageTest(unittest.TestCase):
             "/display-switch/",
             "/movie-recommender/",
             "/voice-memos-organizer/",
-            "/gaode-satellite-kanjing/",
+            "/quota-footer-skill/",
             "/skill-store/",
         ]:
             self.assertIn(path, html)

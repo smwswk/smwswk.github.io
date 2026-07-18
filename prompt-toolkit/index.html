@@ -145,7 +145,7 @@
   <p style="font-size:13px;color:var(--sub);">Tarkovsky / Lubezki / Bela Tarr / Wong Kar-wai / Crewdson / Deakins / Doyle / Salgado / McCurry —— 9位大神适合什么场景、什么色调、什么情绪。</p>
 
   <h3>推荐工具链</h3>
-  <p style="font-size:13px;color:var(--sub);">Claude Code（总控）+ DeepSeek V4（主力模型）+ <a href="https://chintao.cn/register?aff=Qr6O" style="color:#2563eb;">chintao.cn API</a>（生图）。这套是我目前实际在用的组合，中文理解好、成本可控。</p>
+  <p style="font-size:13px;color:var(--sub);">模型、接口和编排工具可以按自己的合规环境替换；本页只保留与平台无关的画面控制方法。</p>
 </div>
 
 <div class="section">
@@ -159,56 +159,25 @@
   <p style="font-size:13px;color:var(--sub);margin-top:10px;">不适合：完全零基础、还没用过任何AI生图工具的人。先去玩两天再来。</p>
 </div>
 
-<div class="price-block">
-  <div class="amount">19.9<span class="unit"> 元</span></div>
-  <p class="note">一顿饭钱。方法通用，不绑定任何平台。</p>
-</div>
-
 <div class="cta-box">
-  <h3>购买方式</h3>
-  <p>在小红书商品栏直接下单，或者加微信获取</p>
-  <div class="cta-wechat" onclick="copyWechat()">微信号：smwswk</div>
-  <div class="cta-hint">点一下自动复制，去微信粘贴添加</div>
+  <h3>公开状态</h3>
+  <p>本页作为方法归档保留，当前不提供购买、咨询、社交账号联系或个人交付。</p>
 </div>
 
 <div class="section">
   <h2>常见问题</h2>
   <div class="faq-item">
-    <div class="faq-q">买个工具包和网上免费教程有什么区别？</div>
-    <div class="faq-a">免费的告诉你"怎么用AI生图"，这个告诉你"怎么控制画面"。所有公式来自实际跑过上百次的验证，包括什么词会触发拦截、怎么绕、哪个导演风格适配什么场景——这些网上搜不到。</div>
+    <div class="faq-q">这页和普通教程有什么区别？</div>
+    <div class="faq-a">重点不是绑定某个模型，而是把画面控制拆成可复用的结构：主体、空间、光线、色彩、镜头与叙事关系。</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">我是用Midjourney的，这个能用吗？</div>
     <div class="faq-a">能用。公式是方法论层面的，不绑定特定工具。电影摄影参考、安全规避策略、风格公式在任何AI生图工具上都有效。</div>
   </div>
-  <div class="faq-item">
-    <div class="faq-q">买了不满意能退吗？</div>
-    <div class="faq-a">19.9元，加微信直接说一声就退，不需要理由。</div>
-  </div>
 </div>
 
 <div class="footer">
-  &copy; 2026 搞艺术的独立开发者 · ai-independent-builder.onrender.com
+  &copy; 2026 Anonymous Contributor
 </div>
-
-<div class="toast" id="toast"></div>
-
-<script>
-function copyWechat() {
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText('smwswk').then(() => showToast('微信号已复制！去微信粘贴添加'));
-  } else {
-    const ta = document.createElement('textarea');
-    ta.value = 'smwswk'; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
-    showToast('微信号已复制！');
-  }
-}
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2000);
-}
-</script>
 </body>
 </html>
