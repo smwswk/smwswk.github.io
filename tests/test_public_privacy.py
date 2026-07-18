@@ -57,6 +57,14 @@ class PublicPrivacyTest(unittest.TestCase):
         self.assertIn("跨平台账号数据不公开", text)
         self.assertGreater(len(text), 1000)
 
+    def test_unreviewed_skill_catalog_is_not_promoted(self):
+        homepage = (ROOT / "index.html").read_text(encoding="utf-8")
+        store = (ROOT / "skill-store" / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("skill-satellite-kanjing.png", homepage)
+        self.assertNotIn("github.com/smwswk/independent-builderg-agent-skills", homepage)
+        self.assertNotIn("github.com/smwswk/independent-builderg-agent-skills", store)
+        self.assertIn("完整目录暂停推广", store)
+
 
 if __name__ == "__main__":
     unittest.main()
