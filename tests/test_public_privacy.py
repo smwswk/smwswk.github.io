@@ -53,6 +53,8 @@ class PublicPrivacyTest(unittest.TestCase):
     def test_podcast_page_is_retained(self):
         text = PODCAST.read_text(encoding="utf-8")
         self.assertIn("接触印相", text)
+        self.assertIn("主持人 C", text)
+        self.assertIn("跨平台账号数据不公开", text)
         self.assertGreater(len(text), 1000)
 
 
