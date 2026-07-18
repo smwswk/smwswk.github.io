@@ -10,7 +10,6 @@ SKILL_ILLUSTRATIONS = [
     ROOT / "homepage-assets" / "skill-display-switch.png",
     ROOT / "homepage-assets" / "skill-movie-recommender.png",
     ROOT / "homepage-assets" / "skill-voice-memos.png",
-    ROOT / "homepage-assets" / "skill-satellite-kanjing.png",
     ROOT / "homepage-assets" / "skill-store.png",
 ]
 
@@ -64,7 +63,7 @@ class HomepagePlainLanguageTest(unittest.TestCase):
             self.assertTrue(asset.is_file(), f"missing {asset}")
             self.assertIn(f"/homepage-assets/{asset.name}", html)
 
-        self.assertEqual(html.count('class="tool-card'), 6)
+        self.assertEqual(html.count('class="tool-card'), 5)
 
     def test_mobile_hero_is_compact_after_navigation(self):
         css = CSS.read_text(encoding="utf-8")
