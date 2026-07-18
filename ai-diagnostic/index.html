@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-<meta name="version" content="20260604-pricing-short">
-<title>AI 自动化需求诊断</title>
+<meta name="version" content="20260718-private-self-check">
+<meta name="description" content="在浏览器本地完成的 AI 自动化自测，不提交任何数据。">
+<title>AI 自动化自测</title>
 <style>
   :root {
     --bg: #f6f7f8;
@@ -301,12 +302,12 @@
 <body>
 
 <div class="header">
-  <div class="eyebrow">AI 自动化需求诊断</div>
-  <h1>AI 自动化需求诊断</h1>
-  <p>用 6 个问题把流程、材料、系统限制和交付目标说清楚，便于快速判断是否值得做自动化。</p>
+  <div class="eyebrow">浏览器本地工具</div>
+  <h1>AI 自动化自测</h1>
+  <p>用 6 个问题把流程、材料、系统限制和目标说清楚，帮助你自行判断是否值得自动化。填写内容只保存在当前浏览器。</p>
   <div class="price-row">
-    <div class="price-pill">咨询：300 元 / 小时</div>
-    <div class="price-pill">项目开发：按难易程度报价</div>
+    <div class="price-pill">不上传数据</div>
+    <div class="price-pill">不提供咨询或代开发</div>
   </div>
 </div>
 
@@ -328,7 +329,7 @@
   <div class="sec-body">
     <div class="q-item">
       <div class="q-label"><span class="q-num">1</span> 想自动化的是哪一件具体工作？</div>
-      <textarea class="q-textarea" data-q="1" placeholder="例如：把客户提交的材料录入后台、把订单同步到表格、把会议录音整理成纪要。"></textarea>
+      <textarea class="q-textarea" data-q="1" placeholder="例如：把收到的材料录入后台、把订单同步到表格、把会议录音整理成纪要。"></textarea>
     </div>
     <div class="q-item">
       <div class="q-label"><span class="q-num">2</span> 现在人工操作大概有哪些步骤？</div>
@@ -386,7 +387,7 @@
       <div class="chip" data-scenario="零售 / 私域顾问">零售 / 私域顾问</div>
       <div class="chip" data-scenario="桌面流程小工具">桌面流程小工具</div>
     </div>
-    <div class="note">咨询按 300 元 / 小时计费；项目开发会根据流程复杂度、系统限制、数据来源和交付形态单独评估。</div>
+    <div class="note">这是自助梳理工具。生成摘要后请自行判断、测试和复核，不要填入真实账号、密码或敏感数据。</div>
   </div>
 </div>
 
@@ -471,7 +472,7 @@
 
   function showSummary() {
     const card = document.getElementById('summaryCard');
-    let html = '<h3>AI 自动化需求摘要</h3>';
+    let html = '<h3>AI 自动化自测摘要</h3>';
     let hasContent = false;
     qs.forEach(id => {
       const el = document.querySelector('[data-q="' + id + '"]');
@@ -488,12 +489,8 @@
     if (!hasContent) {
       html += '<div class="summary-empty">还没有填写内容。</div>';
     }
-    html += '<button class="btn-copy" onclick="copySummary()">复制诊断摘要</button>';
-    html += '<div class="conversion-block">';
-    html += '<h4>下一步沟通</h4>';
-    html += '<p>可将摘要发到微信。咨询定价为 300 元 / 小时；项目开发根据难易程度、系统限制和交付范围单独报价。</p>';
-    html += '<div class="conversion-wechat" onclick="copyWechat()">微信号：smwswk</div>';
-    html += '</div>';
+    html += '<button class="btn-copy" onclick="copySummary()">复制自测摘要</button>';
+    html += '<div class="conversion-block"><h4>下一步</h4><p>先选一个低风险、可回滚的小样本试跑；保留人工复核，并记录节省时间、错误率和维护成本。</p></div>';
     html += '<button class="btn-close" onclick="closeSummary()">关闭</button>';
     card.innerHTML = html;
     document.getElementById('summaryModal').classList.add('show');
@@ -504,7 +501,7 @@
   }
 
   function summaryText() {
-    let text = 'AI 自动化需求摘要\n\n';
+    let text = 'AI 自动化自测摘要\n\n';
     qs.forEach(id => {
       const el = document.querySelector('[data-q="' + id + '"]');
       const val = el ? el.value.trim() : '';
@@ -512,16 +509,12 @@
     });
     const scenarios = selectedScenarios();
     if (scenarios.length) text += '场景类型\n' + scenarios.join(' / ') + '\n\n';
-    text += '咨询定价：300 元 / 小时\n项目开发：根据难易程度和交付范围报价\n微信：smwswk\n';
+    text += '建议：先做低风险、可回滚的小样本测试，并保留人工复核。\n';
     return text;
   }
 
   function copySummary() {
     copyText(summaryText(), '诊断摘要已复制');
-  }
-
-  function copyWechat() {
-    copyText('smwswk', '微信号已复制：smwswk');
   }
 
   function copyText(text, msg) {

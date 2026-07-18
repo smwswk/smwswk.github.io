@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>账单对账表自动化案例 · SMWSWK</title>
+  <title>账单对账表自动化案例 · 个人 AI 工作台</title>
   <meta name="description" content="账单与对账表自动化案例：流水清洗、分类规则、专项支出识别、汇总报表和在线表格写入。">
   <link rel="stylesheet" href="/css/case-light.css?v=20260604-cn-buttons">
 </head>
@@ -16,10 +16,7 @@
         <div class="eyebrow">案例 · 账单对账自动化</div>
         <h1>账单 / 对账表自动化</h1>
         <p class="lead">面向运营、财务助理、小团队和个人工作室，将手机账单、支付平台流水、银行卡记录和手工表格清洗成统一明细，再自动分类、汇总并写入 WPS 或在线表格。</p>
-        <div class="case-actions">
-          <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
-          <button class="btn secondary" type="button" onclick="copyWechat()">复制微信号 smwswk</button>
-        </div>
+        <div class="case-actions"><a class="btn" href="/ai-diagnostic/">打开自动化自测</a></div>
       </div>
       <figure class="visual-card">
         <div class="visual-stage billing-visual" aria-label="账单对账表自动化流程示意图">
@@ -93,7 +90,7 @@
     </section>
 
     <section class="section">
-      <h2>交付物</h2>
+      <h2>可复用产物</h2>
       <div class="grid-2">
         <article class="panel">
           <h3>账单清洗与分类脚本</h3>
@@ -128,29 +125,11 @@
 
     <section class="cta-band">
       <div>
-        <h2>有一批账单或流水要整理？</h2>
-        <p>可先发脱敏字段样例和目标表格结构。咨询 300 元 / 小时，项目开发按难易程度和交付范围报价。</p>
+        <h2>先从脱敏样本验证</h2>
+        <p>这是公开的脱敏案例，不提供咨询或定制开发。可以用自测页梳理自己的流程，再从可回滚的小样本开始。</p>
       </div>
-      <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+      <a class="btn" href="/ai-diagnostic/">打开自动化自测</a>
     </section>
   </main>
-
-  <div class="toast" id="toast">微信号已复制：smwswk</div>
-  <script>
-    function copyWechat() {
-      var id = "smwswk";
-      var toast = document.getElementById("toast");
-      function show() {
-        toast.classList.add("show");
-        window.clearTimeout(window.__toastTimer);
-        window.__toastTimer = window.setTimeout(function () { toast.classList.remove("show"); }, 2200);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(id).then(show, show);
-      } else {
-        show();
-      }
-    }
-  </script>
 </body>
 </html>

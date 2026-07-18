@@ -297,11 +297,11 @@ function loadLicense() {
   } else if (quota > 0) {
     $('#tierBadge').textContent = `免费 ${quota} 次`;
     $('#tierBadge').className = 'badge badge-free';
-    $('#infoBar').textContent = '首次免费，之后 ¥9.9 永久';
+    $('#infoBar').textContent = '公开演示；不提供购买或个人服务';
   } else {
     $('#tierBadge').textContent = '免费已用完';
     $('#tierBadge').className = 'badge badge-free';
-    $('#infoBar').textContent = '¥9.9 永久使用';
+    $('#infoBar').textContent = '公开演示次数已用完';
   }
 }
 
@@ -400,22 +400,13 @@ function downloadImage() {
   a.click();
 }
 
-// ── Paywall ─────────────────────────────────────────────
+// ── Public demo limit ───────────────────────────────────
 function showPaywall() {
   $('#resultArea').innerHTML = `
     <div class="paywall">
       <div class="icon">🖼️</div>
-      <h2>免费次数已用完</h2>
-      <p class="desc">AI 生图有 API 成本，每次生成都需付费。<br>一次购买，永久使用，不限次数。</p>
-      <div class="price">¥9.9 永久</div>
-      <img src="wx-qr.jpg" class="qr" alt="微信收款码">
-      <p class="desc">微信扫码支付后<br>添加微信 smwswk 发送付款截图领取激活码</p>
-      <div class="activate-link" onclick="toggleActivate()">已有激活码？点此输入</div>
-      <div class="activate-form" id="activateForm">
-        <input type="text" id="activateInput" placeholder="XXXX-XXXX-XXXX" maxlength="14">
-        <button class="btn btn-primary" onclick="doActivate()">激活</button>
-        <div class="msg" id="activateMsg"></div>
-      </div>
+      <h2>公开演示次数已用完</h2>
+      <p class="desc">为控制接口费用，公开生成入口暂不继续提供。<br>本页不提供购买、激活码或个人联系方式。</p>
     </div>`;
 }
 

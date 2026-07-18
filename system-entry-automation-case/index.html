@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>系统录入自动化案例 · SMWSWK</title>
+  <title>系统录入自动化案例 · 个人 AI 工作台</title>
   <meta name="description" content="通用业务系统录入自动化案例：材料解析、字段映射、附件上传、表单录入、状态回写和人工复核。">
   <link rel="stylesheet" href="/css/case-light.css?v=20260604-cn-buttons">
 </head>
@@ -16,10 +16,7 @@
         <div class="eyebrow">案例 · 系统录入自动化</div>
         <h1>系统录入自动化</h1>
         <p class="lead">面向大量重复录入的业务系统，将外部材料解析、字段映射、附件上传、后台表单录入和状态回写串成稳定流程，减少人工搬运和漏填风险。</p>
-        <div class="case-actions">
-          <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
-          <button class="btn secondary" type="button" onclick="copyWechat()">复制微信号 smwswk</button>
-        </div>
+        <div class="case-actions"><a class="btn" href="/ai-diagnostic/">打开自动化自测</a></div>
       </div>
       <figure class="visual-card">
         <div class="visual-stage entry-visual" aria-label="系统录入自动化流程示意图">
@@ -53,7 +50,7 @@
       <div class="grid-3">
         <article class="panel">
           <h3>外部材料进入内部系统</h3>
-          <p>客户材料、表格、PDF、截图或附件需要被整理成系统字段，再逐项录入后台。</p>
+          <p>收到的材料、表格、PDF、截图或附件需要被整理成系统字段，再逐项录入后台。</p>
         </article>
         <article class="panel">
           <h3>字段规则稳定但人工耗时</h3>
@@ -67,7 +64,7 @@
     </section>
 
     <section class="section">
-      <h2>交付流程</h2>
+      <h2>流程组成</h2>
       <div class="steps">
         <article class="step" data-step="01">
           <h3>材料接收</h3>
@@ -93,11 +90,11 @@
     </section>
 
     <section class="section">
-      <h2>交付物</h2>
+      <h2>可复用产物</h2>
       <div class="grid-2">
         <article class="panel">
           <h3>可运行工具</h3>
-          <p>根据环境交付网页小工具、浏览器自动化脚本、后台服务或表格处理脚本。</p>
+          <p>根据环境形成网页小工具、浏览器自动化脚本、后台服务或表格处理脚本。</p>
           <div class="tags">
             <span>网页后台</span><span>表格处理</span><span>附件上传</span><span>状态台账</span>
           </div>
@@ -128,29 +125,11 @@
 
     <section class="cta-band">
       <div>
-        <h2>有一套重复录入流程？</h2>
-        <p>可先发操作步骤、字段截图和材料样例。咨询 300 元 / 小时，项目开发按难易程度和交付范围报价。</p>
+        <h2>先从低风险样本验证</h2>
+        <p>这是公开的脱敏案例，不提供咨询或定制开发。可以用自测页梳理自己的流程，再从可回滚的小样本开始。</p>
       </div>
-      <a class="btn" href="/ai-diagnostic/">提交需求诊断</a>
+      <a class="btn" href="/ai-diagnostic/">打开自动化自测</a>
     </section>
   </main>
-
-  <div class="toast" id="toast">微信号已复制：smwswk</div>
-  <script>
-    function copyWechat() {
-      var id = "smwswk";
-      var toast = document.getElementById("toast");
-      function show() {
-        toast.classList.add("show");
-        window.clearTimeout(window.__toastTimer);
-        window.__toastTimer = window.setTimeout(function () { toast.classList.remove("show"); }, 2200);
-      }
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(id).then(show, show);
-      } else {
-        show();
-      }
-    }
-  </script>
 </body>
 </html>
