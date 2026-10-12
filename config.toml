@@ -1,11 +1,11 @@
 languageCode = "en-us"
-title = "个人 AI 工作台"
+title = "SMWSWK"
 baseurl = "https://ai-xiaomin.onrender.com/"
 theme = "hyde"
 
 [params]
   subtitle = "AI × Contemporary Creation"
-  author = "Personal AI Workbench"
+  author = "搞艺术的小明"
   description = "AI-Era Contemporary Creator — Photography, Podcast, AI Workflow, Visual Storytelling"
 
 [taxonomies]
